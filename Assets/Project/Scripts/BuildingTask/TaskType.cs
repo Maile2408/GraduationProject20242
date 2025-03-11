@@ -14,7 +14,7 @@ public enum TaskType
     //Woodcutter
     plantTree = 200,
     chopTree = 201,
-    findTree2Chop = 102,//TODO: use findWorkingPoint instead
+    findTree2Chop = 202,//TODO: use findWorkingPoint instead
 
     //Warehouse
     findBuildingHasProduct = 300,

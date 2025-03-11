@@ -42,12 +42,11 @@ public class ForestHutTask : BuildingTask
     protected virtual void LoadTreePrefabs()
     {
         if (this.treePrefabs.Count > 0) return;
-        GameObject tree1 = Resources.Load<GameObject>("Res/Tree_1");
-        GameObject tree2 = Resources.Load<GameObject>("Res/Tree_2");
-        GameObject tree3 = Resources.Load<GameObject>("Res/Tree_3");
-        this.treePrefabs.Add(tree1);
-        this.treePrefabs.Add(tree2);
-        this.treePrefabs.Add(tree3);
+        GameObject[] trees = Resources.LoadAll<GameObject>("Tree");
+        foreach (GameObject tree in trees)
+        {
+            this.treePrefabs.Add(tree);
+        }
         Debug.Log(transform.name + " LoadObjects", gameObject);
     }
 
@@ -149,7 +148,7 @@ public class ForestHutTask : BuildingTask
 
     protected virtual Transform GetPlantPlace()
     {
-        Vector3 newTreePos = this.RandomPlaceForTree(); ;
+        Vector3 newTreePos = this.RandomPlaceForTree();
         float dis = Vector3.Distance(transform.position, newTreePos);
         if (dis < this.treeDistance) return null;
 
