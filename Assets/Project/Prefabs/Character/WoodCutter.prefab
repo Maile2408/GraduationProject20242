@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d285fd5a6c0f84693fa6ff9149c1e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  workerCtrl: {fileID: 0}
+  workerCtrl: {fileID: 3168199278232870709}
   buildingDistance: 0
   buildDisLimit: 0.7
 --- !u!1 &7615707096717143574
