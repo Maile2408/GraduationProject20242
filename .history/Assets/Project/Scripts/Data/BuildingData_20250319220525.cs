@@ -14,17 +14,17 @@ public class Building
 [System.Serializable]
 public class Cost
 {
-    public float wood { get; set; } = 0;
-    public float stone { get; set; } = 0;
-    public float gold { get; set; } = 0;
+    public int wood { get; set; } = 0;
+    public int stone { get; set; } = 0;
+    public int currency { get; set; } = 0;
 }
 
 [System.Serializable]
 public class UpgradeCost
 {
-    public float? wood { get; set; }
-    public float? stone { get; set; }
-    public float? gold { get; set; }
+    public int? wood { get; set; }
+    public int? stone { get; set; }
+    public int? currency { get; set; }
 }
 
 [System.Serializable]
@@ -33,12 +33,12 @@ public class Level
     public int level { get; set; }
     public Cost cost { get; set; }
     public int capacity { get; set; } = 0;
-    public float currencyProduction { get; set; } = 0;
-    public float productionTime { get; set; } = 0;
+    public int currencyProduction { get; set; } = 0;
+    public int productionTime { get; set; } = 0;
     public UpgradeCost upgradeCost { get; set; }
     public List<string> produces { get; set; } = new List<string>();
-    public float? storageCapacity { get; set; }
-    public float? transportThreshold { get; set; }
+    public int? storageCapacity { get; set; }
+    public int? transportThreshold { get; set; }
     public List<string> requires { get; set; } = new List<string>();
 }
 

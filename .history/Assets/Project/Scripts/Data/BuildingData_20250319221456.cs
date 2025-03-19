@@ -16,7 +16,7 @@ public class Cost
 {
     public float wood { get; set; } = 0;
     public float stone { get; set; } = 0;
-    public float gold { get; set; } = 0;
+    public float currency { get; set; } = 0;
 }
 
 [System.Serializable]
@@ -24,7 +24,7 @@ public class UpgradeCost
 {
     public float? wood { get; set; }
     public float? stone { get; set; }
-    public float? gold { get; set; }
+    public float? currency { get; set; }
 }
 
 [System.Serializable]

@@ -12,7 +12,7 @@ public enum ResourceName
 {
     noResource = 0,
 
-    // Currency
+    // Special
     gold = 1,       
     diamond = 2,    
 
