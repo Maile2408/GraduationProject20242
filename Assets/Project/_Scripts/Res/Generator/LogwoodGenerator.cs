@@ -24,7 +24,7 @@ public class LogwoodGenerator : ResGenerator
         Resource res = new Resource
         {
             name = ResourceName.logwood,
-            number = 1
+            amount = 1
         };
 
         this.resCreate.Clear();

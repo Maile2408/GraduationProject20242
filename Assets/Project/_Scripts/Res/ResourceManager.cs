@@ -16,7 +16,7 @@ public class ResourceManager : MonoBehaviour
     public virtual Resource AddResource(ResourceName resourceName, int number)
     {
         Resource res = this.GetResByName(resourceName);
-        res.number += number;
+        res.amount += number;
         return res;
     }
 

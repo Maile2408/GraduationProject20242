@@ -200,7 +200,7 @@ public class WarehouseTask : BuildingTask
         workerTasks.TaskCurrentDone();
 
         Resource res = workerCtrl.resCarrier.TakeFirst();
-        taskBuildingCtrl.warehouse.AddResource(res.name, res.number);
+        taskBuildingCtrl.warehouse.AddResource(res.name, res.amount);
 
         workerTasks.TaskAdd(TaskType.goToWorkStation);
     }
@@ -216,7 +216,7 @@ public class WarehouseTask : BuildingTask
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 
         Resource res = workerCtrl.resCarrier.TakeFirst();
-        taskBuildingCtrl.warehouse.AddResource(res.name, res.number);
+        taskBuildingCtrl.warehouse.AddResource(res.name, res.amount);
 
         workerTasks.taskBuildingCtrl = null;
         workerTasks.TaskCurrentDone();

@@ -111,7 +111,7 @@ public class HouseBuilderTask : BuildingTask
 
         workerCtrl.workerTasks.TaskCurrentDone();
         Resource res = workerCtrl.resCarrier.TakeFirst();
-        this.construction.AddRes(res.name, res.number);
+        this.construction.AddRes(res.name, res.amount);
 
         ResourceName resRequireName = this.construction.GetResRequireName();
         if (resRequireName == ResourceName.noResource)

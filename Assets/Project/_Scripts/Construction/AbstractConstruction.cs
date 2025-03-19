@@ -59,7 +59,7 @@ public class AbstractConstruction : SaiBehaviour
         {
             Resource resHas = this.resHave.Find((x) => x.name == resRequire.name);
             if (resHas == null) return false;
-            if (resRequire.number > resHas.number) return false;
+            if (resRequire.amount > resHas.amount) return false;
         }
 
         return true;
@@ -71,7 +71,7 @@ public class AbstractConstruction : SaiBehaviour
         {
             Resource resHas = this.resHave.Find((x) => x.name == resRequire.name);
             if (resHas == null) return resRequire.name;
-            if (resRequire.number > resHas.number) return resRequire.name;
+            if (resRequire.amount > resHas.amount) return resRequire.name;
         }
 
         return ResourceName.noResource;
@@ -114,14 +114,14 @@ public class AbstractConstruction : SaiBehaviour
         Resource resource = this.resHave.Find((x) => x.name == resourceName);
         if (resource != null)
         {
-            resource.number += count;
+            resource.amount += count;
             return;
         }
 
         resource = new Resource
         {
             name = resourceName,
-            number = count
+            amount = count
         };
         this.resHave.Add(resource);
     }

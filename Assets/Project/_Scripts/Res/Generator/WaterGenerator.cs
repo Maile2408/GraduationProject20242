@@ -16,7 +16,7 @@ public class WaterGenerator : ResGenerator
         Resource res = new Resource
         {
             name = ResourceName.water,
-            number = 1
+            amount = 1
         };
 
         this.resCreate.Clear();

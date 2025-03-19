@@ -1,0 +1,580 @@
+{
+    "buildings": [
+        {
+            "id": 1,
+            "name": "SmallHouse",
+            "category": "Needs",
+            "description": "A small house providing shelter for workers.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 40, "stone": 15, "currency": 50},
+                    "capacity": 3,
+                    "currencyProduction": 2,
+                    "productionTime": 60,
+                    "upgradeCost": {"wood": 60, "stone": 30, "currency": 100}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 60, "stone": 30, "currency": 100},
+                    "capacity": 5,
+                    "currencyProduction": 5,
+                    "productionTime": 50,
+                    "upgradeCost": {"wood": 90, "stone": 50, "currency": 200}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 90, "stone": 50, "currency": 200},
+                    "capacity": 8,
+                    "currencyProduction": 10,
+                    "productionTime": 40,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 2,
+            "name": "TownHouse",
+            "category": "Needs",
+            "description": "A large residential house for workers.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 80, "stone": 40, "currency": 120},
+                    "capacity": 6,
+                    "currencyProduction": 4,
+                    "productionTime": 55,
+                    "upgradeCost": {"wood": 110, "stone": 60, "currency": 250}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 110, "stone": 60, "currency": 250},
+                    "capacity": 9,
+                    "currencyProduction": 8,
+                    "productionTime": 45,
+                    "upgradeCost": {"wood": 140, "stone": 80, "currency": 400}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 140, "stone": 80, "currency": 400},
+                    "capacity": 12,
+                    "currencyProduction": 15,
+                    "productionTime": 35,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 3,
+            "name": "CityHouse",
+            "category": "Needs",
+            "description": "A modern house providing high-quality shelter for workers.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 100, "stone": 50, "currency": 150},
+                    "capacity": 8,
+                    "currencyProduction": 5,
+                    "productionTime": 50,
+                    "upgradeCost": {"wood": 130, "stone": 70, "currency": 300}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 130, "stone": 70, "currency": 300},
+                    "capacity": 12,
+                    "currencyProduction": 10,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 160, "stone": 100, "currency": 500}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 160, "stone": 100, "currency": 500},
+                    "capacity": 15,
+                    "currencyProduction": 20,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+		{
+            "id": 4,
+            "name": "SmallForesterHut",
+            "category": "Production",
+            "description": "A small hut where foresters plant and cut trees to gather logs.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 30, "stone": 15, "currency": 80},
+                    "capacity": 2,
+                    "produces": ["logwood"],
+                    "storageCapacity": 15,
+                    "transportThreshold": 8,
+                    "currencyProduction": 3,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 50, "stone": 30, "currency": 150}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 50, "stone": 30, "currency": 150},
+                    "capacity": 3,
+                    "produces": ["logwood"],
+                    "storageCapacity": 30,
+                    "transportThreshold": 15,
+                    "currencyProduction": 6,
+                    "productionTime": 35,
+                    "upgradeCost": {"wood": 80, "stone": 50, "currency": 250}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 80, "stone": 50, "currency": 250},
+                    "capacity": 4,
+                    "produces": ["logwood"],
+                    "storageCapacity": 45,
+                    "transportThreshold": 22,
+                    "currencyProduction": 12,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 5,
+            "name": "LargeForesterHut",
+            "category": "Production",
+            "description": "A larger hut with more workers for increased logwood production.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 60, "stone": 30, "currency": 120},
+                    "capacity": 3,
+                    "produces": ["logwood"],
+                    "storageCapacity": 30,
+                    "transportThreshold": 15,
+                    "currencyProduction": 5,
+                    "productionTime": 35,
+                    "upgradeCost": {"wood": 90, "stone": 50, "currency": 200}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 90, "stone": 50, "currency": 200},
+                    "capacity": 4,
+                    "produces": ["logwood"],
+                    "storageCapacity": 50,
+                    "transportThreshold": 25,
+                    "currencyProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": {"wood": 120, "stone": 80, "currency": 350}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 120, "stone": 80, "currency": 350},
+                    "capacity": 6,
+                    "produces": ["logwood"],
+                    "storageCapacity": 70,
+                    "transportThreshold": 35,
+                    "currencyProduction": 20,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 6,
+            "name": "Sawmill",
+            "category": "Production",
+            "description": "Processes raw logs into wooden planks for construction.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 50, "stone": 20, "currency": 150},
+                    "capacity": 2,
+                    "produces": ["plank"],
+                    "requires": ["logwood"],
+                    "storageCapacity": 30,
+                    "transportThreshold": 15,
+                    "currencyProduction": 8,
+                    "productionTime": 35,
+                    "upgradeCost": {"wood": 80, "stone": 40, "currency": 300}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 80, "stone": 40, "currency": 300},
+                    "capacity": 3,
+                    "produces": ["plank"],
+                    "requires": ["logwood"],
+                    "storageCapacity": 50,
+                    "transportThreshold": 25,
+                    "currencyProduction": 15,
+                    "productionTime": 30,
+                    "upgradeCost": {"wood": 120, "stone": 60, "currency": 500}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 120, "stone": 60, "currency": 500},
+                    "capacity": 5,
+                    "produces": ["plank"],
+                    "requires": ["logwood"],
+                    "storageCapacity": 80,
+                    "transportThreshold": 40,
+                    "currencyProduction": 30,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 7,
+            "name": "Mine",
+            "category": "Production",
+            "description": "Extracts stone from underground deposits.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 40, "stone": 60, "currency": 200},
+                    "capacity": 2,
+                    "produces": ["stone"],
+                    "storageCapacity": 20,
+                    "transportThreshold": 10,
+                    "currencyProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 60, "stone": 90, "currency": 300}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 60, "stone": 90, "currency": 300},
+                    "capacity": 3,
+                    "produces": ["stone"],
+                    "storageCapacity": 40,
+                    "transportThreshold": 20,
+                    "currencyProduction": 10,
+                    "productionTime": 35,
+                    "upgradeCost": {"wood": 90, "stone": 120, "currency": 500}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 90, "stone": 120, "currency": 500},
+                    "capacity": 5,
+                    "produces": ["stone"],
+                    "storageCapacity": 60,
+                    "transportThreshold": 30,
+                    "currencyProduction": 20,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+		        {
+            "id": 8,
+            "name": "OldWell",
+            "category": "Production",
+            "description": "An old well that provides a small amount of water.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 30, "stone": 20, "currency": 50},
+                    "capacity": 1,
+                    "produces": ["water"],
+                    "storageCapacity": 10,
+                    "transportThreshold": 5,
+                    "currencyProduction": 2,
+                    "productionTime": 50,
+                    "upgradeCost": {"wood": 50, "stone": 35, "currency": 100}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 50, "stone": 35, "currency": 100},
+                    "capacity": 2,
+                    "produces": ["water"],
+                    "storageCapacity": 20,
+                    "transportThreshold": 10,
+                    "currencyProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 70, "stone": 50, "currency": 180}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 70, "stone": 50, "currency": 180},
+                    "capacity": 3,
+                    "produces": ["water"],
+                    "storageCapacity": 30,
+                    "transportThreshold": 15,
+                    "currencyProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 9,
+            "name": "ModernWell",
+            "category": "Production",
+            "description": "A modern well that provides a large amount of water efficiently.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 60, "stone": 40, "currency": 120},
+                    "capacity": 2,
+                    "produces": ["water"],
+                    "storageCapacity": 20,
+                    "transportThreshold": 10,
+                    "currencyProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 90, "stone": 60, "currency": 250}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 90, "stone": 60, "currency": 250},
+                    "capacity": 3,
+                    "produces": ["water"],
+                    "storageCapacity": 40,
+                    "transportThreshold": 20,
+                    "currencyProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": {"wood": 120, "stone": 80, "currency": 400}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 120, "stone": 80, "currency": 400},
+                    "capacity": 4,
+                    "produces": ["water"],
+                    "storageCapacity": 60,
+                    "transportThreshold": 30,
+                    "currencyProduction": 20,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 10,
+            "name": "SmallWareHouse",
+            "category": "Special",
+            "description": "A small warehouse used to store resources for the city.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 50, "stone": 30, "currency": 150},
+                    "capacity": 0,
+                    "storageCapacity": 100,
+                    "upgradeCost": {"wood": 80, "stone": 50, "currency": 250}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 80, "stone": 50, "currency": 250},
+                    "capacity": 0,
+                    "storageCapacity": 200,
+                    "upgradeCost": {"wood": 120, "stone": 80, "currency": 400}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 120, "stone": 80, "currency": 400},
+                    "capacity": 0,
+                    "storageCapacity": 300,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 11,
+            "name": "LargeWareHouse",
+            "category": "Special",
+            "description": "A large warehouse with greater storage capacity for city resources.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 80, "stone": 50, "currency": 250},
+                    "capacity": 0,
+                    "storageCapacity": 200,
+                    "upgradeCost": {"wood": 120, "stone": 80, "currency": 400}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 120, "stone": 80, "currency": 400},
+                    "capacity": 0,
+                    "storageCapacity": 400,
+                    "upgradeCost": {"wood": 160, "stone": 120, "currency": 600}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 160, "stone": 120, "currency": 600},
+                    "capacity": 0,
+                    "storageCapacity": 600,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 12,
+            "name": "BuilderHut",
+            "category": "Special",
+            "description": "A hut where builders are assigned to construct buildings.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 40, "stone": 20, "currency": 100},
+                    "capacity": 3,
+                    "currencyProduction": 5,
+                    "productionTime": 60,
+                    "upgradeCost": {"wood": 60, "stone": 40, "currency": 200}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 60, "stone": 40, "currency": 200},
+                    "capacity": 5,
+                    "currencyProduction": 10,
+                    "productionTime": 50,
+                    "upgradeCost": {"wood": 90, "stone": 60, "currency": 350}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 90, "stone": 60, "currency": 350},
+                    "capacity": 7,
+                    "currencyProduction": 15,
+                    "productionTime": 40,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+		        {
+            "id": 13,
+            "name": "SmallFarm",
+            "category": "Food",
+            "description": "A small farm that grows crops to produce food.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 50, "stone": 20, "currency": 100},
+                    "capacity": 2,
+                    "produces": ["grain"],
+                    "storageCapacity": 20,
+                    "transportThreshold": 10,
+                    "currencyProduction": 3,
+                    "productionTime": 45,
+                    "upgradeCost": {"wood": 80, "stone": 40, "currency": 200}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 80, "stone": 40, "currency": 200},
+                    "capacity": 3,
+                    "produces": ["grain"],
+                    "storageCapacity": 40,
+                    "transportThreshold": 20,
+                    "currencyProduction": 7,
+                    "productionTime": 35,
+                    "upgradeCost": {"wood": 120, "stone": 70, "currency": 350}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 120, "stone": 70, "currency": 350},
+                    "capacity": 5,
+                    "produces": ["grain"],
+                    "storageCapacity": 60,
+                    "transportThreshold": 30,
+                    "currencyProduction": 12,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 14,
+            "name": "LargeFarm",
+            "category": "Food",
+            "description": "A large farm that produces a greater amount of food.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 80, "stone": 40, "currency": 150},
+                    "capacity": 3,
+                    "produces": ["grain"],
+                    "storageCapacity": 40,
+                    "transportThreshold": 20,
+                    "currencyProduction": 6,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 110, "stone": 60, "currency": 250}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 110, "stone": 60, "currency": 250},
+                    "capacity": 4,
+                    "produces": ["grain"],
+                    "storageCapacity": 80,
+                    "transportThreshold": 40,
+                    "currencyProduction": 12,
+                    "productionTime": 30,
+                    "upgradeCost": {"wood": 150, "stone": 90, "currency": 400}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 150, "stone": 90, "currency": 400},
+                    "capacity": 6,
+                    "produces": ["grain"],
+                    "storageCapacity": 120,
+                    "transportThreshold": 60,
+                    "currencyProduction": 20,
+                    "productionTime": 20,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 15,
+            "name": "Mill",
+            "category": "Food",
+            "description": "A mill that processes grain into flour.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"wood": 60, "stone": 30, "currency": 120},
+                    "capacity": 2,
+                    "produces": ["flour"],
+                    "requires": ["grain"],
+                    "storageCapacity": 30,
+                    "transportThreshold": 15,
+                    "currencyProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"wood": 90, "stone": 50, "currency": 220}
+                },
+                {
+                    "level": 2,
+                    "cost": {"wood": 90, "stone": 50, "currency": 220},
+                    "capacity": 3,
+                    "produces": ["flour"],
+                    "requires": ["grain"],
+                    "storageCapacity": 60,
+                    "transportThreshold": 30,
+                    "currencyProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": {"wood": 130, "stone": 80, "currency": 350}
+                },
+                {
+                    "level": 3,
+                    "cost": {"wood": 130, "stone": 80, "currency": 350},
+                    "capacity": 5,
+                    "produces": ["flour"],
+                    "requires": ["grain"],
+                    "storageCapacity": 90,
+                    "transportThreshold": 45,
+                    "currencyProduction": 20,
+                    "productionTime": 20,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        }
+    ]
+}

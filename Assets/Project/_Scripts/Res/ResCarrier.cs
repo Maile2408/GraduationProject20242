@@ -10,7 +10,7 @@ public class ResCarrier : MonoBehaviour
     public virtual Resource AddResource(ResourceName resourceName, float number)
     {
         Resource res = this.GetResByName(resourceName);
-        res.number += number;
+        res.amount += number;
         return res;
     }
 
@@ -18,7 +18,7 @@ public class ResCarrier : MonoBehaviour
     {
         foreach(Resource addResource in addResources)
         {
-            this.AddResource(addResource.name, addResource.number);
+            this.AddResource(addResource.name, addResource.amount);
         }
     }
 

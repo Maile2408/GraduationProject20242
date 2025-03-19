@@ -17,10 +17,10 @@ public class SawmillWH : Warehouse
         Resource resLogwood = new Resource
         {
             name = logwood.Name(),
-            number = logwood.resMax - logwood.resCurrent
+            amount = logwood.resMax - logwood.resCurrent
         };
 
-        if(resLogwood.number > 0) resources.Add(resLogwood);
+        if(resLogwood.amount > 0) resources.Add(resLogwood);
 
         return resources;
     }
