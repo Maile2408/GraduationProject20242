@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1000
   resCurrent: 0
-  resMax: 7
+  resMax: Infinity
 --- !u!1 &7701929835493955439
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,8 +88,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5777467560807774751}
-  - component: {fileID: 2546504484041836988}
   - component: {fileID: 3157524675920501329}
+  - component: {fileID: 7376630589638708775}
   m_Layer: 0
   m_Name: ModernWell
   m_TagString: Untagged
@@ -114,28 +114,6 @@ Transform:
   - {fileID: 5685642882047575372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2546504484041836988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7701929835493955439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4f79402c73398645bf5ee1c0c6274df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 5280164440776957884}
-  resCreate:
-  - name: 1000
-    number: 1
-  resRequire: []
-  canCreate: 1
-  createTimer: 0
-  createDelay: 7
 --- !u!136 &3157524675920501329
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -159,6 +137,26 @@ CapsuleCollider:
   m_Height: 2.8788252
   m_Direction: 1
   m_Center: {x: -0.057538986, y: 1.2493086, z: -0.0014503002}
+--- !u!114 &7376630589638708775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7701929835493955439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 5280164440776957884}
+  resCreate: []
+  resRequire: []
+  createTimer: 0
+  createDelay: 7
+  canCreate: 1
 --- !u!1 &7768549368349797333
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 
 [System.Serializable]
-public class Building
+public class BuildingType
 {
     public int id { get; set; }
     public string name { get; set; }
@@ -14,17 +14,19 @@ public class Building
 [System.Serializable]
 public class Cost
 {
-    public float wood { get; set; } = 0;
-    public float stone { get; set; } = 0;
-    public float gold { get; set; } = 0;
+    public float? logwood { get; set; } = 0;
+    public float? stone { get; set; } = 0;
+    public float? gold { get; set; } = 0;
+    public float? plank { get; set; } = 0;
 }
 
 [System.Serializable]
 public class UpgradeCost
 {
-    public float? wood { get; set; }
+    public float? logwood { get; set; }
     public float? stone { get; set; }
     public float? gold { get; set; }
+    public float? plank { get; set; }
 }
 
 [System.Serializable]
@@ -32,18 +34,17 @@ public class Level
 {
     public int level { get; set; }
     public Cost cost { get; set; }
-    public int capacity { get; set; } = 0;
-    public float currencyProduction { get; set; } = 0;
+    public int? capacity { get; set; }
+    public float goldProduction { get; set; } = 0;
     public float productionTime { get; set; } = 0;
     public UpgradeCost upgradeCost { get; set; }
     public List<string> produces { get; set; } = new List<string>();
     public float? storageCapacity { get; set; }
-    public float? transportThreshold { get; set; }
     public List<string> requires { get; set; } = new List<string>();
 }
 
 [System.Serializable]
-public class BuildingData
+public class buildingTypeData
 {
-    public List<Building> buildings { get; set; }
+    public List<BuildingType> buildingTypes { get; set; }
 }

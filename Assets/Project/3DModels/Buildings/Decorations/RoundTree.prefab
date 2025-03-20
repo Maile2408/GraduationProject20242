@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 880970725214738984}
   - component: {fileID: 5096517541735811467}
   m_Layer: 0
-  m_Name: Tree_03
+  m_Name: RoundTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

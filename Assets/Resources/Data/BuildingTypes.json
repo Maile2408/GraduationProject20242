@@ -1,5 +1,5 @@
 {
-    "buildings": [
+    "buildingTypes": [
         {
             "id": 1,
             "name": "SmallHouse",
@@ -8,23 +8,23 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 40, "stone": 15, "gold": 50},
+                    "cost": {"logwood": 15, "gold": 50},
                     "capacity": 3,
                     "goldProduction": 2,
                     "productionTime": 60,
-                    "upgradeCost": {"wood": 60, "stone": 30, "gold": 100}
+                    "upgradeCost": {"logwood": 30, "gold": 100}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 60, "stone": 30, "gold": 100},
+                    "cost": {"logwood": 30, "gold": 100},
                     "capacity": 5,
                     "goldProduction": 5,
                     "productionTime": 50,
-                    "upgradeCost": {"wood": 90, "stone": 50, "gold": 200}
+                    "upgradeCost": {"logwood": 45, "stone": 10, "gold": 200, "plank": 15}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 90, "stone": 50, "gold": 200},
+                    "cost": {"logwood": 45, "stone": 10, "gold": 200, "plank": 15},
                     "capacity": 8,
                     "goldProduction": 10,
                     "productionTime": 40,
@@ -41,23 +41,23 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 80, "stone": 40, "gold": 120},
+                    "cost": {"logwood": 50, "gold": 120},
                     "capacity": 6,
                     "goldProduction": 4,
                     "productionTime": 55,
-                    "upgradeCost": {"wood": 110, "stone": 60, "gold": 250}
+                    "upgradeCost": {"logwood": 70, "gold": 250, "plank": 20}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 110, "stone": 60, "gold": 250},
+                    "cost": {"logwood": 70, "gold": 250, "plank": 20},
                     "capacity": 9,
                     "goldProduction": 8,
                     "productionTime": 45,
-                    "upgradeCost": {"wood": 140, "stone": 80, "gold": 400}
+                    "upgradeCost": {"logwood": 90, "stone": 10, "gold": 400, "plank": 35}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 140, "stone": 80, "gold": 400},
+                    "cost": {"logwood": 90, "stone": 10, "gold": 400, "plank": 35},
                     "capacity": 12,
                     "goldProduction": 15,
                     "productionTime": 35,
@@ -74,23 +74,23 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 100, "stone": 50, "gold": 150},
+                    "cost": {"logwood": 100, "stone": 50, "gold": 150},
                     "capacity": 8,
                     "goldProduction": 5,
                     "productionTime": 50,
-                    "upgradeCost": {"wood": 130, "stone": 70, "gold": 300}
+                    "upgradeCost": {"logwood": 130, "stone": 70, "gold": 300, "plank": 30}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 130, "stone": 70, "gold": 300},
+                    "cost": {"logwood": 130, "stone": 70, "gold": 300, "plank": 30},
                     "capacity": 12,
                     "goldProduction": 10,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 160, "stone": 100, "gold": 500}
+                    "upgradeCost": {"logwood": 160, "stone": 100, "gold": 500, "plank": 50}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 160, "stone": 100, "gold": 500},
+                    "cost": {"logwood": 160, "stone": 100, "gold": 500, "plank": 50},
                     "capacity": 15,
                     "goldProduction": 20,
                     "productionTime": 30,
@@ -107,33 +107,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 30, "stone": 15, "gold": 80},
+                    "cost": {"logwood": 30, "gold": 80},
                     "capacity": 2,
                     "produces": ["logwood"],
                     "storageCapacity": 15,
-                    "transportThreshold": 8,
                     "goldProduction": 3,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 50, "stone": 30, "gold": 150}
+                    "upgradeCost": {"logwood": 50, "gold": 150}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 50, "stone": 30, "gold": 150},
+                    "cost": {"logwood": 50, "gold": 150},
                     "capacity": 3,
                     "produces": ["logwood"],
-                    "storageCapacity": 30,
                     "transportThreshold": 15,
                     "goldProduction": 6,
                     "productionTime": 35,
-                    "upgradeCost": {"wood": 80, "stone": 50, "gold": 250}
+                    "upgradeCost": {"logwood": 80, "gold": 250, "plank": 30}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 80, "stone": 50, "gold": 250},
+                    "cost": {"logwood": 80, "gold": 250, "plank": 30},
                     "capacity": 4,
                     "produces": ["logwood"],
                     "storageCapacity": 45,
-                    "transportThreshold": 22,
                     "goldProduction": 12,
                     "productionTime": 30,
                     "upgradeCost": null
@@ -149,33 +146,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 60, "stone": 30, "gold": 120},
+                    "cost": {"logwood": 60, "gold": 120, "plank": 35},
                     "capacity": 3,
                     "produces": ["logwood"],
                     "storageCapacity": 30,
-                    "transportThreshold": 15,
                     "goldProduction": 5,
                     "productionTime": 35,
-                    "upgradeCost": {"wood": 90, "stone": 50, "gold": 200}
+                    "upgradeCost": {"logwood": 90, "stone": 35, "gold": 200, "plank": 30}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 90, "stone": 50, "gold": 200},
+                    "cost": {"logwood": 90, "stone": 35, "gold": 200, "plank": 30},
                     "capacity": 4,
                     "produces": ["logwood"],
                     "storageCapacity": 50,
-                    "transportThreshold": 25,
                     "goldProduction": 10,
                     "productionTime": 30,
-                    "upgradeCost": {"wood": 120, "stone": 80, "gold": 350}
+                    "upgradeCost": {"logwood": 120, "stone": 80, "gold": 350, "plank": 30}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 120, "stone": 80, "gold": 350},
+                    "cost": {"logwood": 120, "stone": 80, "gold": 350, "plank": 30},
                     "capacity": 6,
                     "produces": ["logwood"],
                     "storageCapacity": 70,
-                    "transportThreshold": 35,
                     "goldProduction": 20,
                     "productionTime": 25,
                     "upgradeCost": null
@@ -187,40 +181,37 @@
             "id": 6,
             "name": "Sawmill",
             "category": "Production",
-            "description": "Processes raw logs into wooden planks for construction.",
+            "description": "Processes raw logs into logwooden planks for construction.",
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 50, "stone": 20, "gold": 150},
+                    "cost": {"logwood": 50, "gold": 150},
                     "capacity": 2,
                     "produces": ["plank"],
                     "requires": ["logwood"],
                     "storageCapacity": 30,
-                    "transportThreshold": 15,
                     "goldProduction": 8,
                     "productionTime": 35,
-                    "upgradeCost": {"wood": 80, "stone": 40, "gold": 300}
+                    "upgradeCost": {"logwood": 80, "gold": 300}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 80, "stone": 40, "gold": 300},
+                    "cost": {"logwood": 80, "gold": 300},
                     "capacity": 3,
                     "produces": ["plank"],
                     "requires": ["logwood"],
                     "storageCapacity": 50,
-                    "transportThreshold": 25,
                     "goldProduction": 15,
                     "productionTime": 30,
-                    "upgradeCost": {"wood": 120, "stone": 60, "gold": 500}
+                    "upgradeCost": {"logwood": 120, "gold": 500, "plank": 30}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 120, "stone": 60, "gold": 500},
+                    "cost": {"logwood": 120, "gold": 500, "plank": 30},
                     "capacity": 5,
                     "produces": ["plank"],
                     "requires": ["logwood"],
                     "storageCapacity": 80,
-                    "transportThreshold": 40,
                     "goldProduction": 30,
                     "productionTime": 25,
                     "upgradeCost": null
@@ -236,33 +227,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 40, "stone": 60, "gold": 200},
+                    "cost": {"logwood": 40, "gold": 200},
                     "capacity": 2,
                     "produces": ["stone"],
                     "storageCapacity": 20,
-                    "transportThreshold": 10,
                     "goldProduction": 5,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 60, "stone": 90, "gold": 300}
+                    "upgradeCost": {"logwood": 60, "stone": 50, "gold": 300}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 60, "stone": 90, "gold": 300},
+                    "cost": {"logwood": 60, "stone": 50, "gold": 300},
                     "capacity": 3,
                     "produces": ["stone"],
                     "storageCapacity": 40,
-                    "transportThreshold": 20,
                     "goldProduction": 10,
                     "productionTime": 35,
-                    "upgradeCost": {"wood": 90, "stone": 120, "gold": 500}
+                    "upgradeCost": {"logwood": 90, "stone": 80, "gold": 500}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 90, "stone": 120, "gold": 500},
+                    "cost": {"logwood": 90, "stone": 80, "gold": 500},
                     "capacity": 5,
                     "produces": ["stone"],
                     "storageCapacity": 60,
-                    "transportThreshold": 30,
                     "goldProduction": 20,
                     "productionTime": 30,
                     "upgradeCost": null
@@ -278,33 +266,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 30, "stone": 20, "gold": 50},
+                    "cost": {"logwood": 30, "stone": 10, "gold": 50},
                     "capacity": 1,
                     "produces": ["water"],
                     "storageCapacity": 10,
-                    "transportThreshold": 5,
                     "goldProduction": 2,
                     "productionTime": 50,
-                    "upgradeCost": {"wood": 50, "stone": 35, "gold": 100}
+                    "upgradeCost": {"logwood": 50, "stone": 15, "gold": 100}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 50, "stone": 35, "gold": 100},
+                    "cost": {"logwood": 50, "stone": 15, "gold": 100},
                     "capacity": 2,
                     "produces": ["water"],
                     "storageCapacity": 20,
-                    "transportThreshold": 10,
                     "goldProduction": 5,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 70, "stone": 50, "gold": 180}
+                    "upgradeCost": {"logwood": 70, "stone": 25, "gold": 180}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 70, "stone": 50, "gold": 180},
+                    "cost": {"logwood": 70, "stone": 25, "gold": 180},
                     "capacity": 3,
                     "produces": ["water"],
                     "storageCapacity": 30,
-                    "transportThreshold": 15,
                     "goldProduction": 10,
                     "productionTime": 30,
                     "upgradeCost": null
@@ -320,33 +305,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 60, "stone": 40, "gold": 120},
+                    "cost": {"logwood": 60, "stone": 40, "gold": 120},
                     "capacity": 2,
                     "produces": ["water"],
                     "storageCapacity": 20,
-                    "transportThreshold": 10,
                     "goldProduction": 5,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 90, "stone": 60, "gold": 250}
+                    "upgradeCost": {"logwood": 90, "stone": 60, "gold": 250, "plank": 5}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 90, "stone": 60, "gold": 250},
+                    "cost": {"logwood": 90, "stone": 60, "gold": 250, "plank": 5},
                     "capacity": 3,
                     "produces": ["water"],
                     "storageCapacity": 40,
-                    "transportThreshold": 20,
                     "goldProduction": 10,
                     "productionTime": 30,
-                    "upgradeCost": {"wood": 120, "stone": 80, "gold": 400}
+                    "upgradeCost": {"logwood": 120, "stone": 80, "gold": 400, "plank": 15}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 120, "stone": 80, "gold": 400},
+                    "cost": {"logwood": 120, "stone": 80, "gold": 400, "plank": 15},
                     "capacity": 4,
                     "produces": ["water"],
                     "storageCapacity": 60,
-                    "transportThreshold": 30,
                     "goldProduction": 20,
                     "productionTime": 25,
                     "upgradeCost": null
@@ -362,21 +344,21 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 50, "stone": 30, "gold": 150},
+                    "cost": {"logwood": 50, "gold": 150},
                     "capacity": 0,
                     "storageCapacity": 100,
-                    "upgradeCost": {"wood": 80, "stone": 50, "gold": 250}
+                    "upgradeCost": {"logwood": 80, "gold": 250}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 80, "stone": 50, "gold": 250},
+                    "cost": {"logwood": 80, "gold": 250},
                     "capacity": 0,
                     "storageCapacity": 200,
-                    "upgradeCost": {"wood": 120, "stone": 80, "gold": 400}
+                    "upgradeCost": {"logwood": 120, "gold": 400}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 120, "stone": 80, "gold": 400},
+                    "cost": {"logwood": 120, "gold": 400},
                     "capacity": 0,
                     "storageCapacity": 300,
                     "upgradeCost": null
@@ -392,21 +374,21 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 80, "stone": 50, "gold": 250},
+                    "cost": {"logwood": 80, "stone": 20, "gold": 250, "plank": 20},
                     "capacity": 0,
                     "storageCapacity": 200,
-                    "upgradeCost": {"wood": 120, "stone": 80, "gold": 400}
+                    "upgradeCost": {"logwood": 120, "stone": 50, "gold": 400, "plank": 35}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 120, "stone": 80, "gold": 400},
+                    "cost": {"logwood": 120, "stone": 50, "gold": 400, "plank": 35},
                     "capacity": 0,
                     "storageCapacity": 400,
-                    "upgradeCost": {"wood": 160, "stone": 120, "gold": 600}
+                    "upgradeCost": {"logwood": 160, "stone": 120, "gold": 600, "plank": 50}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 160, "stone": 120, "gold": 600},
+                    "cost": {"logwood": 160, "stone": 120, "gold": 600, "plank": 50},
                     "capacity": 0,
                     "storageCapacity": 600,
                     "upgradeCost": null
@@ -422,23 +404,23 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 40, "stone": 20, "gold": 100},
+                    "cost": {"logwood": 40, "gold": 100},
                     "capacity": 3,
                     "goldProduction": 5,
                     "productionTime": 60,
-                    "upgradeCost": {"wood": 60, "stone": 40, "gold": 200}
+                    "upgradeCost": {"logwood": 60, "stone": 10, "gold": 200}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 60, "stone": 40, "gold": 200},
+                    "cost": {"logwood": 60, "stone": 10, "gold": 200},
                     "capacity": 5,
                     "goldProduction": 10,
                     "productionTime": 50,
-                    "upgradeCost": {"wood": 90, "stone": 60, "gold": 350}
+                    "upgradeCost": {"logwood": 90, "stone": 20, "gold": 350, "plank": 20}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 90, "stone": 60, "gold": 350},
+                    "cost": {"logwood": 90, "stone": 20, "gold": 350, "plank": 20},
                     "capacity": 7,
                     "goldProduction": 15,
                     "productionTime": 40,
@@ -455,33 +437,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 50, "stone": 20, "gold": 100},
+                    "cost": {"logwood": 50, "gold": 100},
                     "capacity": 2,
                     "produces": ["grain"],
                     "storageCapacity": 20,
-                    "transportThreshold": 10,
                     "goldProduction": 3,
                     "productionTime": 45,
-                    "upgradeCost": {"wood": 80, "stone": 40, "gold": 200}
+                    "upgradeCost": {"logwood": 80, "gold": 200, "plank": 15}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 80, "stone": 40, "gold": 200},
+                    "cost": {"logwood": 80, "gold": 200, "plank": 15},
                     "capacity": 3,
                     "produces": ["grain"],
                     "storageCapacity": 40,
-                    "transportThreshold": 20,
                     "goldProduction": 7,
                     "productionTime": 35,
-                    "upgradeCost": {"wood": 120, "stone": 70, "gold": 350}
+                    "upgradeCost": {"logwood": 120, "stone": 30, "gold": 350}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 120, "stone": 70, "gold": 350},
+                    "cost": {"logwood": 120, "stone": 30, "gold": 350},
                     "capacity": 5,
                     "produces": ["grain"],
                     "storageCapacity": 60,
-                    "transportThreshold": 30,
                     "goldProduction": 12,
                     "productionTime": 25,
                     "upgradeCost": null
@@ -497,33 +476,30 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 80, "stone": 40, "gold": 150},
+                    "cost": {"logwood": 80, "stone": 10, "gold": 150},
                     "capacity": 3,
                     "produces": ["grain"],
                     "storageCapacity": 40,
-                    "transportThreshold": 20,
                     "goldProduction": 6,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 110, "stone": 60, "gold": 250}
+                    "upgradeCost": {"logwood": 110, "stone": 20, "gold": 250}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 110, "stone": 60, "gold": 250},
+                    "cost": {"logwood": 110, "stone": 20, "gold": 250},
                     "capacity": 4,
                     "produces": ["grain"],
                     "storageCapacity": 80,
-                    "transportThreshold": 40,
                     "goldProduction": 12,
                     "productionTime": 30,
-                    "upgradeCost": {"wood": 150, "stone": 90, "gold": 400}
+                    "upgradeCost": {"logwood": 150, "stone": 50, "gold": 400, "plank": 30}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 150, "stone": 90, "gold": 400},
+                    "cost": {"logwood": 150, "stone": 50, "gold": 400, "plank": 30},
                     "capacity": 6,
                     "produces": ["grain"],
                     "storageCapacity": 120,
-                    "transportThreshold": 60,
                     "goldProduction": 20,
                     "productionTime": 20,
                     "upgradeCost": null
@@ -539,38 +515,115 @@
             "levels": [
                 {
                     "level": 1,
-                    "cost": {"wood": 60, "stone": 30, "gold": 120},
+                    "cost": {"logwood": 60, "gold": 120, "plank": 25},
                     "capacity": 2,
                     "produces": ["flour"],
                     "requires": ["grain"],
                     "storageCapacity": 30,
-                    "transportThreshold": 15,
                     "goldProduction": 5,
                     "productionTime": 40,
-                    "upgradeCost": {"wood": 90, "stone": 50, "gold": 220}
+                    "upgradeCost": {"logwood": 90, "gold": 220, "plank": 50}
                 },
                 {
                     "level": 2,
-                    "cost": {"wood": 90, "stone": 50, "gold": 220},
+                    "cost": {"logwood": 90, "gold": 220, "plank": 50},
                     "capacity": 3,
                     "produces": ["flour"],
                     "requires": ["grain"],
                     "storageCapacity": 60,
-                    "transportThreshold": 30,
                     "goldProduction": 10,
                     "productionTime": 30,
-                    "upgradeCost": {"wood": 130, "stone": 80, "gold": 350}
+                    "upgradeCost": {"logwood": 130, "gold": 350, "plank": 100}
                 },
                 {
                     "level": 3,
-                    "cost": {"wood": 130, "stone": 80, "gold": 350},
+                    "cost": {"logwood": 130, "gold": 350, "plank": 100},
                     "capacity": 5,
                     "produces": ["flour"],
                     "requires": ["grain"],
                     "storageCapacity": 90,
-                    "transportThreshold": 45,
                     "goldProduction": 20,
                     "productionTime": 20,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 16,
+            "name": "SmallTree",
+            "category": "Decorations",
+            "description": "A small tree to beautify the city.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 17,
+            "name": "PineTree",
+            "category": "Decorations",
+            "description": "A tall pine tree, perfect for forests.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 18,
+            "name": "RoundTree",
+            "category": "Decorations",
+            "description": "A tree with a round-shaped canopy, providing aesthetic value.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 19,
+            "name": "TallBushTree",
+            "category": "Decorations",
+            "description": "A tall, thin tree with scattered leaves.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 20,
+            "name": "LargePineTree",
+            "category": "Decorations",
+            "description": "A large pine tree, commonly found in cold climates.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
                     "upgradeCost": null
                 }
             ],

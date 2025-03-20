@@ -92,13 +92,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5784960217678716472}
-  - component: {fileID: 4627522510285115191}
-  - component: {fileID: 397511345639391392}
   - component: {fileID: 3323583320176606538}
-  - component: {fileID: 5814560735443613681}
-  - component: {fileID: 5914930404476793305}
+  - component: {fileID: 7295464840249446468}
   m_Layer: 0
-  m_Name: Tree_2
+  m_Name: PineTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,51 +118,6 @@ Transform:
   - {fileID: 7555461476570723964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4627522510285115191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7127946524960501908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca1dc8c073bee444a8e82641dcbea45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 3697084491105155440}
-  resCreate:
-  - name: 1001
-    number: 1
-  resRequire: []
-  canCreate: 1
-  createTimer: 0
-  createDelay: 60
---- !u!114 &397511345639391392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7127946524960501908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eecd2b0217848294f886730422e85ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levels:
-  - {fileID: 7331427473137747046}
-  - {fileID: 8763543894209893124}
-  - {fileID: 8983461045183424199}
-  - {fileID: 1232787245361514138}
-  - {fileID: 5391191523714755287}
-  currentLevel: 0
-  isMaxLevel: 0
-  tree: {fileID: 4627522510285115191}
-  treeTimer: 0
-  treeDelay: 20
 --- !u!136 &3323583320176606538
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -189,7 +141,7 @@ CapsuleCollider:
   m_Height: 4.9718313
   m_Direction: 1
   m_Center: {x: 0, y: 1.9859157, z: 0}
---- !u!114 &5814560735443613681
+--- !u!114 &7295464840249446468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,24 +150,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 7127946524960501908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e64a4429569e2394e8f38a37b0857ba0, type: 3}
+  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logwoodGenerator: {fileID: 4627522510285115191}
-  treeLevel: {fileID: 397511345639391392}
-  choper: {fileID: 0}
---- !u!114 &5914930404476793305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7127946524960501908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc4d85ba28e38d408bc2325d78a6a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 3697084491105155440}
+  resCreate: []
+  resRequire: []
+  createTimer: 0
+  createDelay: 7
+  canCreate: 1
 --- !u!1 &8441378028612265907
 GameObject:
   m_ObjectHideFlags: 0

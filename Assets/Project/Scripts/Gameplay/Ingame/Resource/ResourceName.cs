@@ -21,12 +21,13 @@ public enum ResourceName
     logwood = 1001,
     stone = 1002,
     ironOre = 1003,
-    food = 1004,
+    grain = 1004,
 
     // Raw materials level 2 
     plank = 2001, 
     brick = 2002, 
-    ironIngot = 2003, 
+    ironIngot = 2003,
+    flour = 2004, 
 
     // Raw materials level 2 
     bread = 3001, 
