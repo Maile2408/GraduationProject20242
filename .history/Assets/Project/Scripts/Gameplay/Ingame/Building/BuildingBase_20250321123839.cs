@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public abstract class Building
+public abstract class BuildingBase
 {
     public string buildingID;
     public string typeID;

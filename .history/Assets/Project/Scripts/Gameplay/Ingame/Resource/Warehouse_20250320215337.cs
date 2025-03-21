@@ -48,7 +48,7 @@ public class Warehouse : SaiBehaviour
     {
         foreach (Resource addResource in addResources)
         {
-            this.AddResource(addResource.name, addResource.number);
+            this.AddResource(addResource.Name, addResource.Amount);
         }
     }
 

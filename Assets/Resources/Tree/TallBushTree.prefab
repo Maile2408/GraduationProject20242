@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7122152207643888695}
   - component: {fileID: 59232345514343055}
-  - component: {fileID: 6534114097887072632}
+  - component: {fileID: 2103840727052379774}
   m_Layer: 0
   m_Name: TallBushTree
   m_TagString: Untagged
@@ -58,7 +58,7 @@ CapsuleCollider:
   m_Height: 7.5322075
   m_Direction: 1
   m_Center: {x: 0, y: 3.2661037, z: -0.0690279}
---- !u!114 &6534114097887072632
+--- !u!114 &2103840727052379774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,17 +67,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 202501873401521508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ab209434185aac4fb9e7f83804e74d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
   resHolders:
   - {fileID: 2457633860502871056}
-  resCreate: []
+  resCreate:
+  - name: 1001
+    amount: 1
   resRequire: []
-  createTimer: 0
-  createDelay: 7
   canCreate: 1
+  createTimer: 0
+  createDelay: 60
 --- !u!1 &3510499643099795626
 GameObject:
   m_ObjectHideFlags: 0

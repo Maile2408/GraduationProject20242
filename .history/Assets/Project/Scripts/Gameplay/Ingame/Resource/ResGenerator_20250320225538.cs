@@ -64,7 +64,7 @@ public class ResGenerator : Warehouse
             Resource newResource = new Resource
             {
                 name = resHolder.Name(),
-                number = resHolder.TakeAll()
+                amount = resHolder.TakeAll()
             };
 
             resources.Add(newResource);

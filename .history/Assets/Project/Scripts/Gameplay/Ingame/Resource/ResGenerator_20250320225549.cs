@@ -29,7 +29,7 @@ public class ResGenerator : Warehouse
         foreach(Resource res in this.resCreate)
         {
             ResHolder resHolder = this.GetResource(res.name);
-            resHolder.Add(res.number);
+            resHolder.Add(res.amount);
         }
     }
 
@@ -64,7 +64,7 @@ public class ResGenerator : Warehouse
             Resource newResource = new Resource
             {
                 name = resHolder.Name(),
-                number = resHolder.TakeAll()
+                amount = resHolder.TakeAll()
             };
 
             resources.Add(newResource);

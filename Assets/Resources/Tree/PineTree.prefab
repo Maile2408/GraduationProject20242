@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5784960217678716472}
   - component: {fileID: 3323583320176606538}
-  - component: {fileID: 7295464840249446468}
+  - component: {fileID: 437246046825124113}
   m_Layer: 0
   m_Name: PineTree
   m_TagString: Untagged
@@ -141,7 +141,7 @@ CapsuleCollider:
   m_Height: 4.9718313
   m_Direction: 1
   m_Center: {x: 0, y: 1.9859157, z: 0}
---- !u!114 &7295464840249446468
+--- !u!114 &437246046825124113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,17 +150,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7127946524960501908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
+  m_Script: {fileID: 11500000, guid: 1ab209434185aac4fb9e7f83804e74d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
   resHolders:
   - {fileID: 3697084491105155440}
-  resCreate: []
+  resCreate:
+  - name: 1001
+    amount: 1
   resRequire: []
-  createTimer: 0
-  createDelay: 7
   canCreate: 1
+  createTimer: 0
+  createDelay: 60
 --- !u!1 &8441378028612265907
 GameObject:
   m_ObjectHideFlags: 0
