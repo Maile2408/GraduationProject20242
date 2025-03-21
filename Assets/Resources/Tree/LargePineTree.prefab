@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 3369780644417764598}
   resCreate:
   - name: 1001
-    amount: 1
+    number: 0
   resRequire: []
   canCreate: 1
   createTimer: 0
