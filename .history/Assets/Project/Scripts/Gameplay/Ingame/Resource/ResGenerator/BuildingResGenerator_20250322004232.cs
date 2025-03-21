@@ -17,7 +17,7 @@ public class BuildingResGenerator : ResGenerator
             return;
         }
 
-        this.createDelay = buildingInfo.CurrentLevelData.productionTime ?? 5f;
+        this.createDelay = buildingInfo.CurrentLevelData.productionTime ?? 5f; // fallback 5s nếu null
         this.LoadResCreate();
         this.SetLimit();
     }

@@ -1126,7 +1126,7 @@
           "workerCapacity": null,
           "storageCapacity": null,
           "goldPerCycle": null,
-          "productionTime": 60,
+          "productionTime": null,
           "cost": {
             "buildingTypeID": 401,
             "level": 1,
@@ -1157,7 +1157,7 @@
           "workerCapacity": null,
           "storageCapacity": null,
           "goldPerCycle": null,
-          "productionTime": 60,
+          "productionTime": null,
           "cost": {
             "buildingTypeID": 402,
             "level": 1,
@@ -1188,7 +1188,7 @@
           "workerCapacity": null,
           "storageCapacity": null,
           "goldPerCycle": null,
-          "productionTime": 60,
+          "productionTime": null,
           "cost": {
             "buildingTypeID": 403,
             "level": 1,
@@ -1219,7 +1219,7 @@
           "workerCapacity": null,
           "storageCapacity": null,
           "goldPerCycle": null,
-          "productionTime": 60,
+          "productionTime": null,
           "cost": {
             "buildingTypeID": 404,
             "level": 1,
@@ -1250,7 +1250,7 @@
           "workerCapacity": null,
           "storageCapacity": null,
           "goldPerCycle": null,
-          "productionTime": 60,
+          "productionTime": null,
           "cost": {
             "buildingTypeID": 405,
             "level": 1,

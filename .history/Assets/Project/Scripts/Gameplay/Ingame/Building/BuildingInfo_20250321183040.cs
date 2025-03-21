@@ -6,7 +6,7 @@ public class BuildingInfo : MonoBehaviour
 
     public Building BuildingData => buildingData;
     public BuildingType BuildingType { get; private set; }
-    public BuildingLevel CurrentLevelData { get; private set; }
+    public Level CurrentLevelData { get; private set; }
 
     private void Awake()
     {

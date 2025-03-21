@@ -1,0 +1,633 @@
+{
+    "buildingTypes": [
+        {
+            "id": 1,
+            "name": "SmallHouse",
+            "category": "Needs",
+            "description": "A small house providing shelter for workers.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 15, "gold": 50},
+                    "capacity": 3,
+                    "goldProduction": 2,
+                    "productionTime": 60,
+                    "upgradeCost": {"logwood": 30, "gold": 100}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 30, "gold": 100},
+                    "capacity": 5,
+                    "goldProduction": 5,
+                    "productionTime": 50,
+                    "upgradeCost": {"logwood": 45, "stone": 10, "gold": 200, "plank": 15}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 45, "stone": 10, "gold": 200, "plank": 15},
+                    "capacity": 8,
+                    "goldProduction": 10,
+                    "productionTime": 40,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 2,
+            "name": "TownHouse",
+            "category": "Needs",
+            "description": "A large residential house for workers.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 50, "gold": 120},
+                    "capacity": 6,
+                    "goldProduction": 4,
+                    "productionTime": 55,
+                    "upgradeCost": {"logwood": 70, "gold": 250, "plank": 20}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 70, "gold": 250, "plank": 20},
+                    "capacity": 9,
+                    "goldProduction": 8,
+                    "productionTime": 45,
+                    "upgradeCost": {"logwood": 90, "stone": 10, "gold": 400, "plank": 35}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 90, "stone": 10, "gold": 400, "plank": 35},
+                    "capacity": 12,
+                    "goldProduction": 15,
+                    "productionTime": 35,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 3,
+            "name": "CityHouse",
+            "category": "Needs",
+            "description": "A modern house providing high-quality shelter for workers.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 100, "stone": 50, "gold": 150},
+                    "capacity": 8,
+                    "goldProduction": 5,
+                    "productionTime": 50,
+                    "upgradeCost": {"logwood": 130, "stone": 70, "gold": 300, "plank": 30}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 130, "stone": 70, "gold": 300, "plank": 30},
+                    "capacity": 12,
+                    "goldProduction": 10,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 160, "stone": 100, "gold": 500, "plank": 50}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 160, "stone": 100, "gold": 500, "plank": 50},
+                    "capacity": 15,
+                    "goldProduction": 20,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+		{
+            "id": 4,
+            "name": "SmallForesterHut",
+            "category": "Production",
+            "description": "A small hut where foresters plant and cut trees to gather logs.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 30, "gold": 80},
+                    "capacity": 2,
+                    "produces": ["logwood"],
+                    "storageCapacity": 15,
+                    "goldProduction": 3,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 50, "gold": 150}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 50, "gold": 150},
+                    "capacity": 3,
+                    "produces": ["logwood"],
+                    "transportThreshold": 15,
+                    "goldProduction": 6,
+                    "productionTime": 35,
+                    "upgradeCost": {"logwood": 80, "gold": 250, "plank": 30}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 80, "gold": 250, "plank": 30},
+                    "capacity": 4,
+                    "produces": ["logwood"],
+                    "storageCapacity": 45,
+                    "goldProduction": 12,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 5,
+            "name": "LargeForesterHut",
+            "category": "Production",
+            "description": "A larger hut with more workers for increased logwood production.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 60, "gold": 120, "plank": 35},
+                    "capacity": 3,
+                    "produces": ["logwood"],
+                    "storageCapacity": 30,
+                    "goldProduction": 5,
+                    "productionTime": 35,
+                    "upgradeCost": {"logwood": 90, "stone": 35, "gold": 200, "plank": 30}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 90, "stone": 35, "gold": 200, "plank": 30},
+                    "capacity": 4,
+                    "produces": ["logwood"],
+                    "storageCapacity": 50,
+                    "goldProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": {"logwood": 120, "stone": 80, "gold": 350, "plank": 30}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 120, "stone": 80, "gold": 350, "plank": 30},
+                    "capacity": 6,
+                    "produces": ["logwood"],
+                    "storageCapacity": 70,
+                    "goldProduction": 20,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 6,
+            "name": "Sawmill",
+            "category": "Production",
+            "description": "Processes raw logs into logwooden planks for construction.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 50, "gold": 150},
+                    "capacity": 2,
+                    "produces": ["plank"],
+                    "requires": ["logwood"],
+                    "storageCapacity": 30,
+                    "goldProduction": 8,
+                    "productionTime": 35,
+                    "upgradeCost": {"logwood": 80, "gold": 300}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 80, "gold": 300},
+                    "capacity": 3,
+                    "produces": ["plank"],
+                    "requires": ["logwood"],
+                    "storageCapacity": 50,
+                    "goldProduction": 15,
+                    "productionTime": 30,
+                    "upgradeCost": {"logwood": 120, "gold": 500, "plank": 30}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 120, "gold": 500, "plank": 30},
+                    "capacity": 5,
+                    "produces": ["plank"],
+                    "requires": ["logwood"],
+                    "storageCapacity": 80,
+                    "goldProduction": 30,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 7,
+            "name": "Mine",
+            "category": "Production",
+            "description": "Extracts stone from underground deposits.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 40, "gold": 200},
+                    "capacity": 2,
+                    "produces": ["stone"],
+                    "storageCapacity": 20,
+                    "goldProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 60, "stone": 50, "gold": 300}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 60, "stone": 50, "gold": 300},
+                    "capacity": 3,
+                    "produces": ["stone"],
+                    "storageCapacity": 40,
+                    "goldProduction": 10,
+                    "productionTime": 35,
+                    "upgradeCost": {"logwood": 90, "stone": 80, "gold": 500}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 90, "stone": 80, "gold": 500},
+                    "capacity": 5,
+                    "produces": ["stone"],
+                    "storageCapacity": 60,
+                    "goldProduction": 20,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+		        {
+            "id": 8,
+            "name": "OldWell",
+            "category": "Production",
+            "description": "An old well that provides a small amount of water.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 30, "stone": 10, "gold": 50},
+                    "capacity": 1,
+                    "produces": ["water"],
+                    "storageCapacity": 10,
+                    "goldProduction": 2,
+                    "productionTime": 50,
+                    "upgradeCost": {"logwood": 50, "stone": 15, "gold": 100}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 50, "stone": 15, "gold": 100},
+                    "capacity": 2,
+                    "produces": ["water"],
+                    "storageCapacity": 20,
+                    "goldProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 70, "stone": 25, "gold": 180}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 70, "stone": 25, "gold": 180},
+                    "capacity": 3,
+                    "produces": ["water"],
+                    "storageCapacity": 30,
+                    "goldProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 9,
+            "name": "ModernWell",
+            "category": "Production",
+            "description": "A modern well that provides a large amount of water efficiently.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 60, "stone": 40, "gold": 120},
+                    "capacity": 2,
+                    "produces": ["water"],
+                    "storageCapacity": 20,
+                    "goldProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 90, "stone": 60, "gold": 250, "plank": 5}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 90, "stone": 60, "gold": 250, "plank": 5},
+                    "capacity": 3,
+                    "produces": ["water"],
+                    "storageCapacity": 40,
+                    "goldProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": {"logwood": 120, "stone": 80, "gold": 400, "plank": 15}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 120, "stone": 80, "gold": 400, "plank": 15},
+                    "capacity": 4,
+                    "produces": ["water"],
+                    "storageCapacity": 60,
+                    "goldProduction": 20,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 10,
+            "name": "SmallWareHouse",
+            "category": "Special",
+            "description": "A small warehouse used to store resources for the city.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 50, "gold": 150},
+                    "capacity": 0,
+                    "storageCapacity": 100,
+                    "upgradeCost": {"logwood": 80, "gold": 250}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 80, "gold": 250},
+                    "capacity": 0,
+                    "storageCapacity": 200,
+                    "upgradeCost": {"logwood": 120, "gold": 400}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 120, "gold": 400},
+                    "capacity": 0,
+                    "storageCapacity": 300,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 11,
+            "name": "LargeWareHouse",
+            "category": "Special",
+            "description": "A large warehouse with greater storage capacity for city resources.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 80, "stone": 20, "gold": 250, "plank": 20},
+                    "capacity": 0,
+                    "storageCapacity": 200,
+                    "upgradeCost": {"logwood": 120, "stone": 50, "gold": 400, "plank": 35}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 120, "stone": 50, "gold": 400, "plank": 35},
+                    "capacity": 0,
+                    "storageCapacity": 400,
+                    "upgradeCost": {"logwood": 160, "stone": 120, "gold": 600, "plank": 50}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 160, "stone": 120, "gold": 600, "plank": 50},
+                    "capacity": 0,
+                    "storageCapacity": 600,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 12,
+            "name": "BuilderHut",
+            "category": "Special",
+            "description": "A hut where builders are assigned to construct buildings.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 40, "gold": 100},
+                    "capacity": 3,
+                    "goldProduction": 5,
+                    "productionTime": 60,
+                    "upgradeCost": {"logwood": 60, "stone": 10, "gold": 200}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 60, "stone": 10, "gold": 200},
+                    "capacity": 5,
+                    "goldProduction": 10,
+                    "productionTime": 50,
+                    "upgradeCost": {"logwood": 90, "stone": 20, "gold": 350, "plank": 20}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 90, "stone": 20, "gold": 350, "plank": 20},
+                    "capacity": 7,
+                    "goldProduction": 15,
+                    "productionTime": 40,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+		        {
+            "id": 13,
+            "name": "SmallFarm",
+            "category": "Food",
+            "description": "A small farm that grows crops to produce food.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 50, "gold": 100},
+                    "capacity": 2,
+                    "produces": ["grain"],
+                    "storageCapacity": 20,
+                    "goldProduction": 3,
+                    "productionTime": 45,
+                    "upgradeCost": {"logwood": 80, "gold": 200, "plank": 15}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 80, "gold": 200, "plank": 15},
+                    "capacity": 3,
+                    "produces": ["grain"],
+                    "storageCapacity": 40,
+                    "goldProduction": 7,
+                    "productionTime": 35,
+                    "upgradeCost": {"logwood": 120, "stone": 30, "gold": 350}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 120, "stone": 30, "gold": 350},
+                    "capacity": 5,
+                    "produces": ["grain"],
+                    "storageCapacity": 60,
+                    "goldProduction": 12,
+                    "productionTime": 25,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 14,
+            "name": "LargeFarm",
+            "category": "Food",
+            "description": "A large farm that produces a greater amount of food.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 80, "stone": 10, "gold": 150},
+                    "capacity": 3,
+                    "produces": ["grain"],
+                    "storageCapacity": 40,
+                    "goldProduction": 6,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 110, "stone": 20, "gold": 250}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 110, "stone": 20, "gold": 250},
+                    "capacity": 4,
+                    "produces": ["grain"],
+                    "storageCapacity": 80,
+                    "goldProduction": 12,
+                    "productionTime": 30,
+                    "upgradeCost": {"logwood": 150, "stone": 50, "gold": 400, "plank": 30}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 150, "stone": 50, "gold": 400, "plank": 30},
+                    "capacity": 6,
+                    "produces": ["grain"],
+                    "storageCapacity": 120,
+                    "goldProduction": 20,
+                    "productionTime": 20,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 15,
+            "name": "Mill",
+            "category": "Food",
+            "description": "A mill that processes grain into flour.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"logwood": 60, "gold": 120, "plank": 25},
+                    "capacity": 2,
+                    "produces": ["flour"],
+                    "requires": ["grain"],
+                    "storageCapacity": 30,
+                    "goldProduction": 5,
+                    "productionTime": 40,
+                    "upgradeCost": {"logwood": 90, "gold": 220, "plank": 50}
+                },
+                {
+                    "level": 2,
+                    "cost": {"logwood": 90, "gold": 220, "plank": 50},
+                    "capacity": 3,
+                    "produces": ["flour"],
+                    "requires": ["grain"],
+                    "storageCapacity": 60,
+                    "goldProduction": 10,
+                    "productionTime": 30,
+                    "upgradeCost": {"logwood": 130, "gold": 350, "plank": 100}
+                },
+                {
+                    "level": 3,
+                    "cost": {"logwood": 130, "gold": 350, "plank": 100},
+                    "capacity": 5,
+                    "produces": ["flour"],
+                    "requires": ["grain"],
+                    "storageCapacity": 90,
+                    "goldProduction": 20,
+                    "productionTime": 20,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 16,
+            "name": "SmallTree",
+            "category": "Decorations",
+            "description": "A small tree to beautify the city.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 17,
+            "name": "PineTree",
+            "category": "Decorations",
+            "description": "A tall pine tree, perfect for forests.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 18,
+            "name": "RoundTree",
+            "category": "Decorations",
+            "description": "A tree with a round-shaped canopy, providing aesthetic value.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 19,
+            "name": "TallBushTree",
+            "category": "Decorations",
+            "description": "A tall, thin tree with scattered leaves.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        },
+        {
+            "id": 20,
+            "name": "LargePineTree",
+            "category": "Decorations",
+            "description": "A large pine tree, commonly found in cold climates.",
+            "levels": [
+                {
+                    "level": 1,
+                    "cost": {"gold": 1},
+                    "produces": ["logwood"],
+                    "storageCapacity": 1,
+                    "upgradeCost": null
+                }
+            ],
+            "unlocked": true
+        }
+    ]
+}
