@@ -22,7 +22,7 @@ public class BuildingLevel
 {
     public int level;
     public int? workerCapacity;
-    public int? storageCapacity;
+    public float? storageCapacity;
     public float? goldPerCycle;
     public float? productionTime;
     public Dictionary<string, float> cost;
@@ -35,5 +35,5 @@ public class ResourceIO
 {
     public string resource;
     public float? amountPerCycle;
-    public int? maxCapacity;
+    public float? maxCapacity;
 }

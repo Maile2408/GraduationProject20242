@@ -4,8 +4,8 @@ public class ResHolder : SaiBehaviour
 {
     [Header("Res Holder")]
     [SerializeField] protected ResourceName resourceName = ResourceName.noResource;
-    [SerializeField] private float resCurrent = 0; 
-    [SerializeField] private float resMax = Mathf.Infinity; 
+    [SerializeField] protected float resCurrent = 0; 
+    [SerializeField] protected float resMax = Mathf.Infinity; 
 
     public float Current() => resCurrent; 
     public float Max() => resMax; 

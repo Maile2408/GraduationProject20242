@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 558090552038762369}
   - component: {fileID: 2337358203622896837}
   - component: {fileID: 6669846568302571442}
+  - component: {fileID: 4740813431861768481}
   m_Layer: 0
   m_Name: OldWell
   m_TagString: Untagged
@@ -153,12 +154,32 @@ MonoBehaviour:
   resHolders:
   - {fileID: 6954766002471206161}
   resCreate:
-  - name: 1000
-    amount: 1
+  - resourceID: 0
+    name: 1000
+    number: 0
   resRequire: []
   canCreate: 1
   createTimer: 0
   createDelay: 7
+--- !u!114 &4740813431861768481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3bbd2abf3c61e45ad9484b1cd5e74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingData:
+    buildingID: 
+    typeID: 105
+    level: 1
+    state: 
+    position: {x: 0, y: 0, z: 0}
+    storedResources: []
 --- !u!1 &9026893932115698352
 GameObject:
   m_ObjectHideFlags: 0

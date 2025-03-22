@@ -9,7 +9,7 @@ public class LogwoodGenerator : ResGenerator
     protected override void ResetValues()
     {
         base.ResetValues();
-        this.createDelay = 60f;
+        this.createDelay = 30f;
     }
 
     protected override void LoadComponents()

@@ -20,9 +20,6 @@ public class BuildingTypeDatabase : SaiBehaviour
             return;
         }
 
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
         LoadBuildingTypes();
     }
 

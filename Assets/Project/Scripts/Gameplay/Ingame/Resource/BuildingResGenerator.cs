@@ -63,7 +63,7 @@ public class BuildingResGenerator : ResGenerator
         {
             if (System.Enum.TryParse(resIO.resource, out ResourceName resourceName))
             {
-                int max = resIO.maxCapacity ?? 0;
+                float max = resIO.maxCapacity ?? 0;
                 ResHolder holder = this.GetResource(resourceName);
                 holder.SetLimit(max);
             }
