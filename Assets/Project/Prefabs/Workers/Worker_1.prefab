@@ -42,6 +42,8 @@ GameObject:
   - component: {fileID: 1823627154968402021}
   - component: {fileID: 3164997743427114821}
   - component: {fileID: 9136541123470623895}
+  - component: {fileID: 8288901113479984733}
+  - component: {fileID: 4393391447325745335}
   m_Layer: 0
   m_Name: Worker_1
   m_TagString: Untagged
@@ -101,6 +103,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolHolder: {fileID: 8894376237998082069}
+--- !u!114 &8288901113479984733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407465726314633016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b3814f8f67f974d8267d2a6377d207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workerMovement: {fileID: 4393391447325745335}
+  animator: {fileID: 3810698632487920230}
+  workerModel: {fileID: 8165010932826967770}
+  navMeshAgent: {fileID: 3164997743427114821}
+--- !u!114 &4393391447325745335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2407465726314633016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1c4254026f3aa44b9407a5c70f0407b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  isWalking: 0
+  isWorking: 0
+  moveLimit: 0.7
+  targetDistance: 0
 --- !u!1 &4895999115815509514
 GameObject:
   m_ObjectHideFlags: 0

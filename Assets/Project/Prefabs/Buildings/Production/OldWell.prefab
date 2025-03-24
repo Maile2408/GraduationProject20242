@@ -88,9 +88,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558090552038762369}
-  - component: {fileID: 2337358203622896837}
+  - component: {fileID: 5617385813744634816}
+  - component: {fileID: 2661517995323816147}
   - component: {fileID: 6669846568302571442}
   - component: {fileID: 4740813431861768481}
+  - component: {fileID: 809744381269413174}
   m_Layer: 0
   m_Name: OldWell
   m_TagString: Untagged
@@ -107,15 +109,16 @@ Transform:
   m_GameObject: {fileID: 2846300099946564928}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.52, z: 15.74}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 385746855772258634}
   - {fileID: 3058673754153078072}
+  - {fileID: 5172631214130365671}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2337358203622896837
+--- !u!136 &5617385813744634816
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,10 +137,26 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.61537534
-  m_Height: 1.9723154
+  m_Radius: 0.85
+  m_Height: 3
   m_Direction: 1
-  m_Center: {x: -0.4137557, y: 0, z: -0.022504807}
+  m_Center: {x: -0.65, y: -0.15, z: 0}
+--- !u!208 &2661517995323816147
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1, y: 1.5, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.65, y: -0.15, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!114 &6669846568302571442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +199,52 @@ MonoBehaviour:
     state: 
     position: {x: 0, y: 0, z: 0}
     storedResources: []
+--- !u!114 &809744381269413174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 5172631214130365671}
+  workers: {fileID: 0}
+  warehouse: {fileID: 6669846568302571442}
+--- !u!1 &7995047075312778845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5172631214130365671}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5172631214130365671
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995047075312778845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 558090552038762369}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9026893932115698352
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +289,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Well_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137693776322936660, guid: 8a03712623f183948ae9450609b102bf,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137693776322936660, guid: 8a03712623f183948ae9450609b102bf,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137693776322936660, guid: 8a03712623f183948ae9450609b102bf,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 9137693776322936660, guid: 8a03712623f183948ae9450609b102bf,
         type: 3}

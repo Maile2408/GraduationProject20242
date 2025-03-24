@@ -130,6 +130,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4326515290078987691}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &7881381889648687162 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 4789089a715e48242934b00b04b01a6f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4326515290078987691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7223159940664389611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,6 +199,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker_3
       objectReference: {fileID: 0}
+    - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 7881381889648687162}
+    - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
+        type: 3}
+      propertyPath: workerModel
+      value: 
+      objectReference: {fileID: 4287540948491641408}
     - target: {fileID: 9136541123470623895, guid: fa8258dc17db99d4aa9cec214858539f,
         type: 3}
       propertyPath: toolHolder

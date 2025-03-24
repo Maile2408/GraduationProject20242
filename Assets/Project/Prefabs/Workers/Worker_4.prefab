@@ -118,6 +118,12 @@ PrefabInstance:
       addedObject: {fileID: 5129772255611864089}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6facd2d32eafa4e4f8320b81d088dd21, type: 3}
+--- !u!95 &170055977779915711 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 6facd2d32eafa4e4f8320b81d088dd21,
+    type: 3}
+  m_PrefabInstance: {fileID: 5996187397459564078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3330269351363355391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9007695132977427665, guid: 6facd2d32eafa4e4f8320b81d088dd21,
@@ -193,6 +199,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker_4
       objectReference: {fileID: 0}
+    - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 170055977779915711}
+    - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
+        type: 3}
+      propertyPath: workerModel
+      value: 
+      objectReference: {fileID: 6105761612679688645}
     - target: {fileID: 9136541123470623895, guid: fa8258dc17db99d4aa9cec214858539f,
         type: 3}
       propertyPath: toolHolder

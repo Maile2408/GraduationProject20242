@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 1612289415997782118}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 2.49}
+  m_LocalPosition: {x: -0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,12 +151,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1501206955669915690}
-  - component: {fileID: 2719827026449773712}
-  - component: {fileID: 918393919289806722}
-  - component: {fileID: 642524149979950838}
   - component: {fileID: 2142936645187516524}
-  - component: {fileID: 3856262143698531365}
   - component: {fileID: 8595868463300164750}
+  - component: {fileID: 5507188658938358624}
+  - component: {fileID: 3590794400304309782}
+  - component: {fileID: 7974707743969316183}
   m_Layer: 9
   m_Name: SmallForesterHut
   m_TagString: Untagged
@@ -173,7 +172,7 @@ Transform:
   m_GameObject: {fileID: 7943948403960145444}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.3, y: 0.56, z: 8.39}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -182,51 +181,6 @@ Transform:
   - {fileID: 4363021126508830458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2719827026449773712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943948403960145444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57725d756a773ae46aea28f61a59bd23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders: []
---- !u!114 &918393919289806722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943948403960145444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b47f2a0a874c9044ba30eb0f9efc9d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxWorker: 2
-  workers: []
---- !u!114 &642524149979950838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943948403960145444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f26a8672c0be35c448299a54065c8074, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingType: 1
-  door: {fileID: 4363021126508830458}
-  workers: {fileID: 918393919289806722}
-  warehouse: {fileID: 2719827026449773712}
-  buildingTask: {fileID: 3856262143698531365}
 --- !u!208 &2142936645187516524
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -237,43 +191,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 3.455, y: 0.795, z: 4.45}
+  m_Extents: {x: 2.75, y: 0.75, z: 3}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
-  m_Center: {x: -0.24, y: 0, z: -2.05}
+  m_Center: {x: 0, y: 0, z: -1.75}
   m_TimeToStationary: 0.5
---- !u!114 &3856262143698531365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943948403960145444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d65b79eeae43f40afbe1255709a7df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingCtrl: {fileID: 642524149979950838}
-  taskTimer: 0
-  taskDelay: 5
-  workingSpeed: 7
-  lastBuildingWorked: 0
-  nearBuildings: []
-  plantTreeObj: {fileID: 5276937730439446297, guid: f2984f0e1beae2648b53c94bef78419f,
-    type: 3}
-  treeMax: 7
-  treeRange: 27
-  treeDistance: 7
-  treeRemoveSpeed: 16
-  treePrefabs:
-  - {fileID: 3871105914798837505, guid: 3fe148055f2ca74439b4323df2201e6e, type: 3}
-  - {fileID: 7127946524960501908, guid: c937dc91c1200834c9ab09edca00cbfe, type: 3}
-  - {fileID: 4287713475601423998, guid: 3078b2aba52dbd645861a6b5b4e63fe7, type: 3}
-  - {fileID: 202501873401521508, guid: 4d2a81c6c6282d74180b0ddcbf560d9d, type: 3}
-  - {fileID: 1649529211713047312, guid: 930a89dc83fb06e4cb8775f9d80e2ac5, type: 3}
-  trees: []
 --- !u!65 &8595868463300164750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -293,8 +216,56 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.96, y: 6.748631, z: 6.1721125}
-  m_Center: {x: 0, y: 3.4863083, z: -1.4710565}
+  m_Size: {x: 5, y: 7, z: 5.5}
+  m_Center: {x: 0, y: 3.5, z: -2}
+--- !u!114 &5507188658938358624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd3bbd2abf3c61e45ad9484b1cd5e74b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingData:
+    buildingID: 
+    typeID: 
+    level: 0
+    state: 
+    position: {x: 0, y: 0, z: 0}
+    storedResources: []
+--- !u!114 &3590794400304309782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 4363021126508830458}
+  workers: {fileID: 0}
+  warehouse: {fileID: 0}
+--- !u!114 &7974707743969316183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54edb10cb3cc7744492e16403967fc52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders: []
 --- !u!1001 &4568424660213852612
 PrefabInstance:
   m_ObjectHideFlags: 0
