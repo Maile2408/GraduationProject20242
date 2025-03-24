@@ -57,9 +57,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5941955011656909813}
   - component: {fileID: 3706886499034198228}
-  - component: {fileID: 8551798876039863627}
   - component: {fileID: 461272535832799157}
   - component: {fileID: 1487967974124332394}
+  - component: {fileID: 1904561273452007236}
   m_Layer: 0
   m_Name: SmallTree
   m_TagString: Untagged
@@ -107,29 +107,6 @@ CapsuleCollider:
   m_Height: 6.0964265
   m_Direction: 1
   m_Center: {x: 0, y: 2.5482132, z: 0}
---- !u!114 &8551798876039863627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3871105914798837505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab209434185aac4fb9e7f83804e74d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 222898589984474393}
-  resCreate:
-  - resourceID: 0
-    name: 1001
-    number: 1
-  resRequire: []
-  canCreate: 1
-  createTimer: 0
-  createDelay: 30
 --- !u!114 &461272535832799157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingData:
     buildingID: 
-    typeID: 401
-    level: 1
+    typeID: 
+    level: 0
     state: 
     position: {x: 0, y: 0, z: 0}
     storedResources: []
@@ -169,9 +146,32 @@ MonoBehaviour:
   - {fileID: 185099374953663241}
   currentLevel: 0
   isMaxLevel: 0
-  tree: {fileID: 8551798876039863627}
+  tree: {fileID: 1904561273452007236}
   treeTimer: 0
   treeDelay: 10
+--- !u!114 &1904561273452007236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871105914798837505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ab209434185aac4fb9e7f83804e74d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 222898589984474393}
+  resCreate:
+  - resourceID: 0
+    name: 1001
+    number: 1
+  resRequire: []
+  canCreate: 1
+  createTimer: 0
+  createDelay: 30
 --- !u!1 &4333593640651922279
 GameObject:
   m_ObjectHideFlags: 0

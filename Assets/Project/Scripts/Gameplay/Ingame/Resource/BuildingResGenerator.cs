@@ -40,7 +40,7 @@ public class BuildingResGenerator : ResGenerator
 
         foreach (var resIO in buildingInfo.CurrentLevelData.produces)
         {
-            if (System.Enum.TryParse(resIO.resource, out ResourceName resourceName))
+            if (System.Enum.TryParse(resIO.resource, true, out ResourceName resourceName))
             {
                 int amount = Mathf.RoundToInt(resIO.amountPerCycle ?? 0);
                 Resource res = new Resource
@@ -61,7 +61,7 @@ public class BuildingResGenerator : ResGenerator
     {
         foreach (var resIO in buildingInfo.CurrentLevelData.produces)
         {
-            if (System.Enum.TryParse(resIO.resource, out ResourceName resourceName))
+            if (System.Enum.TryParse(resIO.resource, true, out ResourceName resourceName))
             {
                 float max = resIO.maxCapacity ?? 0;
                 ResHolder holder = this.GetResource(resourceName);

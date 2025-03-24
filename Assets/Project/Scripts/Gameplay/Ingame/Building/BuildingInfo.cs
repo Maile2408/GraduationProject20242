@@ -8,11 +8,6 @@ public class BuildingInfo : MonoBehaviour
     public BuildingType BuildingType { get; private set; }
     public BuildingLevel CurrentLevelData { get; private set; }
 
-    private void Awake()
-    {
-        InitData();
-    }
-
     public void SetBuilding(Building data)
     {
         this.buildingData = data;

@@ -1,12 +1,13 @@
+using System;
 using System.Collections.Generic;
 
-[System.Serializable]
+[Serializable]
 public class BuildingTypeData
 {
     public List<BuildingType> buildingTypes;
 }
 
-[System.Serializable]
+[Serializable]
 public class BuildingType
 {
     public int id;
@@ -17,20 +18,24 @@ public class BuildingType
     public List<BuildingLevel> levels;
 }
 
-[System.Serializable]
+[Serializable]
 public class BuildingLevel
 {
     public int level;
+
     public int? workerCapacity;
     public float? storageCapacity;
+
     public float? goldPerCycle;
     public float? productionTime;
+
     public Dictionary<string, float> cost;
+
     public List<ResourceIO> produces;
     public List<ResourceIO> requires;
 }
 
-[System.Serializable]
+[Serializable]
 public class ResourceIO
 {
     public string resource;

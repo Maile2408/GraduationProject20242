@@ -487,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 461272535832799157, guid: 3fe148055f2ca74439b4323df2201e6e,
         type: 3}
       propertyPath: buildingData.typeID
-      value: 404
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1487967974124332394, guid: 3fe148055f2ca74439b4323df2201e6e,
         type: 3}
@@ -517,7 +517,7 @@ PrefabInstance:
     - target: {fileID: 3871105914798837505, guid: 3fe148055f2ca74439b4323df2201e6e,
         type: 3}
       propertyPath: m_Name
-      value: SmallTree (1) Variant
+      value: TallBushTree
       objectReference: {fileID: 0}
     - target: {fileID: 5941955011656909813, guid: 3fe148055f2ca74439b4323df2201e6e,
         type: 3}
