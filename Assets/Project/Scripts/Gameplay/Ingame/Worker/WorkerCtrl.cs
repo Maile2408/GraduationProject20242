@@ -3,31 +3,40 @@ using UnityEngine.AI;
 
 public class WorkerCtrl : SaiBehaviour
 {
-    //public WorkerBuildings workerBuildings;
+    public WorkerBuildings workerBuildings;
     public WorkerMovement workerMovement;
-    //public WorkerTasks workerTasks;
+    public WorkerTasks workerTasks;
     public Animator animator;
     public Transform workerModel;
+    public WorkerTools tools;
     public NavMeshAgent navMeshAgent;
-    //public ResCarrier resCarrier;
+    public ResCarrier resCarrier;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        //this.LoadWorkerBuildings();
+        this.LoadWorkerBuildings();
         this.LoadWorkerMovement();
         this.LoadAnimator();
-        //this.LoadWorkerTasks();
+        this.LoadWorkerTasks();
         this.LoadAgent();
-        //this.LoadResCarrier();
+        this.LoadResCarrier();
+        this.LoadWokerTools();
     }
 
-    /*protected virtual void LoadWorkerTasks()
+    protected virtual void LoadWorkerTasks()
     {
         if (this.workerTasks != null) return;
         this.workerTasks = GetComponent<WorkerTasks>();
         Debug.Log(transform.name + ": LoadWorkerTasks", gameObject);
-    }*/
+    }
+
+    protected virtual void LoadWokerTools()
+    {
+        if(this.tools != null) return;
+        this.tools = GetComponent<WorkerTools>();
+        Debug.Log(transform.name + ": LoadWorkerTools", gameObject);
+    }
 
     protected virtual void LoadAnimator()
     {
@@ -37,12 +46,12 @@ public class WorkerCtrl : SaiBehaviour
         Debug.Log(transform.name + ": LoadAnimator", gameObject);
     }
 
-    /*protected virtual void LoadWorkerBuildings()
+    protected virtual void LoadWorkerBuildings()
     {
         if (this.workerBuildings != null) return;
         this.workerBuildings = GetComponent<WorkerBuildings>();
         Debug.Log(transform.name + ": LoadWorkerBuildings", gameObject);
-    }*/
+    }
 
     protected virtual void LoadWorkerMovement()
     {
@@ -59,17 +68,17 @@ public class WorkerCtrl : SaiBehaviour
         Debug.Log(transform.name + ": LoadAgent", gameObject);
     }
 
-    /*protected virtual void LoadResCarrier()
+    protected virtual void LoadResCarrier()
     {
         if (this.resCarrier != null) return;
         this.resCarrier = GetComponent<ResCarrier>();
         Debug.Log(transform.name + ": ResCarrier", gameObject);
-    }*/
+    }
 
-    /*public virtual void WorkerReleased()
+    public virtual void WorkerReleased()
     {
         this.workerTasks.readyForTask = false;
         this.workerTasks.taskWorking.GoOutBuilding();
         this.workerBuildings.WorkerReleased();
-    }*/
+    }
 }

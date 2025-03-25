@@ -2,40 +2,30 @@ using UnityEngine;
 
 public class WorkerMovement : SaiBehaviour
 {
-    //public WorkerCtrl workerCtrl;
+    public WorkerCtrl workerCtrl;
     [SerializeField] protected Transform target;
-    [SerializeField] protected bool isWalking = false;
-    [SerializeField] protected bool isWorking = false;
-    //public WorkingType workingType = WorkingType.chopTree;
     [SerializeField] protected float moveLimit = 0.7f;
-    [SerializeField] protected float targetDistance = 0f;
+    public bool isMoving = false;
+    public bool isWorking = false;
+    public WorkingType workingType = WorkingType.chopping;
+    public MovingType movingType = MovingType.walking;
+
+    protected float targetDistance = 0f;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        //this.LoadWorkerCtrl();
+
+        if (workerCtrl == null) workerCtrl = GetComponent<WorkerCtrl>();
     }
 
     protected override void FixedUpdate()
     {
-        //this.Moving();
-        //this.Animating();
+        this.HandleMovement();
+        this.UpdateAnimator();
     }
 
-    /*protected virtual void LoadWorkerCtrl()
-    {
-        if (this.workerCtrl != null) return;
-        this.workerCtrl = GetComponent<WorkerCtrl>();
-        Debug.Log(transform.name + ": LoadWorkerCtrl", gameObject);
-    }*/
-
-
-    public virtual Transform GetTarget()
-    {
-        return this.target;
-    }
-
-    /*public virtual void SetTarget(Transform trans)
+    public virtual void SetTarget(Transform trans)
     {
         this.target = trans;
 
@@ -48,19 +38,24 @@ public class WorkerMovement : SaiBehaviour
             this.workerCtrl.navMeshAgent.enabled = true;
             this.IsClose2Target();
         }
-    }*/
+    }
 
-    /*protected virtual void Moving()
+    public virtual void StartWorking(WorkingType workType)
     {
-        if (this.target == null || this.IsClose2Target())
-        {
-            this.isWalking = false;
-            return;
-        }
+        this.isWorking = true;
+        this.workingType = workType;
 
-        this.isWalking = true;
-        this.workerCtrl.navMeshAgent.SetDestination(this.target.position);
-    }*/
+        this.isMoving = false;
+        workerCtrl.navMeshAgent.enabled = false;
+
+        workerCtrl.tools.UpdateTool(MovingType.walking, workType);
+    }
+
+    public virtual void StopWorking()
+    {
+        this.isWorking = false;
+        workerCtrl.tools.ClearTool();
+    }
 
     public virtual bool IsClose2Target()
     {
@@ -68,20 +63,41 @@ public class WorkerMovement : SaiBehaviour
 
         Vector3 targetPos = this.target.position;
         targetPos.y = transform.position.y;
-
         this.targetDistance = Vector3.Distance(transform.position, targetPos);
-        return this.targetDistance < this.moveLimit;
+
+        return this.targetDistance < moveLimit;
     }
 
-    /*protected virtual void Animating()
+    protected virtual void HandleMovement()
     {
-        this.workerCtrl.animator.SetBool("isWalking", this.isWalking);
-        this.workerCtrl.animator.SetBool("isWorking", this.isWorking);
-        this.workerCtrl.animator.SetFloat("workingType", (float)this.workingType);
-    }*/
+        if (!this.isMoving || this.target == null)
+        {
+            this.isMoving = false;
+            return;
+        }
 
-    public virtual float TargetDistance()
-    {
-        return this.targetDistance;
+        if (this.IsClose2Target())
+        {
+            this.isMoving = false;
+            workerCtrl.navMeshAgent.ResetPath();
+        }
+        else
+        {
+            workerCtrl.navMeshAgent.SetDestination(target.position);
+        }
     }
+
+    protected virtual void UpdateAnimator()
+    {
+        var animator = workerCtrl.animator;
+
+        animator.SetBool("isMoving", this.isMoving);
+        animator.SetBool("isWorking", this.isWorking);
+        animator.SetFloat("workingType", (float)this.workingType);
+        animator.SetFloat("movingType", (float)this.movingType);
+    }
+
+    public virtual Transform GetTarget() => this.target;
+
+    public virtual float GetTargetDistance() => this.targetDistance;
 }

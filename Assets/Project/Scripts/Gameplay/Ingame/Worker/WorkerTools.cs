@@ -13,6 +13,7 @@ public class WorkerTools : SaiBehaviour
         { WorkingType.chopping, "Axe" },
         { WorkingType.building, "Hammer" },
         { WorkingType.sawing, "Saw" },
+        { WorkingType.mining, "Pickaxe" },
 
         // TODO: Extend support for additional WorkingTypes with specific tool prefabs if needed.
     };

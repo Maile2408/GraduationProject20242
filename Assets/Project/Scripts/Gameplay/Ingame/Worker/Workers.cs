@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,6 @@ public class Workers : SaiBehaviour
 {
     [SerializeField] protected int maxWorker = 1;
     [SerializeField] protected List<WorkerCtrl> workers;
-    //[SerializeField] protected List<Transform> workers;
 
     public virtual bool IsNeedWorker()
     {
@@ -19,7 +19,7 @@ public class Workers : SaiBehaviour
         this.workers.Add(worker);
     }
 
-    /*public virtual void ReleaseWorkers()
+    public virtual void ReleaseWorkers()
     {
         foreach(WorkerCtrl workerCtrl in this.workers)
         {
@@ -27,5 +27,5 @@ public class Workers : SaiBehaviour
         }
 
         this.workers.Clear();
-    }*/
+    }
 }

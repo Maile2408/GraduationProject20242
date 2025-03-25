@@ -1065,7 +1065,7 @@
         "level": 1,
         "workerCapacity": null,
         "storageCapacity": null,
-        "goldPerCycle": 5,
+        "goldPerCycle": null,
         "productionTime": 60,
         "cost": {
           "gold": 10
@@ -1074,7 +1074,7 @@
           {
             "resource": "logwood",
             "amountPerCycle": 2,
-            "maxCapacity": 10
+            "maxCapacity": 2
           }
         ],
         "requires": []
@@ -1092,7 +1092,7 @@
         "level": 1,
         "workerCapacity": null,
         "storageCapacity": null,
-        "goldPerCycle": 5,
+        "goldPerCycle": null,
         "productionTime": 60,
         "cost": {
           "gold": 10
@@ -1101,7 +1101,7 @@
           {
             "resource": "logwood",
             "amountPerCycle": 2,
-            "maxCapacity": 10
+            "maxCapacity": 2
           }
         ],
         "requires": []
@@ -1119,7 +1119,7 @@
         "level": 1,
         "workerCapacity": null,
         "storageCapacity": null,
-        "goldPerCycle": 5,
+        "goldPerCycle": null,
         "productionTime": 60,
         "cost": {
           "gold": 10
@@ -1128,7 +1128,7 @@
           {
             "resource": "logwood",
             "amountPerCycle": 2,
-            "maxCapacity": 10
+            "maxCapacity": 2
           }
         ],
         "requires": []
@@ -1146,7 +1146,7 @@
         "level": 1,
         "workerCapacity": null,
         "storageCapacity": null,
-        "goldPerCycle": 5,
+        "goldPerCycle": null,
         "productionTime": 60,
         "cost": {
           "gold": 10
@@ -1155,7 +1155,7 @@
           {
             "resource": "logwood",
             "amountPerCycle": 2,
-            "maxCapacity": 10
+            "maxCapacity": 2
           }
         ],
         "requires": []
@@ -1173,7 +1173,7 @@
         "level": 1,
         "workerCapacity": null,
         "storageCapacity": null,
-        "goldPerCycle": 5,
+        "goldPerCycle": null,
         "productionTime": 60,
         "cost": {
           "gold": 10
@@ -1182,7 +1182,7 @@
           {
             "resource": "logwood",
             "amountPerCycle": 2,
-            "maxCapacity": 10
+            "maxCapacity": 2
           }
         ],
         "requires": []
