@@ -94,6 +94,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worker_8
       objectReference: {fileID: 0}
+    - target: {fileID: 6405624883257388430, guid: fa8258dc17db99d4aa9cec214858539f,
+        type: 3}
+      propertyPath: modelTransform
+      value: 
+      objectReference: {fileID: 9155975628756808031}
     - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
         type: 3}
       propertyPath: animator

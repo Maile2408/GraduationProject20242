@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 1411624868277248345}
   - component: {fileID: 4158048290761358145}
   - component: {fileID: 6363926459457410845}
-  - component: {fileID: 4510376287663765326}
   - component: {fileID: 2281166653818590534}
   - component: {fileID: 1041381714071843154}
   m_Layer: 9
@@ -285,25 +284,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6, y: 5.5, z: 6}
   m_Center: {x: 0, y: 2.8, z: 0}
---- !u!114 &4510376287663765326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297410189614911037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd3bbd2abf3c61e45ad9484b1cd5e74b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingData:
-    buildingID: 
-    typeID: 
-    level: 0
-    state: 
-    position: {x: 0, y: 0, z: 0}
-    storedResources: []
 --- !u!114 &2281166653818590534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,9 +296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingTaskType: 1
   door: {fileID: 3594809630266730258}
   workers: {fileID: 0}
   warehouse: {fileID: 1041381714071843154}
+  buildingTask: {fileID: 0}
+  buildingInfo: {fileID: 0}
 --- !u!114 &1041381714071843154
 MonoBehaviour:
   m_ObjectHideFlags: 0

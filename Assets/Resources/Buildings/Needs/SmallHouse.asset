@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
+  m_Name: SmallHouse
+  m_EditorClassIdentifier: 
+  id: 1
+  buildingName: Small House
+  category: Needs
+  description: A small house providing shelter for workers.
+  icon: {fileID: 0}
+  maxLevel: 3
+  levels:
+  - level: 1
+    workerCapacity: 2
+    storageCapacity: 0
+    goldPerCycle: 5
+    productionTime: 60
+    cost:
+    - resource: 1
+      amount: 100
+    - resource: 1001
+      amount: 20
+    produces: []
+    requires:
+    - resource: 1000
+      amountPerCycle: 1
+      maxCapacity: 5
+  - level: 2
+    workerCapacity: 5
+    storageCapacity: 0
+    goldPerCycle: 10
+    productionTime: 50
+    cost:
+    - resource: 1
+      amount: 200
+    - resource: 1001
+      amount: 40
+    - resource: 2001
+      amount: 30
+    produces: []
+    requires:
+    - resource: 1000
+      amountPerCycle: 2
+      maxCapacity: 10
+  - level: 3
+    workerCapacity: 7
+    storageCapacity: 0
+    goldPerCycle: 15
+    productionTime: 40
+    cost:
+    - resource: 1
+      amount: 300
+    - resource: 1001
+      amount: 60
+    - resource: 2001
+      amount: 45
+    produces: []
+    requires:
+    - resource: 1000
+      amountPerCycle: 3
+      maxCapacity: 15

@@ -11,6 +11,7 @@ public class WorkerCtrl : SaiBehaviour
     public WorkerTools tools;
     public NavMeshAgent navMeshAgent;
     public ResCarrier resCarrier;
+    public WorkerGroundAlign workerGroundAlign;
 
     protected override void LoadComponents()
     {
@@ -22,6 +23,14 @@ public class WorkerCtrl : SaiBehaviour
         this.LoadAgent();
         this.LoadResCarrier();
         this.LoadWokerTools();
+        this.LoadWorkerGroundAlign();
+    }
+
+    protected virtual void LoadWorkerGroundAlign()
+    {
+        if (this.workerGroundAlign != null) return;
+        this.workerGroundAlign = GetComponent<WorkerGroundAlign>();
+        Debug.Log(transform.name + ": LoadWorkerGroundAlign", gameObject);
     }
 
     protected virtual void LoadWorkerTasks()

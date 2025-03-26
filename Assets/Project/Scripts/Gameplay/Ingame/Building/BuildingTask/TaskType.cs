@@ -26,4 +26,9 @@ public enum TaskType
     //House Builder
     findWarehouseHasRes = 400,
     buildConstruction = 401,
+
+    //House
+    findWell = 500,
+    gotoWell = 501,
+    takeWater = 502,
 }

@@ -1,5 +1,6 @@
 public enum WorkingType
 {
+    none,
     chopping = 0,
     sawing = 1,
     building = 2,

@@ -40,23 +40,6 @@ public class WorkerMovement : SaiBehaviour
         }
     }
 
-    public virtual void StartWorking(WorkingType workType)
-    {
-        this.isWorking = true;
-        this.workingType = workType;
-
-        this.isMoving = false;
-        workerCtrl.navMeshAgent.enabled = false;
-
-        workerCtrl.tools.UpdateTool(MovingType.walking, workType);
-    }
-
-    public virtual void StopWorking()
-    {
-        this.isWorking = false;
-        workerCtrl.tools.ClearTool();
-    }
-
     public virtual bool IsClose2Target()
     {
         if (this.target == null) return false;
