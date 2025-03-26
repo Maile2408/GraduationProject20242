@@ -129,12 +129,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workerBuildings: {fileID: 5276538544039100352}
   workerMovement: {fileID: 4393391447325745335}
-  workerTasks: {fileID: 0}
+  workerTasks: {fileID: 3255505065262186428}
   animator: {fileID: 3810698632487920230}
   workerModel: {fileID: 8165010932826967770}
   tools: {fileID: 9136541123470623895}
   navMeshAgent: {fileID: 3164997743427114821}
   resCarrier: {fileID: 7813732833429004653}
+  workerGroundAlign: {fileID: 6405624883257388430}
 --- !u!114 &4393391447325745335
 MonoBehaviour:
   m_ObjectHideFlags: 0

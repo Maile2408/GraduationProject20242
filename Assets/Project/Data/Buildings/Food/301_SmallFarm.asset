@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
+  m_Name: 301_SmallFarm
+  m_EditorClassIdentifier: 
+  id: 301
+  buildingName: SmallFarm
+  category: Food
+  description: A small farm that grows crops to produce food.
+  icon: {fileID: 0}
+  prefab: {fileID: 0}
+  cost: []
+  workerCapacity: 0
+  storageCapacity: 0
+  productionTime: 0
+  goldPerCycle: 0
+  produces: []
+  requires: []
