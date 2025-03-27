@@ -7,6 +7,8 @@ public class ResCarrier : MonoBehaviour
     [SerializeField] protected int carryCount = 1;
     [SerializeField] protected List<Resource> resources;
 
+    public int CarryCount() => carryCount;
+
     public virtual Resource AddResource(ResourceName resourceName, float number)
     {
         Resource res = this.GetResByName(resourceName);

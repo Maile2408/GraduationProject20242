@@ -28,7 +28,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5469972370477295381}
   m_Father: {fileID: 4554691606063356283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2336245001713660091
@@ -74,8 +75,10 @@ GameObject:
   - component: {fileID: 8124599967985920064}
   - component: {fileID: 9010675337122037934}
   - component: {fileID: 5967565008107837345}
-  - component: {fileID: 7170151508054665988}
-  m_Layer: 0
+  - component: {fileID: 5280799064681273468}
+  - component: {fileID: 5757297881628241568}
+  - component: {fileID: 5961908531418431930}
+  m_Layer: 10
   m_Name: 1_SmallHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,8 +153,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  resHolders: []
---- !u!114 &7170151508054665988
+  resHolders:
+  - {fileID: 6451577935508301101}
+--- !u!114 &5280799064681273468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -160,14 +164,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 3322632007140552549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d8d76c1f1613f641b3785cf399ebcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingTaskType: 1
+  maxWorker: 1
+  workers: []
+--- !u!114 &5757297881628241568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322632007140552549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78f7596a4ac6968439c8037dbd9430f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCtrl: {fileID: 0}
+  taskTimer: 0
+  taskDelay: 5
+  workingSpeed: 7
+  lastBuildingWorked: 0
+  nearBuildings: []
+--- !u!114 &5961908531418431930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322632007140552549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a414dabc01d4141afaacef9d7d65f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingTaskType: 2
   door: {fileID: 3778497098271283803}
-  workers: {fileID: 0}
+  workers: {fileID: 5280799064681273468}
   warehouse: {fileID: 5967565008107837345}
-  buildingTask: {fileID: 0}
+  buildingTask: {fileID: 5757297881628241568}
 --- !u!1 &4059225930742006772
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +236,53 @@ Transform:
   - {fileID: 2952262552395501965}
   m_Father: {fileID: 4554691606063356283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6258272780460419820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5469972370477295381}
+  - component: {fileID: 6451577935508301101}
+  m_Layer: 0
+  m_Name: water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5469972370477295381
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258272780460419820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8193324091105880945}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6451577935508301101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258272780460419820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345a28718077b8c4083473e84dbdd823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceName: 1000
+  resCurrent: 0
+  resMax: Infinity
 --- !u!1001 &3418850434381887078
 PrefabInstance:
   m_ObjectHideFlags: 0

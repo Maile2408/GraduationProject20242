@@ -5,5 +5,4 @@ public class Worker
 {
     public string workerID;
     public string workerName;
-    public string homeID;
 }

@@ -51,14 +51,4 @@ public class WorkerManager : SaiBehaviour
     {
         this.workerCtrls.Remove(workerCtrl);
     }
-
-    public virtual int CountFreeWorkers()
-    {
-        int count = 0;
-        foreach (WorkerCtrl worker in this.workerCtrls)
-        {
-            if (!worker.workerTasks.HasTask()) count++;
-        }
-        return count;
-    }
 }

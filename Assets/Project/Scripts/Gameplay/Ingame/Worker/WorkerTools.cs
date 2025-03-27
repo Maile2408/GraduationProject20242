@@ -3,70 +3,51 @@ using UnityEngine;
 
 public class WorkerTools : SaiBehaviour
 {
-    [Header("Tool Holders")]
-    [SerializeField] private Transform toolHolder;
-
-    private GameObject currentTool;
-
-    private static readonly Dictionary<WorkingType, string> toolMap = new()
-    {
-        { WorkingType.chopping, "Axe" },
-        { WorkingType.building, "Hammer" },
-        { WorkingType.sawing, "Saw" },
-        { WorkingType.mining, "Pickaxe" },
-
-        // TODO: Extend support for additional WorkingTypes with specific tool prefabs if needed.
-    };
+    [Header("Tool References")]
+    [SerializeField] GameObject axe;
+    [SerializeField] GameObject box;
+    [SerializeField] GameObject hammer;
+    [SerializeField] GameObject pickaxe;
+    [SerializeField] GameObject saw;
+    GameObject currentTool;
+    WorkerCtrl workerCtrl;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
+        if (workerCtrl == null) workerCtrl = GetComponent<WorkerCtrl>();
+    }
 
-        if (toolHolder != null) return;
+    protected override void FixedUpdate()
+    {
+        this.UpdateToolByState();
+    }
 
-        toolHolder = transform.Find("ToolHolder");
-        if (toolHolder == null)
+    protected void UpdateToolByState()
+    {
+        if (currentTool != null) currentTool.SetActive(false);
+        currentTool = null;
+
+        if (workerCtrl.workerMovement == null) return;
+
+        if (workerCtrl.workerMovement.isWorking)
         {
-            Debug.LogError($"{transform.name}: ToolHolder not found!");
+            switch (workerCtrl.workerMovement.workingType)
+            {
+                case WorkingType.chopping: currentTool = axe; break;
+                case WorkingType.building: currentTool = hammer; break;
+                case WorkingType.sawing: currentTool = saw; break;
+                case WorkingType.mining: currentTool = pickaxe; break;
+                default: currentTool = null; break;
+            }
         }
-    }
-
-    public void UpdateTool(MovingType movingType, WorkingType? workingType)
-    {
-        ClearTool();
-
-        if (workingType.HasValue)
+        else if (workerCtrl.workerMovement.isMoving && 
+                 workerCtrl.workerMovement.movingType == MovingType.carrying)
         {
-            AttachToolByWorkingType(workingType.Value);
+            currentTool = box;
         }
-        else if (movingType == MovingType.carrying)
-        {
-            AttachToolByName("Tools/Box");
-        }
-    }
 
-    private void AttachToolByWorkingType(WorkingType type)
-    {
-        if (!toolMap.TryGetValue(type, out string toolName)) return;
-        AttachToolByName($"Tools/{toolName}");
-    }
-
-    private void AttachToolByName(string prefabPath)
-    {
-        GameObject obj = PoolManager.Instance.Spawn(prefabPath, toolHolder);
-        if (obj == null) return;
-
-        currentTool = obj;
-    }
-
-    public void ClearTool()
-    {
         if (currentTool != null)
-        {
-            PoolManager.Instance.Despawn(currentTool);
-            currentTool = null;
-        }
+            currentTool.SetActive(true);
     }
-
-    public bool HasTool() => currentTool != null;
 }

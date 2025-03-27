@@ -8,6 +8,8 @@ public class Workers : SaiBehaviour
     [SerializeField] protected int maxWorker = 1;
     [SerializeField] protected List<WorkerCtrl> workers;
 
+    public int MaxWorker() => maxWorker;
+
     public virtual bool IsNeedWorker()
     {
         if (this.workers.Count >= this.maxWorker) return false;

@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 5617385813744634816}
   - component: {fileID: 2661517995323816147}
   - component: {fileID: 809744381269413174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: 105_OldWell
   m_TagString: Well
   m_Icon: {fileID: 0}

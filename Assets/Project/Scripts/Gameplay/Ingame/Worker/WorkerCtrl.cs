@@ -42,7 +42,7 @@ public class WorkerCtrl : SaiBehaviour
 
     protected virtual void LoadWokerTools()
     {
-        if(this.tools != null) return;
+        if (this.tools != null) return;
         this.tools = GetComponent<WorkerTools>();
         Debug.Log(transform.name + ": LoadWorkerTools", gameObject);
     }

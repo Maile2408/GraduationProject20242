@@ -107,10 +107,9 @@ GameObject:
   - component: {fileID: 4919096508425701450}
   - component: {fileID: 7801168187232133582}
   - component: {fileID: 3210038822942982862}
-  - component: {fileID: 4217128721458955381}
   - component: {fileID: 6350323812857738404}
   - component: {fileID: 5339575139614872918}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 204_Mill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,25 +171,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.5, y: 8, z: 4}
   m_Center: {x: 0, y: 4, z: 0}
---- !u!114 &4217128721458955381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7001314357054349155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd3bbd2abf3c61e45ad9484b1cd5e74b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingData:
-    buildingID: 
-    typeID: 
-    level: 0
-    state: 
-    position: {x: 0, y: 0, z: 0}
-    storedResources: []
 --- !u!114 &6350323812857738404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,9 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingTaskType: 1
   door: {fileID: 2448165389011326011}
   workers: {fileID: 0}
   warehouse: {fileID: 0}
+  buildingTask: {fileID: 0}
 --- !u!114 &5339575139614872918
 MonoBehaviour:
   m_ObjectHideFlags: 0

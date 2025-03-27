@@ -49,4 +49,12 @@ public class TreeLevel : BuildLevel
         else this.isMaxLevel = false;
         return this.isMaxLevel;
     }
+
+    public virtual void ResetTreeLevel()
+    {
+        HideAllBuild();
+        this.currentLevel = 0;
+        this.treeTimer = 0f;
+        this.isMaxLevel = false;
+    }
 }

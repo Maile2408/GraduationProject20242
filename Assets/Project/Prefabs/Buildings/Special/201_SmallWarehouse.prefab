@@ -223,7 +223,8 @@ GameObject:
   - component: {fileID: 2281166653818590534}
   - component: {fileID: 1041381714071843154}
   - component: {fileID: 5348401345058665975}
-  m_Layer: 9
+  - component: {fileID: 8932886077444592059}
+  m_Layer: 10
   m_Name: 201_SmallWarehouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +302,7 @@ MonoBehaviour:
   door: {fileID: 3594809630266730258}
   workers: {fileID: 5348401345058665975}
   warehouse: {fileID: 1041381714071843154}
-  buildingTask: {fileID: 0}
+  buildingTask: {fileID: 8932886077444592059}
 --- !u!114 &1041381714071843154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +336,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxWorker: 1
   workers: []
+--- !u!114 &8932886077444592059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297410189614911037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce16303ee3e53d647a4a205895eef4e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCtrl: {fileID: 2281166653818590534}
+  taskTimer: 0
+  taskDelay: 5
+  workingSpeed: 7
+  lastBuildingWorked: 0
+  nearBuildings: []
+  takeProductCount: 0
+  takeProductMax: 7
+  takeProductTimer: 0
+  takeProductDelay: 7
+  bringMaterialCount: 0
+  bringMaterialMax: 2
+  bringMaterialTimer: 0
+  bringMaterialDelay: 7
 --- !u!1 &7068421913831432579
 GameObject:
   m_ObjectHideFlags: 0

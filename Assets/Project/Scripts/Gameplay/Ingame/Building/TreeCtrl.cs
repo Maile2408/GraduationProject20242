@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TreeCtrl : SaiBehaviour
+public class TreeCtrl : SaiBehaviour, IPoolable
 {
     public ResGenerator resGenerator;
     public TreeLevel treeLevel;
@@ -25,5 +25,14 @@ public class TreeCtrl : SaiBehaviour
         if (this.resGenerator != null) return;
         this.resGenerator = GetComponent<ResGenerator>();
         Debug.Log(transform.name + " LoadResGenerator", gameObject);
+    }
+
+    public void OnSpawn() { }
+
+    public void OnDespawn()
+    {
+        choper = null;
+        this.treeLevel.ResetTreeLevel();
+        this.resGenerator.ResetRes();
     }
 }

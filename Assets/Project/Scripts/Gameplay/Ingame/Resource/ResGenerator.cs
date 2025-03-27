@@ -24,8 +24,8 @@ public class ResGenerator : Warehouse
         this.createTimer = 0;
 
         if (!this.IsRequireEnough()) return;
-        
-        foreach(Resource res in this.resCreate)
+
+        foreach (Resource res in this.resCreate)
         {
             ResHolder resHolder = this.GetResource(res.name);
             resHolder.Add(res.number);
@@ -70,5 +70,16 @@ public class ResGenerator : Warehouse
         }
 
         return resources;
+    }
+
+    public virtual void ResetRes()
+    {
+        canCreate = true;
+        createTimer = 0f;
+
+        foreach (ResHolder resHolder in this.resHolders)
+        {
+            resHolder.Deduct(resHolder.Current());
+        }
     }
 }

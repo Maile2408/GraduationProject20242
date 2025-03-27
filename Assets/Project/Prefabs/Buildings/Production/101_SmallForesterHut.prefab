@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 7974707743969316183}
   - component: {fileID: 5045358046197085009}
   - component: {fileID: 3351261019592303417}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: 101_SmallForesterHut
   m_TagString: Untagged
   m_Icon: {fileID: 0}

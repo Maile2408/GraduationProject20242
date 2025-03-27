@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ForestHutTask : BuildingTask
 {
@@ -11,8 +12,7 @@ public class ForestHutTask : BuildingTask
     [SerializeField] protected float treeRange = 20f;
     [SerializeField] protected float treeDistance = 7f;
     [SerializeField] protected float treeRemoveSpeed = 16f;
-    [SerializeField] protected List<GameObject> treePrefabs = new();
-    [SerializeField] protected List<GameObject> trees = new();
+    [SerializeField] protected List<GameObject> trees;
 
     protected override void Start()
     {
@@ -30,7 +30,6 @@ public class ForestHutTask : BuildingTask
     {
         base.LoadComponents();
         this.LoadObjects();
-        this.LoadTreePrefabs();
         this.LoadGroundLayer();
     }
 
@@ -44,13 +43,6 @@ public class ForestHutTask : BuildingTask
     {
         if (this.plantTreeObj != null) return;
         this.plantTreeObj = Resources.Load<GameObject>(PoolPrefabPath.Point("MaskPositionObject"));
-    }
-
-    protected virtual void LoadTreePrefabs()
-    {
-        if (this.treePrefabs.Count > 0) return;
-        GameObject[] loadedTrees = Resources.LoadAll<GameObject>(PoolPrefabPath.Tree(""));
-        this.treePrefabs.AddRange(loadedTrees);
     }
 
     protected virtual void RemoveDeadTrees()
@@ -109,8 +101,9 @@ public class ForestHutTask : BuildingTask
 
     protected virtual void PlantTree(WorkerCtrl workerCtrl)
     {
-        Transform target = workerCtrl.workerMovement.GetTarget();
+        if (workerCtrl.workerMovement.isWorking) return;
 
+        Transform target = workerCtrl.workerMovement.GetTarget();
         if (target == null)
         {
             target = this.GetPlantPlace();
@@ -122,29 +115,48 @@ public class ForestHutTask : BuildingTask
 
         if (workerCtrl.workerMovement.IsClose2Target())
         {
-            workerCtrl.workerMovement.isWorking = true;
-            workerCtrl.workerMovement.workingType = WorkingType.planting;
-            workerCtrl.tools.UpdateTool(MovingType.walking, WorkingType.planting);
+            StartCoroutine(PlantingRoutine(workerCtrl, target));
+        }
+    }
 
-            PoolManager.Instance.Despawn(target.gameObject);
-            this.Planting(workerCtrl.transform);
+    private IEnumerator PlantingRoutine(WorkerCtrl workerCtrl, Transform target)
+    {
+        workerCtrl.workerMovement.SetWorkingType(true, WorkingType.planting);
+        yield return new WaitForSeconds(8f);
 
-            workerCtrl.workerMovement.isWorking = false;
-            workerCtrl.tools.ClearTool();
+        workerCtrl.workerMovement.SetWorkingType(false, WorkingType.planting);
 
-            if (!this.NeedMoreTree())
-            {
-                workerCtrl.workerTasks.TaskCurrentDone();
-                workerCtrl.workerTasks.TaskAdd(TaskType.goToWorkStation);
-            }
+        PoolManager.Instance.Despawn(target.gameObject);
+        this.Planting(workerCtrl.transform);
+
+        workerCtrl.workerMovement.SetTarget(null);
+
+        if (!this.NeedMoreTree())
+        {
+            workerCtrl.workerTasks.TaskCurrentDone();
+            workerCtrl.workerTasks.TaskAdd(TaskType.goToWorkStation);
         }
     }
 
     protected virtual void Planting(Transform trans)
     {
         GameObject treePrefab = this.GetTreePrefab();
-        GameObject treeObj = PoolManager.Instance.Spawn(treePrefab.name, null);
-        treeObj.transform.position = trans.position;
+        string path = PoolPrefabPath.Tree(treePrefab.name);
+        GameObject treeObj = PoolManager.Instance.Spawn(path);
+
+        Vector3 offset = trans.forward * 0.5f;
+        Vector3 placePos = trans.position + offset;
+
+        Vector3 rayOrigin = placePos + Vector3.up * 5f;
+        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, 10f, groundLayer))
+        {
+            treeObj.transform.position = hit.point;
+        }
+        else
+        {
+            treeObj.transform.position = placePos;
+        }
+
         treeObj.transform.rotation = trans.rotation;
         this.trees.Add(treeObj);
         TreeManager.instance.TreeAdd(treeObj);
@@ -152,8 +164,7 @@ public class ForestHutTask : BuildingTask
 
     protected virtual GameObject GetTreePrefab()
     {
-        int rand = Random.Range(0, this.treePrefabs.Count);
-        return this.treePrefabs[rand];
+        return TreePrefabCache.GetRandomTree();
     }
 
     protected virtual Transform GetPlantPlace()
@@ -161,7 +172,7 @@ public class ForestHutTask : BuildingTask
         Vector3? newTreePos = this.RandomPlaceForTree();
         if (newTreePos == null) return null;
 
-        GameObject treePlace = PoolManager.Instance.Spawn(plantTreeObj.name);
+        GameObject treePlace = PoolManager.Instance.Spawn(PoolPrefabPath.Point("MaskPositionObject"));
         treePlace.transform.position = newTreePos.Value;
         return treePlace.transform;
     }
@@ -181,13 +192,24 @@ public class ForestHutTask : BuildingTask
                 float dis = Vector3.Distance(transform.position, hit.point);
                 if (dis < this.treeDistance) continue;
 
+                Collider[] overlaps = Physics.OverlapSphere(hit.point, 1f, LayerMask.GetMask("Building"));
+                if (overlaps.Length > 0) continue;
+
+                overlaps = Physics.OverlapSphere(hit.point, 1f, LayerMask.GetMask("Nature"));
+                if (overlaps.Length > 0) continue;
+
+                overlaps = Physics.OverlapSphere(hit.point, 1f, LayerMask.GetMask("Tree"));
+                if (overlaps.Length > 0) continue;
+
+                if (!NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, 1f, NavMesh.AllAreas))
+                    continue;
+
                 return hit.point;
             }
         }
 
         return null;
     }
-
 
     protected virtual void LoadNearByTrees()
     {
@@ -214,9 +236,7 @@ public class ForestHutTask : BuildingTask
 
     private IEnumerator Chopping(WorkerCtrl workerCtrl, Transform tree)
     {
-        workerCtrl.workerMovement.isWorking = true;
-        workerCtrl.workerMovement.workingType = WorkingType.chopping;
-        workerCtrl.tools.UpdateTool(MovingType.walking, WorkingType.chopping);
+        workerCtrl.workerMovement.SetWorkingType(true, WorkingType.chopping);
         yield return new WaitForSeconds(this.workingSpeed);
 
         TreeCtrl treeCtrl = tree.GetComponent<TreeCtrl>();
@@ -228,8 +248,7 @@ public class ForestHutTask : BuildingTask
         this.trees.Remove(treeCtrl.gameObject);
         TreeManager.instance.TreeRemove(treeCtrl.gameObject);
 
-        workerCtrl.workerMovement.isWorking = false;
-        workerCtrl.tools.ClearTool();
+        workerCtrl.workerMovement.SetWorkingType(false, WorkingType.chopping);
 
         workerCtrl.workerTasks.taskTarget = null;
         workerCtrl.resCarrier.AddByList(resources);
@@ -287,24 +306,15 @@ public class ForestHutTask : BuildingTask
     protected virtual void BringTreeBack(WorkerCtrl workerCtrl)
     {
         WorkerTask taskWorking = workerCtrl.workerTasks.taskWorking;
+        workerCtrl.workerMovement.SetMovingType(true, MovingType.carrying);
         taskWorking.GotoBuilding();
-
-        if (!workerCtrl.workerMovement.isMoving)
-        {
-            workerCtrl.workerMovement.isMoving = true;
-            workerCtrl.workerMovement.movingType = MovingType.carrying;
-            workerCtrl.tools.UpdateTool(MovingType.carrying, null);
-        }
 
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 
         List<Resource> resources = workerCtrl.resCarrier.TakeAll();
         this.buildingCtrl.warehouse.AddByList(resources);
+        workerCtrl.workerMovement.SetMovingType(true, MovingType.walking);
         taskWorking.GoIntoBuilding();
-
-        workerCtrl.workerMovement.isMoving = false;
-        workerCtrl.workerMovement.movingType = MovingType.walking;
-        workerCtrl.tools.ClearTool();
 
         workerCtrl.workerTasks.TaskCurrentDone();
     }

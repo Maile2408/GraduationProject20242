@@ -6,7 +6,7 @@ public class TimeManager : SaiBehaviour
     public static TimeManager Instance { get; private set; }
 
     public enum TimeState { Day, Night }
-    [SerializeField] private TimeState currentTime = TimeState.Day;
+    [SerializeField] TimeState currentTime = TimeState.Day;
     public TimeState CurrentTime => currentTime;
 
     public bool IsDay => currentTime == TimeState.Day;
@@ -14,7 +14,7 @@ public class TimeManager : SaiBehaviour
 
     [Header("Time Config")]
     [SerializeField] private float timePerPhase = 300f;
-    private float timer;
+    [SerializeField] float timer;
 
     public static event Action OnDayStart;
     public static event Action OnNightStart;

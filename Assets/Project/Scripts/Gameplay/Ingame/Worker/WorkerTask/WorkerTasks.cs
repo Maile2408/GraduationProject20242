@@ -34,8 +34,6 @@ public class WorkerTasks : SaiBehaviour
 
         if (TimeManager.Instance.IsNight) this.GoHome();
         else this.GoWork();
-
-        if (!this.HasTask()) this.GoHome();
     }
 
     protected virtual void LoadWorkerCtrl()
@@ -99,7 +97,7 @@ public class WorkerTasks : SaiBehaviour
 
     public virtual bool HasTask()
     {
-        if (this.tasks.Count > 0) return true;
-        return false;
+        if (this.tasks.Count <= 0) return false;
+        return true;
     }
 }
