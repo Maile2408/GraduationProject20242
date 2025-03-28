@@ -66,6 +66,6 @@ public class BuildingTask : SaiBehaviour
             return Vector3.Distance(currentPos, aPos)
             .CompareTo(Vector3.Distance(currentPos, bPos));
         });
-        //Invoke("FindNearBuildings", 7f);
     }
+
 }

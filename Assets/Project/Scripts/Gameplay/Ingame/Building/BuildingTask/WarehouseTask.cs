@@ -190,6 +190,7 @@ public class WarehouseTask : BuildingTask
     protected virtual void BringResourceBack(WorkerCtrl workerCtrl)
     {
         WorkerTasks workerTasks = workerCtrl.workerTasks;
+        workerCtrl.workerMovement.SetMovingType(MovingType.carrying);
         if (workerTasks.inBuilding) workerTasks.taskWorking.GoOutBuilding();
 
         BuildingCtrl taskBuildingCtrl = workerTasks.taskBuildingCtrl;
@@ -199,6 +200,7 @@ public class WarehouseTask : BuildingTask
         workerTasks.taskBuildingCtrl = null;
         workerTasks.TaskCurrentDone();
 
+        workerCtrl.workerMovement.SetMovingType(MovingType.walking);
         Resource res = workerCtrl.resCarrier.TakeFirst();
         taskBuildingCtrl.warehouse.AddResource(res.name, res.number);
 
@@ -208,6 +210,7 @@ public class WarehouseTask : BuildingTask
     protected virtual void BringMatetiral2Building(WorkerCtrl workerCtrl)
     {
         WorkerTasks workerTasks = workerCtrl.workerTasks;
+        workerCtrl.workerMovement.SetMovingType(MovingType.carrying);
         if (workerTasks.inBuilding) workerTasks.taskWorking.GoOutBuilding();
 
         BuildingCtrl taskBuildingCtrl = workerTasks.taskBuildingCtrl;
@@ -215,6 +218,7 @@ public class WarehouseTask : BuildingTask
         if (workerCtrl.workerMovement.GetTarget() == null) workerCtrl.workerMovement.SetTarget(taskBuildingCtrl.door);
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 
+        workerCtrl.workerMovement.SetMovingType(MovingType.walking);
         Resource res = workerCtrl.resCarrier.TakeFirst();
         taskBuildingCtrl.warehouse.AddResource(res.name, res.number);
 

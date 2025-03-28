@@ -2,30 +2,14 @@ using UnityEngine;
 
 public class HouseCtrl : BuildingCtrl
 {
-    protected override void Start()
+    protected override void LoadComponents()
     {
-        base.Start();
-        for (int i = 0; i < this.workers.MaxWorker(); i++)
-        {
-            this.SpawnWorker();
-        }
+        base.LoadComponents();
+        ResetBuildingTaskType();
     }
 
-    protected virtual void SpawnWorker()
+    protected virtual void ResetBuildingTaskType()
     {
-        GameObject prefab = WorkerPrefabCache.GetRandomWorker();
-
-        string path = PoolPrefabPath.Worker(prefab.name);
-        GameObject workerObj = PoolManager.Instance.Spawn(path);
-    
-        Vector2 randomOffset = Random.insideUnitCircle * 2f;
-        Vector3 spawnPos = this.door.position + new Vector3(randomOffset.x, 0, randomOffset.y);
-
-        workerObj.transform.position = spawnPos;
-        workerObj.transform.rotation = this.door.rotation;
-
-        WorkerCtrl worker = workerObj.GetComponent<WorkerCtrl>();
-
-        WorkerManager.instance.AddWorker(worker);
+        this.buildingTaskType = BuildingTaskType.home;
     }
 }

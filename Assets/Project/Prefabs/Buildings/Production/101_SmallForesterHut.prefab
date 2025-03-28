@@ -152,11 +152,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1501206955669915690}
   - component: {fileID: 2142936645187516524}
-  - component: {fileID: 8595868463300164750}
   - component: {fileID: 3590794400304309782}
-  - component: {fileID: 7974707743969316183}
   - component: {fileID: 5045358046197085009}
   - component: {fileID: 3351261019592303417}
+  - component: {fileID: 7983853247106543956}
   m_Layer: 10
   m_Name: 101_SmallForesterHut
   m_TagString: Untagged
@@ -198,27 +197,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: -1.75}
   m_TimeToStationary: 0.5
---- !u!65 &8595868463300164750
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943948403960145444}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5, y: 7, z: 5.5}
-  m_Center: {x: 0, y: 3.5, z: -2}
 --- !u!114 &3590794400304309782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,23 +212,8 @@ MonoBehaviour:
   buildingTaskType: 1
   door: {fileID: 4363021126508830458}
   workers: {fileID: 3351261019592303417}
-  warehouse: {fileID: 7974707743969316183}
+  warehouse: {fileID: 7983853247106543956}
   buildingTask: {fileID: 5045358046197085009}
---- !u!114 &7974707743969316183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943948403960145444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54edb10cb3cc7744492e16403967fc52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 5071211775130448809}
 --- !u!114 &5045358046197085009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,12 +241,6 @@ MonoBehaviour:
   treeRange: 20
   treeDistance: 7
   treeRemoveSpeed: 16
-  treePrefabs:
-  - {fileID: 6037618531128414535, guid: 8a7f12c3ec0487e40bb10e10da34d5ad, type: 3}
-  - {fileID: 3930009475331632560, guid: de8f01e9be5e26047b14b80e7f0d901b, type: 3}
-  - {fileID: 1539788968839218716, guid: 49aecb4aded8b70498cc89b4cf23d228, type: 3}
-  - {fileID: 3871105914798837505, guid: 3fe148055f2ca74439b4323df2201e6e, type: 3}
-  - {fileID: 5593291195550496672, guid: 04be42fdd24f37e4699529920cb37883, type: 3}
   trees: []
 --- !u!114 &3351261019592303417
 MonoBehaviour:
@@ -299,6 +256,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxWorker: 1
   workers: []
+--- !u!114 &7983853247106543956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01becbee821d5d94b8ce75cb2c181784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 5071211775130448809}
 --- !u!1001 &4568424660213852612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -365,8 +337,39 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60442e490c2f98b468909145dd1cc4fa,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5150418479264879912}
   m_SourcePrefab: {fileID: 100100000, guid: 60442e490c2f98b468909145dd1cc4fa, type: 3}
+--- !u!1 &3721987425629852821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 60442e490c2f98b468909145dd1cc4fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 4568424660213852612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5150418479264879912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3721987425629852821}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.2070036, y: 7.71845, z: 5.743994}
+  m_Center: {x: -0.0001732111, y: 3.8725502, z: -2.0141637}
 --- !u!4 &4101925469917744687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 60442e490c2f98b468909145dd1cc4fa,

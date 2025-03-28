@@ -74,10 +74,10 @@ GameObject:
   - component: {fileID: 4554691606063356283}
   - component: {fileID: 8124599967985920064}
   - component: {fileID: 9010675337122037934}
-  - component: {fileID: 5967565008107837345}
   - component: {fileID: 5280799064681273468}
   - component: {fileID: 5757297881628241568}
   - component: {fileID: 5961908531418431930}
+  - component: {fileID: 4717171960972615187}
   m_Layer: 10
   m_Name: 1_SmallHouse
   m_TagString: Untagged
@@ -140,21 +140,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 8, z: 5}
   m_Center: {x: 0, y: 4, z: 0}
---- !u!114 &5967565008107837345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3322632007140552549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54edb10cb3cc7744492e16403967fc52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 6451577935508301101}
 --- !u!114 &5280799064681273468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f7596a4ac6968439c8037dbd9430f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingCtrl: {fileID: 0}
+  buildingCtrl: {fileID: 5961908531418431930}
   taskTimer: 0
   taskDelay: 5
   workingSpeed: 7
@@ -202,8 +187,27 @@ MonoBehaviour:
   buildingTaskType: 2
   door: {fileID: 3778497098271283803}
   workers: {fileID: 5280799064681273468}
-  warehouse: {fileID: 5967565008107837345}
+  warehouse: {fileID: 4717171960972615187}
   buildingTask: {fileID: 5757297881628241568}
+--- !u!114 &4717171960972615187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322632007140552549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3936c10666bf53b41b74e846ff4c0be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 6451577935508301101}
+  resConsume: []
+  canConsume: 1
+  consumeTimer: 0
+  consumeDelay: 15
 --- !u!1 &4059225930742006772
 GameObject:
   m_ObjectHideFlags: 0

@@ -306,14 +306,14 @@ public class ForestHutTask : BuildingTask
     protected virtual void BringTreeBack(WorkerCtrl workerCtrl)
     {
         WorkerTask taskWorking = workerCtrl.workerTasks.taskWorking;
-        workerCtrl.workerMovement.SetMovingType(true, MovingType.carrying);
+        workerCtrl.workerMovement.SetMovingType(MovingType.carrying);
         taskWorking.GotoBuilding();
 
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 
         List<Resource> resources = workerCtrl.resCarrier.TakeAll();
         this.buildingCtrl.warehouse.AddByList(resources);
-        workerCtrl.workerMovement.SetMovingType(true, MovingType.walking);
+        workerCtrl.workerMovement.SetMovingType(MovingType.walking);
         taskWorking.GoIntoBuilding();
 
         workerCtrl.workerTasks.TaskCurrentDone();

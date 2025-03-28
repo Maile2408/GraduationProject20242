@@ -94,10 +94,4 @@ public class WorkerTasks : SaiBehaviour
         if (this.tasks.Count <= 0) return TaskType.none;
         return this.tasks[this.tasks.Count - 1];
     }
-
-    public virtual bool HasTask()
-    {
-        if (this.tasks.Count <= 0) return false;
-        return true;
-    }
 }

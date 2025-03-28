@@ -1,5 +1,52 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &945831878492312073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7079472424653440718}
+  - component: {fileID: 5990817347085663957}
+  m_Layer: 0
+  m_Name: water
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7079472424653440718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945831878492312073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7743466120916869349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5990817347085663957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945831878492312073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345a28718077b8c4083473e84dbdd823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceName: 1000
+  resCurrent: 0
+  resMax: Infinity
 --- !u!1 &3250181107822618877
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +128,7 @@ Transform:
   - {fileID: 9183600800828154941}
   - {fileID: 8143715080194117623}
   - {fileID: 3458854270080763547}
+  - {fileID: 7079472424653440718}
   m_Father: {fileID: 1411624868277248345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3641245119418940074
@@ -221,9 +269,9 @@ GameObject:
   - component: {fileID: 4158048290761358145}
   - component: {fileID: 6363926459457410845}
   - component: {fileID: 2281166653818590534}
-  - component: {fileID: 1041381714071843154}
   - component: {fileID: 5348401345058665975}
   - component: {fileID: 8932886077444592059}
+  - component: {fileID: 9140795952028685800}
   m_Layer: 10
   m_Name: 201_SmallWarehouse
   m_TagString: Untagged
@@ -301,27 +349,8 @@ MonoBehaviour:
   buildingTaskType: 1
   door: {fileID: 3594809630266730258}
   workers: {fileID: 5348401345058665975}
-  warehouse: {fileID: 1041381714071843154}
+  warehouse: {fileID: 9140795952028685800}
   buildingTask: {fileID: 8932886077444592059}
---- !u!114 &1041381714071843154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5297410189614911037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54edb10cb3cc7744492e16403967fc52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 1492407584743661065}
-  - {fileID: 2627877434307994831}
-  - {fileID: 6884733124245607847}
-  - {fileID: 5576462980929007020}
-  - {fileID: 8560969877993594044}
 --- !u!114 &5348401345058665975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +391,27 @@ MonoBehaviour:
   bringMaterialMax: 2
   bringMaterialTimer: 0
   bringMaterialDelay: 7
+--- !u!114 &9140795952028685800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297410189614911037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eb71d07ac9de7944a6887b1142b1415, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 1492407584743661065}
+  - {fileID: 2627877434307994831}
+  - {fileID: 6884733124245607847}
+  - {fileID: 5576462980929007020}
+  - {fileID: 8560969877993594044}
+  - {fileID: 5990817347085663957}
+  storageCapacity: 500
 --- !u!1 &7068421913831432579
 GameObject:
   m_ObjectHideFlags: 0

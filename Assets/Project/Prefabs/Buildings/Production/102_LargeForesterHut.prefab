@@ -66,7 +66,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32163122d4766434b92fca9bf37e6588,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4164462642563115808}
   m_SourcePrefab: {fileID: 100100000, guid: 32163122d4766434b92fca9bf37e6588, type: 3}
 --- !u!4 &537826030570282856 stripped
 Transform:
@@ -74,6 +78,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 70936717659797635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &881981224848573906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 32163122d4766434b92fca9bf37e6588,
+    type: 3}
+  m_PrefabInstance: {fileID: 70936717659797635}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4164462642563115808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881981224848573906}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.1555886, y: 6.9296064, z: 8.268863}
+  m_Center: {x: -0.00000023841858, y: 3.4472136, z: -2.410499}
 --- !u!1001 &4729846030856658192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -150,7 +181,7 @@ PrefabInstance:
     - target: {fileID: 7943948403960145444, guid: 6c0c9b5b08dcf2947a38239488d26535,
         type: 3}
       propertyPath: m_Name
-      value: LargeForesterHut
+      value: 102_LargeForesterHut
       objectReference: {fileID: 0}
     - target: {fileID: 8595868463300164750, guid: 6c0c9b5b08dcf2947a38239488d26535,
         type: 3}

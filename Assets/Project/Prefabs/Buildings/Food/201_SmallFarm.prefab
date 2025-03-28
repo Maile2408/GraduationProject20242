@@ -76,7 +76,8 @@ GameObject:
   - component: {fileID: 2996050894426286668}
   - component: {fileID: 2963095428889122672}
   - component: {fileID: 3466910155300429710}
-  - component: {fileID: 5235913770728345527}
+  - component: {fileID: 9104029212868749372}
+  - component: {fileID: 3274444880760114693}
   m_Layer: 10
   m_Name: 201_SmallFarm
   m_TagString: Untagged
@@ -153,10 +154,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingTaskType: 1
   door: {fileID: 2007526909530194194}
-  workers: {fileID: 0}
-  warehouse: {fileID: 0}
+  workers: {fileID: 9104029212868749372}
+  warehouse: {fileID: 3274444880760114693}
   buildingTask: {fileID: 0}
---- !u!114 &5235913770728345527
+--- !u!114 &9104029212868749372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,11 +166,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 6358878214627279092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54edb10cb3cc7744492e16403967fc52, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d8d76c1f1613f641b3785cf399ebcbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWorker: 1
+  workers: []
+--- !u!114 &3274444880760114693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358878214627279092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdfb7991f93cf5b4c936bf804f40483e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  resHolders: []
+  resHolders:
+  - {fileID: 7827121731618736623}
+  - {fileID: 718270986234951788}
 --- !u!1 &6375638034966907705
 GameObject:
   m_ObjectHideFlags: 0

@@ -70,9 +70,8 @@ public class WorkerMovement : SaiBehaviour
         this.workingType = workingType;
     }
 
-    public void SetMovingType(bool moving, MovingType movingType)
+    public void SetMovingType(MovingType movingType)
     {
-        this.isMoving = moving;
         this.movingType = movingType;
     }
 

@@ -88,9 +88,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558090552038762369}
-  - component: {fileID: 5617385813744634816}
   - component: {fileID: 2661517995323816147}
   - component: {fileID: 809744381269413174}
+  - component: {fileID: 830386812652832585}
+  - component: {fileID: 5897096311856363076}
   m_Layer: 10
   m_Name: 105_OldWell
   m_TagString: Well
@@ -115,29 +116,6 @@ Transform:
   - {fileID: 3058673754153078072}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &5617385813744634816
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2846300099946564928}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.85
-  m_Height: 3
-  m_Direction: 1
-  m_Center: {x: -0.65, y: -0.15, z: 0}
 --- !u!208 &2661517995323816147
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -168,9 +146,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingTaskType: 1
   door: {fileID: 0}
-  workers: {fileID: 0}
-  warehouse: {fileID: 0}
+  workers: {fileID: 5897096311856363076}
+  warehouse: {fileID: 830386812652832585}
   buildingTask: {fileID: 0}
+--- !u!114 &830386812652832585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 6954766002471206161}
+  resCreate: []
+  resRequire: []
+  canCreate: 1
+  createTimer: 0
+  createDelay: 7
+--- !u!114 &5897096311856363076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8d76c1f1613f641b3785cf399ebcbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxWorker: 1
+  workers: []
 --- !u!1 &9026893932115698352
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +296,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9137693776322569076, guid: 8a03712623f183948ae9450609b102bf,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4085864654798350980}
   m_SourcePrefab: {fileID: 100100000, guid: 8a03712623f183948ae9450609b102bf, type: 3}
 --- !u!4 &2422296123869284646 stripped
 Transform:
@@ -292,3 +308,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6868593539560666738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2422296123869713670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9137693776322569076, guid: 8a03712623f183948ae9450609b102bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 6868593539560666738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4085864654798350980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422296123869713670}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.370354, y: 3.0298367, z: 3.3985968}
+  m_Center: {x: 0.10778978, y: -0.07882875, z: 0.639853}
