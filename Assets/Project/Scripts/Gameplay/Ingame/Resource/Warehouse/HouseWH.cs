@@ -8,12 +8,34 @@ public class HouseWH : Warehouse
     public bool canConsume = true;
 
     [SerializeField] protected float consumeTimer = 0f;
-    [SerializeField] protected float consumeDelay = 15f;
+    [SerializeField] protected float consumeDelay = 60f;
+
+    protected Workers workers;
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadWorkers();
+        this.LoadResConsume();
+    }
+
+    protected virtual void LoadWorkers()
+    {
+        if (this.workers != null) return;
+        this.workers = GetComponent<Workers>();
+        Debug.Log(transform.name + " LoadWorkers", gameObject);
+    }
 
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
+        this.CheckCanConsume();
         this.Consuming();
+    }
+
+    protected virtual void CheckCanConsume()
+    {
+        this.canConsume = TimeManager.Instance.IsNight;
     }
 
     protected virtual void Consuming()
@@ -31,6 +53,18 @@ public class HouseWH : Warehouse
 
             if (holder.Current() >= res.number) holder.Deduct(res.number);
         }
+    }
+
+    protected virtual void LoadResConsume()
+    {
+        Resource res = new Resource
+        {
+            name = ResourceName.water,
+            number = 1
+        };
+
+        this.resConsume.Clear();
+        this.resConsume.Add(res);
     }
 
     public override List<Resource> NeedResoures()

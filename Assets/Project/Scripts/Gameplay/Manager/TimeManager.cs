@@ -6,15 +6,17 @@ public class TimeManager : SaiBehaviour
     public static TimeManager Instance { get; private set; }
 
     public enum TimeState { Day, Night }
-    [SerializeField] TimeState currentTime = TimeState.Day;
+
+    [SerializeField] private TimeState currentTime = TimeState.Day;
     public TimeState CurrentTime => currentTime;
 
     public bool IsDay => currentTime == TimeState.Day;
     public bool IsNight => currentTime == TimeState.Night;
 
     [Header("Time Config")]
-    [SerializeField] private float timePerPhase = 300f;
-    [SerializeField] float timer;
+    [SerializeField] private float dayDuration = 600f;    
+    [SerializeField] private float nightDuration = 300f;
+    [SerializeField] private float timer;
 
     public static event Action OnDayStart;
     public static event Action OnNightStart;
@@ -26,25 +28,43 @@ public class TimeManager : SaiBehaviour
         else Instance = this;
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        if (IsDay) OnDayStart?.Invoke();
+        else OnNightStart?.Invoke();
+    }
+
     protected override void Update()
     {
         base.Update();
 
         timer += Time.deltaTime;
-        if (timer >= timePerPhase)
+
+        if (IsDay && timer >= dayDuration)
         {
             timer = 0f;
-            ToggleTime();
+            SwitchToNight();
+        }
+        else if (IsNight && timer >= nightDuration)
+        {
+            timer = 0f;
+            SwitchToDay();
         }
     }
 
-    public void ToggleTime()
+    private void SwitchToDay()
     {
-        currentTime = (currentTime == TimeState.Day) ? TimeState.Night : TimeState.Day;
-        Debug.Log($"[TimeManager] Switched to: {currentTime}");
+        currentTime = TimeState.Day;
+        OnDayStart?.Invoke();
+        Debug.Log("[TimeManager] Switched to DAY");
+    }
 
-        if (IsDay) OnDayStart?.Invoke();
-        else OnNightStart?.Invoke();
+    private void SwitchToNight()
+    {
+        currentTime = TimeState.Night;
+        OnNightStart?.Invoke();
+        Debug.Log("[TimeManager] Switched to NIGHT");
     }
 
     public void ForceSetTime(TimeState newTime)

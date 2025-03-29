@@ -107,7 +107,11 @@ public class WarehouseTask : BuildingTask
 
         foreach (BuildingCtrl buildingCtrl in this.nearBuildings)
         {
-            if (buildingCtrl.buildingTaskType != BuildingTaskType.workStation) continue;
+            bool isWorkstationOrHome =
+            buildingCtrl.buildingTaskType == BuildingTaskType.workStation ||
+            buildingCtrl.buildingTaskType == BuildingTaskType.home;
+
+            if (!isWorkstationOrHome) continue;
             resources = buildingCtrl.warehouse.NeedResoures();
             foreach (Resource resource in resources)
             {
@@ -174,7 +178,12 @@ public class WarehouseTask : BuildingTask
             }
 
             BuildingCtrl nextBuilding = this.nearBuildings[this.lastBuildingWorked];
-            if (nextBuilding.buildingTaskType != BuildingTaskType.workStation) continue;
+
+            bool isWorkstationOrResource =
+            nextBuilding.buildingTaskType == BuildingTaskType.workStation ||
+            nextBuilding.buildingTaskType == BuildingTaskType.resource;
+
+            if (!isWorkstationOrResource) continue;
 
             ResHolder resHolder = nextBuilding.warehouse.ResNeed2Move();
             if (resHolder == null) continue;

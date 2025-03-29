@@ -120,6 +120,7 @@ MonoBehaviour:
   pickaxe: {fileID: 502455637558393063}
   saw: {fileID: 7367008212405957289}
   can: {fileID: 4388705566388437435}
+  sickle: {fileID: 0}
 --- !u!114 &8288901113479984733
 MonoBehaviour:
   m_ObjectHideFlags: 0

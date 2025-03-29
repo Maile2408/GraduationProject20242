@@ -7,4 +7,5 @@ public enum WorkingType
     mining = 4,
     watering = 5,
     harvesting = 6,
+    relaxing = 7,
 }

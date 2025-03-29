@@ -89,9 +89,9 @@ GameObject:
   m_Component:
   - component: {fileID: 558090552038762369}
   - component: {fileID: 2661517995323816147}
-  - component: {fileID: 809744381269413174}
-  - component: {fileID: 830386812652832585}
   - component: {fileID: 5897096311856363076}
+  - component: {fileID: 1516692336692902209}
+  - component: {fileID: 6483382352796370888}
   m_Layer: 10
   m_Name: 105_OldWell
   m_TagString: Well
@@ -114,6 +114,7 @@ Transform:
   m_Children:
   - {fileID: 385746855772258634}
   - {fileID: 3058673754153078072}
+  - {fileID: 7288594023897671340}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &2661517995323816147
@@ -132,43 +133,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.65, y: -0.15, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &809744381269413174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2846300099946564928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildingTaskType: 1
-  door: {fileID: 0}
-  workers: {fileID: 5897096311856363076}
-  warehouse: {fileID: 830386812652832585}
-  buildingTask: {fileID: 0}
---- !u!114 &830386812652832585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2846300099946564928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isFull: 0
-  resHolders:
-  - {fileID: 6954766002471206161}
-  resCreate: []
-  resRequire: []
-  canCreate: 1
-  createTimer: 0
-  createDelay: 7
 --- !u!114 &5897096311856363076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +147,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxWorker: 1
   workers: []
+--- !u!114 &1516692336692902209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5f9a279f6458544b6af261388bc39e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 0
+  resHolders:
+  - {fileID: 6954766002471206161}
+  resCreate:
+  - name: 1000
+    number: 1
+  resRequire: []
+  canCreate: 1
+  createTimer: 0
+  createDelay: 7
+--- !u!114 &6483382352796370888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee3b32282cb4b7c4eb978af50fd7e5be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingTaskType: 3
+  door: {fileID: 7288594023897671340}
+  workers: {fileID: 5897096311856363076}
+  warehouse: {fileID: 1516692336692902209}
+  buildingTask: {fileID: 0}
+--- !u!1 &7494243973533802976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7288594023897671340}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7288594023897671340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494243973533802976}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 558090552038762369}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9026893932115698352
 GameObject:
   m_ObjectHideFlags: 0

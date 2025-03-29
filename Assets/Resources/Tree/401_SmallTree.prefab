@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5941955011656909813}
   - component: {fileID: 1487967974124332394}
   - component: {fileID: 6715072606138140870}
-  - component: {fileID: 3476373157623934274}
+  - component: {fileID: 4934674291790717148}
   m_Layer: 9
   m_Name: 401_SmallTree
   m_TagString: Tree
@@ -103,9 +103,9 @@ MonoBehaviour:
   - {fileID: 185099374953663241}
   currentLevel: 0
   isMaxLevel: 0
-  tree: {fileID: 3476373157623934274}
+  tree: {fileID: 4934674291790717148}
   treeTimer: 0
-  treeDelay: 10
+  treeDelay: 20
 --- !u!114 &6715072606138140870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a82299033f4a19458b2ec1133b67bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resGenerator: {fileID: 3476373157623934274}
+  resGenerator: {fileID: 4934674291790717148}
   treeLevel: {fileID: 1487967974124332394}
   choper: {fileID: 0}
---- !u!114 &3476373157623934274
+--- !u!114 &4934674291790717148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3871105914798837505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0e2299f212ed7043b6e27224f63c134, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e8e88349842bc346995b76b3c376be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0

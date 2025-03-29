@@ -3,7 +3,7 @@ using UnityEngine;
 public class TreeLevel : BuildLevel
 {
     [SerializeField] protected bool isMaxLevel = false;
-    [SerializeField] protected ResGenerator tree;
+    [SerializeField] protected LogwoodGenerator tree;
     [SerializeField] protected float treeTimer = 0;
     [SerializeField] protected float treeDelay = Mathf.Infinity;
 
@@ -23,7 +23,7 @@ public class TreeLevel : BuildLevel
     protected virtual void LoadTree()
     {
         if (this.tree != null) return;
-        this.tree = GetComponent<ResGenerator>();
+        this.tree = GetComponent<LogwoodGenerator>();
         this.GetTreeDelay();
         Debug.Log(transform.name + ": LoadTree");
     }

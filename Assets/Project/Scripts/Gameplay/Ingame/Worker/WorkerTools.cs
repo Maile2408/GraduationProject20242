@@ -10,7 +10,6 @@ public class WorkerTools : SaiBehaviour
     [SerializeField] GameObject pickaxe;
     [SerializeField] GameObject saw;
     [SerializeField] GameObject can;
-    [SerializeField] GameObject sickle;
     GameObject currentTool;
     WorkerCtrl workerCtrl;
 
@@ -41,7 +40,6 @@ public class WorkerTools : SaiBehaviour
                 case WorkingType.sawing: currentTool = saw; break;
                 case WorkingType.mining: currentTool = pickaxe; break;
                 case WorkingType.watering: currentTool = can; break;
-                case WorkingType.harvesting: currentTool = sickle; break;
                 default: currentTool = null; break;
             }
         }

@@ -92,6 +92,6 @@ public class SawmillTask : BuildingTask
     protected virtual bool HasLogwood()
     {
         ResHolder logwood = this.buildingCtrl.warehouse.GetResource(ResourceName.logwood);
-        return logwood.Current() > 0;
+        return logwood.Current() > this.logwoodCost;
     }
 }

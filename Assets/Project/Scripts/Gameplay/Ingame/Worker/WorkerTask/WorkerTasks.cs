@@ -19,6 +19,19 @@ public class WorkerTasks : SaiBehaviour
         this.DisableTasks();
     }
 
+    protected override void OnEnable()
+    {
+        TimeManager.OnDayStart += GoWork;
+        TimeManager.OnNightStart += GoHome;
+    }
+
+    protected override void OnDisable()
+    {
+        TimeManager.OnDayStart -= GoWork;
+        TimeManager.OnNightStart -= GoHome;
+    }
+
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -29,11 +42,6 @@ public class WorkerTasks : SaiBehaviour
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-
-        if (TimeManager.Instance == null) return;
-
-        if (TimeManager.Instance.IsNight) this.GoHome();
-        else this.GoWork();
     }
 
     protected virtual void LoadWorkerCtrl()
@@ -60,15 +68,36 @@ public class WorkerTasks : SaiBehaviour
 
     protected virtual void GoHome()
     {
+        if (this.taskGoHome.gameObject.activeSelf) return;
+
+        this.ClearAllTasks();
+        this.taskBuildingCtrl = null;
+        this.taskTarget = null;
+        this.readyForTask = false;
+
         this.taskWorking.gameObject.SetActive(false);
         this.taskGoHome.gameObject.SetActive(true);
+
+        this.taskGoHome.GoOutBuilding();
+        this.TaskAdd(TaskType.goToHome);
     }
 
     protected virtual void GoWork()
     {
-        this.taskWorking.gameObject.SetActive(true);
+        if (this.taskWorking.gameObject.activeSelf) return;
+
+        this.ClearAllTasks();
+        this.taskBuildingCtrl = null;
+        this.taskTarget = null;
+        this.readyForTask = false;
+
         this.taskGoHome.gameObject.SetActive(false);
+        this.taskWorking.gameObject.SetActive(true);
+
+        this.taskWorking.GoOutBuilding();
+        this.TaskAdd(TaskType.goToWorkStation);
     }
+
 
     public virtual void TaskAdd(TaskType taskType)
     {

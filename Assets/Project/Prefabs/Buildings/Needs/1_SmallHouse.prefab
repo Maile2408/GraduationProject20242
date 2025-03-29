@@ -204,10 +204,12 @@ MonoBehaviour:
   isFull: 0
   resHolders:
   - {fileID: 6451577935508301101}
-  resConsume: []
+  resConsume:
+  - name: 1000
+    number: 1
   canConsume: 1
   consumeTimer: 0
-  consumeDelay: 15
+  consumeDelay: 60
 --- !u!1 &4059225930742006772
 GameObject:
   m_ObjectHideFlags: 0

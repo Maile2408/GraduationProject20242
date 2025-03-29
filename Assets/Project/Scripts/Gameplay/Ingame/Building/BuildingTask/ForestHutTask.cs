@@ -179,7 +179,10 @@ public class ForestHutTask : BuildingTask
 
     protected virtual Vector3? RandomPlaceForTree()
     {
-        for (int i = 0; i < 10; i++)
+        const float minDistanceToObstacle = 2.5f; 
+        int obstacleLayerMask = LayerMask.GetMask("Building", "Nature", "Tree");
+
+        for (int i = 0; i < 20; i++)
         {
             Vector3 randomXZ = transform.position;
             randomXZ.x += Random.Range(-this.treeRange, this.treeRange);
@@ -192,19 +195,15 @@ public class ForestHutTask : BuildingTask
                 float dis = Vector3.Distance(transform.position, hit.point);
                 if (dis < this.treeDistance) continue;
 
-                Collider[] overlaps = Physics.OverlapSphere(hit.point, 1f, LayerMask.GetMask("Building"));
+                Collider[] overlaps = Physics.OverlapSphere(hit.point, minDistanceToObstacle, obstacleLayerMask);
                 if (overlaps.Length > 0) continue;
 
-                overlaps = Physics.OverlapSphere(hit.point, 1f, LayerMask.GetMask("Nature"));
-                if (overlaps.Length > 0) continue;
-
-                overlaps = Physics.OverlapSphere(hit.point, 1f, LayerMask.GetMask("Tree"));
-                if (overlaps.Length > 0) continue;
-
-                if (!NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, 1f, NavMesh.AllAreas))
+                if (!NavMesh.SamplePosition(hit.point, out NavMeshHit navHit, minDistanceToObstacle, NavMesh.AllAreas))
                     continue;
 
-                return hit.point;
+                if (Vector3.Distance(navHit.position, hit.point) > 0.5f) continue;
+
+                return navHit.position;
             }
         }
 
@@ -242,7 +241,7 @@ public class ForestHutTask : BuildingTask
         TreeCtrl treeCtrl = tree.GetComponent<TreeCtrl>();
         treeCtrl.treeLevel.ShowLastBuild();
 
-        List<Resource> resources = treeCtrl.resGenerator.TakeAll();
+        List<Resource> resources = treeCtrl.logwoodGenerator.TakeAll();
         treeCtrl.choper = null;
 
         this.trees.Remove(treeCtrl.gameObject);
@@ -293,7 +292,7 @@ public class ForestHutTask : BuildingTask
             if (tree == null) continue;
             TreeCtrl treeCtrl = tree.GetComponent<TreeCtrl>();
             if (treeCtrl == null) continue;
-            if (!treeCtrl.resGenerator.IsAllResMax()) continue;
+            if (!treeCtrl.logwoodGenerator.IsAllResMax()) continue;
             if (treeCtrl.choper != null) continue;
 
             treeCtrl.choper = workerCtrl;

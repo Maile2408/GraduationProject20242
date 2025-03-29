@@ -10,6 +10,7 @@ public enum TaskType
     bringResourceBack = 104,
     findWorkingPoint = 105,
     getResNeed2Move = 106,
+    goOutToRelax = 107,
 
     //Tree
     plantTree = 200,

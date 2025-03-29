@@ -32,6 +32,37 @@ Transform:
   - {fileID: 4926936656731857046}
   m_Father: {fileID: 4919096508425701450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1755980000975028998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96515547686659020}
+  m_Layer: 0
+  m_Name: RelaxingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96515547686659020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755980000975028998}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.5, y: 0, z: 3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4919096508425701450}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2982555620668590179
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +141,7 @@ GameObject:
   - component: {fileID: 6350323812857738404}
   - component: {fileID: 5862594308299958790}
   - component: {fileID: 3247199984456728586}
+  - component: {fileID: 4408572599766678027}
   m_Layer: 10
   m_Name: 204_Mill
   m_TagString: Untagged
@@ -133,6 +165,7 @@ Transform:
   - {fileID: 4013086172917092825}
   - {fileID: 619842893722374332}
   - {fileID: 2448165389011326011}
+  - {fileID: 96515547686659020}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!208 &7801168187232133582
@@ -145,7 +178,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 3.5, y: 0.5, z: 2.25}
+  m_Extents: {x: 2.75, y: 0.5, z: 2.25}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -170,7 +203,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.5, y: 8, z: 4}
+  m_Size: {x: 5, y: 8, z: 4}
   m_Center: {x: 0, y: 4, z: 0}
 --- !u!114 &6350323812857738404
 MonoBehaviour:
@@ -188,7 +221,7 @@ MonoBehaviour:
   door: {fileID: 2448165389011326011}
   workers: {fileID: 5862594308299958790}
   warehouse: {fileID: 3247199984456728586}
-  buildingTask: {fileID: 0}
+  buildingTask: {fileID: 4408572599766678027}
 --- !u!114 &5862594308299958790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +252,30 @@ MonoBehaviour:
   resHolders:
   - {fileID: 1318107370938270073}
   - {fileID: 6803335654970049287}
+--- !u!114 &4408572599766678027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001314357054349155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7001adbe1e17c8e46ae898bb31dbcf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCtrl: {fileID: 6350323812857738404}
+  taskTimer: 0
+  taskDelay: 5
+  workingSpeed: 7
+  lastBuildingWorked: 0
+  nearBuildings: []
+  grainCost: 3
+  flourReceive: 1
+  relaxingPoint: {fileID: 96515547686659020}
+  relaxingTime: 10
+  fanBlades: {fileID: 5646470307365876928}
+  fanSpeed: 100
 --- !u!1 &7057220416242035974
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,6 +456,12 @@ PrefabInstance:
 --- !u!4 &4926936656731857046 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 45aa0c83909fdaf4daf1e03dbea4f6f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 4887891811045410685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5646470307365876928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8248046534693588035, guid: 45aa0c83909fdaf4daf1e03dbea4f6f2,
     type: 3}
   m_PrefabInstance: {fileID: 4887891811045410685}
   m_PrefabAsset: {fileID: 0}
