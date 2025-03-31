@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3746d3d8861ac428996ed7b01c6086, type: 3}
+  m_Name: LightingPreset
+  m_EditorClassIdentifier: 
+  dayAmbientSkyColor: {r: 0.84313726, g: 0.8980392, b: 1, a: 0}
+  nightAmbientSkyColor: {r: 0.35686275, g: 0.42745098, b: 0.5372549, a: 0}
+  dayAmbientEquatorColor: {r: 1, g: 0.9490196, b: 0.8156863, a: 0}
+  nightAmbientEquatorColor: {r: 0.4392157, g: 0.4862745, b: 0.56078434, a: 0}
+  dayAmbientGroundColor: {r: 0.8039216, g: 0.9019608, b: 0.7019608, a: 0}
+  nightAmbientGroundColor: {r: 0.2509804, g: 0.3019608, b: 0.3529412, a: 0}
+  dayDirectionalColor: {r: 1, g: 0.9372549, b: 0.8352941, a: 0}
+  nightDirectionalColor: {r: 0.41960785, g: 0.5019608, b: 0.6509804, a: 0}
+  dayFogColor: {r: 0.9019608, g: 0.9372549, b: 0.9764706, a: 0}
+  nightFogColor: {r: 0.23529412, g: 0.27450982, b: 0.33333334, a: 0}
+  daySunIntensity: 1.2
+  nightSunIntensity: 0.3
