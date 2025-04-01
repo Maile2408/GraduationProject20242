@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class BuildingManager : SaiBehaviour
 {
-    public static BuildingManager instance;
+    public static BuildingManager Instance;
     [SerializeField] protected List<BuildingCtrl> buildingCtrls;
 
     protected override void Awake()
     {
         base.Awake();
-        if (BuildingManager.instance != null) Debug.LogError("Only 1 BuildingManager allow");
-        BuildingManager.instance = this;
+        if (BuildingManager.Instance != null) Debug.LogError("Only 1 BuildingManager allow");
+        BuildingManager.Instance = this;
     }
 
     protected override void LoadComponents()

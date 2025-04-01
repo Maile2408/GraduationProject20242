@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class WorkerManager : SaiBehaviour
 {
-    public static WorkerManager instance;
+    public static WorkerManager Instance;
 
     [SerializeField] protected List<WorkerCtrl> workerCtrls = new();
 
     protected override void Awake()
     {
         base.Awake();
-        if (WorkerManager.instance != null) Debug.LogError("Only 1 WorkerManager allow");
-        WorkerManager.instance = this;
+        if (WorkerManager.Instance != null) Debug.LogError("Only 1 WorkerManager allow");
+        WorkerManager.Instance = this;
     }
 
     protected override void LoadComponents()
