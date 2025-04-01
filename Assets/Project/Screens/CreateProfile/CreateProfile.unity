@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 3387652934893700365, guid: c49abf5ba0202d04aa3b183b46ac5c2b,
         type: 3}
       propertyPath: m_Name
-      value: Profile
+      value: CreateProfile
       objectReference: {fileID: 0}
     - target: {fileID: 3820747425946490561, guid: c49abf5ba0202d04aa3b183b46ac5c2b,
         type: 3}
@@ -393,6 +393,16 @@ PrefabInstance:
     - target: {fileID: 3820747425946490561, guid: c49abf5ba0202d04aa3b183b46ac5c2b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886573697683966823, guid: c49abf5ba0202d04aa3b183b46ac5c2b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 68
+      objectReference: {fileID: 0}
+    - target: {fileID: 7941945980989159012, guid: c49abf5ba0202d04aa3b183b46ac5c2b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GodModeCtrl : SaiBehaviour
 {
-    public static GodModeCtrl Instance;
+    public static GodModeCtrl instance;
 
     [Header("God Mode")]
     public Camera _camera;
@@ -11,8 +11,8 @@ public class GodModeCtrl : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (GodModeCtrl.Instance != null) Debug.LogError("Only 1 GodModeCtrl allow");
-        GodModeCtrl.Instance = this;
+        if (GodModeCtrl.instance != null) Debug.LogError("Only 1 GodModeCtrl allow");
+        GodModeCtrl.instance = this;
     }
 
     protected override void LoadComponents()

@@ -12,7 +12,6 @@ public class GodInput : SaiBehaviour
     {
         this.InputHandle();
         this.MouseRotation();
-        //this.ChoosePlace2Build();
     }
 
     protected override void LoadComponents()
@@ -50,7 +49,7 @@ public class GodInput : SaiBehaviour
         {
             this.mouseRotation = (Input.mousePosition - this.mouseReference);
             this.mouseRotation.y = -(this.mouseRotation.x + this.mouseRotation.y);
-            this.mouseReference = Input.mousePosition;
+            this.mouseReference = Input.mousePosition; 
         }
         else
         {
@@ -59,11 +58,4 @@ public class GodInput : SaiBehaviour
 
         this.godModeCtrl.godMovement.camRotation.y = this.mouseRotation.x;
     }
-
-    /*protected virtual void ChoosePlace2Build()
-    {
-        if (!BuildManager.instance.isBuilding) return;
-        if (!Input.GetKeyUp(KeyCode.Mouse0)) return;
-        BuildManager.instance.CurrentBuildPlace();
-    }*/
 }

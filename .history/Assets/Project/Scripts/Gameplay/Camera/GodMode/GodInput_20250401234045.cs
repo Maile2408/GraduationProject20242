@@ -50,7 +50,7 @@ public class GodInput : SaiBehaviour
         {
             this.mouseRotation = (Input.mousePosition - this.mouseReference);
             this.mouseRotation.y = -(this.mouseRotation.x + this.mouseRotation.y);
-            this.mouseReference = Input.mousePosition;
+            this.mouseReference = Input.mousePosition; 
         }
         else
         {
