@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5126686764147596028}
   - component: {fileID: 7532847377756685700}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 6551238458832218917}
   - component: {fileID: 4789133491936509830}
   - component: {fileID: 524339628775314087}
+  - component: {fileID: 4010740058408562948}
   m_Layer: 5
   m_Name: BuildingItem
   m_TagString: Untagged
@@ -272,3 +273,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4010740058408562948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7779092508309033286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a1cd787512db945ae673c50e25879f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 7532847377756685700}
+  lockIcon: {fileID: 7612047608948585923}

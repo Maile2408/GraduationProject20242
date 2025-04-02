@@ -96,7 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8ec9f6c326f00f4448778bdf11381d78,
+    type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -17799,7 +17800,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -18524,7 +18525,7 @@ MonoBehaviour:
   sun: {fileID: 2059384766}
   transitionSpeed: 1
   postProcessingVolume: {fileID: 96668313}
-  dayExposure: -0.5
+  dayExposure: 0
   nightExposure: 0.4
 --- !u!1001 &2138755142
 PrefabInstance:
