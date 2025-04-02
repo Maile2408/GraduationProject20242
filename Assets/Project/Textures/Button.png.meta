@@ -195,7 +195,7 @@ TextureImporter:
         height: 181
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 199, y: 80, z: 199, w: 80}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -279,7 +279,7 @@ TextureImporter:
         height: 237
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 100, y: 100, z: 100, w: 100}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -3031,6 +3031,7 @@ TextureImporter:
       Button_133: -2129734351
       Button_134: -1935789910
       Button_135: 772564413
+      Button_136: -1297878857
       Button_14: -1675653382
       Button_15: 1928438447
       Button_16: 153855899

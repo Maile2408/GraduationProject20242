@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateProfileController : MonoBehaviour, IKeyBack
+public class GamePlayController : MonoBehaviour, IKeyBack
 {
-    public const string NAME = "CreateProfile";
+    public const string NAME = "GamePlay";
 
     public void OnKeyBack()
     {

@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateProfileController : MonoBehaviour, IKeyBack
+public class ProfileMenuController : MonoBehaviour, IKeyBack
 {
-    public const string NAME = "CreateProfile";
+    public const string NAME = "ProfileMenu";
 
     public void OnKeyBack()
     {
