@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 6853231937996311732}
   - component: {fileID: 2425093524609828206}
   - component: {fileID: 490644881862380583}
+  - component: {fileID: 821983392919612589}
   m_Layer: 9
   m_Name: 304_BuilderHut
   m_TagString: Untagged
@@ -186,7 +187,7 @@ MonoBehaviour:
   door: {fileID: 7619892272282265105}
   workers: {fileID: 490644881862380583}
   warehouse: {fileID: 2425093524609828206}
-  buildingTask: {fileID: 0}
+  buildingTask: {fileID: 821983392919612589}
 --- !u!114 &2425093524609828206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +216,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxWorker: 1
   workers: []
+--- !u!114 &821983392919612589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751155682947312614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed2674b325182f48b7d5ca47338f6a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingCtrl: {fileID: 6853231937996311732}
+  taskTimer: 0
+  taskDelay: 5
+  workingSpeed: 7
+  lastBuildingWorked: 0
+  nearBuildings: []
+  construction: {fileID: 0}
+  warehouses: []
 --- !u!1001 &6994070973843950394
 PrefabInstance:
   m_ObjectHideFlags: 0

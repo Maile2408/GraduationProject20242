@@ -59,4 +59,11 @@ public class GodInput : SaiBehaviour
 
         this.godModeCtrl.godMovement.camRotation.y = this.mouseRotation.x;
     }
+
+    /*protected virtual void ChoosePlace2Build()
+    {
+        if (!BuildManager.instance.isBuilding) return;
+        if (!Input.GetKeyUp(KeyCode.Mouse0)) return;
+        BuildManager.instance.CurrentBuildPlace();
+    }*/
 }

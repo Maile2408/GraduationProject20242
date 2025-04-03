@@ -68,7 +68,6 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     public void OnBuildButtonTap()
     {
         ScreenManager.Close();
-        BuildManager.Instance.PrepareToBuild(pendingInfo);
     }
 
     public void OnKeyBack()
