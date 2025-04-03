@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
-  m_Name: 201_SmallWareHouse
+  m_Name: 404_Fountain1
   m_EditorClassIdentifier: 
-  id: 201
-  buildingName: SmallWareHouse
-  category: Special
-  description: A small warehouse used to store resources for the city.
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  buildingName: Fountain 1
+  icon: {fileID: 21300000, guid: c2896a905696135448bfe3e5708a1515, type: 3}
+  prefab: {fileID: 4889581378593562243, guid: cac71c3224fe7f340accf532cfc3cb9d, type: 3}
+  description: A simple fountain to decorate your town center.
+  isUnlocked: 0
+  category: 4
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []

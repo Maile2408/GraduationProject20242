@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
+  m_Name: 204_Mill
+  m_EditorClassIdentifier: 
+  buildingName: Mill
+  icon: {fileID: 21300000, guid: 90fdb495b8792214f85ff8ea068ae1de, type: 3}
+  prefab: {fileID: 7001314357054349155, guid: b1f4200f7612fed41982e009c8391ab6, type: 3}
+  description: 'A mill that processes grain into flour.
+
+    Worker Slots: 1'
+  isUnlocked: 0
+  category: 1
+  coin: 0
+  cost: []

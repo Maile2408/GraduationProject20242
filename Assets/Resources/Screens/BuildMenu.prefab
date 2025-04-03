@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 3926869427018233093}
   - component: {fileID: 726319316554658825}
   - component: {fileID: 3951919000561396199}
-  - component: {fileID: 7379620136119596981}
+  - component: {fileID: 3316650279355489455}
   m_Layer: 5
   m_Name: Panel_Buildings
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7379620136119596981
+--- !u!114 &3316650279355489455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   categoryGroups:
   - {fileID: 3906243138682082494}
-  - {fileID: 5951252067929473614}
   - {fileID: 4695478399454987655}
+  - {fileID: 5951252067929473614}
   - {fileID: 3752989838167301027}
   - {fileID: 8438915271160972513}
   contentParent: {fileID: 3424616429398311133}
@@ -531,8 +531,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5552512848493772453}
-  - {fileID: 3002957904741296213}
   - {fileID: 4184423283119648668}
+  - {fileID: 3002957904741296213}
   - {fileID: 5705764048510677432}
   - {fileID: 1019698963564719866}
   m_Father: {fileID: 408106300}
@@ -623,7 +623,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 7379620136119596981}
+      objectReference: {fileID: 3316650279355489455}
     - target: {fileID: 2658280189304815884, guid: 81098750d2c676c45be229241ec49dad,
         type: 3}
       propertyPath: category
@@ -765,11 +765,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7353440877049356392}
     m_Modifications:
+    - target: {fileID: 864599530146294138, guid: 81098750d2c676c45be229241ec49dad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 864599530146294138, guid: 81098750d2c676c45be229241ec49dad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 864599530146294138, guid: 81098750d2c676c45be229241ec49dad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3387652934893700365}
+    - target: {fileID: 864599530146294138, guid: 81098750d2c676c45be229241ec49dad,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2658280189304815884, guid: 81098750d2c676c45be229241ec49dad,
         type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 7379620136119596981}
+      objectReference: {fileID: 3316650279355489455}
     - target: {fileID: 4070048627399193021, guid: 81098750d2c676c45be229241ec49dad,
         type: 3}
       propertyPath: m_Name
@@ -1044,7 +1064,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 7379620136119596981}
+      objectReference: {fileID: 3316650279355489455}
     - target: {fileID: 2658280189304815884, guid: 81098750d2c676c45be229241ec49dad,
         type: 3}
       propertyPath: category
@@ -1191,6 +1211,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_Close
       objectReference: {fileID: 0}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8564135240907683778}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCloseButtonTap
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildMenuController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8300267618277262529, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1319,7 +1374,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 7379620136119596981}
+      objectReference: {fileID: 3316650279355489455}
     - target: {fileID: 2658280189304815884, guid: 81098750d2c676c45be229241ec49dad,
         type: 3}
       propertyPath: category
@@ -1470,7 +1525,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menu
       value: 
-      objectReference: {fileID: 7379620136119596981}
+      objectReference: {fileID: 3316650279355489455}
     - target: {fileID: 2658280189304815884, guid: 81098750d2c676c45be229241ec49dad,
         type: 3}
       propertyPath: category

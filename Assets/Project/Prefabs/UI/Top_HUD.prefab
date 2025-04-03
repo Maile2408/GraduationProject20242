@@ -224,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 2154286031013270816, guid: fdaf4e4a8b7c303489e2786ee649bead,
         type: 3}
       propertyPath: m_Name
-      value: Text_Gold
+      value: Text_Coin
       objectReference: {fileID: 0}
     - target: {fileID: 2738981403926481617, guid: fdaf4e4a8b7c303489e2786ee649bead,
         type: 3}
@@ -572,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 4277207455243716818, guid: 89277bc4a98dba14f82ca6a3b138486c,
         type: 3}
       propertyPath: m_Name
-      value: Icon_Gold
+      value: Icon_Coin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

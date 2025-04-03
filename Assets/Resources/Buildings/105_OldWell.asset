@@ -12,16 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 105_OldWell
   m_EditorClassIdentifier: 
-  id: 105
   buildingName: Old Well
-  category: 
+  icon: {fileID: 21300000, guid: 2d94ddea40381a34d9d65de7820add34, type: 3}
+  prefab: {fileID: 2846300099946564928, guid: 6c47289cc014f454bb1c466f3ed61b34, type: 3}
   description: An old well that provides a small amount of water.
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  isUnlocked: 1
+  category: 2
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []

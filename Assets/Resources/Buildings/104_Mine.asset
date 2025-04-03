@@ -12,16 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 104_Mine
   m_EditorClassIdentifier: 
-  id: 104
   buildingName: Mine
-  category: Production
-  description: Extracts stone from underground deposits.
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: 59532294a16ccf84192db6b673e0b1bd, type: 3}
+  prefab: {fileID: 7116166987348167793, guid: 122c77afffdc7264fb34813684db252e, type: 3}
+  description: 'Produces stone from underground deposits.
+
+    Worker Slots: 1'
+  isUnlocked: 0
+  category: 2
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []

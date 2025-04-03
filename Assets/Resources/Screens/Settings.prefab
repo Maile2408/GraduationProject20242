@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -936,6 +936,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button_Close
       objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8820560134439023166}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCloseButtonTap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7427810619542893849, guid: 63fc5425daf123349b1274b10a2a95b4,
         type: 3}
       propertyPath: m_text
@@ -1064,6 +1099,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Apply
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8820560134439023166}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnApplyButtonTap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7427810619542893849, guid: 63fc5425daf123349b1274b10a2a95b4,
         type: 3}

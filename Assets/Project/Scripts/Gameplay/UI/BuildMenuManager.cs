@@ -13,15 +13,16 @@ public class BuildMenuManager : MonoBehaviour
     [SerializeField] GameObject buildingItemPrefab;
     [SerializeField] List<BuildingInfo> allBuildings;
 
-    private ObjectPool pool;
     private List<GameObject> activeItems = new();
+
+    private string buildingItemPath;
 
     private void Awake()
     {
         allBuildings = Resources.LoadAll<BuildingInfo>(PoolPrefabPath.Building(""))
         .OrderBy(b => b.name)
         .ToList();
-        pool = new ObjectPool(buildingItemPrefab, contentParent);
+        buildingItemPath = PoolPrefabPath.BuildingItem(buildingItemPrefab.name);
     }
 
     private void Start()
@@ -31,14 +32,17 @@ public class BuildMenuManager : MonoBehaviour
 
     public void ShowCategory(BuildingCategory category)
     {
-        foreach (var obj in activeItems) pool.Despawn(obj);
-
+        foreach (var obj in activeItems)
+        {
+            PoolManager.Instance.Despawn(obj);
+        }
         activeItems.Clear();
 
         foreach (var info in allBuildings.Where(b => b.category == category))
         {
-            GameObject go = pool.Spawn(contentParent);
-            go.GetComponent<BuildingItem>().Setup(info);
+            GameObject go = PoolManager.Instance.Spawn(buildingItemPath, contentParent);
+            go.transform.localScale = Vector3.one;
+            go.GetComponent<BuildingItem>().Setup(info, OnBuildingItemClick);
             activeItems.Add(go);
         }
 
@@ -49,5 +53,12 @@ public class BuildMenuManager : MonoBehaviour
             c.a = (group.category == category) ? 1f : 0.2f;
             img.color = c;
         }
+    }
+
+    private void OnBuildingItemClick(BuildingInfo info)
+    {
+        BuildingInfoPopupController.pendingInfo = info;
+        ScreenManager.Close();
+        ScreenManager.Add<BuildingInfoPopupController>(BuildingInfoPopupController.NAME);
     }
 }

@@ -8,14 +8,10 @@ public class BuildingInfo : ScriptableObject
     public Sprite icon;
     public GameObject prefab;
     [TextArea] public string description;
-    public bool isUnlocked = true;
+    public bool isUnlocked = false;
 
     public BuildingCategory category;
 
+    public float coin;
     public List<Resource> cost;
-    public List<Resource> requires;
-    public List<Resource> produces;
-
-    public float storageCapacity;
-    public float workerCapacity;
 }

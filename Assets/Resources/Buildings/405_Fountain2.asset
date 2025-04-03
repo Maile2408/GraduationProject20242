@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
-  m_Name: 204_BuilderHut
+  m_Name: 405_Fountain2
   m_EditorClassIdentifier: 
-  id: 204
-  buildingName: Builder Hut
-  category: 
-  description: A hut where builders are assigned to construct buildings.
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  buildingName: Large Pine Tree
+  icon: {fileID: 21300000, guid: 870c0a79898928c4594163680eec72b6, type: 3}
+  prefab: {fileID: 54136654269128273, guid: 5144c9548110cc743833070e459863a6, type: 3}
+  description: A grand fountain that beautifies your city.
+  isUnlocked: 0
+  category: 4
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []

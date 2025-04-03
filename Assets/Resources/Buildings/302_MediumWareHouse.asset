@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
-  m_Name: 202_MediumWareHouse
+  m_Name: 302_MediumWareHouse
   m_EditorClassIdentifier: 
-  id: 202
   buildingName: Medium Warehouse
-  category: Special
-  description: A medium warehouse used to store resources for the city.
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: 9c8372bde450b9f4dab299de3dee04f5, type: 3}
+  prefab: {fileID: 7128530417178768940, guid: 6e133b1dec1593f45a345887d19f1211, type: 3}
+  description: 'A medium warehouse used to store resources for the city.
+
+    Storage
+    Capacity: 1000
+
+    Worker Slots: 3'
+  isUnlocked: 0
+  category: 3
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []

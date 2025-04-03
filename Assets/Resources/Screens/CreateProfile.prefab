@@ -63,14 +63,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 40e67defe014f554ab7b8cde1b6c6b9f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -394,6 +394,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2556938796349048238}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnStartButtonTap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CreateProfileController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7427810619542893849, guid: 63fc5425daf123349b1274b10a2a95b4,
         type: 3}
@@ -1183,6 +1218,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button_Home
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2556938796349048238}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnHomeButtonTap
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CreateProfileController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7427810619542893849, guid: 63fc5425daf123349b1274b10a2a95b4,
         type: 3}

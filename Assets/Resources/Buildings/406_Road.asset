@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
-  m_Name: 303_LargeFarm
+  m_Name: 406_Road
   m_EditorClassIdentifier: 
-  id: 303
-  buildingName: LargeFarm
-  category: Food
-  description: A large farm that produces a greater amount of food.
+  buildingName: 
   icon: {fileID: 0}
   prefab: {fileID: 0}
+  description: 
+  isUnlocked: 0
+  category: 4
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []

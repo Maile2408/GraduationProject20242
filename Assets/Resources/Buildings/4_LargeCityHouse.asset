@@ -12,16 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 4_LargeCityHouse
   m_EditorClassIdentifier: 
-  id: 4
   buildingName: Large City House
-  category: 
-  description: A large house providing high-quality shelter for workers.
-  icon: {fileID: 0}
-  prefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: a6c88b680c3162f4daaa80c6eda3b3cd, type: 3}
+  prefab: {fileID: 621184301424729025, guid: e9afe841adc722e43bf74c4f44fba3f5, type: 3}
+  description: 'A grand residence fit for a prosperous kingdom.
+
+    Worker Capacity:
+    6'
+  isUnlocked: 0
+  category: 0
+  coin: 0
   cost: []
-  workerCapacity: 0
-  storageCapacity: 0
-  productionTime: 0
-  goldPerCycle: 0
-  produces: []
-  requires: []
