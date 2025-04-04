@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 5862594308299958790}
   - component: {fileID: 3247199984456728586}
   - component: {fileID: 4408572599766678027}
+  - component: {fileID: 626446649395977377}
   m_Layer: 10
   m_Name: 204_Mill
   m_TagString: Untagged
@@ -276,6 +277,22 @@ MonoBehaviour:
   relaxingTime: 10
   fanBlades: {fileID: 5646470307365876928}
   fanSpeed: 100
+--- !u!114 &626446649395977377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001314357054349155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1 &7057220416242035974
 GameObject:
   m_ObjectHideFlags: 0

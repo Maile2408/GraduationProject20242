@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Lamp 2
   icon: {fileID: 21300000, guid: 26810da68d9415c459ce0e242c0f0eaa, type: 3}
-  prefab: {fileID: 4981622828241362513, guid: 6dfa75dea77fd104fa473d26bf31100a, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 2bc520fc4b38af64aaf211665f6229e6, type: 3}
   description: A large decorative lamp that lights up a wider area.
   isUnlocked: 0
   category: 4

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: LargeFarm
   icon: {fileID: 21300000, guid: ed9ebdb3e11483340a895dd4f21a98af, type: 3}
-  prefab: {fileID: 3936477917194002658, guid: de30694406be6cc4690a90d09280cf08, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 263c21bc716033b419f5e47af57c8400, type: 3}
   description: 'Requires water to produce a large amount of grain.
 
     Worker Slots:

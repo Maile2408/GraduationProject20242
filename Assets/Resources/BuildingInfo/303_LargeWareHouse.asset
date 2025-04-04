@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Large Ware House
   icon: {fileID: 21300000, guid: b287df30870888241b2b5f62e79c24c1, type: 3}
-  prefab: {fileID: 8307998632062291150, guid: 583ee95cd1a24df428a24c3b243ecfb8, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 81c2b48b358520f4c96198b8a38de2a8, type: 3}
   description: 'A large warehouse with greater storage capacity for city resources.
 
     Storage

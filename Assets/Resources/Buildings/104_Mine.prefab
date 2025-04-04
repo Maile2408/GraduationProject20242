@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 5526516204302391449}
   - component: {fileID: 7551604691183085391}
   - component: {fileID: 3111888421605113748}
+  - component: {fileID: 8396968305035882445}
   m_Layer: 10
   m_Name: 104_Mine
   m_TagString: Untagged
@@ -265,6 +266,22 @@ MonoBehaviour:
   nearBuildings: []
   workingPoint: {fileID: 8116739394030228898}
   stoneReceive: 1
+--- !u!114 &8396968305035882445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116166987348167793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1 &7483022057702023295
 GameObject:
   m_ObjectHideFlags: 0

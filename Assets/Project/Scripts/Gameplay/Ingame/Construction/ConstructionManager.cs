@@ -40,11 +40,10 @@ public class ConstructionManager : SaiBehaviour
 
     public virtual AbstractConstruction GetConstruction()
     {
-        // Lấy công trình chưa hoàn tất
         foreach (var construction in this.constructions)
         {
             if (construction == null) continue;
-            if (construction.Percent() < 99f)
+            if (!construction.isBuilding && !construction.isReadyToBuild)
                 return construction;
         }
 

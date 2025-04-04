@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Medium Warehouse
   icon: {fileID: 21300000, guid: 9c8372bde450b9f4dab299de3dee04f5, type: 3}
-  prefab: {fileID: 7128530417178768940, guid: 6e133b1dec1593f45a345887d19f1211, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 2c52c0bf91ba6844195a87a1f96a3d12, type: 3}
   description: 'A medium warehouse used to store resources for the city.
 
     Storage

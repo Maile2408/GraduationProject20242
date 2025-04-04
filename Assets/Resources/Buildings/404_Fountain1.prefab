@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 6373910601849673281, guid: 9575259a25832df47aae4ba623db9614,
         type: 3}
       propertyPath: m_Name
-      value: 401_Lamp1 Variant
+      value: 404_Fountain1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -192,5 +192,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4390936, y: 3.834705, z: 3.4390936}
-  m_Center: {x: 0, y: 1.9282502, z: 0}
+  m_Size: {x: 3.5, y: 4, z: 3.5}
+  m_Center: {x: 0, y: 2, z: 0}

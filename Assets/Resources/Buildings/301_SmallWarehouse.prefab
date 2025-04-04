@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 5348401345058665975}
   - component: {fileID: 8932886077444592059}
   - component: {fileID: 9140795952028685800}
+  - component: {fileID: 720073393473329422}
   m_Layer: 10
   m_Name: 301_SmallWarehouse
   m_TagString: Untagged
@@ -412,6 +413,22 @@ MonoBehaviour:
   - {fileID: 8560969877993594044}
   - {fileID: 5990817347085663957}
   storageCapacity: 500
+--- !u!114 &720073393473329422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297410189614911037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1 &7068421913831432579
 GameObject:
   m_ObjectHideFlags: 0

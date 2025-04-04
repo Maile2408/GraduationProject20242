@@ -97,8 +97,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.49546793, y: 3.8951423, z: 0.60894394}
-  m_Center: {x: 0, y: 1.9448069, z: -0.010046005}
+  m_Size: {x: 0.5, y: 4, z: 0.6}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!4 &2064485046424616191 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 05e45fa629549904194271db9187de32,
@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 6373910601849673281, guid: 9575259a25832df47aae4ba623db9614,
         type: 3}
       propertyPath: m_Name
-      value: 401_Lamp Variant
+      value: 402_Lamp2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

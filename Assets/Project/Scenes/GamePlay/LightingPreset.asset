@@ -22,5 +22,5 @@ MonoBehaviour:
   nightDirectionalColor: {r: 0.41960785, g: 0.5019608, b: 0.6509804, a: 0}
   dayFogColor: {r: 0.92941177, g: 0.9137255, b: 0.8901961, a: 0}
   nightFogColor: {r: 0.23529412, g: 0.27450982, b: 0.33333334, a: 0}
-  daySunIntensity: 0.8
+  daySunIntensity: 1
   nightSunIntensity: 0.3

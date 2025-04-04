@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 6530359695041407905}
   - component: {fileID: 994975806937700625}
   - component: {fileID: 6420094517091028529}
+  - component: {fileID: 757687581282362823}
   m_Layer: 10
   m_Name: 103_Sawmill
   m_TagString: Untagged
@@ -344,6 +345,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   resHolders: []
+--- !u!114 &757687581282362823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666276507023350059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1001 &654915527543397045
 PrefabInstance:
   m_ObjectHideFlags: 0

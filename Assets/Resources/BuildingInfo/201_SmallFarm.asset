@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Small Farm
   icon: {fileID: 21300000, guid: 060ca8ee36ad40445b3e50d094cae881, type: 3}
-  prefab: {fileID: 6358878214627279092, guid: a07a46ef718b33244b758cdb0797c693, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 03b0d152d2295f3458df4066dfc021eb, type: 3}
   description: 'Requires water to produce grain.
 
     Worker Slots: 1'

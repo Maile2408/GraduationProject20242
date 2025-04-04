@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Large Pine Tree
   icon: {fileID: 21300000, guid: 870c0a79898928c4594163680eec72b6, type: 3}
-  prefab: {fileID: 54136654269128273, guid: 5144c9548110cc743833070e459863a6, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 46041b32b439be9479af430ef1726bed, type: 3}
   description: A grand fountain that beautifies your city.
   isUnlocked: 0
   category: 4

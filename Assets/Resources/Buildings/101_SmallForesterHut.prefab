@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 5045358046197085009}
   - component: {fileID: 3351261019592303417}
   - component: {fileID: 7983853247106543956}
+  - component: {fileID: 3472358137330348831}
   m_Layer: 10
   m_Name: 101_SmallForesterHut
   m_TagString: Untagged
@@ -271,6 +272,22 @@ MonoBehaviour:
   isFull: 0
   resHolders:
   - {fileID: 5071211775130448809}
+--- !u!114 &3472358137330348831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1001 &4568424660213852612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -368,8 +385,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5.2070036, y: 7.71845, z: 5.743994}
-  m_Center: {x: -0.0001732111, y: 3.8725502, z: -2.0141637}
+  m_Size: {x: 5.2, y: 7.7, z: 5.7}
+  m_Center: {x: 0, y: 3.8, z: -2}
 --- !u!4 &4101925469917744687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 60442e490c2f98b468909145dd1cc4fa,

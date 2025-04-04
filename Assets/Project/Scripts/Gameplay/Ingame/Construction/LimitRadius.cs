@@ -1,92 +1,84 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public class LimitRadius : SaiBehaviour
 {
     [Header("Visual & Detection")]
-    [SerializeField] protected Collider detectionCollider;
-    [SerializeField] protected MeshRenderer highlightRenderer;
+    public MeshRenderer highlightRenderer;
 
     [Header("Materials")]
-    [SerializeField] protected Material canPlaceMat;
-    [SerializeField] protected Material cannotPlaceMat;
+    [SerializeField] private Material canPlaceMat;
+    [SerializeField] private Material cannotPlaceMat;
 
-    [SerializeField] public List<GameObject> collideObjects = new();
+    [Header("Detection Settings")]
+    [SerializeField] private Vector3 boxSize = Vector3.one;
+    [SerializeField] private Vector3 boxOffset = Vector3.zero;
+    [SerializeField] private Vector3 extraSize = new(0.1f, 1f, 0.1f); 
+    [SerializeField] private LayerMask collisionMask = ~0;
 
-    protected override void LoadComponents()
+    [Header("Highlight Scale")]
+    [SerializeField] private float highlightYScale = 0.5f;
+
+    [SerializeField] private bool isCollided = false;
+
+    protected override void Update()
     {
-        base.LoadComponents();
-        this.LoadDetectionCollider();
-        this.LoadHighlightRenderer();
-    }
-
-    protected virtual void LoadDetectionCollider()
-    {
-        if (this.detectionCollider != null) return;
-        this.detectionCollider = GetComponent<Collider>();
-        if (this.detectionCollider != null)
-        {
-            this.detectionCollider.isTrigger = true;
-        }
-    }
-
-    protected virtual void LoadHighlightRenderer()
-    {
-        if (this.highlightRenderer != null) return;
-        this.highlightRenderer = GetComponentInChildren<MeshRenderer>();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (this.ShouldIgnore(other)) return;
-        this.collideObjects.Add(other.gameObject);
+        this.CheckOverlap();
         this.UpdateHighlight();
     }
 
-    private void OnTriggerExit(Collider other)
+    protected virtual void CheckOverlap()
     {
-        if (this.collideObjects.Contains(other.gameObject))
+        Vector3 center = transform.position + boxOffset;
+        Vector3 halfExtents = (boxSize + extraSize) * 0.5f;
+
+        Collider[] hits = Physics.OverlapBox(center, halfExtents, transform.rotation, collisionMask);
+        int validHits = 0;
+
+        foreach (var col in hits)
         {
-            this.collideObjects.Remove(other.gameObject);
-            this.UpdateHighlight();
+            if (col.gameObject == this.gameObject) continue;
+            if (col.isTrigger) continue;
+
+            validHits++;
+        }
+
+        isCollided = validHits > 0;
+    }
+
+    public bool IsCollided()
+    {
+        return isCollided;
+    }
+
+    public void ResizeToBounds(Vector3 targetSize)
+    {
+        boxSize = targetSize;
+
+        if (highlightRenderer != null)
+        {
+            MeshFilter mf = highlightRenderer.GetComponent<MeshFilter>();
+            if (mf != null && mf.sharedMesh != null)
+            {
+                Vector3 meshSize = mf.sharedMesh.bounds.size;
+                meshSize.x = Mathf.Approximately(meshSize.x, 0) ? 1f : meshSize.x;
+                meshSize.z = Mathf.Approximately(meshSize.z, 0) ? 1f : meshSize.z;
+
+                Vector3 newScale = new(
+                    targetSize.x / meshSize.x,
+                    highlightYScale,
+                    targetSize.z / meshSize.z
+                );
+
+                highlightRenderer.transform.localScale = newScale;
+            }
         }
     }
 
-    protected virtual bool ShouldIgnore(Collider other)
+    protected virtual void UpdateHighlight()
     {
-        return other.isTrigger || other.gameObject == this.gameObject;
-    }
+        if (highlightRenderer == null || canPlaceMat == null || cannotPlaceMat == null) return;
 
-    public virtual bool IsCollided()
-    {
-        return this.collideObjects.Count > 0;
-    }
-
-    public virtual void ClearColliders()
-    {
-        this.collideObjects.Clear();
-        this.UpdateHighlight();
-    }
-
-    public virtual void UpdateHighlight()
-    {
-        if (this.highlightRenderer == null || canPlaceMat == null || cannotPlaceMat == null) return;
-
-        Material mat = this.IsCollided() ? cannotPlaceMat : canPlaceMat;
-        this.highlightRenderer.material = mat;
-    }
-
-    public virtual void ResizeToBounds(Vector3 size)
-    {
-        if (this.detectionCollider is BoxCollider box)
-        {
-            box.size = size;
-        }
-
-        if (this.highlightRenderer != null)
-        {
-            this.highlightRenderer.transform.localScale = size;
-        }
+        Material mat = isCollided ? cannotPlaceMat : canPlaceMat;
+        highlightRenderer.material = mat;
     }
 }

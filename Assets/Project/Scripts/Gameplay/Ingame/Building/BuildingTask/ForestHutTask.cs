@@ -180,7 +180,7 @@ public class ForestHutTask : BuildingTask
     protected virtual Vector3? RandomPlaceForTree()
     {
         const float minDistanceToObstacle = 2.5f; 
-        int obstacleLayerMask = LayerMask.GetMask("Building", "Nature", "Tree");
+        int obstacleLayerMask = LayerMask.GetMask("Building", "Nature", "Tree", "UnderConstruction");
 
         for (int i = 0; i < 20; i++)
         {

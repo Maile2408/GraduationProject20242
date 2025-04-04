@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Mill
   icon: {fileID: 21300000, guid: 90fdb495b8792214f85ff8ea068ae1de, type: 3}
-  prefab: {fileID: 7001314357054349155, guid: b1f4200f7612fed41982e009c8391ab6, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: dee92253554baaa4b92f1921ac9bede3, type: 3}
   description: 'A mill that processes grain into flour.
 
     Worker Slots: 1'

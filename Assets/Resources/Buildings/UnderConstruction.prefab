@@ -15,8 +15,7 @@ GameObject:
   - component: {fileID: 3599154321221677959}
   - component: {fileID: 6254648920629245741}
   - component: {fileID: 2569744437032839626}
-  - component: {fileID: 9029003476256271817}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UnderConstruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.148201, y: 0.58, z: 24.459517}
-  m_LocalScale: {x: 1.5, y: 0.2, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,7 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingInfo: {fileID: 0}
   abstractConstruction: {fileID: 6254648920629245741}
-  limitRadius: {fileID: 9029003476256271817}
 --- !u!114 &6254648920629245741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,6 +137,8 @@ MonoBehaviour:
   info: {fileID: 0}
   builder: {fileID: 0}
   isPlaced: 0
+  isReadyToBuild: 0
+  isBuilding: 0
 --- !u!114 &2569744437032839626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,20 +155,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
---- !u!114 &9029003476256271817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1848996774410902995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9244e595aa5e544e845d884283e741a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detectionCollider: {fileID: 625110400679306001}
-  highlightRenderer: {fileID: 5805712270910410631}
-  canPlaceMat: {fileID: 2100000, guid: 1651a44f931e51f42b641bead9f130f9, type: 2}
-  cannotPlaceMat: {fileID: 2100000, guid: 73ac31777fbe41644ba2783675aedb56, type: 2}
-  collideObjects: []

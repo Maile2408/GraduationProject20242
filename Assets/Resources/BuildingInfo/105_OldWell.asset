@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Old Well
   icon: {fileID: 21300000, guid: 2d94ddea40381a34d9d65de7820add34, type: 3}
-  prefab: {fileID: 2846300099946564928, guid: 6c47289cc014f454bb1c466f3ed61b34, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: f9f0a998bf9760f4180f95ebadef64d2, type: 3}
   description: An old well that provides a small amount of water.
   isUnlocked: 1
   category: 2

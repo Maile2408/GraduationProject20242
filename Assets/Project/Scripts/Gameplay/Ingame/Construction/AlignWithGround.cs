@@ -13,7 +13,7 @@ public class AlignWithGround : MonoBehaviour
         {
             transform.position = hit.point;
 
-            transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            transform.rotation = Quaternion.identity;
         }
     }
 }

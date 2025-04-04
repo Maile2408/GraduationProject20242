@@ -165,6 +165,7 @@ GameObject:
   - component: {fileID: 9104029212868749372}
   - component: {fileID: 3274444880760114693}
   - component: {fileID: 3206367624013793179}
+  - component: {fileID: 3678275288413758287}
   m_Layer: 10
   m_Name: 201_SmallFarm
   m_TagString: Untagged
@@ -323,6 +324,22 @@ MonoBehaviour:
   - {fileID: 755265035519635444}
   workingPoint: {fileID: 2228556134079350468}
   grainsRoot: {fileID: 8025619399865360034}
+--- !u!114 &3678275288413758287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358878214627279092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1 &6375638034966907705
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: City House
   icon: {fileID: 21300000, guid: 3514e82728a20d64c95d5ab69cb399b0, type: 3}
-  prefab: {fileID: 3573967036665501531, guid: 49609b7147f57a341bbbaac661a26454, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 7aefc4e4a92bad8438eaa178f4942ff0, type: 3}
   description: 'A spacious home designed for a bustling city.
 
     Worker Capacity:
-    5'
+    6'
   isUnlocked: 0
   category: 0
   coin: 0

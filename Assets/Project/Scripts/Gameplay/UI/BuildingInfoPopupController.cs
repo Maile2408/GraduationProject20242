@@ -24,11 +24,13 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     [SerializeField] private TextMeshProUGUI stoneAmount;
 
     public static BuildingInfo pendingInfo;
+    BuildingInfo currentInfo;
 
     private void OnEnable()
     {
         if (pendingInfo != null)
         {
+            currentInfo = pendingInfo;
             Setup(pendingInfo);
             pendingInfo = null;
         }
@@ -68,7 +70,7 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     public void OnBuildButtonTap()
     {
         ScreenManager.Close();
-        BuildManager.Instance.PrepareToBuild(pendingInfo);
+        BuildManager.Instance.PrepareToBuild(currentInfo);
     }
 
     public void OnKeyBack()

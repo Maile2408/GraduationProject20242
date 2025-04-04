@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: SmallWareHouse
   icon: {fileID: 21300000, guid: 451eb0d252a73c24d92b712fdce897c2, type: 3}
-  prefab: {fileID: 5297410189614911037, guid: 18f5cc42f0dbf444d95119a3c11bf738, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: f4f527b7ef5b89b40aff48e0410d47d0, type: 3}
   description: 'A small warehouse used to store resources for the city.
 
     Storage

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Large Forester Hut
   icon: {fileID: 21300000, guid: 97f020350dfc5734e8d866c93bb1059e, type: 3}
-  prefab: {fileID: 3430998665661250356, guid: 012d96b41d2c5a64195fe31ec70c4a5a, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 9c2aff0829c93294fb1e115de75c467d, type: 3}
   description: 'A larger hut with more workers for increased logwood production.
 
     Worker

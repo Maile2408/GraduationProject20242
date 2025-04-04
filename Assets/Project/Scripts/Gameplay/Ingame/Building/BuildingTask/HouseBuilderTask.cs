@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class HouseBuilderTask : BuildingTask
                 this.BringResToConstruction(workerCtrl);
                 break;
             case TaskType.buildConstruction:
-                this.BuildConstruction(workerCtrl);
+                this.DoBuild(workerCtrl);
                 break;
             case TaskType.goToWorkStation:
                 this.GoToWorkStation(workerCtrl);
@@ -39,9 +40,10 @@ public class HouseBuilderTask : BuildingTask
 
     protected virtual void Planning(WorkerCtrl workerCtrl)
     {
-        if (this.construction == null) this.construction = ConstructionManager.Instance.GetConstruction();
+        if (this.construction == null)
+            this.construction = ConstructionManager.Instance.GetConstruction();
 
-        if (this.construction)
+        if (this.construction != null)
         {
             this.construction.builder = this.buildingCtrl;
             workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);
@@ -54,7 +56,7 @@ public class HouseBuilderTask : BuildingTask
         List<BuildingCtrl> buildingCtrls = BuildingManager.Instance.BuildingCtrls();
         foreach (BuildingCtrl buildingCtrl in buildingCtrls)
         {
-            if (buildingCtrl.buildingTask.GetType() != typeof(WarehouseTask)) continue;
+            if (buildingCtrl.buildingTask is not WarehouseTask) continue;
             if (this.warehouses.Contains(buildingCtrl)) continue;
             this.warehouses.Add(buildingCtrl);
         }
@@ -63,11 +65,18 @@ public class HouseBuilderTask : BuildingTask
     protected virtual void FindWarehouseHasRes(WorkerCtrl workerCtrl)
     {
         ResourceName resRequireName = this.construction.GetResRequireName();
+        if (resRequireName == ResourceName.noResource)
+        {
+            workerCtrl.workerTasks.TaskCurrentDone();
+            workerCtrl.workerTasks.TaskAdd(TaskType.buildConstruction);
+            return;
+        }
 
         foreach (BuildingCtrl warehouse in this.warehouses)
         {
             ResHolder resHolder = warehouse.warehouse.GetResource(resRequireName);
             if (resHolder.Current() < 1) continue;
+
             workerCtrl.workerTasks.taskBuildingCtrl = warehouse;
             workerCtrl.workerTasks.TaskCurrentDone();
             workerCtrl.workerTasks.TaskAdd(TaskType.getResNeed2Move);
@@ -78,21 +87,20 @@ public class HouseBuilderTask : BuildingTask
     protected virtual void GetResNeed2Move(WorkerCtrl workerCtrl)
     {
         BuildingCtrl warehouseCtrl = workerCtrl.workerTasks.taskBuildingCtrl;
-
         ResourceName resRequireName = this.construction.GetResRequireName();
         ResHolder resHolder = warehouseCtrl.warehouse.GetResource(resRequireName);
-        if (resHolder.Current() < 1)//Note: not relace with multi workers
+        if (resHolder.Current() < 1)
         {
             workerCtrl.workerTasks.TaskCurrentDone();
             workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);
             return;
         }
 
-        WorkerTasks workerTasks = workerCtrl.workerTasks;
-        if (workerTasks.inBuilding) workerTasks.taskWorking.GoOutBuilding();
+        if (workerCtrl.workerTasks.inBuilding)
+            workerCtrl.workerTasks.taskWorking.GoOutBuilding();
 
-        Transform target = workerCtrl.workerMovement.GetTarget();
-        if (target == null) workerCtrl.workerMovement.SetTarget(warehouseCtrl.door);
+        if (workerCtrl.workerMovement.GetTarget() == null)
+            workerCtrl.workerMovement.SetTarget(warehouseCtrl.door);
 
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 
@@ -105,42 +113,48 @@ public class HouseBuilderTask : BuildingTask
 
     protected virtual void BringResToConstruction(WorkerCtrl workerCtrl)
     {
-        Transform target = workerCtrl.workerMovement.GetTarget();
-        if (target == null) workerCtrl.workerMovement.SetTarget(this.construction.transform);
+        if (workerCtrl.workerMovement.GetTarget() == null)
+            workerCtrl.workerMovement.SetTarget(this.construction.transform);
+
+        workerCtrl.workerMovement.SetMovingType(MovingType.carrying);
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 
+        workerCtrl.workerMovement.SetMovingType(MovingType.walking);
         workerCtrl.workerTasks.TaskCurrentDone();
+
         Resource res = workerCtrl.resCarrier.TakeFirst();
         this.construction.AddRes(res.name, res.number);
 
-        ResourceName resRequireName = this.construction.GetResRequireName();
-        if (resRequireName == ResourceName.noResource)
+        if (this.construction.isReadyToBuild)
         {
             workerCtrl.workerTasks.TaskAdd(TaskType.buildConstruction);
-            return;
         }
-
-        workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);
+        else
+        {
+            workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);
+        }
     }
 
-    protected virtual void BuildConstruction(WorkerCtrl workerCtrl)
+    protected virtual void DoBuild(WorkerCtrl workerCtrl)
     {
-        if (!this.IsConstructionFinish()) return;
+        if (workerCtrl.workerMovement.isWorking) return;
+        StartCoroutine(BuildingRoutine(workerCtrl));
+    }
+
+    protected virtual IEnumerator BuildingRoutine(WorkerCtrl workerCtrl)
+    {
+        workerCtrl.workerMovement.SetWorkingType(true, WorkingType.building);
+        yield return new WaitForSeconds(this.workingSpeed);
+
+        workerCtrl.workerMovement.SetWorkingType(false, WorkingType.building);
+
+        if (this.construction != null && this.construction.isReadyToBuild)
+        {
+            this.construction.Finish();
+            this.construction = null;
+        }
 
         workerCtrl.workerTasks.TaskCurrentDone();
         workerCtrl.workerTasks.TaskAdd(TaskType.goToWorkStation);
-        //TODO: add building animation
-    }
-
-    protected virtual bool IsConstructionFinish()
-    {
-        if (this.construction == null) return true;//TODO: untesting code
-
-        float percent = this.construction.Percent();
-        if (percent < 99) return false;
-
-        this.construction.Finish();
-        this.construction = null;
-        return true;
     }
 }

@@ -13,6 +13,7 @@ public class BuildManager : SaiBehaviour
     [SerializeField] protected GameObject currentGhost;
     [SerializeField] protected BuildingInfo currentInfo;
     [SerializeField] protected bool isBuilding = false;
+    [SerializeField] protected Quaternion buildRotation = Quaternion.identity;
 
     protected override void Awake()
     {
@@ -46,15 +47,17 @@ public class BuildManager : SaiBehaviour
             return;
         }
 
-        Collider col = currentGhost.GetComponent<Collider>();
-        if (col != null) col.enabled = false;
+        buildRotation = Quaternion.identity;
+        currentGhost.transform.rotation = buildRotation;
 
         if (currentGhost.TryGetComponent(out LimitRadius limitRadius))
         {
-            var bounds = currentGhost.GetComponentInChildren<Renderer>().bounds;
+            Bounds bounds = new Bounds(currentGhost.transform.position, Vector3.zero);
+            foreach (Renderer r in currentGhost.GetComponentsInChildren<Renderer>())
+            {
+                bounds.Encapsulate(r.bounds);
+            }
             limitRadius.ResizeToBounds(bounds.size);
-            limitRadius.ClearColliders();
-            limitRadius.UpdateHighlight();
         }
 
         isBuilding = true;
@@ -69,11 +72,24 @@ public class BuildManager : SaiBehaviour
             buildPos = new Vector3(snapped.x, hit.point.y, snapped.z);
 
             currentGhost.transform.position = buildPos;
-
-            currentGhost.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            currentGhost.transform.rotation = buildRotation;
 
             if (Input.GetMouseButtonDown(0)) PlaceBuilding();
             if (Input.GetMouseButtonDown(1)) CancelBuild();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RotateGhost();
+        }
+    }
+
+    protected virtual void RotateGhost()
+    {
+        buildRotation *= Quaternion.Euler(0, 90f, 0);
+        if (currentGhost != null)
+        {
+            currentGhost.transform.rotation = buildRotation;
         }
     }
 
@@ -90,14 +106,22 @@ public class BuildManager : SaiBehaviour
 
         if (currentGhost.TryGetComponent(out LimitRadius limitRadius) && limitRadius.IsCollided())
         {
-            Debug.Log("Can't put the building because it is colliding!");
+            Debug.Log("Can't place the building due to collision.");
             return;
+        }
+
+        Vector3 highlightScale = Vector3.one;
+        if (currentGhost.TryGetComponent(out LimitRadius limit))
+        {
+            highlightScale = limit.highlightRenderer.transform.localScale;
         }
 
         PoolManager.Instance.Despawn(currentGhost);
 
         GameObject underConstruction = PoolManager.Instance.Spawn(PoolPrefabPath.Building("UnderConstruction"));
         underConstruction.transform.position = buildPos;
+        underConstruction.transform.rotation = buildRotation;
+        underConstruction.transform.localScale = highlightScale;
 
         if (underConstruction.TryGetComponent(out AlignWithGround align))
         {
@@ -126,5 +150,6 @@ public class BuildManager : SaiBehaviour
         currentGhost = null;
         currentInfo = null;
         isBuilding = false;
+        buildRotation = Quaternion.identity;
     }
 }

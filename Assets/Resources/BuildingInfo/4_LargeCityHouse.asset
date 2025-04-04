@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Large City House
   icon: {fileID: 21300000, guid: a6c88b680c3162f4daaa80c6eda3b3cd, type: 3}
-  prefab: {fileID: 621184301424729025, guid: e9afe841adc722e43bf74c4f44fba3f5, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 01abd00ad947df440af21dc146b9307c, type: 3}
   description: 'A grand residence fit for a prosperous kingdom.
 
     Worker Capacity:
-    6'
+    8'
   isUnlocked: 0
   category: 0
   coin: 0

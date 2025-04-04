@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 5757297881628241568}
   - component: {fileID: 5961908531418431930}
   - component: {fileID: 4717171960972615187}
+  - component: {fileID: 161200623100153958}
   m_Layer: 10
   m_Name: 1_SmallHouse
   m_TagString: Untagged
@@ -210,6 +211,22 @@ MonoBehaviour:
   canConsume: 1
   consumeTimer: 0
   consumeDelay: 60
+--- !u!114 &161200623100153958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322632007140552549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1 &4059225930742006772
 GameObject:
   m_ObjectHideFlags: 0

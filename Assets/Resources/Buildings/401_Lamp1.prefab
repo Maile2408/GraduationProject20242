@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 1095960585246189257}
   - component: {fileID: 105618136336304315}
   - component: {fileID: 589787677702946022}
+  - component: {fileID: 749390315378072316}
   m_Layer: 0
   m_Name: 401_Lamp1
   m_TagString: Untagged
@@ -212,6 +213,22 @@ MonoBehaviour:
   workingSpeed: 7
   lastBuildingWorked: 0
   nearBuildings: []
+--- !u!114 &749390315378072316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373910601849673281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb01c99bb5660af44ac89295154f9aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 128
+  raycastDistance: 10
 --- !u!1001 &7698086036147538102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,8 +326,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.49700803, y: 3.4962995, z: 0.40447438}
-  m_Center: {x: 0.000000029802322, y: 1.7561885, z: -0.012835443}
+  m_Size: {x: 0.5, y: 3.5, z: 0.4}
+  m_Center: {x: 0, y: 1.75, z: 0}
 --- !u!4 &7881194944965472093 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 629941c5191d61d42a74d21a2851479a,

@@ -8,7 +8,10 @@ public class AbstractConstruction : SaiBehaviour
     public BuildingCtrl builder;
     public bool isPlaced = false;
 
+    [Header("Build Progress")]
     protected Dictionary<ResourceName, float> resourceProgress = new();
+    public bool isReadyToBuild = false; 
+    public bool isBuilding = false;     
 
     protected override void LoadComponents()
     {
@@ -20,6 +23,8 @@ public class AbstractConstruction : SaiBehaviour
         this.info = buildingInfo;
         this.resourceProgress.Clear();
         this.isPlaced = true;
+        this.isReadyToBuild = false;
+        this.isBuilding = false;
 
         foreach (var res in info.cost)
         {
@@ -31,6 +36,8 @@ public class AbstractConstruction : SaiBehaviour
 
     public virtual ResourceName GetResRequireName()
     {
+        if (this.isReadyToBuild) return ResourceName.noResource;
+
         foreach (var res in info.cost)
         {
             if (!resourceProgress.ContainsKey(res.name)) continue;
@@ -47,26 +54,25 @@ public class AbstractConstruction : SaiBehaviour
     {
         if (!resourceProgress.ContainsKey(name)) return;
 
-        resourceProgress[name] += amount;
         float maxAmount = info.cost.Find(r => r.name == name)?.number ?? 0;
+        resourceProgress[name] += amount;
         resourceProgress[name] = Mathf.Min(resourceProgress[name], maxAmount);
+
+        this.CheckIfReadyToBuild();
     }
 
-    public virtual float Percent()
+    protected virtual void CheckIfReadyToBuild()
     {
-        float total = 0f;
-        float current = 0f;
-
         foreach (var res in info.cost)
         {
             float required = res.number;
             float progress = resourceProgress.ContainsKey(res.name) ? resourceProgress[res.name] : 0;
 
-            total += required;
-            current += Mathf.Min(progress, required);
+            if (progress < required)
+                return;
         }
 
-        return total <= 0 ? 100f : (current / total) * 100f;
+        this.isReadyToBuild = true;
     }
 
     public virtual void Finish()

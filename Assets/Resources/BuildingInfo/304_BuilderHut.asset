@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: Builder Hut
   icon: {fileID: 21300000, guid: b315fca4c59288b428d524c3227d283d, type: 3}
-  prefab: {fileID: 6751155682947312614, guid: f7f44a4919b87f049aeda5b4b46c1e9d, type: 3}
+  prefab: {fileID: 3322632007140552549, guid: 3e9d038ca1edec5429918cd661c74887, type: 3}
   description: 'A hut where builders are assigned to construct buildings.
 
     Worker

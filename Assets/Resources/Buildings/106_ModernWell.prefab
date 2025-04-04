@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 2661517995323816147, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
       propertyPath: m_Center.y
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2661517995323816147, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 2661517995323816147, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
       propertyPath: m_Extents.y
-      value: 1.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2661517995323816147, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
@@ -126,12 +126,12 @@ PrefabInstance:
     - target: {fileID: 7288594023897671340, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7288594023897671340, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7288594023897671340, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
@@ -257,5 +257,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9717536, y: 2.5201385, z: 2.3169029}
-  m_Center: {x: 0.013087004, y: 1.2442483, z: -0.013254523}
+  m_Size: {x: 2, y: 2.5, z: 2.2}
+  m_Center: {x: 0, y: 1.2, z: 0}

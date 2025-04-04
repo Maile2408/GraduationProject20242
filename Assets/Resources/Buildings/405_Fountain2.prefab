@@ -103,8 +103,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 4.251216, y: 3.175459, z: 4.251216}
-  m_Center: {x: 0, y: 1.5902691, z: 0}
+  m_Size: {x: 4.25, y: 3, z: 4.25}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!1001 &6392007463814727696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 6373910601849673281, guid: 9575259a25832df47aae4ba623db9614,
         type: 3}
       propertyPath: m_Name
-      value: 401_Lamp1 Variant
+      value: 405_Fountain2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
