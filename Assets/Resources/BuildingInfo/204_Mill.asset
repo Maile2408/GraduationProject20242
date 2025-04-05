@@ -18,7 +18,7 @@ MonoBehaviour:
   description: 'A mill that processes grain into flour.
 
     Worker Slots: 1'
-  isUnlocked: 0
+  isUnlocked: 1
   category: 1
   coin: 0
   cost: []

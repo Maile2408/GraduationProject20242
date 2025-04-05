@@ -25,6 +25,16 @@ public class GamePlayController : MonoBehaviour, IKeyBack
 
     public void OnDestroyButtonTap()
     {
+        DestroyManager.Instance.EnterDestroyMode();
+    }
+
+    public void OnPlusWorkerButtonTap()
+    {
+
+    }
+
+    public void OnPlusCoinButtonTap()
+    {
 
     }
 

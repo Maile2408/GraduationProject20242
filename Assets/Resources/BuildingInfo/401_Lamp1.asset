@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 108e6716fbf3fea44b1ff1d1d152e384, type: 3}
   prefab: {fileID: 3322632007140552549, guid: c68f8da7bb3797446818484008a51fc0, type: 3}
   description: A decorative lamp to light up nearby areas.
-  isUnlocked: 0
+  isUnlocked: 1
   category: 4
   coin: 0
   cost: []

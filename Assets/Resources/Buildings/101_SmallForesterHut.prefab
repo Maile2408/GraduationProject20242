@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6376619236367532964}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Res
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4363021126508830458}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7054907641699151781}
   - component: {fileID: 5071211775130448809}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: logwood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 306427997762676233}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,6 +157,8 @@ GameObject:
   - component: {fileID: 3351261019592303417}
   - component: {fileID: 7983853247106543956}
   - component: {fileID: 3472358137330348831}
+  - component: {fileID: 5862589241954472880}
+  - component: {fileID: 5176502065300578403}
   m_Layer: 10
   m_Name: 101_SmallForesterHut
   m_TagString: Untagged
@@ -288,6 +290,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
+--- !u!65 &5862589241954472880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.2, y: 7.7, z: 5.7}
+  m_Center: {x: 0, y: 3.8, z: -2}
+--- !u!114 &5176502065300578403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7943948403960145444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6cec8dd2f19948b300f028e4daf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestructible: 1
+  buildingCtrl: {fileID: 3590794400304309782}
 --- !u!1001 &4568424660213852612
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -351,42 +388,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: _bakkery
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 60442e490c2f98b468909145dd1cc4fa,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 60442e490c2f98b468909145dd1cc4fa,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5150418479264879912}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60442e490c2f98b468909145dd1cc4fa, type: 3}
---- !u!1 &3721987425629852821 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 60442e490c2f98b468909145dd1cc4fa,
-    type: 3}
-  m_PrefabInstance: {fileID: 4568424660213852612}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &5150418479264879912
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3721987425629852821}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 5.2, y: 7.7, z: 5.7}
-  m_Center: {x: 0, y: 3.8, z: -2}
 --- !u!4 &4101925469917744687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 60442e490c2f98b468909145dd1cc4fa,

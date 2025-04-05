@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 0d5cd5ad6c2b27846a0285bd796177db, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 0bff4ec2a01eebc46ae3a2ee8353f65a, type: 3}
   description: A modern well that provides a large amount of water efficiently.
-  isUnlocked: 0
+  isUnlocked: 1
   category: 2
   coin: 0
   cost: []

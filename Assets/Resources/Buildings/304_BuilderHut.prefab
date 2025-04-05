@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 848684628279596619}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7779493512921512772}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Res
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7619892272282265105}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -110,7 +110,8 @@ GameObject:
   - component: {fileID: 490644881862380583}
   - component: {fileID: 821983392919612589}
   - component: {fileID: 4456616609900915090}
-  m_Layer: 9
+  - component: {fileID: 7802444393789693333}
+  m_Layer: 10
   m_Name: 304_BuilderHut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,6 +254,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
+--- !u!114 &7802444393789693333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751155682947312614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6cec8dd2f19948b300f028e4daf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestructible: 1
+  buildingCtrl: {fileID: 6853231937996311732}
 --- !u!1001 &6994070973843950394
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -330,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BuilderHut
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81802f73b036b714b837a7be243cfb3d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -16,7 +16,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 97726089ad0092b4e9c1abf6a40d392b, type: 3}
   prefab: {fileID: 3322632007140552549, guid: be1942e58e6d23e4da489d7240d15b9a, type: 3}
   description: A decorative signpost to guide your villagers.
-  isUnlocked: 0
+  isUnlocked: 1
   category: 4
   coin: 0
   cost: []

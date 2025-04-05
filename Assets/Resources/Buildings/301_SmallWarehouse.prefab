@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7079472424653440718}
   - component: {fileID: 5990817347085663957}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3458854270080763547}
   - component: {fileID: 8560969877993594044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: flour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7743466120916869349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Res
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7006907542270797607}
   - component: {fileID: 2627877434307994831}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: plank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5217135526156428370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -220,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9183600800828154941}
   - component: {fileID: 6884733124245607847}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 8932886077444592059}
   - component: {fileID: 9140795952028685800}
   - component: {fileID: 720073393473329422}
+  - component: {fileID: 3773913233497389960}
   m_Layer: 10
   m_Name: 301_SmallWarehouse
   m_TagString: Untagged
@@ -429,6 +430,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
+--- !u!114 &3773913233497389960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5297410189614911037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6cec8dd2f19948b300f028e4daf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestructible: 1
+  buildingCtrl: {fileID: 2281166653818590534}
 --- !u!1 &7068421913831432579
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +453,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3594809630266730258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -470,7 +485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8143715080194117623}
   - component: {fileID: 5576462980929007020}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7433053115760477412}
   - component: {fileID: 1492407584743661065}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: logwood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,10 +627,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3900264975997497713, guid: ec9a8e0512261e94da6ad10b223aed88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ec9a8e0512261e94da6ad10b223aed88,
         type: 3}
       propertyPath: m_Name
       value: SmallBarn
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec9a8e0512261e94da6ad10b223aed88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949267151923071911, guid: ec9a8e0512261e94da6ad10b223aed88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2200954050048525142, guid: ec9a8e0512261e94da6ad10b223aed88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6936106482449141914, guid: ec9a8e0512261e94da6ad10b223aed88,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

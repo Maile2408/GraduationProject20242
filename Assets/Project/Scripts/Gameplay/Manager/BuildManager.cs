@@ -5,15 +5,15 @@ public class BuildManager : SaiBehaviour
     public static BuildManager Instance;
 
     [Header("Build Settings")]
-    [SerializeField] protected LayerMask groundMask;
-    [SerializeField] protected float gridSize = 1f;
+    [SerializeField] private LayerMask groundMask;
+    [SerializeField] private float gridSize = 1f;
 
     [Header("State")]
-    [SerializeField] protected Vector3 buildPos;
-    [SerializeField] protected GameObject currentGhost;
-    [SerializeField] protected BuildingInfo currentInfo;
-    [SerializeField] protected bool isBuilding = false;
-    [SerializeField] protected Quaternion buildRotation = Quaternion.identity;
+    [SerializeField] private Vector3 buildPos;
+    [SerializeField] private GameObject currentGhost;
+    [SerializeField] private BuildingInfo currentInfo;
+    [SerializeField] private bool isBuilding = false;
+    [SerializeField] private Quaternion buildRotation = Quaternion.identity;
 
     protected override void Awake()
     {
@@ -50,6 +50,7 @@ public class BuildManager : SaiBehaviour
         buildRotation = Quaternion.identity;
         currentGhost.transform.rotation = buildRotation;
 
+        // Resize collider + visual highlight
         if (currentGhost.TryGetComponent(out LimitRadius limitRadius))
         {
             Bounds bounds = new Bounds(currentGhost.transform.position, Vector3.zero);
@@ -57,7 +58,9 @@ public class BuildManager : SaiBehaviour
             {
                 bounds.Encapsulate(r.bounds);
             }
+
             limitRadius.ResizeToBounds(bounds.size);
+            limitRadius.ClearColliders(); // important for pooled ghost
         }
 
         isBuilding = true;
@@ -68,6 +71,9 @@ public class BuildManager : SaiBehaviour
         Ray ray = GodModeCtrl.Instance._camera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit, 999f, groundMask))
         {
+            GameObject hitObject = hit.collider.gameObject;
+            if (hitObject.layer != LayerMask.NameToLayer("Ground")) return;
+
             Vector3 snapped = SnapToGrid(hit.point);
             buildPos = new Vector3(snapped.x, hit.point.y, snapped.z);
 
@@ -104,6 +110,7 @@ public class BuildManager : SaiBehaviour
     {
         if (currentGhost == null || currentInfo == null) return;
 
+        // Check for collision
         if (currentGhost.TryGetComponent(out LimitRadius limitRadius) && limitRadius.IsCollided())
         {
             Debug.Log("Can't place the building due to collision.");
@@ -135,6 +142,7 @@ public class BuildManager : SaiBehaviour
 
         ClearState();
     }
+
 
     protected virtual void CancelBuild()
     {

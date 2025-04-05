@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WorkerCtrl : SaiBehaviour
+public class WorkerCtrl : SaiBehaviour, IPoolable
 {
     public WorkerBuildings workerBuildings;
     public WorkerMovement workerMovement;
@@ -88,6 +88,13 @@ public class WorkerCtrl : SaiBehaviour
     {
         this.workerTasks.readyForTask = false;
         this.workerTasks.taskWorking.GoOutBuilding();
+        this.workerBuildings.WorkerReleased();
+    }
+
+    public void OnSpawn() { }
+
+    public void OnDespawn()
+    {
         this.workerBuildings.WorkerReleased();
     }
 }

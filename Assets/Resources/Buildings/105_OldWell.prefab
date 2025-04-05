@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385746855772258634}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Res
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8884190538569138123}
   - component: {fileID: 6954766002471206161}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6483382352796370888}
   - component: {fileID: 5176099353417875667}
   - component: {fileID: 3191399247992500179}
+  - component: {fileID: 361350465238669532}
   m_Layer: 10
   m_Name: 105_OldWell
   m_TagString: Well
@@ -222,6 +223,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
+--- !u!114 &361350465238669532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6cec8dd2f19948b300f028e4daf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestructible: 1
+  buildingCtrl: {fileID: 6483382352796370888}
 --- !u!1 &7494243973533802976
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,7 +246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7288594023897671340}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -262,7 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3058673754153078072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,6 +312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Well_4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137693776322569076, guid: 8a03712623f183948ae9450609b102bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9137693776322936660, guid: 8a03712623f183948ae9450609b102bf,
         type: 3}

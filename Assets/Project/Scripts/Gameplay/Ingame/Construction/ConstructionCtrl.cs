@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ConstructionCtrl : SaiBehaviour
+public class ConstructionCtrl : SaiBehaviour, IPoolable
 {
     [Header("Construction Info")]
     [SerializeField] protected BuildingInfo buildingInfo;
@@ -31,5 +31,12 @@ public class ConstructionCtrl : SaiBehaviour
     public virtual BuildingInfo GetBuildingInfo()
     {
         return this.buildingInfo;
+    }
+
+    public void OnSpawn() { }
+
+    public void OnDespawn()
+    {
+        this.abstractConstruction.ResetConstruction();
     }
 }

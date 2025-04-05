@@ -143,6 +143,8 @@ public class HouseBuilderTask : BuildingTask
 
     protected virtual IEnumerator BuildingRoutine(WorkerCtrl workerCtrl)
     {
+        if (this.construction == null) yield break;
+        
         workerCtrl.workerMovement.SetWorkingType(true, WorkingType.building);
         yield return new WaitForSeconds(this.workingSpeed);
 

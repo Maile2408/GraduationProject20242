@@ -86,4 +86,12 @@ public class Warehouse : SaiBehaviour
     {
         return new List<Resource>(); //Do not return null
     }
+
+    public virtual void ResetResources()
+    {
+        foreach (ResHolder resHolder in this.resHolders)
+        {
+            resHolder.Deduct(resHolder.Current());
+        }
+    }
 }

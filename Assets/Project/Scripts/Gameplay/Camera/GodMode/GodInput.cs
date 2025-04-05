@@ -12,7 +12,6 @@ public class GodInput : SaiBehaviour
     {
         this.InputHandle();
         this.MouseRotation();
-        //this.ChoosePlace2Build();
     }
 
     protected override void LoadComponents()

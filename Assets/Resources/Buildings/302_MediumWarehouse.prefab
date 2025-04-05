@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 5297410189614911037, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: m_Name
-      value: MediumWarehouse
+      value: 302_MediumWarehouse
       objectReference: {fileID: 0}
     - target: {fileID: 6363926459457410845, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
@@ -187,10 +187,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4944689785630348856, guid: d481a23ff50411b4da582f672041153b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d481a23ff50411b4da582f672041153b,
         type: 3}
       propertyPath: m_Name
       value: Barn
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d481a23ff50411b4da582f672041153b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478903316058027947, guid: d481a23ff50411b4da582f672041153b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5010573443351668588, guid: d481a23ff50411b4da582f672041153b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8244774295064208800, guid: d481a23ff50411b4da582f672041153b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8305412371715642021, guid: d481a23ff50411b4da582f672041153b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

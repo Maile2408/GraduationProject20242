@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8116739394030228898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WorkingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2991005037783183636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5522019632301228836}
   - component: {fileID: 4035933828235781774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8124821952696941940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Res
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +158,7 @@ GameObject:
   - component: {fileID: 7551604691183085391}
   - component: {fileID: 3111888421605113748}
   - component: {fileID: 8396968305035882445}
+  - component: {fileID: 8335665856062766556}
   m_Layer: 10
   m_Name: 104_Mine
   m_TagString: Untagged
@@ -282,6 +283,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
+--- !u!114 &8335665856062766556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116166987348167793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6cec8dd2f19948b300f028e4daf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestructible: 1
+  buildingCtrl: {fileID: 3770651292097496232}
 --- !u!1 &7483022057702023295
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8863932873855681816}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -390,6 +405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Resource_Gold_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a5d158bc3c7fd14f9a1c391cf4ab92a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -510,6 +530,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: dbd9bd93a2cadf3458adab8cdaf5e41c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

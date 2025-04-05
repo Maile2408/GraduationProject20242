@@ -1373,6 +1373,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SmallForesterHut
       objectReference: {fileID: 0}
+    - target: {fileID: 7943948403960145444, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3159,6 +3164,7 @@ Transform:
   - {fileID: 1512581872}
   - {fileID: 4606195}
   - {fileID: 160959976}
+  - {fileID: 1577853407}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &322598330
@@ -4415,7 +4421,7 @@ PrefabInstance:
     - target: {fileID: 1815214716833374551, guid: 34d89b502cce81348ada8e06678a0897,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1815214716833374551, guid: 34d89b502cce81348ada8e06678a0897,
         type: 3}
@@ -9009,7 +9015,6 @@ GameObject:
   - component: {fileID: 979442824}
   - component: {fileID: 979442827}
   - component: {fileID: 979442826}
-  - component: {fileID: 979442825}
   m_Layer: 4
   m_Name: Water
   m_TagString: Untagged
@@ -9032,28 +9037,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1711443173}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &979442825
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979442823}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &979442826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14497,6 +14480,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1575257042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1577853406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1577853407}
+  - component: {fileID: 1577853408}
+  m_Layer: 0
+  m_Name: DestroyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1577853407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577853406}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 311307204}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577853408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577853406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bc5812affdef945b919a9896857ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shovelCursor: {fileID: 2800000, guid: 713439b2baaeab0429f7ff85f5755b12, type: 3}
+  hotspot: {x: 0, y: 0}
+  cursorMode: 0
+  isDestroyMode: 0
 --- !u!1001 &1580859950
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16649,7 +16680,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 2023
+    m_Bits: 128
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_GenerateLinks: 0

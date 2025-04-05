@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 619842893722374332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Buildings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 96515547686659020}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RelaxingPoint
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2448165389011326011}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4013086172917092825}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Res
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 3247199984456728586}
   - component: {fileID: 4408572599766678027}
   - component: {fileID: 626446649395977377}
+  - component: {fileID: 5568238156848796024}
   m_Layer: 10
   m_Name: 204_Mill
   m_TagString: Untagged
@@ -293,6 +294,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   raycastDistance: 10
+--- !u!114 &5568238156848796024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001314357054349155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65e6cec8dd2f19948b300f028e4daf06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDestructible: 1
+  buildingCtrl: {fileID: 6350323812857738404}
 --- !u!1 &7057220416242035974
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6230023467616281051}
   - component: {fileID: 1318107370938270073}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: grain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3541839703624771941}
   - component: {fileID: 6803335654970049287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: flour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,10 +475,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3173356949126460451, guid: 45aa0c83909fdaf4daf1e03dbea4f6f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 45aa0c83909fdaf4daf1e03dbea4f6f2,
         type: 3}
       propertyPath: m_Name
       value: Mill
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 45aa0c83909fdaf4daf1e03dbea4f6f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887841757709769166, guid: 45aa0c83909fdaf4daf1e03dbea4f6f2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

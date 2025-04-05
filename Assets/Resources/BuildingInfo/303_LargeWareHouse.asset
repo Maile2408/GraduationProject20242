@@ -21,7 +21,7 @@ MonoBehaviour:
     Capacity: 1500
 
     Worker Slots: 4'
-  isUnlocked: 0
+  isUnlocked: 1
   category: 3
   coin: 0
   cost: []

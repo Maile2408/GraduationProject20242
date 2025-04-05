@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingCtrl : SaiBehaviour
+public class BuildingCtrl : SaiBehaviour, IPoolable
 {
     [Header("Building")]
     public BuildingTaskType buildingTaskType = BuildingTaskType.workStation;
@@ -46,5 +46,12 @@ public class BuildingCtrl : SaiBehaviour
         if (this.buildingTask != null) return;
         this.buildingTask = GetComponent<BuildingTask>();
         Debug.Log(transform.name + ": LoadBuldingTask", gameObject);
+    }
+
+    public void OnSpawn() { }
+
+    public void OnDespawn()
+    {
+        this.warehouse.ResetResources();
     }
 }

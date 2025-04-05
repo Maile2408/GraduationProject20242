@@ -93,4 +93,9 @@ public class AbstractConstruction : SaiBehaviour
         ConstructionManager.Instance.RemoveConstruction(this);
         PoolManager.Instance.Despawn(this.gameObject);
     }
+
+    public virtual void ResetConstruction()
+    {
+        this.builder = null;
+    }
 }
