@@ -10,7 +10,7 @@ public class CameraManager : SaiBehaviour
         {
             if (_instance == null)
             {
-                Debug.LogError("Cameramanager has not been created!");
+                Debug.LogError("CameraManager chưa được khởi tạo!");
             }
             return _instance;
         }
@@ -68,6 +68,7 @@ public class CameraManager : SaiBehaviour
 
     public void SwitchToCamera(GameCameraType cameraType)
     {
+        // Tắt tất cả camera
         thirdPersonCam?.SetActive(false);
         firstPersonCam?.SetActive(false);
         godModeCam?.SetActive(false);
@@ -77,6 +78,7 @@ public class CameraManager : SaiBehaviour
         if (cameraType == GameCameraType.firstPerson) firstPersonCam?.SetActive(true);
         if (cameraType == GameCameraType.godMode) godModeCam?.SetActive(true);
 
+        // Cập nhật trạng thái camera hiện tại
         currentCamera = cameraType;
     }
 }
