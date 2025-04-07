@@ -15,7 +15,6 @@ public class DestroyManager : SaiBehaviour
     [Header("State")]
     [SerializeField] private bool isDestroying = false;
     private BuildDestroyable currentTarget;
-    private BuildDestroyable targetToDestroy;
     private Camera cam;
 
     protected override void Awake()
@@ -43,20 +42,25 @@ public class DestroyManager : SaiBehaviour
 
         UpdateRaycastTarget();
 
+        // Right-click to cancel
         if (Input.GetMouseButtonDown(1))
         {
             CancelDestroyMode();
             return;
         }
 
+        // Click on UI? cancel
+        if (Input.GetMouseButtonDown(0) && IsPointerOverUI())
+        {
+            CancelDestroyMode();
+            return;
+        }
+
+        // Left-click to trigger confirmation popup
         if (Input.GetMouseButtonDown(0))
         {
             if (currentTarget != null)
             {
-                targetToDestroy = currentTarget;
-
-                CancelDestroyMode();
-
                 ConfirmationPopupController.OnYesCallback = OnConfirmYes;
                 ConfirmationPopupController.OnNoCallback = OnConfirmNo;
                 ConfirmationPopupController.Message = "Are you sure you want to destroy this building?";
@@ -107,14 +111,10 @@ public class DestroyManager : SaiBehaviour
 
     private void OnConfirmYes()
     {
-        if (targetToDestroy != null)
+        if (currentTarget != null)
         {
-            targetToDestroy.Destroy();
-            Debug.Log("[DestroyManager] Destroyed: " + targetToDestroy.name);
-        }
-        else
-        {
-            Debug.LogWarning("[DestroyManager] Confirmed destroy but target was null.");
+            currentTarget.Destroy();
+            Debug.Log("[DestroyManager] Destroyed: " + currentTarget.name);
         }
 
         ClearCallbacks();
@@ -134,6 +134,26 @@ public class DestroyManager : SaiBehaviour
         ConfirmationPopupController.OnNoCallback = null;
     }
 
+    private bool IsPointerOverUI()
+    {
+        if (EventSystem.current == null) return false;
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (var result in results)
+        {
+            if (result.gameObject.layer == LayerMask.NameToLayer("UI"))
+                return true;
+        }
+
+        return false;
+    }
 
     public bool IsInDestroyMode() => isDestroying;
 }

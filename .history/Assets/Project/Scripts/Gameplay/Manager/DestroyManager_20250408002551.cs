@@ -10,13 +10,13 @@ public class DestroyManager : SaiBehaviour
     [SerializeField] private Texture2D shovelCursor;
     [SerializeField] private Vector2 hotspot = Vector2.zero;
     [SerializeField] private CursorMode cursorMode = CursorMode.Auto;
-    [SerializeField] private LayerMask destroyableMask; // Building | UnderConstruction
+    [SerializeField] private LayerMask destroyableMask; // Layer: Building | UnderConstruction
 
     [Header("State")]
     [SerializeField] private bool isDestroying = false;
     private BuildDestroyable currentTarget;
-    private BuildDestroyable targetToDestroy;
     private Camera cam;
+    private bool hasPopupOpen = false;
 
     protected override void Awake()
     {
@@ -41,7 +41,8 @@ public class DestroyManager : SaiBehaviour
         base.Update();
         if (!isDestroying) return;
 
-        UpdateRaycastTarget();
+        if (!hasPopupOpen)
+            UpdateRaycastTarget();
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -53,9 +54,8 @@ public class DestroyManager : SaiBehaviour
         {
             if (currentTarget != null)
             {
-                targetToDestroy = currentTarget;
-
-                CancelDestroyMode();
+                hasPopupOpen = true;
+                Cursor.SetCursor(null, Vector2.zero, cursorMode);
 
                 ConfirmationPopupController.OnYesCallback = OnConfirmYes;
                 ConfirmationPopupController.OnNoCallback = OnConfirmNo;
@@ -93,6 +93,7 @@ public class DestroyManager : SaiBehaviour
     public void EnterDestroyMode()
     {
         isDestroying = true;
+        hasPopupOpen = false;
         Cursor.SetCursor(shovelCursor, hotspot, cursorMode);
         Debug.Log("[DestroyManager] Entered destroy mode.");
     }
@@ -100,6 +101,7 @@ public class DestroyManager : SaiBehaviour
     public void CancelDestroyMode()
     {
         isDestroying = false;
+        hasPopupOpen = false;
         Cursor.SetCursor(null, Vector2.zero, cursorMode);
         currentTarget = null;
         Debug.Log("[DestroyManager] Exited destroy mode.");
@@ -107,14 +109,10 @@ public class DestroyManager : SaiBehaviour
 
     private void OnConfirmYes()
     {
-        if (targetToDestroy != null)
+        if (currentTarget != null)
         {
-            targetToDestroy.Destroy();
-            Debug.Log("[DestroyManager] Destroyed: " + targetToDestroy.name);
-        }
-        else
-        {
-            Debug.LogWarning("[DestroyManager] Confirmed destroy but target was null.");
+            currentTarget.Destroy();
+            Debug.Log("[DestroyManager] Destroyed: " + currentTarget.name);
         }
 
         ClearCallbacks();
@@ -133,7 +131,6 @@ public class DestroyManager : SaiBehaviour
         ConfirmationPopupController.OnYesCallback = null;
         ConfirmationPopupController.OnNoCallback = null;
     }
-
 
     public bool IsInDestroyMode() => isDestroying;
 }

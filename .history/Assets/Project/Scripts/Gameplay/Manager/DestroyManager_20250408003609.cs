@@ -53,9 +53,9 @@ public class DestroyManager : SaiBehaviour
         {
             if (currentTarget != null)
             {
-                targetToDestroy = currentTarget;
+                Cursor.SetCursor(null, Vector2.zero, cursorMode);
 
-                CancelDestroyMode();
+                targetToDestroy = currentTarget;
 
                 ConfirmationPopupController.OnYesCallback = OnConfirmYes;
                 ConfirmationPopupController.OnNoCallback = OnConfirmNo;

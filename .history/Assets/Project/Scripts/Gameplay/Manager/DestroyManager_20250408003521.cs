@@ -53,10 +53,8 @@ public class DestroyManager : SaiBehaviour
         {
             if (currentTarget != null)
             {
-                targetToDestroy = currentTarget;
-
-                CancelDestroyMode();
-
+                Cursor.SetCursor(null, Vector2.zero, cursorMode);
+                
                 ConfirmationPopupController.OnYesCallback = OnConfirmYes;
                 ConfirmationPopupController.OnNoCallback = OnConfirmNo;
                 ConfirmationPopupController.Message = "Are you sure you want to destroy this building?";
@@ -107,14 +105,10 @@ public class DestroyManager : SaiBehaviour
 
     private void OnConfirmYes()
     {
-        if (targetToDestroy != null)
+        if (currentTarget != null)
         {
-            targetToDestroy.Destroy();
-            Debug.Log("[DestroyManager] Destroyed: " + targetToDestroy.name);
-        }
-        else
-        {
-            Debug.LogWarning("[DestroyManager] Confirmed destroy but target was null.");
+            currentTarget.Destroy();
+            Debug.Log("[DestroyManager] Destroyed: " + currentTarget.name);
         }
 
         ClearCallbacks();

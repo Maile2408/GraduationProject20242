@@ -90,7 +90,6 @@ public class WorkerCtrl : SaiBehaviour, IPoolable
         this.workerTasks.taskWorking.GoOutBuilding();
         this.workerBuildings.WorkerReleased();
         this.workerTasks.ClearAllTasks();
-        this.workerMovement.SetWorkingType(false, WorkingType.none);
     }
 
     public void OnSpawn() { }

@@ -10,12 +10,11 @@ public class DestroyManager : SaiBehaviour
     [SerializeField] private Texture2D shovelCursor;
     [SerializeField] private Vector2 hotspot = Vector2.zero;
     [SerializeField] private CursorMode cursorMode = CursorMode.Auto;
-    [SerializeField] private LayerMask destroyableMask; // Building | UnderConstruction
+    [SerializeField] private LayerMask destroyableMask; // Layer: Building | UnderConstruction
 
     [Header("State")]
     [SerializeField] private bool isDestroying = false;
     private BuildDestroyable currentTarget;
-    private BuildDestroyable targetToDestroy;
     private Camera cam;
 
     protected override void Awake()
@@ -49,13 +48,11 @@ public class DestroyManager : SaiBehaviour
             return;
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !IsPointerOverUI())
         {
             if (currentTarget != null)
             {
-                targetToDestroy = currentTarget;
-
-                CancelDestroyMode();
+                Cursor.SetCursor(null, Vector2.zero, cursorMode); 
 
                 ConfirmationPopupController.OnYesCallback = OnConfirmYes;
                 ConfirmationPopupController.OnNoCallback = OnConfirmNo;
@@ -77,8 +74,6 @@ public class DestroyManager : SaiBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, 999f, destroyableMask))
         {
-            Debug.Log($"[DestroyManager] Raycast hit: {hit.collider.name}, Layer: {LayerMask.LayerToName(hit.collider.gameObject.layer)}");
-
             var destroyable = hit.collider.GetComponentInParent<BuildDestroyable>();
             if (destroyable != null && destroyable.CanBeDestroyed())
             {
@@ -107,14 +102,10 @@ public class DestroyManager : SaiBehaviour
 
     private void OnConfirmYes()
     {
-        if (targetToDestroy != null)
+        if (currentTarget != null)
         {
-            targetToDestroy.Destroy();
-            Debug.Log("[DestroyManager] Destroyed: " + targetToDestroy.name);
-        }
-        else
-        {
-            Debug.LogWarning("[DestroyManager] Confirmed destroy but target was null.");
+            currentTarget.Destroy();
+            Debug.Log("[DestroyManager] Destroyed: " + currentTarget.name);
         }
 
         ClearCallbacks();
@@ -134,6 +125,26 @@ public class DestroyManager : SaiBehaviour
         ConfirmationPopupController.OnNoCallback = null;
     }
 
+    private bool IsPointerOverUI()
+    {
+        if (EventSystem.current == null) return false;
+
+        PointerEventData eventData = new PointerEventData(EventSystem.current)
+        {
+            position = Input.mousePosition
+        };
+
+        var results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventData, results);
+
+        foreach (var result in results)
+        {
+            if (result.gameObject.layer == LayerMask.NameToLayer("UI"))
+                return true;
+        }
+
+        return false;
+    }
 
     public bool IsInDestroyMode() => isDestroying;
 }

@@ -14527,7 +14527,10 @@ MonoBehaviour:
   shovelCursor: {fileID: 2800000, guid: 713439b2baaeab0429f7ff85f5755b12, type: 3}
   hotspot: {x: 0, y: 0}
   cursorMode: 0
-  isDestroyMode: 0
+  destroyableMask:
+    serializedVersion: 2
+    m_Bits: 3072
+  isDestroying: 0
 --- !u!1001 &1580859950
 PrefabInstance:
   m_ObjectHideFlags: 0
