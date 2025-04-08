@@ -5,7 +5,7 @@ public class HouseWH : Warehouse
 {
     [Header("House Consumer")]
     [SerializeField] protected List<Resource> resConsume = new();
-    public bool canConsume = true;
+    public bool canConsume = false;
 
     [SerializeField] protected float consumeTimer = 0f;
     [SerializeField] protected float consumeDelay = 60f;
@@ -35,7 +35,8 @@ public class HouseWH : Warehouse
 
     protected virtual void CheckCanConsume()
     {
-        this.canConsume = TimeManager.Instance.IsNight;
+        if (TimeManager.Instance.IsNight) this.canConsume = true;
+        else this.canConsume = false;
     }
 
     protected virtual void Consuming()

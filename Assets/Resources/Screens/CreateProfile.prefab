@@ -827,6 +827,11 @@ PrefabInstance:
       propertyPath: m_text
       value: "\u200B"
       objectReference: {fileID: 0}
+    - target: {fileID: 2390560204703684669, guid: d17312deca8f2294fb471add3d5be2fc,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 2837428529409616757, guid: d17312deca8f2294fb471add3d5be2fc,
         type: 3}
       propertyPath: m_Pivot.x

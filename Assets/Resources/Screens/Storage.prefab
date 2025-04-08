@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 449eb60ce2163a1408df648979b619f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contentParent: {fileID: 5544279380933089859}
+  txtTotalStorage: {fileID: 4345410149771488504}
 --- !u!1 &6155662301929481735
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Skin
+      value: skin
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -633,7 +635,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Plank
+      value: plank
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -754,6 +756,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 899174476644929358}
     m_Modifications:
+    - target: {fileID: 2056558199517027653, guid: b83f6473fb9cfa8409637ca8fb374fd1,
+        type: 3}
+      propertyPath: m_text
+      value: 0/50
+      objectReference: {fileID: 0}
     - target: {fileID: 4046062895852707910, guid: b83f6473fb9cfa8409637ca8fb374fd1,
         type: 3}
       propertyPath: m_Pivot.x
@@ -870,6 +877,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2362036073483252157}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4345410149771488504 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2056558199517027653, guid: b83f6473fb9cfa8409637ca8fb374fd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 2362036073483252157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3760378490560386219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1016,7 +1035,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Logwood
+      value: logwood
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1146,7 +1165,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Gold
+      value: gold
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1276,7 +1295,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Flour
+      value: flour
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1406,7 +1425,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Silver
+      value: silver
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1536,7 +1555,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Copper
+      value: copper
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1666,7 +1685,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Water
+      value: water
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1796,7 +1815,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Grain
+      value: grain
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
@@ -1926,7 +1945,7 @@ PrefabInstance:
     - target: {fileID: 3171356555288045538, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}
       propertyPath: m_Name
-      value: Stone
+      value: stone
       objectReference: {fileID: 0}
     - target: {fileID: 3966424623056021880, guid: 90af8419be4628241817b2f594781ebd,
         type: 3}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,6 +7,8 @@ public class Warehouse : SaiBehaviour
     [Header("Warehouse")]
     [SerializeField] protected bool isFull = false;
     [SerializeField] protected List<ResHolder> resHolders;
+
+    public static event Action OnStorageChanged;
 
     protected override void FixedUpdate()
     {
@@ -56,6 +59,8 @@ public class Warehouse : SaiBehaviour
     {
         ResHolder res = this.GetResource(resourceName);
         res.Add(number);
+
+        OnStorageChanged?.Invoke();
         return res;
     }
 
@@ -64,6 +69,8 @@ public class Warehouse : SaiBehaviour
         ResHolder res = this.GetResource(resourceName);
         if (res.Current() < number) return null;
         res.Deduct(number);
+
+        OnStorageChanged?.Invoke();
         return res;
     }
 

@@ -1,9 +1,10 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WarehouseWH : Warehouse
 {
     [SerializeField] float storageCapacity = 500f;
+
+    public virtual float GetStorageCapacity() => storageCapacity;
 
     public override bool IsFull()
     {

@@ -12,9 +12,4 @@ public class HouseCtrl : BuildingCtrl
     {
         this.buildingTaskType = BuildingTaskType.home;
     }
-
-    protected virtual void SpawnWorkerFromHouse()
-    {
-        
-    }
 }

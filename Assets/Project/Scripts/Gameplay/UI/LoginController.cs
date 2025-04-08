@@ -25,7 +25,6 @@ public class LoginController : MonoBehaviour, IKeyBack
         ScreenManager.Close();
     }
 
-
     public void OnKeyBack()
     {
         ScreenManager.Close();

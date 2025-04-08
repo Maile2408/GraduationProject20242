@@ -188,6 +188,11 @@ public class WarehouseTask : BuildingTask
             ResHolder resHolder = nextBuilding.warehouse.ResNeed2Move();
             if (resHolder == null) continue;
 
+            if (this.buildingCtrl.warehouse is WarehouseWH centralWarehouse && centralWarehouse.IsFull())
+            {
+                continue;
+            }
+
             workerCtrl.workerTasks.taskBuildingCtrl = nextBuilding;
             return nextBuilding;
 
@@ -199,10 +204,18 @@ public class WarehouseTask : BuildingTask
     protected virtual void BringResourceBack(WorkerCtrl workerCtrl)
     {
         WorkerTasks workerTasks = workerCtrl.workerTasks;
+        BuildingCtrl taskBuildingCtrl = workerTasks.taskBuildingCtrl;
+        if (taskBuildingCtrl.warehouse is WarehouseWH wh && wh.IsFull())
+        {
+            Debug.Log("Warehouse full, canceling resources.");
+            workerTasks.taskBuildingCtrl = null;
+            workerTasks.TaskCurrentDone();
+            return;
+        }
+
         workerCtrl.workerMovement.SetMovingType(MovingType.carrying);
         if (workerTasks.inBuilding) workerTasks.taskWorking.GoOutBuilding();
 
-        BuildingCtrl taskBuildingCtrl = workerTasks.taskBuildingCtrl;
         if (workerCtrl.workerMovement.GetTarget() == null) workerCtrl.workerMovement.SetTarget(taskBuildingCtrl.door);
         if (!workerCtrl.workerMovement.IsClose2Target()) return;
 

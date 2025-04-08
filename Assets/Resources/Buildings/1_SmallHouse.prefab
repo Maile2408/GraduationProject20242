@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 4717171960972615187}
   - component: {fileID: 161200623100153958}
   - component: {fileID: 636405040616234707}
+  - component: {fileID: 1674359742429889462}
   m_Layer: 10
   m_Name: 1_SmallHouse
   m_TagString: Untagged
@@ -242,6 +243,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestructible: 1
   buildingCtrl: {fileID: 5961908531418431930}
+--- !u!114 &1674359742429889462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322632007140552549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taxCycle: 60
+  taxAmount: 50
+  taxIcon: {fileID: 4184836504635754774, guid: 197705b59d350464aba9105b7d300659, type: 3}
 --- !u!1 &4059225930742006772
 GameObject:
   m_ObjectHideFlags: 0

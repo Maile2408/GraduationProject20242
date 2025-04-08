@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 3838712113542292333, guid: 1819e35deac63b048b49d998ac8c4045,
         type: 3}
       propertyPath: m_Name
-      value: Panel_Login
+      value: Panel_Confirmation
       objectReference: {fileID: 0}
     - target: {fileID: 7269584442030440755, guid: 1819e35deac63b048b49d998ac8c4045,
         type: 3}
