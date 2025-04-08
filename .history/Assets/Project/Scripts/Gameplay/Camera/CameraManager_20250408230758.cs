@@ -78,9 +78,6 @@ public class CameraManager : SaiBehaviour
         {
             thirdPersonCam?.SetActive(true);
             newActiveCamera = thirdPersonCam.GetComponentInChildren<Camera>();
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
         }
         else if (cameraType == GameCameraType.firstPerson)
         {

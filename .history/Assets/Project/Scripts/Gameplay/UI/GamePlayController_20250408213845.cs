@@ -7,6 +7,7 @@ public class GamePlayController : MonoBehaviour, IKeyBack
 
     [SerializeField] TextMeshProUGUI workerAmount;
     [SerializeField] TextMeshProUGUI coinAmount;
+    [SerializeField] private RectTransform coinHUDTarget;
 
     private void OnEnable()
     {

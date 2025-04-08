@@ -24,9 +24,9 @@ public class GamePlayController : MonoBehaviour, IKeyBack
         workerAmount.text = $"{workers.Count}";
     }
 
-    public void UpdateCoinDisplay()
+    public void UpdateCoinDisplay(float newCoin)
     {
-        
+        coinAmount.text = $"{newCoin:0}";
     }
 
     public void OnProfileMenuButtonTap()

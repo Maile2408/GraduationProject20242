@@ -11,6 +11,10 @@ public class GamePlayController : MonoBehaviour, IKeyBack
     private void OnEnable()
     {
         WorkerManager.OnWorkerListChanged += UpdateWorkerDisplay;
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.onCoinChanged.AddListener(UpdateCoinDisplay);
+        }
     }
 
     private void OnDisable()

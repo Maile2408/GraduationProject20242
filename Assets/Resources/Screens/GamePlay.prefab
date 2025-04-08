@@ -581,7 +581,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   workerAmount: {fileID: 4236237799518571116}
   coinAmount: {fileID: 469208624022757124}
-  coinHUDTarget: {fileID: 5607846554644019062}
 --- !u!1 &3870881864377968807
 GameObject:
   m_ObjectHideFlags: 0

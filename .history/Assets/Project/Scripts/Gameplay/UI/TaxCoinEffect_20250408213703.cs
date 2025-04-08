@@ -3,9 +3,9 @@ using DG.Tweening;
 
 public class TaxCoinEffect : MonoBehaviour, IPoolable
 {
-    private static Transform targetUI;
+    private static RectTransform targetUI;
 
-    public static void SetTargetUI(Transform uiTarget)
+    public static void SetTargetUI(RectTransform uiTarget)
     {
         targetUI = uiTarget;
     }
@@ -22,22 +22,30 @@ public class TaxCoinEffect : MonoBehaviour, IPoolable
 
     public void FlyToUI(float delay)
     {
-        if (targetUI == null)
+        if (targetUI == null || Camera.main == null)
         {
             PoolManager.Instance.Despawn(gameObject);
             return;
         }
 
-        Vector3 screenTarget = Camera.main.WorldToScreenPoint(targetUI.position);
-        Vector3 worldTarget = Camera.main.ScreenToWorldPoint(new Vector3(screenTarget.x, screenTarget.y, 5f));
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+
+        Vector2 targetAnchoredPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            targetUI.parent as RectTransform,
+            targetUI.position,
+            Camera.main,
+            out targetAnchoredPos
+        );
+
+        Vector3 worldTarget = Camera.main.ScreenToWorldPoint(new Vector3(
+            targetUI.position.x, targetUI.position.y, screenPos.z
+        ));
 
         transform.DOMove(worldTarget, 0.8f)
             .SetDelay(delay)
             .SetEase(Ease.InOutSine)
-            .OnComplete(() =>
-            {
-                PoolManager.Instance.Despawn(gameObject);
-            });
+            .OnComplete(() => PoolManager.Instance.Despawn(gameObject));
     }
 
     public void OnSpawn()
@@ -47,6 +55,6 @@ public class TaxCoinEffect : MonoBehaviour, IPoolable
 
     public void OnDespawn()
     {
-        transform.DOKill(); 
+        transform.DOKill();
     }
 }

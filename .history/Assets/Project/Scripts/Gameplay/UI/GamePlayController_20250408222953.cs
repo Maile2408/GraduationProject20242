@@ -11,11 +11,24 @@ public class GamePlayController : MonoBehaviour, IKeyBack
     private void OnEnable()
     {
         WorkerManager.OnWorkerListChanged += UpdateWorkerDisplay;
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.onCoinChanged.AddListener(UpdateCoinDisplay);
+        }
     }
 
     private void OnDisable()
     {
         WorkerManager.OnWorkerListChanged -= UpdateWorkerDisplay;
+        if (CurrencyManager.Instance != null)
+        {
+            CurrencyManager.Instance.onCoinChanged.RemoveListener(UpdateCoinDisplay);
+        }
+    }
+
+    private void Start()
+    {
+        UpdateCoinDisplay(CurrencyManager.Coin);
     }
 
     public void UpdateWorkerDisplay()
@@ -24,9 +37,9 @@ public class GamePlayController : MonoBehaviour, IKeyBack
         workerAmount.text = $"{workers.Count}";
     }
 
-    public void UpdateCoinDisplay()
+    public void UpdateCoinDisplay(float newCoin)
     {
-        
+        coinAmount.text = $"{newCoin:0}";
     }
 
     public void OnProfileMenuButtonTap()

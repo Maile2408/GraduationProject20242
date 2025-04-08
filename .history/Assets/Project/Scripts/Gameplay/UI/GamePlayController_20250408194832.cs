@@ -7,15 +7,24 @@ public class GamePlayController : MonoBehaviour, IKeyBack
 
     [SerializeField] TextMeshProUGUI workerAmount;
     [SerializeField] TextMeshProUGUI coinAmount;
+    [SerializeField] Transform coinHUDTarget;
 
     private void OnEnable()
     {
-        WorkerManager.OnWorkerListChanged += UpdateWorkerDisplay;
+         WorkerManager.OnWorkerListChanged += UpdateWorkerDisplay;
+        CurrencyManager.Instance.onCoinChanged.AddListener(UpdateCoinDisplay);
     }
 
     private void OnDisable()
     {
         WorkerManager.OnWorkerListChanged -= UpdateWorkerDisplay;
+        CurrencyManager.Instance.onCoinChanged.RemoveListener(UpdateCoinDisplay);
+    }
+
+    private void Start()
+    {
+        TaxCoinEffect.SetTargetUI(coinHUDTarget);
+        UpdateCoinDisplay();
     }
 
     public void UpdateWorkerDisplay()
@@ -26,7 +35,8 @@ public class GamePlayController : MonoBehaviour, IKeyBack
 
     public void UpdateCoinDisplay()
     {
-        
+        float currentCoin = CurrencyManager.Coin;
+        coinAmount.text = $"{currentCoin:0}";
     }
 
     public void OnProfileMenuButtonTap()
