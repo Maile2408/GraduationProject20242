@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8971956416390118098, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3721987425629852821, guid: 6c0c9b5b08dcf2947a38239488d26535, type: 3}

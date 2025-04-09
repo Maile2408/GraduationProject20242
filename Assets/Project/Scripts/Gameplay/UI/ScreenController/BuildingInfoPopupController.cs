@@ -23,6 +23,10 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     [SerializeField] private GameObject stoneIcon;
     [SerializeField] private TextMeshProUGUI stoneAmount;
 
+    [SerializeField] private Button buildButton;
+    [SerializeField] private GameObject warningPanel;
+    [SerializeField] private TextMeshProUGUI warningText;
+
     public static BuildingInfo pendingInfo;
     BuildingInfo currentInfo;
 
@@ -69,8 +73,31 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
 
     public void OnBuildButtonTap()
     {
+        if (!CanBuild())
+        {
+            warningPanel.SetActive(true);
+            return;
+        }
+
         ScreenManager.Close();
         BuildManager.Instance.PrepareToBuild(currentInfo);
+    }
+
+    private bool CanBuild()
+    {
+        if (currentInfo == null) return false;
+
+        bool hasCoin = CurrencyManager.Instance.CurrentCoin() >= currentInfo.coin;
+        bool hasRes = StorageResourceManager.Instance.HasEnoughResources(currentInfo.cost);
+
+        if (!hasCoin && !hasRes)
+            warningText.text = "[Not enough coin and resources!]";
+        else if (!hasCoin)
+            warningText.text = "[Not enough coin!]";
+        else if (!hasRes)
+            warningText.text = "[Not enough resources!]";
+
+        return hasCoin && hasRes;
     }
 
     public void OnKeyBack()

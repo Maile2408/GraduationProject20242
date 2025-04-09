@@ -44,24 +44,7 @@ public class StorageController : MonoBehaviour, IKeyBack
 
     private void UpdateStorageDisplay()
     {
-        float totalCapacity = 0f;
-        Dictionary<ResourceName, float> totals = new();
-
-        foreach (var building in BuildingManager.Instance.BuildingCtrls())
-        {
-            if (building.warehouse is not WarehouseWH wh) continue;
-
-            totalCapacity += wh.GetStorageCapacity();
-
-            foreach (var holder in wh.GetStockedResources())
-            {
-                ResourceName res = holder.Name();
-                float amount = holder.Current();
-
-                if (!totals.ContainsKey(res)) totals[res] = 0;
-                totals[res] += amount;
-            }
-        }
+        var totals = StorageResourceManager.Instance.GetTotalResources();
 
         foreach (var pair in resourceTexts)
         {
@@ -69,9 +52,8 @@ public class StorageController : MonoBehaviour, IKeyBack
             pair.Value.text = $"{value:0}";
         }
 
-        float totalUsed = 0;
-        foreach (var val in totals.Values) totalUsed += val;
-        txtTotalStorage.text = $"{totalUsed:0}/{totalCapacity:0}";
+        var (used, capacity) = StorageResourceManager.Instance.GetTotalUsedAndCapacity();
+        txtTotalStorage.text = $"{used:0}/{capacity:0}";
     }
 
     public void OnCloseButtonTap()

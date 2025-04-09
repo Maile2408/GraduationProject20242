@@ -8,12 +8,15 @@ public class WorkerManager : SaiBehaviour
 
     [Header("Data")]
     [SerializeField] protected List<WorkerCtrl> workerCtrls = new();
+    [SerializeField] private float workerCost = 100f;
 
     [Header("Placement")]
     [SerializeField] private LayerMask groundLayer;
     private bool isPlacingWorker = false;
     private WorkerCtrl placingWorker;
     public static event Action OnWorkerListChanged;
+
+    public float WorkerCost() => workerCost;
 
     protected override void Awake()
     {
@@ -23,7 +26,11 @@ public class WorkerManager : SaiBehaviour
             Debug.LogError("Only 1 WorkerManager allowed");
         }
         WorkerManager.Instance = this;
+    }
 
+    protected override void Start()
+    {
+        base.Start();
         OnWorkerListChanged?.Invoke();
     }
 
@@ -125,6 +132,8 @@ public class WorkerManager : SaiBehaviour
     private void FinalizePlacement()
     {
         AddWorker(placingWorker);
+        CurrencyManager.Instance.SpendCoin(workerCost);
+
         placingWorker = null;
         isPlacingWorker = false;
     }

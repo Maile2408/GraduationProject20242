@@ -21,7 +21,7 @@ MonoBehaviour:
     Capacity: 3'
   isUnlocked: 1
   category: 0
-  coin: 0
+  coin: 500
   cost:
   - name: 1001
     number: 5

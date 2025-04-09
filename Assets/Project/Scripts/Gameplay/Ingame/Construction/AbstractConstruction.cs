@@ -10,8 +10,8 @@ public class AbstractConstruction : SaiBehaviour
 
     [Header("Build Progress")]
     protected Dictionary<ResourceName, float> resourceProgress = new();
-    public bool isReadyToBuild = false; 
-    public bool isBuilding = false;     
+    public bool isReadyToBuild = false;
+    public bool isBuilding = false;
 
     protected override void LoadComponents()
     {
@@ -28,7 +28,8 @@ public class AbstractConstruction : SaiBehaviour
 
         foreach (var res in info.cost)
         {
-            resourceProgress[res.name] = 0f;
+            float preFilled = Mathf.Max(0, res.number - 1);
+            resourceProgress[res.name] = preFilled;
         }
 
         ConstructionManager.Instance.AddConstruction(this);

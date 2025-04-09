@@ -126,6 +126,8 @@ public class BuildManager : SaiBehaviour
         }
 
         PoolManager.Instance.Despawn(currentGhost);
+        CurrencyManager.Instance.SpendCoin(currentInfo.coin);  
+        DeductResourcesOnPlacement(currentInfo);               
 
         GameObject underConstruction = PoolManager.Instance.Spawn(PoolPrefabPath.Building("UnderConstruction"));
         underConstruction.transform.position = buildPos;
@@ -145,6 +147,31 @@ public class BuildManager : SaiBehaviour
         ClearState();
     }
 
+    private void DeductResourcesOnPlacement(BuildingInfo info)
+    {
+        foreach (var res in info.cost)
+        {
+            float targetToDeduct = Mathf.Max(0, res.number - 1f);
+            float remaining = targetToDeduct;
+
+            foreach (var building in BuildingManager.Instance.BuildingCtrls())
+            {
+                if (building.warehouse is not WarehouseWH wh) continue;
+
+                var holder = wh.GetResource(res.name);
+                if (holder == null || holder.Current() <= 0) continue;
+
+                float available = holder.Current();
+                float take = Mathf.Min(available, remaining);
+                holder.Deduct(take);
+
+                remaining -= take;
+                if (remaining <= 0) break;
+            }
+
+            Debug.Log($"[BuildManager] Deducted {targetToDeduct}/{res.number} of {res.name}");
+        }
+    }
 
     protected virtual void CancelBuild()
     {
