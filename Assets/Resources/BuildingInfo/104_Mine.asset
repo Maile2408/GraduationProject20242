@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 104_Mine
   m_EditorClassIdentifier: 
+  buildingID: 104
   buildingName: Mine
   icon: {fileID: 21300000, guid: 59532294a16ccf84192db6b673e0b1bd, type: 3}
   prefab: {fileID: 3322632007140552549, guid: b7930b5dedd533a418690486f3768a4e, type: 3}
   description: 'Produces stone from underground deposits.
 
     Worker Slots: 1'
-  isUnlocked: 1
   category: 2
-  coin: 0
-  cost: []
+  coin: 1000
+  cost:
+  - name: 1001
+    number: 10
+  - name: 1002
+    number: 20
+  unlockCityLevel: 3

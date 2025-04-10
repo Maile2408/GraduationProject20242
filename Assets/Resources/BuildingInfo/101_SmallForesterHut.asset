@@ -12,14 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 101_SmallForesterHut
   m_EditorClassIdentifier: 
+  buildingID: 101
   buildingName: Small Forester Hut
   icon: {fileID: 21300000, guid: 5e6f32eca9b040e40b3278feee2e0086, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 7602d624985178140be33a59cc74d301, type: 3}
   description: 'A small hut where foresters plant and cut trees to gather logs.
 
     Worker
-    Slots: 1'
-  isUnlocked: 1
+    Slots: 2'
   category: 2
-  coin: 0
-  cost: []
+  coin: 500
+  cost:
+  - name: 1001
+    number: 25
+  unlockCityLevel: 2

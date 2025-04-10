@@ -58,6 +58,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1492407584743661065, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: resMax
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627877434307994831, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: resMax
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3594809630266730258, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -78,10 +88,35 @@ PrefabInstance:
       propertyPath: m_Extents.z
       value: 4.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4506968214014999738, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: interval
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4506968214014999738, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: coinPerCycle
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 5297410189614911037, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: m_Name
       value: 302_MediumWarehouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5348401345058665975, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: maxWorker
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576462980929007020, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: resMax
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5990817347085663957, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: resMax
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 6363926459457410845, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
@@ -112,6 +147,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Center.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884733124245607847, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: resMax
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8560969877993594044, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: resMax
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

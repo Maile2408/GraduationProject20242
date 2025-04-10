@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 404_Fountain1
   m_EditorClassIdentifier: 
+  buildingID: 404
   buildingName: Fountain 1
   icon: {fileID: 21300000, guid: c2896a905696135448bfe3e5708a1515, type: 3}
   prefab: {fileID: 3322632007140552549, guid: b9621e4ace4d63e49aace2c675e43cc0, type: 3}
   description: A simple fountain to decorate your town center.
-  isUnlocked: 1
   category: 4
-  coin: 0
-  cost: []
+  coin: 150
+  cost:
+  - name: 1002
+    number: 5
+  unlockCityLevel: 13

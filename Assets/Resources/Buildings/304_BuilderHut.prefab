@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8d76c1f1613f641b3785cf399ebcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWorker: 1
+  maxWorker: 3
   workers: []
 --- !u!114 &821983392919612589
 MonoBehaviour:
@@ -238,7 +238,6 @@ MonoBehaviour:
   workingSpeed: 7
   lastBuildingWorked: 0
   nearBuildings: []
-  construction: {fileID: 0}
   warehouses: []
 --- !u!114 &4456616609900915090
 MonoBehaviour:
@@ -282,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPerCycle: 50
-  interval: 20
+  coinPerCycle: 15
+  interval: 60
   taxIcon: {fileID: 8778495229898802364}
   taxText: {fileID: 8330959180470007177}
 --- !u!1001 &5170023433409166765
@@ -407,7 +406,7 @@ PrefabInstance:
     - target: {fileID: 5866402532127219703, guid: 0d6f57d2af65ab645a1f5645defa27ea,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5866402532127219703, guid: 0d6f57d2af65ab645a1f5645defa27ea,
         type: 3}

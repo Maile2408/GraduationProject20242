@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 4_LargeCityHouse
   m_EditorClassIdentifier: 
+  buildingID: 4
   buildingName: Large City House
   icon: {fileID: 21300000, guid: a6c88b680c3162f4daaa80c6eda3b3cd, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 01abd00ad947df440af21dc146b9307c, type: 3}
@@ -19,7 +20,13 @@ MonoBehaviour:
 
     Worker Capacity:
     8'
-  isUnlocked: 1
   category: 0
-  coin: 0
-  cost: []
+  coin: 2000
+  cost:
+  - name: 1001
+    number: 25
+  - name: 2001
+    number: 45
+  - name: 1002
+    number: 40
+  unlockCityLevel: 11

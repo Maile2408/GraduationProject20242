@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d512420e0d2d8429dd2d43d81b789d, type: 3}
+  m_Name: CityLevelConfigs
+  m_EditorClassIdentifier: 
+  levelConfigs:
+  - requiredXP: 300
+    unlockedBuildings: 65000000
+    rewardCoin: 50
+  - requiredXP: 900
+    unlockedBuildings: 0100000068000000
+    rewardCoin: 100
+  - requiredXP: 1500
+    unlockedBuildings: 6700000030010000
+    rewardCoin: 150
+  - requiredXP: 2200
+    unlockedBuildings: 02000000c9000000
+    rewardCoin: 150
+  - requiredXP: 3000
+    unlockedBuildings: 2d01000091010000
+    rewardCoin: 220
+  - requiredXP: 4100
+    unlockedBuildings: 030000006a000000
+    rewardCoin: 250
+  - requiredXP: 5300
+    unlockedBuildings: ca0000002e010000
+    rewardCoin: 300
+  - requiredXP: 6500
+    unlockedBuildings: cc00000093010000
+    rewardCoin: 320
+  - requiredXP: 8000
+    unlockedBuildings: 6600000092010000
+    rewardCoin: 370
+  - requiredXP: 9600
+    unlockedBuildings: cc00000093010000
+    rewardCoin: 400
+  - requiredXP: 11000
+    unlockedBuildings: cb000000
+    rewardCoin: 420
+  - requiredXP: 12500
+    unlockedBuildings: 94010000
+    rewardCoin: 450
+  - requiredXP: 14200
+    unlockedBuildings: 2f010000
+    rewardCoin: 600
+  - requiredXP: 16100
+    unlockedBuildings: 95010000
+    rewardCoin: 630
+  - requiredXP: 18900
+    unlockedBuildings: 
+    rewardCoin: 750
+  - requiredXP: 21000
+    unlockedBuildings: 
+    rewardCoin: 800
+  - requiredXP: 23000
+    unlockedBuildings: 
+    rewardCoin: 820
+  - requiredXP: 25300
+    unlockedBuildings: 
+    rewardCoin: 850
+  - requiredXP: 26000
+    unlockedBuildings: 
+    rewardCoin: 900
+  - requiredXP: 27500
+    unlockedBuildings: 
+    rewardCoin: 960
+  - requiredXP: 29000
+    unlockedBuildings: 
+    rewardCoin: 1050
+  - requiredXP: 30400
+    unlockedBuildings: 
+    rewardCoin: 1140
+  - requiredXP: 32000
+    unlockedBuildings: 
+    rewardCoin: 1200
+  - requiredXP: 33500
+    unlockedBuildings: 
+    rewardCoin: 1240
+  - requiredXP: 35000
+    unlockedBuildings: 
+    rewardCoin: 1290
+  - requiredXP: 36000
+    unlockedBuildings: 
+    rewardCoin: 1300
+  - requiredXP: 37000
+    unlockedBuildings: 
+    rewardCoin: 1500
+  - requiredXP: 38000
+    unlockedBuildings: 
+    rewardCoin: 1600
+  - requiredXP: 39000
+    unlockedBuildings: 
+    rewardCoin: 1700

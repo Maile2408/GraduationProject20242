@@ -369,8 +369,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPerCycle: 50
-  interval: 20
+  coinPerCycle: 15
+  interval: 95
   taxIcon: {fileID: 6635901330730815045}
   taxText: {fileID: 6222159118604795760}
 --- !u!1 &6375638034966907705
@@ -419,7 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1000
   resCurrent: 0
-  resMax: Infinity
+  resMax: 5
 --- !u!1 &7942871969079912570
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1004
   resCurrent: 0
-  resMax: Infinity
+  resMax: 48
 --- !u!1 &9036181604459293430
 GameObject:
   m_ObjectHideFlags: 0

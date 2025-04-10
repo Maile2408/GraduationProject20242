@@ -26,11 +26,17 @@ public class AbstractConstruction : SaiBehaviour
         this.isReadyToBuild = false;
         this.isBuilding = false;
 
+        bool requiresNoResource = true;
+
         foreach (var res in info.cost)
         {
             float preFilled = Mathf.Max(0, res.number - 1);
             resourceProgress[res.name] = preFilled;
+
+            if (res.number > 0) requiresNoResource = false;
         }
+
+        if (requiresNoResource) this.isReadyToBuild = true;
 
         ConstructionManager.Instance.AddConstruction(this);
     }

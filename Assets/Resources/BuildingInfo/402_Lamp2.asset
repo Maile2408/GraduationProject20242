@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 402_Lamp2
   m_EditorClassIdentifier: 
+  buildingID: 402
   buildingName: Lamp 2
   icon: {fileID: 21300000, guid: 26810da68d9415c459ce0e242c0f0eaa, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 2bc520fc4b38af64aaf211665f6229e6, type: 3}
   description: A large decorative lamp that lights up a wider area.
-  isUnlocked: 1
   category: 4
-  coin: 0
-  cost: []
+  coin: 100
+  cost:
+  - name: 1001
+    number: 1
+  - name: 1002
+    number: 2
+  unlockCityLevel: 10

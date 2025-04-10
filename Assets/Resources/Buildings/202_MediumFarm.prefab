@@ -8,6 +8,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 718270986234951788, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: resMax
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2007526909530194194, guid: a07a46ef718b33244b758cdb0797c693,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -52,6 +57,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Extents.z
       value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104794151521967684, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: interval
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3104794151521967684, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: coinPerCycle
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206367624013793179, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: waterCost
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206367624013793179, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: grainReceive
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3206367624013793179, guid: a07a46ef718b33244b758cdb0797c693,
         type: 3}
@@ -237,6 +262,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 202_MediumFarm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827121731618736623, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: resMax
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7827121731618736623, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: resCurrent
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

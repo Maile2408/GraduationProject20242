@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8d76c1f1613f641b3785cf399ebcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWorker: 1
+  maxWorker: 3
   workers: []
 --- !u!114 &5757297881628241568
 MonoBehaviour:
@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPerCycle: 50
-  interval: 20
+  coinPerCycle: 10
+  interval: 120
   taxIcon: {fileID: 2553308148235719629}
   taxText: {fileID: 2963885192518214392}
 --- !u!1 &4059225930742006772
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1000
   resCurrent: 0
-  resMax: Infinity
+  resMax: 5
 --- !u!1001 &2090736987956538076
 PrefabInstance:
   m_ObjectHideFlags: 0

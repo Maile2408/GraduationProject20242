@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 306_TradeGuild
   m_EditorClassIdentifier: 
+  buildingID: 306
   buildingName: 
   icon: {fileID: 0}
   prefab: {fileID: 0}
   description: 
-  isUnlocked: 0
   category: 3
   coin: 0
   cost: []
+  unlockCityLevel: 100

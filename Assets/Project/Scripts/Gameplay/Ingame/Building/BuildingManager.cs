@@ -34,16 +34,26 @@ public class BuildingManager : SaiBehaviour
 
     public virtual BuildingCtrl FindBuilding(BuildingTaskType buildingTaskType)
     {
-        BuildingCtrl buildingCtrl;
+        BuildingCtrl candidateWithZeroWorker = null;
+
         for (int i = 0; i < this.buildingCtrls.Count; i++)
         {
-            buildingCtrl = this.buildingCtrls[i];
-            if (!buildingCtrl.workers.IsNeedWorker()) continue;
+            BuildingCtrl buildingCtrl = this.buildingCtrls[i];
             if (buildingCtrl.buildingTaskType != buildingTaskType) continue;
+            if (!buildingCtrl.workers.IsNeedWorker()) continue;
 
-            return buildingCtrl;
+            if (buildingCtrl.workers.WorkerCount() == 0)
+            {
+                return buildingCtrl;
+            }
+
+            if (candidateWithZeroWorker == null)
+            {
+                candidateWithZeroWorker = buildingCtrl;
+            }
         }
-        return null;
+
+        return candidateWithZeroWorker;
     }
 
     public virtual List<BuildingCtrl> BuildingCtrls()
@@ -65,7 +75,7 @@ public class BuildingManager : SaiBehaviour
 
     protected virtual void NearBuildingRecheck()
     {
-        foreach(BuildingCtrl buildingCtrl in this.buildingCtrls)
+        foreach (BuildingCtrl buildingCtrl in this.buildingCtrls)
         {
             buildingCtrl.buildingTask.FindNearBuildings();
         }

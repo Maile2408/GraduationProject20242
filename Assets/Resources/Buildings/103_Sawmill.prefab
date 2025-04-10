@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1001
   resCurrent: 0
-  resMax: Infinity
+  resMax: 10
 --- !u!1 &3813349622488221939
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 2001
   resCurrent: 0
-  resMax: Infinity
+  resMax: 20
 --- !u!1 &5437220968584149859
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +347,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
-  resHolders: []
+  resHolders:
+  - {fileID: 3087653489064532356}
+  - {fileID: 7687530044961353905}
 --- !u!114 &757687581282362823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,8 +392,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPerCycle: 50
-  interval: 20
+  coinPerCycle: 20
+  interval: 60
   taxIcon: {fileID: 3729081644285096494}
   taxText: {fileID: 4147430590757405467}
 --- !u!1001 &654915527543397045

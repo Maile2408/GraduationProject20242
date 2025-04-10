@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 102_LargeForesterHut
   m_EditorClassIdentifier: 
+  buildingID: 102
   buildingName: Large Forester Hut
   icon: {fileID: 21300000, guid: 97f020350dfc5734e8d866c93bb1059e, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 9c2aff0829c93294fb1e115de75c467d, type: 3}
   description: 'A larger hut with more workers for increased logwood production.
 
     Worker
-    Slots: 3'
-  isUnlocked: 1
+    Slots: 5'
   category: 2
-  coin: 0
-  cost: []
+  coin: 1000
+  cost:
+  - name: 1001
+    number: 35
+  - name: 2001
+    number: 25
+  unlockCityLevel: 10

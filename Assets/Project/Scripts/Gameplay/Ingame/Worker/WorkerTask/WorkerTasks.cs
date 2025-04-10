@@ -11,6 +11,13 @@ public class WorkerTasks : SaiBehaviour
     public TaskGoHome taskGoHome;
     public Transform taskTarget;
     public BuildingCtrl taskBuildingCtrl;
+    public AbstractConstruction taskConstruction;
+
+    public int bringMaterialCount = 0;
+    public int takeProductCount = 0;
+    public float bringMaterialTimer = 0f;
+    public float takeProductTimer = 0f;
+
     [SerializeField] protected List<TaskType> tasks;
 
     protected override void Awake()
@@ -30,7 +37,6 @@ public class WorkerTasks : SaiBehaviour
         TimeManager.OnDayStart -= GoWork;
         TimeManager.OnNightStart -= GoHome;
     }
-
 
     protected override void LoadComponents()
     {
@@ -66,7 +72,7 @@ public class WorkerTasks : SaiBehaviour
         this.taskGoHome.gameObject.SetActive(false);
     }
 
-    protected virtual void GoHome()
+    public virtual void GoHome()
     {
         if (this.taskGoHome.gameObject.activeSelf) return;
 
@@ -82,7 +88,7 @@ public class WorkerTasks : SaiBehaviour
         this.TaskAdd(TaskType.goToHome);
     }
 
-    protected virtual void GoWork()
+    public virtual void GoWork()
     {
         if (this.taskWorking.gameObject.activeSelf) return;
 
@@ -97,7 +103,6 @@ public class WorkerTasks : SaiBehaviour
         this.taskWorking.GoOutBuilding();
         this.TaskAdd(TaskType.goToWorkStation);
     }
-
 
     public virtual void TaskAdd(TaskType taskType)
     {

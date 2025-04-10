@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 1_SmallHouse
   m_EditorClassIdentifier: 
+  buildingID: 1
   buildingName: Small House
   icon: {fileID: 21300000, guid: 75e3ed8b912853b49bbd3a8f6d7745bd, type: 3}
   prefab: {fileID: 3322632007140552549, guid: b8f9f3b247ad69a458258542abd55161, type: 3}
@@ -19,9 +20,9 @@ MonoBehaviour:
 
     Worker
     Capacity: 3'
-  isUnlocked: 1
   category: 0
-  coin: 500
+  coin: 400
   cost:
   - name: 1001
-    number: 5
+    number: 35
+  unlockCityLevel: 3

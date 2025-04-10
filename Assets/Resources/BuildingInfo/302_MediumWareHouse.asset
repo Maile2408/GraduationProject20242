@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 302_MediumWareHouse
   m_EditorClassIdentifier: 
+  buildingID: 302
   buildingName: Medium Warehouse
   icon: {fileID: 21300000, guid: 9c8372bde450b9f4dab299de3dee04f5, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 2c52c0bf91ba6844195a87a1f96a3d12, type: 3}
@@ -20,8 +21,14 @@ MonoBehaviour:
     Storage
     Capacity: 1000
 
-    Worker Slots: 3'
-  isUnlocked: 1
+    Worker Slots: 5'
   category: 3
-  coin: 0
-  cost: []
+  coin: 2500
+  cost:
+  - name: 1001
+    number: 60
+  - name: 2001
+    number: 45
+  - name: 1002
+    number: 10
+  unlockCityLevel: 8

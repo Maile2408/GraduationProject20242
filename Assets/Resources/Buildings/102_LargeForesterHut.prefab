@@ -147,10 +147,30 @@ PrefabInstance:
       propertyPath: m_Extents.z
       value: 4.25
       objectReference: {fileID: 0}
+    - target: {fileID: 2799566800521373762, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: interval
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2799566800521373762, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: coinPerCycle
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3351261019592303417, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: maxWorker
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4363021126508830458, guid: 6c0c9b5b08dcf2947a38239488d26535,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5071211775130448809, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: resMax
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5862589241954472880, guid: 6c0c9b5b08dcf2947a38239488d26535,
         type: 3}

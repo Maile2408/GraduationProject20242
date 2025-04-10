@@ -15,7 +15,7 @@ public class BuildingItem : MonoBehaviour, IPoolable
         info = data;
 
         bool hasData = info.icon != null;
-        bool isLocked = !info.isUnlocked;
+        bool isLocked = !UnlockManager.Instance.IsUnlocked(info.buildingID);
 
         if (icon != null)
         {
@@ -60,7 +60,7 @@ public class BuildingItem : MonoBehaviour, IPoolable
             button.onClick.RemoveAllListeners();
             button.onClick.AddListener(() =>
             {
-                if (data.isUnlocked)
+                if (UnlockManager.Instance.IsUnlocked(data.buildingID))
                     onClick?.Invoke(data);
             });
         }

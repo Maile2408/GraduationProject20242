@@ -9,6 +9,8 @@ public class Workers : SaiBehaviour
     [SerializeField] protected List<WorkerCtrl> workers;
 
     public int MaxWorker() => maxWorker;
+    
+    public int WorkerCount() => workers.Count;
 
     public virtual bool IsNeedWorker()
     {

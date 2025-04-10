@@ -73,6 +73,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5280799064681273468, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: maxWorker
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451577935508301101, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: resMax
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527098802734037022, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: interval
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 6527098802734037022, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: coinPerCycle
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8124599967985920064, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
       propertyPath: m_Center.z

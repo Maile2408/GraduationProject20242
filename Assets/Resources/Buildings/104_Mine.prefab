@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1002
   resCurrent: 0
-  resMax: Infinity
+  resMax: 20
 --- !u!1 &5198654396068903561
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,8 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPerCycle: 50
-  interval: 20
+  coinPerCycle: 20
+  interval: 70
   taxIcon: {fileID: 8288161507742111123}
   taxText: {fileID: 8740236869455652006}
 --- !u!1 &7483022057702023295

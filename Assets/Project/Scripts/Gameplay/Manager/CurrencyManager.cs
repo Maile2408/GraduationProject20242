@@ -5,7 +5,7 @@ public class CurrencyManager : SaiBehaviour
 {
     public static CurrencyManager Instance;
 
-    [SerializeField] float currentCoin = 1000;
+    [SerializeField] float currentCoin = 2000;
 
     public static event Action OnCoinChanged;
 

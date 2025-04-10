@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 201_SmallFarm
   m_EditorClassIdentifier: 
+  buildingID: 201
   buildingName: Small Farm
   icon: {fileID: 21300000, guid: 060ca8ee36ad40445b3e50d094cae881, type: 3}
   prefab: {fileID: 3322632007140552549, guid: 03b0d152d2295f3458df4066dfc021eb, type: 3}
   description: 'Requires water to produce grain.
 
     Worker Slots: 1'
-  isUnlocked: 1
   category: 1
-  coin: 0
-  cost: []
+  coin: 750
+  cost:
+  - name: 1001
+    number: 30
+  - name: 1002
+    number: 5
+  unlockCityLevel: 5

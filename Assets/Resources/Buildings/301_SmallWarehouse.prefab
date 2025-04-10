@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1000
   resCurrent: 0
-  resMax: Infinity
+  resMax: 500
 --- !u!1 &3250181107822618877
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 2004
   resCurrent: 0
-  resMax: Infinity
+  resMax: 500
 --- !u!1 &3574292245934616922
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 2001
   resCurrent: 0
-  resMax: Infinity
+  resMax: 500
 --- !u!1 &3936607768593117688
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1002
   resCurrent: 0
-  resMax: Infinity
+  resMax: 500
 --- !u!1 &5297410189614911037
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8d76c1f1613f641b3785cf399ebcbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWorker: 1
+  maxWorker: 3
   workers: []
 --- !u!114 &8932886077444592059
 MonoBehaviour:
@@ -458,8 +458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f68b07a1a631fd43aba2e47fbb6cc5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPerCycle: 50
-  interval: 20
+  coinPerCycle: 20
+  interval: 100
   taxIcon: {fileID: 468259120624331373}
   taxText: {fileID: 878605357860232024}
 --- !u!1 &7068421913831432579
@@ -539,7 +539,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1004
   resCurrent: 0
-  resMax: Infinity
+  resMax: 500
 --- !u!1 &7603143548732662221
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceName: 1001
   resCurrent: 0
-  resMax: Infinity
+  resMax: 500
 --- !u!1001 &2678288964089467584
 PrefabInstance:
   m_ObjectHideFlags: 0

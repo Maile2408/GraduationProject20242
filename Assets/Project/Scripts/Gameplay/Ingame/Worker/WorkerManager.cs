@@ -134,6 +134,9 @@ public class WorkerManager : SaiBehaviour
         AddWorker(placingWorker);
         CurrencyManager.Instance.SpendCoin(workerCost);
 
+        if (TimeManager.Instance.IsDay) placingWorker.workerTasks.GoWork();
+        else placingWorker.workerTasks.GoHome();
+
         placingWorker = null;
         isPlacingWorker = false;
     }

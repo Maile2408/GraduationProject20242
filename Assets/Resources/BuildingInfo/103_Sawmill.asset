@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 103_Sawmill
   m_EditorClassIdentifier: 
+  buildingID: 103
   buildingName: Sawmill
   icon: {fileID: 21300000, guid: 625e25e5281975847b5fd4067aa4dade, type: 3}
   prefab: {fileID: 3322632007140552549, guid: f0ab9dc212634af4596081973da23293, type: 3}
@@ -19,7 +20,9 @@ MonoBehaviour:
 
     Worker Slots:
     1'
-  isUnlocked: 1
   category: 2
-  coin: 0
-  cost: []
+  coin: 1500
+  cost:
+  - name: 1001
+    number: 30
+  unlockCityLevel: 4

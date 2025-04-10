@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a97c3f456e7664ea60fdae26dbaa63, type: 3}
   m_Name: 202_MediumFarm
   m_EditorClassIdentifier: 
+  buildingID: 202
   buildingName: Medium Farm
   icon: {fileID: 21300000, guid: 50dcbe70dbc75a742b69aa11f55e7157, type: 3}
   prefab: {fileID: 3322632007140552549, guid: b108edfc105807c4e9ae3dcdd9c6ec00, type: 3}
   description: 'Requires water to produce more grain.
 
     Worker Slots: 1'
-  isUnlocked: 1
   category: 1
-  coin: 0
-  cost: []
+  coin: 950
+  cost:
+  - name: 1001
+    number: 40
+  - name: 2001
+    number: 15
+  - name: 1002
+    number: 10
+  unlockCityLevel: 8
