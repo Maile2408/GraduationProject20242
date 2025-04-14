@@ -153,6 +153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665325979639345321}
   - component: {fileID: 6792081797407785365}
+  - component: {fileID: 3102498823865929198}
   - component: {fileID: 3770651292097496232}
   - component: {fileID: 5526516204302391449}
   - component: {fileID: 7551604691183085391}
@@ -203,6 +204,27 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.75, y: 0, z: 0.5}
   m_TimeToStationary: 0.5
+--- !u!65 &3102498823865929198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116166987348167793}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9, y: 8, z: 9}
+  m_Center: {x: -0.75, y: 4, z: 0.5}
 --- !u!114 &3770651292097496232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +306,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  raycastHeight: 5
   raycastDistance: 10
+  maxAllowedSlope: 45
 --- !u!114 &8335665856062766556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -734,39 +758,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dbd9bd93a2cadf3458adab8cdaf5e41c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6318704166496266224}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbd9bd93a2cadf3458adab8cdaf5e41c, type: 3}
---- !u!1 &8134591753636613498 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dbd9bd93a2cadf3458adab8cdaf5e41c,
-    type: 3}
-  m_PrefabInstance: {fileID: 8944863302942994475}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6318704166496266224
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8134591753636613498}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.012842995, y: 0.013612372, z: 0.0116925435}
-  m_Center: {x: -0.001129746, y: -0.00030645358, z: 0.005691916}
 --- !u!4 &8910425417889175488 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dbd9bd93a2cadf3458adab8cdaf5e41c,

@@ -7,22 +7,34 @@ public class TimeUIManager : MonoBehaviour
 
     private void OnEnable()
     {
-        TimeManager.OnDayStart += ShowDayIcon;
-        TimeManager.OnNightStart += ShowNightIcon;
+        TimeManager.OnDayStart += HandleDayStart;
+        TimeManager.OnNightStart += HandleNightStart;
     }
 
     private void OnDisable()
     {
-        TimeManager.OnDayStart -= ShowDayIcon;
-        TimeManager.OnNightStart -= ShowNightIcon;
+        TimeManager.OnDayStart -= HandleDayStart;
+        TimeManager.OnNightStart -= HandleNightStart;
     }
 
     private void Start()
     {
-        UpdateIcon();
+        UpdateIconSilently();
     }
 
-    private void UpdateIcon()
+    private void HandleDayStart()
+    {
+        ShowDayIcon();
+        GameMessage.Info("A new day has begun!");
+    }
+
+    private void HandleNightStart()
+    {
+        ShowNightIcon();
+        GameMessage.Info("Nightfall: All workers have returned home to rest.");
+    }
+
+    private void UpdateIconSilently()
     {
         if (TimeManager.Instance.IsDay)
             ShowDayIcon();

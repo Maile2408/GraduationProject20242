@@ -59,12 +59,10 @@ public class CityLevelManager : MonoBehaviour
 
             onLevelUp?.Invoke(currentLevel);
 
-            foreach (var id in levelData.unlockedBuildings)
-                UnlockManager.Instance.UnlockBuilding(id);
+            foreach (var id in levelData.unlockedBuildings) UnlockManager.Instance.UnlockBuilding(id);
 
             CurrencyManager.Instance.AddCoin(levelData.rewardCoin);
-
-            GameMessage.Success($"🎉 Level up! You reached level {currentLevel} and gained {levelData.rewardCoin} coins!");
+            GameMessage.Success($"Level up! You reached level {currentLevel} and gained {levelData.rewardCoin} coins!");
 
             Debug.Log($"City leveled up to {currentLevel}! Reward: {levelData.rewardCoin} coins.");
         }

@@ -88,6 +88,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: 106_ModernWell
       objectReference: {fileID: 0}
+    - target: {fileID: 3350357399436698098, guid: 6c47289cc014f454bb1c466f3ed61b34,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350357399436698098, guid: 6c47289cc014f454bb1c466f3ed61b34,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3350357399436698098, guid: 6c47289cc014f454bb1c466f3ed61b34,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4740813431861768481, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
       propertyPath: buildingData.level
@@ -225,11 +240,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3056677758966929319, guid: d7b8619efbe92e943ab2cd47ff31724c,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 684399727978056721}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7b8619efbe92e943ab2cd47ff31724c, type: 3}
 --- !u!4 &5558724679974442179 stripped
 Transform:
@@ -237,30 +248,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5842390582777590135}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8899068324026263248 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3056677758966929319, guid: d7b8619efbe92e943ab2cd47ff31724c,
-    type: 3}
-  m_PrefabInstance: {fileID: 5842390582777590135}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &684399727978056721
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8899068324026263248}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2, y: 2.5, z: 2.2}
-  m_Center: {x: 0, y: 1.2, z: 0}

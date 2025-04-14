@@ -1,44 +1,63 @@
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
-using System.Collections;
 
 public enum GameMessageType { Info, Success, Warning, Guide }
 
-public class GameMessageUI : MonoBehaviour
+public class GameMessageUI : MonoBehaviour, IPoolable
 {
     [SerializeField] private RectTransform panel;
     [SerializeField] private TextMeshProUGUI messageText;
+    [SerializeField] private CanvasGroup canvasGroup;
 
     [Header("Tween Settings")]
     [SerializeField] private float slideInX = 300f;
-    [SerializeField] private float slideOutX = -300f;
+    [SerializeField] private float slideOutX = -300f; 
     [SerializeField] private float slideDuration = 0.5f;
-    [SerializeField] private float displayDuration = 3f;
+    [SerializeField] private float displayDuration = 2.5f;
 
     private Sequence messageSequence;
 
-    private void Awake()
-    {
-        panel.anchoredPosition = new Vector2(slideOutX, panel.anchoredPosition.y);
-    }
-
-    public IEnumerator ShowMessage(string message, GameMessageType type)
+    public void ShowMessage(string message, GameMessageType type)
     {
         messageText.text = message;
         messageText.color = GetColor(type);
 
         messageSequence?.Kill();
-        panel.anchoredPosition = new Vector2(slideOutX, panel.anchoredPosition.y);
+        ResetState();
 
         messageSequence = DOTween.Sequence()
-            .Append(panel.DOAnchorPosX(slideInX, slideDuration).SetEase(Ease.OutBack))
+            .AppendCallback(() =>
+            {
+                canvasGroup.alpha = 0f;
+                panel.anchoredPosition = new Vector2(slideOutX, panel.anchoredPosition.y);
+            })
+            .Append(canvasGroup.DOFade(1f, 0.2f))
+            .Join(panel.DOAnchorPosX(slideInX, slideDuration).SetEase(Ease.OutBack))
             .AppendInterval(displayDuration)
-            .Append(panel.DOAnchorPosX(slideOutX, slideDuration).SetEase(Ease.InBack));
-
-        yield return messageSequence.WaitForCompletion();
+            .Append(canvasGroup.DOFade(0f, 0.4f))
+            .OnComplete(() =>
+            {
+                PoolManager.Instance.Despawn(gameObject);
+            });
     }
 
+    private void ResetState()
+    {
+        panel.anchoredPosition = new Vector2(slideOutX, panel.anchoredPosition.y);
+        canvasGroup.alpha = 0f;
+    }
+
+    public void OnSpawn()
+    {
+        ResetState();
+    }
+
+    public void OnDespawn()
+    {
+        messageSequence?.Kill();
+        ResetState();
+    }
 
     private Color GetColor(GameMessageType type)
     {
@@ -46,8 +65,7 @@ public class GameMessageUI : MonoBehaviour
         {
             GameMessageType.Warning => Color.red,
             GameMessageType.Success => Color.green,
-            GameMessageType.Info => Color.white,
-            GameMessageType.Guide => new Color(1f, 0.85f, 0.3f),
+            GameMessageType.Guide => Color.cyan,
             _ => Color.white,
         };
     }

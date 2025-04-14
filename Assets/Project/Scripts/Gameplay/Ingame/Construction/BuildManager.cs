@@ -127,7 +127,9 @@ public class BuildManager : SaiBehaviour
 
         PoolManager.Instance.Despawn(currentGhost);
         CurrencyManager.Instance.SpendCoin(currentInfo.coin);  
-        DeductResourcesOnPlacement(currentInfo);               
+        DeductResourcesOnPlacement(currentInfo);
+        CityLevelManager.Instance.AddXP(125);
+        GameMessage.Success($"Construction Complete: {currentInfo.buildingName}! +125 XP");               
 
         GameObject underConstruction = PoolManager.Instance.Spawn(PoolPrefabPath.Building("UnderConstruction"));
         underConstruction.transform.position = buildPos;

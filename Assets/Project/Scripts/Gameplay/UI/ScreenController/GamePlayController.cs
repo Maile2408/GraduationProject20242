@@ -64,14 +64,25 @@ public class GamePlayController : MonoBehaviour, IKeyBack
     public void OnPlusCoinButtonTap()
     {
         var buildings = BuildingManager.Instance.BuildingCtrls();
+        int totalCollected = 0;
 
         foreach (var building in buildings)
         {
             if (building.TryGetComponent(out TaxBuildingCtrl tax) && tax.IsReadyToCollect())
             {
-                tax.Collect();
-                Debug.Log($"[GamePlay] Collected tax from {building.name}");
+                int coin = tax.Collect(); 
+                totalCollected += coin;
             }
+        }
+
+        if (totalCollected > 0)
+        {
+            CityLevelManager.Instance.AddXP(totalCollected);
+            GameMessage.Success($"Collected total {totalCollected} coins! +{totalCollected} XP");
+        }
+        else
+        {
+            GameMessage.Warning("No buildings are ready to collect tax.");
         }
     }
 

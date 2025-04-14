@@ -97,8 +97,11 @@ public class AbstractConstruction : SaiBehaviour
         if (realBuilding.TryGetComponent(out BuildingCtrl ctrl))
             BuildingManager.Instance.AddBuilding(ctrl);
 
+        ConstructionManager.Instance.NotifyWorkersWhenFinished(this);
         ConstructionManager.Instance.RemoveConstruction(this);
         PoolManager.Instance.Despawn(this.gameObject);
+        CityLevelManager.Instance.AddXP(25);
+        GameMessage.Info($"Builder finished: {info.buildingName}! +25 XP");
     }
 
     public virtual void ResetConstruction()

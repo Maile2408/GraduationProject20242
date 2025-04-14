@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,16 +5,17 @@ public class GameMessageUIManager : MonoBehaviour
 {
     public static GameMessageUIManager Instance { get; private set; }
 
-    [SerializeField] private GameMessageUI gameMessageUI;
+    [Header("Settings")]
+    [SerializeField] private RectTransform container;
+    [SerializeField] private int maxMessages = 3;
+    [SerializeField] private float spacingY = 80f;
 
-    private Queue<(string message, GameMessageType type)> messageQueue = new();
-    private bool isShowing = false;
+    private readonly List<GameObject> activeMessages = new();
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance != null && Instance != this)
         {
-            Debug.LogError("Multiple GameMessageUIManager!");
             Destroy(gameObject);
             return;
         }
@@ -24,23 +24,25 @@ public class GameMessageUIManager : MonoBehaviour
 
     public void ShowMessage(string message, GameMessageType type)
     {
-        messageQueue.Enqueue((message, type));
-        TryShowNext();
-    }
+        if (activeMessages.Count >= maxMessages)
+        {
+            var oldest = activeMessages[^1];
+            PoolManager.Instance.Despawn(oldest);
+            activeMessages.RemoveAt(activeMessages.Count - 1);
+        }
 
-    private void TryShowNext()
-    {
-        if (isShowing || messageQueue.Count == 0) return;
+        GameObject msgObj = PoolManager.Instance.Spawn(PoolPrefabPath.UI("GameMessageUI"), container);
+        msgObj.transform.SetAsFirstSibling();
 
-        var (msg, type) = messageQueue.Dequeue();
-        StartCoroutine(ShowRoutine(msg, type));
-    }
+        GameMessageUI msgUI = msgObj.GetComponent<GameMessageUI>();
+        msgUI.ShowMessage(message, type);
 
-    private IEnumerator ShowRoutine(string msg, GameMessageType type)
-    {
-        isShowing = true;
-        yield return gameMessageUI.ShowMessage(msg, type);
-        isShowing = false;
-        TryShowNext();
+        activeMessages.Insert(0, msgObj);
+
+        for (int i = 0; i < activeMessages.Count; i++)
+        {
+            var rt = activeMessages[i].GetComponent<RectTransform>();
+            rt.anchoredPosition = new Vector2(0, -i * spacingY);
+        }
     }
 }

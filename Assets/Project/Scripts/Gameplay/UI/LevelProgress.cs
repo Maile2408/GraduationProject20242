@@ -4,8 +4,8 @@ using TMPro;
 
 public class LevelProgress : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textLevel;  
-    [SerializeField] private Image fillImage;             
+    [SerializeField] private TextMeshProUGUI textLevel;
+    [SerializeField] private Image fillImage;
 
     private int lastXP = -1;
     private int lastLevel = -1;

@@ -44,16 +44,18 @@ public class TaxBuildingCtrl : MonoBehaviour
         }
     }
 
-    public void Collect()
+    public int Collect()
     {
-        if (!isReadyToCollect) return;
+        if (!isReadyToCollect) return 0;
 
         isReadyToCollect = false;
         taxIcon?.SetActive(false);
         taxText?.Show(coinPerCycle);
 
-        CurrencyManager.Instance.AddCoin(coinPerCycle);
+        CurrencyManager.Instance.AddCoin((int)coinPerCycle);
+        return (int)coinPerCycle;
     }
+
 
     public bool IsReadyToCollect() => isReadyToCollect;
 }

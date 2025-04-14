@@ -133,6 +133,8 @@ public class WorkerManager : SaiBehaviour
     {
         AddWorker(placingWorker);
         CurrencyManager.Instance.SpendCoin(workerCost);
+        CityLevelManager.Instance.AddXP(75);
+        GameMessage.Info("New Worker Hired! +75 XP");
 
         if (TimeManager.Instance.IsDay) placingWorker.workerTasks.GoWork();
         else placingWorker.workerTasks.GoHome();

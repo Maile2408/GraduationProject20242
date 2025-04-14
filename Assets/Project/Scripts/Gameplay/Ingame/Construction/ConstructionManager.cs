@@ -54,4 +54,16 @@ public class ConstructionManager : SaiBehaviour
     {
         return constructions;
     }
+
+    public void NotifyWorkersWhenFinished(AbstractConstruction finished)
+    {
+        foreach (var worker in WorkerManager.Instance.WorkerCtrls())
+        {
+            if (worker.workerTasks.taskConstruction == finished)
+            {
+                worker.workerTasks.taskConstruction = null;
+                worker.workerTasks.ClearAllTasks();
+            }
+        }
+    }
 }
