@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa6212dc51954141a672041d6c07063, type: 3}
+  m_Name: Achievement_412
+  m_EditorClassIdentifier: 
+  id: playtime_5600
+  title: Enduring Legacy
+  description: Play for over 1 hour 30 minutes
+  type: 14
+  goalAmount: 5600
+  rewardXP: 350
+  rewardCoin: 160
+  icon: {fileID: 21300000, guid: d09421934f826fe499132245a652ea57, type: 3}
+  order: 412

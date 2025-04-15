@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa6212dc51954141a672041d6c07063, type: 3}
+  m_Name: Achievement_303
+  m_EditorClassIdentifier: 
+  id: water_50
+  title: Water Gatherer
+  description: Store 50 water
+  type: 12
+  goalAmount: 50
+  rewardXP: 30
+  rewardCoin: 10
+  icon: {fileID: -1986662211, guid: a03e9228371be9449a97a937850924ca, type: 3}
+  order: 303

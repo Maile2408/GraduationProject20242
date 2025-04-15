@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fa6212dc51954141a672041d6c07063, type: 3}
+  m_Name: Achievement_200
+  m_EditorClassIdentifier: 
+  id: tax_100
+  title: Coin Counter
+  description: Collect 100 in tax
+  type: 7
+  goalAmount: 100
+  rewardXP: 30
+  rewardCoin: 10
+  icon: {fileID: -570784495, guid: a03e9228371be9449a97a937850924ca, type: 3}
+  order: 200
