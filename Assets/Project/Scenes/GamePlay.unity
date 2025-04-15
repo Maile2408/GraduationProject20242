@@ -2905,6 +2905,7 @@ Transform:
   - {fileID: 1268562945}
   - {fileID: 1758135325}
   - {fileID: 392746408}
+  - {fileID: 1863626969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &334525321
@@ -3721,7 +3722,7 @@ Transform:
   m_GameObject: {fileID: 451273610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.031850353, y: 0.4609318, z: -0.4308184}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4831,10 +4832,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 975146080}
     m_Modifications:
+    - target: {fileID: 636405040616234707, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: isDestructible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3322632007140552549, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
       propertyPath: m_Name
-      value: 1_SmallHouse
+      value: FirstlHouse
       objectReference: {fileID: 0}
     - target: {fileID: 4554691606063356283, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
@@ -4886,6 +4892,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5961908531418431930, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 210f5f87df2f69946be0a9ce664a99f4,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9259,15 +9271,26 @@ PrefabInstance:
       propertyPath: resCurrent
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2281166653818590534, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 19a7dda09ea333648ad03146fea6357f,
+        type: 2}
     - target: {fileID: 2627877434307994831, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: resCurrent
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3773913233497389960, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: isDestructible
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5297410189614911037, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: m_Name
-      value: 301_SmallWarehouse
+      value: FirstWarehouse
       objectReference: {fileID: 0}
     - target: {fileID: 6884733124245607847, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
@@ -16390,13 +16413,69 @@ PrefabInstance:
     - target: {fileID: 6751155682947312614, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
         type: 3}
       propertyPath: m_Name
-      value: 304_BuilderHut
+      value: FirstBuilderHut
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853231937996311732, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: a61cb2ebd432ed14c8ec62156d808ed3,
+        type: 2}
+    - target: {fileID: 7802444393789693333, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
+        type: 3}
+      propertyPath: isDestructible
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7f44a4919b87f049aeda5b4b46c1e9d, type: 3}
+--- !u!1 &1863626968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863626969}
+  - component: {fileID: 1863626970}
+  m_Layer: 0
+  m_Name: AchievementManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863626969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863626968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 311307204}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863626970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863626968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3147ba6b470f084bb1efaa9d1764335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementList: []
 --- !u!1001 &1900313188
 PrefabInstance:
   m_ObjectHideFlags: 0

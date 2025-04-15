@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69ef01ad4ff64294eb38ff6bbd011d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   godModeCtrl: {fileID: 567730600815006411}
   isMouseRotating: 0
   mouseScroll: {x: 0, y: 0}
