@@ -103,8 +103,27 @@ public class AbstractConstruction : SaiBehaviour
         ConstructionManager.Instance.NotifyWorkersWhenFinished(this);
         ConstructionManager.Instance.RemoveConstruction(this);
         PoolManager.Instance.Despawn(this.gameObject);
+
         CityLevelManager.Instance.AddXP(25);
         GameMessage.Info($"Builder finished: {info.buildingName}! +25 XP");
+
+        //Achievement
+        AchievementReporter.FirstBuild();
+        AchievementReporter.BuildStructure();
+        switch (info.specialAchievementType)
+        {
+            case SpecialBuildingAchievementType.House:
+                AchievementReporter.BuildHouse();
+                break;
+
+            case SpecialBuildingAchievementType.BuilderHut:
+                AchievementReporter.BuildBuilderHut();
+                break;
+
+            case SpecialBuildingAchievementType.Warehouse:
+                AchievementReporter.BuildWarehouse();
+                break;
+        }
     }
 
     public virtual void ResetConstruction()

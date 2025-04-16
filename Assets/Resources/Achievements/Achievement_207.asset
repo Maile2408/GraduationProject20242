@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tax_3500
   title: Lord of Taxation
   description: Collect 3500 in tax
-  type: 7
+  type: 9
   goalAmount: 3500
   rewardXP: 140
   rewardCoin: 50

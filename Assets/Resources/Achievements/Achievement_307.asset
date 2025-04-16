@@ -15,7 +15,7 @@ MonoBehaviour:
   id: flour_50
   title: Flour Sacker
   description: Store 50 flour
-  type: 12
+  type: 19
   goalAmount: 50
   rewardXP: 40
   rewardCoin: 12

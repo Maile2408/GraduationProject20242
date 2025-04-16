@@ -15,7 +15,7 @@ MonoBehaviour:
   id: worker_total_20
   title: A Thriving Hamlet
   description: Have 20 workers in your city
-  type: 5
+  type: 7
   goalAmount: 20
   rewardXP: 150
   rewardCoin: 50

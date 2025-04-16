@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_5600
   title: Enduring Legacy
   description: Play for over 1 hour 30 minutes
-  type: 14
+  type: 21
   goalAmount: 5600
   rewardXP: 350
   rewardCoin: 160

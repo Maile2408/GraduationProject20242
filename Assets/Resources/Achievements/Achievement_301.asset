@@ -15,7 +15,7 @@ MonoBehaviour:
   id: stone_100
   title: Stone Gatherer
   description: Store 100 stone
-  type: 12
+  type: 15
   goalAmount: 100
   rewardXP: 40
   rewardCoin: 10

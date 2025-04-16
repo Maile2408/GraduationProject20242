@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa6212dc51954141a672041d6c07063, type: 3}
   m_Name: Achievement_106
   m_EditorClassIdentifier: 
-  id: max_worker_15
+  id: max_worker_35
   title: Workforce Limit
-  description: Reach max worker capacity (15)
-  type: 6
-  goalAmount: 15
+  description: Reach max worker capacity (35)
+  type: 8
+  goalAmount: 35
   rewardXP: 120
   rewardCoin: 50
   icon: {fileID: 21300000, guid: 39d441a943ba80146a66fd671d92b65e, type: 3}

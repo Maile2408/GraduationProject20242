@@ -6,7 +6,8 @@ public class ProfileMenuController : MonoBehaviour, IKeyBack
 
     public void OnAchievementsButtonTap()
     {
-
+        ScreenManager.Close();
+        ScreenManager.Add<AchievementBoardController>(AchievementBoardController.NAME);
     }
 
     public void OnLeaderboardButtonTap()

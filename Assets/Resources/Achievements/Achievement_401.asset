@@ -15,7 +15,7 @@ MonoBehaviour:
   id: level_3
   title: Growing Power
   description: Reach city level 3
-  type: 13
+  type: 20
   goalAmount: 3
   rewardXP: 80
   rewardCoin: 30

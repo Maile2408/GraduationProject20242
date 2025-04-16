@@ -29,44 +29,24 @@ public class WorkersController : MonoBehaviour, IKeyBack
     private void UpdateDisplay()
     {
         var workers = WorkerManager.Instance.WorkerCtrls();
+
         int currentWorkers = workers.Count;
-        int workerCapacity = GetTotalCapacity(BuildingTaskType.home);
+        int workerCapacity = WorkerManager.Instance.GetTotalCapacity(BuildingTaskType.home);
+        int countEmployed = WorkerManager.Instance.CountEmployed(workers);
+        int totalJobSlots = WorkerManager.Instance.GetTotalCapacity(BuildingTaskType.workStation);
+
         float coin = CurrencyManager.Instance.CurrentCoin();
         float cost = WorkerManager.Instance.WorkerCost();
 
         txtCurrentWorkers.text = $"Current Workers: {currentWorkers}";
-        txtEmployedWorkers.text = $"Employed Workers: {CountEmployed(workers)}";
+        txtEmployedWorkers.text = $"Employed Workers: {countEmployed}";
         txtWorkerCapacity.text = $"Worker Capacity: {workerCapacity}";
-        txtJobSlots.text = $"Total Job Slots: {GetTotalCapacity(BuildingTaskType.workStation)}";
+        txtJobSlots.text = $"Total Job Slots: {totalJobSlots}";
 
         canHire = currentWorkers < workerCapacity && coin >= cost;
 
         note.SetActive(true);
         warning.SetActive(false);
-    }
-
-    private int CountEmployed(List<WorkerCtrl> workers)
-    {
-        int count = 0;
-        foreach (var worker in workers)
-        {
-            if (worker.workerBuildings.GetWork() != null) count++;
-        }
-        return count;
-    }
-
-    private int GetTotalCapacity(BuildingTaskType type)
-    {
-        int total = 0;
-        foreach (var building in BuildingManager.Instance.BuildingCtrls())
-        {
-            if (building.buildingTaskType != type) continue;
-            if (building.TryGetComponent(out Workers workersComp))
-            {
-                total += workersComp.MaxWorker();
-            }
-        }
-        return total;
     }
 
     public void OnHireButtonTap()
@@ -86,7 +66,8 @@ public class WorkersController : MonoBehaviour, IKeyBack
     {
         var workers = WorkerManager.Instance.WorkerCtrls();
         int currentWorkers = workers.Count;
-        int workerCapacity = GetTotalCapacity(BuildingTaskType.home);
+        int workerCapacity = WorkerManager.Instance.GetTotalCapacity(BuildingTaskType.home);
+        
         float coin = CurrencyManager.Instance.CurrentCoin();
         float cost = WorkerManager.Instance.WorkerCost();
 

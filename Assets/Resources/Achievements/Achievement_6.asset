@@ -15,7 +15,7 @@ MonoBehaviour:
   id: warehouse_5
   title: Kingdom Logistics
   description: Own 5 Warehouses across your realm
-  type: 1
+  type: 4
   goalAmount: 5
   rewardXP: 150
   rewardCoin: 60

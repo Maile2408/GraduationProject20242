@@ -15,7 +15,7 @@ MonoBehaviour:
   id: water_50
   title: Water Gatherer
   description: Store 50 water
-  type: 12
+  type: 17
   goalAmount: 50
   rewardXP: 30
   rewardCoin: 10

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: res_total_500
   title: Resource Stasher
   description: Store 500 total resources
-  type: 11
+  type: 13
   goalAmount: 500
   rewardXP: 70
   rewardCoin: 25

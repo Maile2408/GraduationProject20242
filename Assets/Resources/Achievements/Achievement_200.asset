@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tax_100
   title: Coin Counter
   description: Collect 100 in tax
-  type: 7
+  type: 9
   goalAmount: 100
   rewardXP: 30
   rewardCoin: 10

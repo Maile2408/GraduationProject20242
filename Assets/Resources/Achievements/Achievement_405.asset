@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_1800
   title: Steady Stewardship
   description: Play for 30 minutes
-  type: 14
+  type: 21
   goalAmount: 1800
   rewardXP: 200
   rewardCoin: 90

@@ -40,6 +40,9 @@ public class UnlockManager : MonoBehaviour
         {
             unlockedBuildings.Add(buildingID);
             Debug.Log($"[Unlock] Building Unlocked: {buildingID}");
+
+            // Achievement
+            AchievementReporter.UnlockBuilding();
         }
     }
 

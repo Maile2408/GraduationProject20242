@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_current_8000
   title: Vaultmaster
   description: Reach a coin balance of 8,000
-  type: 10
+  type: 12
   goalAmount: 8000
   rewardXP: 320
   rewardCoin: 140

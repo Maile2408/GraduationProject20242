@@ -88,4 +88,28 @@ public class StorageResourceManager : SaiBehaviour
 
         return (totalUsed, totalCapacity);
     }
+
+    public void ReportStorageAchievements()
+    {
+        var totals = GetTotalResources();
+        float total = 0f;
+
+        foreach (var pair in totals)
+        {
+            float amount = pair.Value;
+            total += amount;
+
+            switch (pair.Key)
+            {
+                case ResourceName.logwood: AchievementReporter.Logwood(amount); break;
+                case ResourceName.plank: AchievementReporter.Plank(amount); break;
+                case ResourceName.water: AchievementReporter.Water(amount); break;
+                case ResourceName.stone: AchievementReporter.Stone(amount); break;
+                case ResourceName.grain: AchievementReporter.Grain(amount); break;
+                case ResourceName.flour: AchievementReporter.Flour(amount); break;
+            }
+        }
+
+        AchievementReporter.StoreResource(total);
+    }
 }

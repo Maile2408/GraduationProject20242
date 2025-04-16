@@ -15,7 +15,7 @@ MonoBehaviour:
   id: stone_300
   title: Stone Repository
   description: Store 300 stone
-  type: 12
+  type: 15
   goalAmount: 300
   rewardXP: 70
   rewardCoin: 25

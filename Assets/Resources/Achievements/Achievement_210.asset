@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_spent_3000
   title: Royal Visionary
   description: Spend 3,000 coins
-  type: 9
+  type: 11
   goalAmount: 3000
   rewardXP: 200
   rewardCoin: 0

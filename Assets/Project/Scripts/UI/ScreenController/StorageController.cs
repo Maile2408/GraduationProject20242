@@ -17,12 +17,12 @@ public class StorageController : MonoBehaviour, IKeyBack
         CacheResourceTexts();
         UpdateStorageDisplay();
 
-        Warehouse.OnStorageChanged += UpdateStorageDisplay;
+        WarehouseWH.OnStorageChanged += UpdateStorageDisplay;
     }
 
     private void OnDisable()
     {
-        Warehouse.OnStorageChanged -= UpdateStorageDisplay;
+        WarehouseWH.OnStorageChanged -= UpdateStorageDisplay;
     }
 
     private void CacheResourceTexts()

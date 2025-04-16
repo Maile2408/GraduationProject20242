@@ -3,7 +3,9 @@ public enum AchievementType
     //Build
     FirstBuild,
     BuildCount,
-    SpecialBuildingBuilt,
+    BuildHouse,
+    BuildBuilderHut,
+    BuildWarehouse,
     BuildingUnlockedCount,
 
     //Worker
@@ -19,7 +21,12 @@ public enum AchievementType
 
     //Resource
     ResourceStored,
-    SpecificResourceStored,
+    LogwoodStored,
+    StoneStored,
+    PlankStored,
+    WaterStored,
+    GrainStored,
+    FlourStored,
     
     //Progress
     LevelReached,

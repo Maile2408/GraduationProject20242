@@ -79,6 +79,9 @@ public class GamePlayController : MonoBehaviour, IKeyBack
         {
             CityLevelManager.Instance.AddXP(totalCollected);
             GameMessage.Success($"Collected total {totalCollected} coins! +{totalCollected} XP");
+
+            //Achievement
+            AchievementReporter.CollectTax(totalCollected);
         }
         else
         {

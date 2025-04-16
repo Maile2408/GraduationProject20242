@@ -15,7 +15,7 @@ MonoBehaviour:
   id: unlock_3
   title: Blueprint Initiate
   description: Unlock 3 building types
-  type: 3
+  type: 5
   goalAmount: 3
   rewardXP: 60
   rewardCoin: 25

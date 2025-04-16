@@ -15,7 +15,7 @@ MonoBehaviour:
   id: plank_100
   title: Plank Supplier
   description: Store 100 planks
-  type: 12
+  type: 16
   goalAmount: 100
   rewardXP: 40
   rewardCoin: 10

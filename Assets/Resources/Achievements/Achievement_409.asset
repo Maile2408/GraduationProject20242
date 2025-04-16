@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_3600
   title: The Eternal Reign
   description: Play for 1 hour
-  type: 14
+  type: 21
   goalAmount: 3600
   rewardXP: 250
   rewardCoin: 120

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: unlock_5
   title: Master Planner
   description: Unlock 5 building types
-  type: 3
+  type: 5
   goalAmount: 5
   rewardXP: 100
   rewardCoin: 40

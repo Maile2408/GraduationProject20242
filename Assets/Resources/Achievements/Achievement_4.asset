@@ -15,7 +15,7 @@ MonoBehaviour:
   id: warehouse_1
   title: Stockroom Startup
   description: Construct a Warehouse with your own hands
-  type: 2
+  type: 4
   goalAmount: 1
   rewardXP: 80
   rewardCoin: 25

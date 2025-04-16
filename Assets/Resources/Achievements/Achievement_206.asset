@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_spent_1000
   title: Grand Investor
   description: Spend 1,000 coins
-  type: 9
+  type: 11
   goalAmount: 1000
   rewardXP: 120
   rewardCoin: 0

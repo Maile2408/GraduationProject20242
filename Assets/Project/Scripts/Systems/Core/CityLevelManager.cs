@@ -40,6 +40,9 @@ public class CityLevelManager : MonoBehaviour
     private void Start()
     {
         UnlockManager.Instance.UnlockInitialBuildings(currentLevel);
+        
+        //Achievement
+        AchievementReporter.ReachLevel(currentLevel);
     }
 
     public void AddXP(int amount)
@@ -64,6 +67,9 @@ public class CityLevelManager : MonoBehaviour
             CurrencyManager.Instance.AddCoin(levelData.rewardCoin);
             GameMessage.Success($"Level up! You reached level {currentLevel} and gained {levelData.rewardCoin} coins!");
 
+            //Achievement
+            AchievementReporter.ReachLevel(currentLevel);
+            
             Debug.Log($"City leveled up to {currentLevel}! Reward: {levelData.rewardCoin} coins.");
         }
     }

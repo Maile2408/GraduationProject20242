@@ -15,4 +15,6 @@ public class BuildingInfo : ScriptableObject
     public List<Resource> cost;
 
     public int unlockCityLevel = 1;
+
+    public SpecialBuildingAchievementType specialAchievementType = SpecialBuildingAchievementType.None;
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_600
   title: Royal Duty
   description: Play for 10 minutes
-  type: 14
+  type: 21
   goalAmount: 600
   rewardXP: 100
   rewardCoin: 50

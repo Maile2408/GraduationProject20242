@@ -26,3 +26,4 @@ MonoBehaviour:
   - name: 1001
     number: 35
   unlockCityLevel: 3
+  specialAchievementType: 1

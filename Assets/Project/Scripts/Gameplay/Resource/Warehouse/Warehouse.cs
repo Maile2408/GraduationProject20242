@@ -8,8 +8,6 @@ public class Warehouse : SaiBehaviour
     [SerializeField] protected bool isFull = false;
     [SerializeField] protected List<ResHolder> resHolders;
 
-    public static event Action OnStorageChanged;
-
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -44,7 +42,7 @@ public class Warehouse : SaiBehaviour
 
     public virtual List<ResHolder> GetStockedResources()
     {
-        return this.resHolders.FindAll((holder) => holder.Current() > 0);
+        return this.resHolders.FindAll((holder) => holder.Current() >= 0);
     }
 
     public virtual void AddByList(List<Resource> addResources)
@@ -59,8 +57,6 @@ public class Warehouse : SaiBehaviour
     {
         ResHolder res = this.GetResource(resourceName);
         res.Add(number);
-
-        OnStorageChanged?.Invoke();
         return res;
     }
 
@@ -69,8 +65,6 @@ public class Warehouse : SaiBehaviour
         ResHolder res = this.GetResource(resourceName);
         if (res.Current() < number) return null;
         res.Deduct(number);
-
-        OnStorageChanged?.Invoke();
         return res;
     }
 

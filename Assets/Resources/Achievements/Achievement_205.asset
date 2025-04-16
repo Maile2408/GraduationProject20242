@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_earned_5000
   title: Vault of Victory
   description: Earn 5000 coins
-  type: 8
+  type: 10
   goalAmount: 5000
   rewardXP: 200
   rewardCoin: 100

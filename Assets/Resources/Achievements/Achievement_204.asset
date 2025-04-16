@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_earned_2000
   title: Kingdom's Wealth
   description: Earn 2000 coins
-  type: 8
+  type: 10
   goalAmount: 2000
   rewardXP: 100
   rewardCoin: 40

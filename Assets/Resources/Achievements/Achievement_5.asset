@@ -15,7 +15,7 @@ MonoBehaviour:
   id: builderhut_1
   title: Tools of the Crown
   description: Construct your own Builder Hut
-  type: 2
+  type: 3
   goalAmount: 1
   rewardXP: 70
   rewardCoin: 20

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: worker_total_30
   title: Bustling Domain
   description: Reach 30 workers active in the city
-  type: 5
+  type: 7
   goalAmount: 30
   rewardXP: 180
   rewardCoin: 60

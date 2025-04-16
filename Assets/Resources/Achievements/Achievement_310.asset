@@ -15,7 +15,7 @@ MonoBehaviour:
   id: logwood_250
   title: Lumber Cache
   description: Store 250 logwood
-  type: 12
+  type: 14
   goalAmount: 250
   rewardXP: 60
   rewardCoin: 20

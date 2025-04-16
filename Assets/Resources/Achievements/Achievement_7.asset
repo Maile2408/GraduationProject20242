@@ -15,7 +15,7 @@ MonoBehaviour:
   id: house_5
   title: Neighborhood Grows
   description: Build 5 Houses in your kingdom
-  type: 1
+  type: 2
   goalAmount: 5
   rewardXP: 100
   rewardCoin: 35

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_4800
   title: Long Reign
   description: Play for 1 hour 20 minutes
-  type: 14
+  type: 21
   goalAmount: 4800
   rewardXP: 300
   rewardCoin: 140

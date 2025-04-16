@@ -27,24 +27,32 @@ public class CurrencyManager : SaiBehaviour
     {
         base.Start();
         OnCoinChanged?.Invoke();
+
+        //Achievement
+        AchievementReporter.UpdateCurrentCoin(currentCoin);
     }
 
     public void AddCoin(float amount)
     {
         currentCoin += amount;
         OnCoinChanged?.Invoke();
+
+        //Achievement
+        AchievementReporter.EarnCoin(amount);
+        AchievementReporter.UpdateCurrentCoin(currentCoin);
     }
 
-    public bool SpendCoin(float amount)
+    public void SpendCoin(float amount)
     {
         if (currentCoin >= amount)
         {
             currentCoin -= amount;
             OnCoinChanged?.Invoke();
-            return true;
-        }
 
+            //Achievement
+            AchievementReporter.SpendCoin(amount);
+            AchievementReporter.UpdateCurrentCoin(currentCoin);
+        }
         Debug.Log("Not enough money!");
-        return false;
     }
 }

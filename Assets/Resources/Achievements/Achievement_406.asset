@@ -15,7 +15,7 @@ MonoBehaviour:
   id: level_10
   title: Crown's Reach
   description: Reach city level 10
-  type: 13
+  type: 20
   goalAmount: 10
   rewardXP: 180
   rewardCoin: 90

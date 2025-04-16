@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tax_5000
   title: Supreme Treasurer
   description: Collect 5000 in tax
-  type: 7
+  type: 9
   goalAmount: 5000
   rewardXP: 180
   rewardCoin: 80

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: worker_hired_1
   title: Royal Recruit
   description: Hire 1 worker
-  type: 4
+  type: 6
   goalAmount: 1
   rewardXP: 30
   rewardCoin: 10

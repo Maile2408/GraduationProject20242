@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_earned_1000
   title: Gold Gainer
   description: Earn 1000 coins
-  type: 8
+  type: 10
   goalAmount: 1000
   rewardXP: 60
   rewardCoin: 20

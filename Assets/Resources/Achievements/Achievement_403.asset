@@ -15,7 +15,7 @@ MonoBehaviour:
   id: level_5
   title: Realm Ascending
   description: Reach city level 5
-  type: 13
+  type: 20
   goalAmount: 5
   rewardXP: 120
   rewardCoin: 60

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AchievementBoardController : MonoBehaviour, IKeyBack
+public class AchievementRewardsController : MonoBehaviour, IKeyBack
 {
-    public const string NAME = "AchievementBoard";
+    public const string NAME = "AchievementRewards";
 
     [SerializeField] private Transform content;
 
@@ -12,7 +12,7 @@ public class AchievementBoardController : MonoBehaviour, IKeyBack
         RefreshUI();
     }
 
-    public void RefreshUI()
+    private void RefreshUI()
     {
         foreach (Transform child in content)
         {
@@ -23,13 +23,17 @@ public class AchievementBoardController : MonoBehaviour, IKeyBack
 
         foreach (var progress in list)
         {
-            GameObject slot = PoolManager.Instance.Spawn(PoolPrefabPath.UI("AchievementSlot"), content);
-            slot.GetComponent<AchievementSlotUI>().Setup(progress);
+            if (progress.isCompleted && !progress.isRewardClaimed)
+            {
+                GameObject slot = PoolManager.Instance.Spawn(PoolPrefabPath.UI("AchievementSlot"), content);
+                slot.GetComponent<AchievementSlotUI>().Setup(progress);
+            }
         }
     }
 
-    public void OnCloseButtonTap()
+    public void OnClaimButtonTap()
     {
+        AchievementManager.Instance.ClaimAllPendingRewards();
         ScreenManager.Close();
     }
 

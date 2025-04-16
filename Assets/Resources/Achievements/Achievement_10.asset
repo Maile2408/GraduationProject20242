@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: unlock_10
   title: Master Planner
-  description: Unlock 5 building types
-  type: 3
+  description: Unlock 10 building types
+  type: 5
   goalAmount: 10
   rewardXP: 200
   rewardCoin: 60

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tax_500
   title: Royal Treasurer
   description: Collect 500 in tax
-  type: 7
+  type: 9
   goalAmount: 500
   rewardXP: 50
   rewardCoin: 30

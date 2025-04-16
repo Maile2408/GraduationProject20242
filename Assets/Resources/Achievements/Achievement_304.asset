@@ -15,7 +15,7 @@ MonoBehaviour:
   id: res_total_300
   title: Basic Reserve
   description: Store 300 total resources
-  type: 11
+  type: 13
   goalAmount: 300
   rewardXP: 50
   rewardCoin: 15

@@ -18,7 +18,7 @@ public class AchievementSlotUI : MonoBehaviour, IPoolable
         textDescription.text = data.description;
 
         if (progress.isCompleted)
-            textProgress.text = "<color=green>✔ Completed</color>";
+            textProgress.text = "<color=green>Completed</color>";
         else
             textProgress.text = $"{progress.current}/{data.goalAmount}";
     }

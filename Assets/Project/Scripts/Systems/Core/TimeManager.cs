@@ -14,8 +14,8 @@ public class TimeManager : SaiBehaviour
     public bool IsNight => currentTime == TimeState.Night;
 
     [Header("Time Config")]
-    [SerializeField] private float dayDuration = 600f;    
-    [SerializeField] private float nightDuration = 300f;
+    [SerializeField] private float dayDuration = 300f;    
+    [SerializeField] private float nightDuration = 120f;
     [SerializeField] private float timer;
 
     public static event Action OnDayStart;
@@ -43,11 +43,17 @@ public class TimeManager : SaiBehaviour
 
         if (IsDay && timer >= dayDuration)
         {
+            //Achievement
+            AchievementReporter.PlayTime(dayDuration);
+            
             timer = 0f;
             SwitchToNight();
         }
         else if (IsNight && timer >= nightDuration)
         {
+            //Achievement
+            AchievementReporter.PlayTime(nightDuration);
+            
             timer = 0f;
             SwitchToDay();
         }

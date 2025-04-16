@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_2700
   title: Midday March
   description: Play for 45 minutes
-  type: 14
+  type: 21
   goalAmount: 2700
   rewardXP: 220
   rewardCoin: 100

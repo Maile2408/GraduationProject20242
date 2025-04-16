@@ -30,3 +30,4 @@ MonoBehaviour:
   - name: 2001
     number: 30
   unlockCityLevel: 6
+  specialAchievementType: 2

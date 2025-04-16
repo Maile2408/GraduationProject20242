@@ -32,6 +32,10 @@ public class WorkerManager : SaiBehaviour
     {
         base.Start();
         OnWorkerListChanged?.Invoke();
+
+        //Achievement
+        AchievementReporter.MaxWorkerReached(this.GetTotalCapacity(BuildingTaskType.home));
+        AchievementReporter.UpdateTotalWorker(this.workerCtrls.Count);
     }
 
     protected override void LoadComponents()
@@ -98,6 +102,30 @@ public class WorkerManager : SaiBehaviour
         this.workerCtrls.Remove(workerCtrl);
     }
 
+    public int GetTotalCapacity(BuildingTaskType type)
+    {
+        int total = 0;
+        foreach (var building in BuildingManager.Instance.BuildingCtrls())
+        {
+            if (building.buildingTaskType != type) continue;
+            if (building.TryGetComponent(out Workers workersComp))
+            {
+                total += workersComp.MaxWorker();
+            }
+        }
+        return total;
+    }
+
+    public int CountEmployed(List<WorkerCtrl> workers)
+    {
+        int count = 0;
+        foreach (var worker in workers)
+        {
+            if (worker.workerBuildings.GetWork() != null) count++;
+        }
+        return count;
+    }
+
     public void StartPlacingWorker()
     {
         if (isPlacingWorker) return;
@@ -126,15 +154,23 @@ public class WorkerManager : SaiBehaviour
 
         isPlacingWorker = true;
 
+        GameMessage.Guide("Click on Ground to place a worker");
+
         Debug.Log("Click on Ground to place a worker.");
     }
 
     private void FinalizePlacement()
     {
         AddWorker(placingWorker);
+
         CurrencyManager.Instance.SpendCoin(workerCost);
         CityLevelManager.Instance.AddXP(75);
         GameMessage.Info("New Worker Hired! +75 XP");
+
+        // Achievement
+        AchievementReporter.HireWorker();
+        AchievementReporter.MaxWorkerReached(this.GetTotalCapacity(BuildingTaskType.home));
+        AchievementReporter.UpdateTotalWorker(this.workerCtrls.Count);
 
         if (TimeManager.Instance.IsDay) placingWorker.workerTasks.GoWork();
         else placingWorker.workerTasks.GoHome();

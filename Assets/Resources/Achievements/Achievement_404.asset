@@ -15,7 +15,7 @@ MonoBehaviour:
   id: playtime_1200
   title: Royal Vigilance
   description: Play for 20 minutes
-  type: 14
+  type: 21
   goalAmount: 1200
   rewardXP: 130
   rewardCoin: 65

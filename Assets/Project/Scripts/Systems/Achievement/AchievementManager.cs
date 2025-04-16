@@ -7,7 +7,9 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager Instance;
 
     private Dictionary<string, AchievementProgress> progressDict = new();
-    private List<AchievementProgress> progressList = new(); 
+    private List<AchievementProgress> progressList = new();
+    private List<AchievementProgress> pendingClaimQueue = new();
+    private bool isPopupPending = false;
 
     private void Awake()
     {
@@ -55,18 +57,70 @@ public class AchievementManager : MonoBehaviour
         {
             if (progress.data.type != type || progress.isCompleted) continue;
 
-            bool completed = progress.AddProgress(amount);
+            bool completed = false;
+
+            if (AchievementProgress.IsCumulativeType(type))
+                completed = progress.AddProgress(amount);
+            else if (amount > progress.current)
+                completed = progress.SetProgress(amount);
+
             if (completed)
             {
-                CityLevelManager.Instance?.AddXP(progress.data.rewardXP);
-                CurrencyManager.Instance?.AddCoin(progress.data.rewardCoin);
-
-                GameMessage.Success($"{progress.data.title} (+{progress.data.rewardXP} XP, +{progress.data.rewardCoin} Coin)");
-
-                // Optionally: show popup here
-                // var popup = PoolManager.Instance.Spawn(...);
+                if (!progress.isRewardClaimed && !pendingClaimQueue.Contains(progress))
+                {
+                    pendingClaimQueue.Add(progress);
+                    ShowAchievementPopup();
+                }
             }
         }
+    }
+
+    private void ShowAchievementPopup()
+    {
+        if(isPopupPending) return;
+        
+        isPopupPending = true;
+        Invoke(nameof(OpenPopup), 1.5f);
+    }
+
+    private void OpenPopup()
+    {
+        isPopupPending = false;
+        if(pendingClaimQueue.Count > 0 ) ScreenManager.Add<AchievementRewardsController>(AchievementRewardsController.NAME);
+    }
+
+    public void ClaimAllPendingRewards()
+    {
+        int totalXP = 0;
+        int totalCoin = 0;
+
+        foreach (var progress in pendingClaimQueue)
+        {
+            if (progress.isRewardClaimed) continue;
+
+            totalXP += progress.data.rewardXP;
+            totalCoin += progress.data.rewardCoin;
+            progress.isRewardClaimed = true;
+        }
+
+        if (totalXP > 0) CityLevelManager.Instance.AddXP(totalXP);
+        if (totalCoin > 0) CurrencyManager.Instance.AddCoin(totalCoin);
+
+        GameMessage.Success($"Claimed all achievements! (+{totalXP} XP, +{totalCoin} Coin)");
+
+        pendingClaimQueue.Clear();
+    }
+
+    public int GetCurrentProgress(AchievementType type)
+    {
+        int max = 0;
+        foreach (var progress in progressList)
+        {
+            if (progress.data.type != type) continue;
+            if (progress.current > max)
+                max = progress.current;
+        }
+        return max;
     }
 
     public List<AchievementProgress> GetAllProgress() => new(progressList);

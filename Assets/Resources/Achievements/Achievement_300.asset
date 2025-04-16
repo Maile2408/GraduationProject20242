@@ -15,7 +15,7 @@ MonoBehaviour:
   id: logwood_100
   title: Logwood Collector
   description: Store 100 logwood
-  type: 12
+  type: 14
   goalAmount: 100
   rewardXP: 40
   rewardCoin: 10

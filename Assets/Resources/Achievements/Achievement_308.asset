@@ -15,7 +15,7 @@ MonoBehaviour:
   id: plank_200
   title: Plank Depot
   description: Store 200 planks
-  type: 12
+  type: 16
   goalAmount: 200
   rewardXP: 65
   rewardCoin: 22

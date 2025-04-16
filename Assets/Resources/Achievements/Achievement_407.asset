@@ -15,7 +15,7 @@ MonoBehaviour:
   id: level_15
   title: Imperial Legacy
   description: Reach city level 15
-  type: 13
+  type: 20
   goalAmount: 15
   rewardXP: 240
   rewardCoin: 110

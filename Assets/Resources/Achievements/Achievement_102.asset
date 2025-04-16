@@ -15,7 +15,7 @@ MonoBehaviour:
   id: worker_hired_10
   title: Skilled Workforce
   description: Hire 10 workers
-  type: 4
+  type: 6
   goalAmount: 10
   rewardXP: 100
   rewardCoin: 40

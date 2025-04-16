@@ -56,6 +56,7 @@ public class TaxBuildingCtrl : MonoBehaviour
         taxText?.Show(coinPerCycle);
 
         CurrencyManager.Instance.AddCoin((int)coinPerCycle);
+
         return (int)coinPerCycle;
     }
 

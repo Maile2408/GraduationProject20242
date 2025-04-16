@@ -30,3 +30,4 @@ MonoBehaviour:
   - name: 1002
     number: 40
   unlockCityLevel: 11
+  specialAchievementType: 1

@@ -15,7 +15,7 @@ MonoBehaviour:
   id: coin_earned_7500
   title: Treasury of Legends
   description: Earn 7500 coins
-  type: 8
+  type: 10
   goalAmount: 7500
   rewardXP: 250
   rewardCoin: 120
