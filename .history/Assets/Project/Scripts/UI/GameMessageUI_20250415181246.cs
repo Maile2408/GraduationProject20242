@@ -26,7 +26,7 @@ public class GameMessageUI : MonoBehaviour, IPoolable
         messageSequence?.Kill();
         ResetState();
 
-        messageSequence = DOTween.Sequence().SetLink(gameObject)
+        messageSequence = DOTween.Sequence()
             .AppendCallback(() =>
             {
                 canvasGroup.alpha = 0f;

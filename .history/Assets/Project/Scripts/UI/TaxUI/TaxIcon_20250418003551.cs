@@ -10,9 +10,4 @@ public class TaxIcon : MonoBehaviour
                  .SetEase(Ease.InOutSine)
                  .SetLink(gameObject);
     }
-
-    private void OnDisable()
-    {
-        DOTween.Kill(gameObject);
-    }
 }

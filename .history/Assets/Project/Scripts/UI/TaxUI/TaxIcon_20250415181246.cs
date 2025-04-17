@@ -7,12 +7,6 @@ public class TaxIcon : MonoBehaviour
     {
         transform.DOLocalMoveY(transform.localPosition.y + 10f, 0.5f)
                  .SetLoops(-1, LoopType.Yoyo)
-                 .SetEase(Ease.InOutSine)
-                 .SetLink(gameObject);
-    }
-
-    private void OnDisable()
-    {
-        DOTween.Kill(gameObject);
+                 .SetEase(Ease.InOutSine);
     }
 }

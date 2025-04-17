@@ -39,4 +39,5 @@ public class TaxText : MonoBehaviour
     {
         DOTween.Kill(gameObject);
     }
+
 }

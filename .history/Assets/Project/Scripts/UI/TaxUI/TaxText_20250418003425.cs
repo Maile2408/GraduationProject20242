@@ -34,9 +34,4 @@ public class TaxText : MonoBehaviour
             });
 
     }
-
-    private void OnDisable()
-    {
-        DOTween.Kill(gameObject);
-    }
 }

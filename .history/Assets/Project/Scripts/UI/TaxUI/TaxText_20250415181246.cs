@@ -20,23 +20,12 @@ public class TaxText : MonoBehaviour
         Vector3 startPos = rect.localPosition;
         rect.localPosition = startPos;
 
-        rect.DOLocalMoveY(startPos.y + flyDistance, duration)
-            .SetEase(Ease.OutCubic)
-            .SetLink(gameObject);
-
-        canvasGroup.DOFade(0, duration)
-            .SetLink(gameObject)
-            .OnComplete(() =>
-            {
-                gameObject.SetActive(false);
-                rect.localPosition = startPos;
-                canvasGroup.alpha = 1;
-            });
-
-    }
-
-    private void OnDisable()
-    {
-        DOTween.Kill(gameObject);
+        rect.DOLocalMoveY(startPos.y + flyDistance, duration).SetEase(Ease.OutCubic);
+        canvasGroup.DOFade(0, duration).OnComplete(() =>
+        {
+            gameObject.SetActive(false);
+            rect.localPosition = startPos;
+            canvasGroup.alpha = 1;
+        });
     }
 }
