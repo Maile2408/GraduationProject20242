@@ -34,10 +34,17 @@ public class HomeController : MonoBehaviour, IKeyBack
 
     public void OnPlayButtonTap()
     {
-        //Nếu đã đăng nhập thì vào thẳng màn game
-        //ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
-        //Nếu chưa đăng nhập thì add Screen Login
-        ScreenManager.Add<LoginController>(LoginController.NAME);
+        if (PlayFabAccountManager.Instance.IsLoggedIn)
+        {
+            if (PlayFabProfileManager.Instance.HasCreatedProfile)
+                ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
+            else
+                ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
+        }
+        else
+        {
+            ScreenManager.Add<LoginController>(LoginController.NAME);
+        }
     }
 
     public void OnQuitButtonTap()

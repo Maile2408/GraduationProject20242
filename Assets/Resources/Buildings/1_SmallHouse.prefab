@@ -193,6 +193,7 @@ MonoBehaviour:
   workers: {fileID: 5280799064681273468}
   warehouse: {fileID: 4717171960972615187}
   buildingTask: {fileID: 5757297881628241568}
+  buildingInfo: {fileID: 0}
 --- !u!114 &4717171960972615187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +230,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  raycastHeight: 5
   raycastDistance: 10
+  maxAllowedSlope: 45
 --- !u!114 &636405040616234707
 MonoBehaviour:
   m_ObjectHideFlags: 0

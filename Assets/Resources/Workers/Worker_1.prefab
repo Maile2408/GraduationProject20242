@@ -203,6 +203,11 @@ MonoBehaviour:
   taskGoHome: {fileID: 3678729322262056260}
   taskTarget: {fileID: 0}
   taskBuildingCtrl: {fileID: 0}
+  taskConstruction: {fileID: 0}
+  bringMaterialCount: 0
+  takeProductCount: 0
+  bringMaterialTimer: 0
+  takeProductTimer: 0
   tasks: 
 --- !u!1 &4895999115815509514
 GameObject:

@@ -35,9 +35,15 @@ public class HouseWH : Warehouse
 
     protected virtual void CheckCanConsume()
     {
-        if (TimeManager.Instance.IsNight) this.canConsume = true;
-        else this.canConsume = false;
+        if (TimeManager.Instance == null)
+        {
+            Debug.LogWarning("TimeManager.Instance is null in HouseWH");
+            return;
+        }
+
+        this.canConsume = TimeManager.Instance.IsNight;
     }
+
 
     protected virtual void Consuming()
     {
