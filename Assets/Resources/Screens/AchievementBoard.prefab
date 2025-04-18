@@ -222,7 +222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3820747425946490561}
-  - component: {fileID: 1132351595513303592}
+  - component: {fileID: 8581292691929150355}
   m_Layer: 5
   m_Name: AchievementBoard
   m_TagString: Untagged
@@ -250,7 +250,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1132351595513303592
+--- !u!114 &8581292691929150355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,7 +259,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3387652934893700365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ac1ea0cd6707ac4b95e90499407ff0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f3b505c89dcada4bac5c5824d338496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 4808785311801157254}
@@ -372,7 +372,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1132351595513303592}
+      objectReference: {fileID: 8581292691929150355}
     - target: {fileID: 4271190397044446626, guid: ae53df424f4b8fc4bb3107e9d1994ef2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState

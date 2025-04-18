@@ -26,7 +26,7 @@ public class AchievementManager : MonoBehaviour
 
     private void LoadAllAchievements()
     {
-        var achievementArray = Resources.LoadAll<AchievementData>(PoolPrefabPath.Achievement(""));
+        var achievementArray = Resources.LoadAll<AchievementData>("Achievements/");
         var sorted = achievementArray.OrderBy(a => a.order).ToList();
 
         foreach (var data in sorted)

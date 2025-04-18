@@ -146,8 +146,8 @@ GameObject:
   - component: {fileID: 7494800443932987278}
   - component: {fileID: 8108947695707425717}
   - component: {fileID: 678341359211098037}
-  - component: {fileID: 5638840545205409674}
   - component: {fileID: 4294930947139301261}
+  - component: {fileID: 6048076643844496539}
   m_Layer: 5
   m_Name: GameMessageUI
   m_TagString: Untagged
@@ -213,25 +213,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5638840545205409674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5494174058657160696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68072848458890440b895c69853487be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 7494800443932987278}
-  messageText: {fileID: 4760777391480263753}
-  canvasGroup: {fileID: 4294930947139301261}
-  slideInX: 300
-  slideOutX: -300
-  slideDuration: 0.5
-  displayDuration: 2.5
 --- !u!225 &4294930947139301261
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -244,3 +225,22 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6048076643844496539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494174058657160696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c181806c8b228ee47bb08ed02d4edbb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 7494800443932987278}
+  messageText: {fileID: 4760777391480263753}
+  canvasGroup: {fileID: 4294930947139301261}
+  slideInX: 300
+  slideOutX: -300
+  slideDuration: 0.5
+  displayDuration: 2.5

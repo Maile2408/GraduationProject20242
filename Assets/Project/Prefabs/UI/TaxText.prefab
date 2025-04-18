@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4884304480098626724}
   - component: {fileID: 7713681703662000271}
   - component: {fileID: 482810347155390605}
-  - component: {fileID: 7769256608637408574}
+  - component: {fileID: 8229066297360662496}
   m_Layer: 5
   m_Name: TaxText
   m_TagString: Untagged
@@ -149,7 +149,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &7769256608637408574
+--- !u!114 &8229066297360662496
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,8 +158,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8594416187075582391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5126a98bfbc624bb4d06f5e20c9278, type: 3}
+  m_Script: {fileID: 11500000, guid: 54f35513ad21cb440a1b48495dd31713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 7713681703662000271}
   canvasGroup: {fileID: 482810347155390605}
+  flyDistance: 100
+  duration: 2

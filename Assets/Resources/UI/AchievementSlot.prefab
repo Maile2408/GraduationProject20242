@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8288271279878554941}
   - component: {fileID: 5426598165314045839}
   - component: {fileID: 6310234694212570816}
-  - component: {fileID: 7738619961801922748}
+  - component: {fileID: 5032922998786523038}
   m_Layer: 5
   m_Name: AchievementSlot
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7738619961801922748
+--- !u!114 &5032922998786523038
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4836428727396759694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f771c25c55b52e243adf91cfbb097a4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 039f20e0a65136841bcd49fd280507f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textTitle: {fileID: 8849222667339431367}

@@ -13,8 +13,13 @@ public class PoolManager : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (PoolManager.Instance != null) Debug.LogError("Only 1 PoolManager allow");
-        PoolManager.Instance = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
 
     public GameObject Spawn(string prefabPath, Transform parent = null)
@@ -56,4 +61,10 @@ public class PoolManager : SaiBehaviour
             GameObject.Destroy(obj);
         }
     }
+
+    public bool HasSpawned(GameObject obj)
+    {
+        return poolByObject.ContainsKey(obj);
+    }
+
 }

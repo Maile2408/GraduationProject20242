@@ -9,8 +9,8 @@ public class BuildingManager : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (BuildingManager.Instance != null) Debug.LogError("Only 1 BuildingManager allow");
-        BuildingManager.Instance = this;
+        if (Instance != null) Debug.LogError("Only 1 BuildingManager allow");
+        Instance = this;
     }
 
     protected override void LoadComponents()

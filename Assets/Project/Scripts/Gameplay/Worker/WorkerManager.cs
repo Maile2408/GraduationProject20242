@@ -21,11 +21,11 @@ public class WorkerManager : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (WorkerManager.Instance != null)
+        if (Instance != null)
         {
             Debug.LogError("Only 1 WorkerManager allowed");
         }
-        WorkerManager.Instance = this;
+        Instance = this;
     }
 
     protected override void Start()
@@ -163,6 +163,7 @@ public class WorkerManager : SaiBehaviour
     {
         AddWorker(placingWorker);
 
+        AudioManager.Instance.PlayWorkerSpawn();
         CurrencyManager.Instance.SpendCoin(workerCost);
         CityLevelManager.Instance.AddXP(75);
         GameMessage.Info("New Worker Hired! +75 XP");

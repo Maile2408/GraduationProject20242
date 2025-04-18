@@ -190,7 +190,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3820747425946490561}
-  - component: {fileID: 2556938796349048238}
+  - component: {fileID: 1299959015368574251}
   m_Layer: 5
   m_Name: CreateProfile
   m_TagString: Untagged
@@ -218,7 +218,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2556938796349048238
+--- !u!114 &1299959015368574251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3387652934893700365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bb8b0baf82be3c4db9c224db54fece4, type: 3}
+  m_Script: {fileID: 11500000, guid: 64b7abb3cc127d94d8bad07a898fed49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputYourName: {fileID: 3902785842627483341}
@@ -569,7 +569,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2556938796349048238}
+      objectReference: {fileID: 1299959015368574251}
     - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1464,7 +1464,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2556938796349048238}
+      objectReference: {fileID: 1299959015368574251}
     - target: {fileID: 2648973434519825085, guid: 63fc5425daf123349b1274b10a2a95b4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
