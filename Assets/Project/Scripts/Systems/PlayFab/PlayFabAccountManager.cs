@@ -20,8 +20,6 @@ public class PlayFabAccountManager : MonoBehaviour
         PlayFabSettings.staticSettings.TitleId = titleId;
     }
 
-    #region Login/Register
-
     public void Login(string email, string password, Action onSuccess, Action<string> onError)
     {
         var request = new LoginWithEmailAddressRequest
@@ -76,6 +74,4 @@ public class PlayFabAccountManager : MonoBehaviour
         PlayerPrefs.DeleteKey("PlayFabID");
         Debug.Log("User logged out");
     }
-
-    #endregion
 }
