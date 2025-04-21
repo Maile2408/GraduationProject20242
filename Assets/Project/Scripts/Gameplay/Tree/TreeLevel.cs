@@ -7,6 +7,12 @@ public class TreeLevel : BuildLevel
     [SerializeField] protected float treeTimer = 0;
     [SerializeField] protected float treeDelay = Mathf.Infinity;
 
+    public float TreeTimer
+    {
+        get => treeTimer;
+        set => treeTimer = Mathf.Max(0, value);
+    }
+
     protected override void FixedUpdate()
     {
         base.FixedUpdate();

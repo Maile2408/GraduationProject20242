@@ -8,10 +8,10 @@ namespace Invector.vCharacterController
     public class vCreateBasicCharacterEditor : EditorWindow
     {
         GUISkin skin;
-        GameObject charObj;
+        UnityEngine.GameObject charObj;
         Animator charAnimator;
         public  RuntimeAnimatorController controller;
-        public GameObject hud;
+        public UnityEngine.GameObject hud;
         Vector2 rect = new Vector2(500, 540);
         Vector2 scrool;
         Editor humanoidpreview;
@@ -65,7 +65,7 @@ namespace Invector.vCharacterController
             else if (!isValidAvatar)
                 EditorGUILayout.HelpBox(charObj.name + " is a invalid Humanoid", MessageType.Info);
 
-            charObj = EditorGUILayout.ObjectField("FBX Model", charObj, typeof(GameObject), true, GUILayout.ExpandWidth(true)) as GameObject;
+            charObj = EditorGUILayout.ObjectField("FBX Model", charObj, typeof(UnityEngine.GameObject), true, GUILayout.ExpandWidth(true)) as UnityEngine.GameObject;
 
             if (GUI.changed && charObj != null && charObj.GetComponent<vThirdPersonController>() == null)
                 humanoidpreview = Editor.CreateEditor(charObj);
@@ -126,7 +126,7 @@ namespace Invector.vCharacterController
         void Create()
         {
             // base for the character
-            var _ThirdPerson = GameObject.Instantiate(charObj, Vector3.zero, Quaternion.identity) as GameObject;
+            var _ThirdPerson = UnityEngine.GameObject.Instantiate(charObj, Vector3.zero, Quaternion.identity) as UnityEngine.GameObject;
             if (!_ThirdPerson)
                 return;          
             _ThirdPerson.name = "vBasicController_" + charObj.gameObject.name;
@@ -137,10 +137,10 @@ namespace Invector.vCharacterController
             var collider = _ThirdPerson.AddComponent<CapsuleCollider>();
 
             // camera
-            GameObject camera = null;
+            UnityEngine.GameObject camera = null;
             if (Camera.main == null)
             {
-                var cam = new GameObject("vThirdPersonCamera");
+                var cam = new UnityEngine.GameObject("vThirdPersonCamera");
                 cam.AddComponent<Camera>();
                 cam.AddComponent<AudioListener>();
                 camera = cam;

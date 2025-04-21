@@ -11,7 +11,7 @@ public class LeaderboardController : MonoBehaviour, IKeyBack
     [SerializeField] private TMP_Dropdown dropdownStatType;
     [SerializeField] private Transform content;
 
-    private readonly List<GameObject> activeSlots = new();
+    private readonly List<UnityEngine.GameObject> activeSlots = new();
 
     private readonly Dictionary<string, string> statMapping = new()
     {
@@ -57,7 +57,7 @@ public class LeaderboardController : MonoBehaviour, IKeyBack
 
         foreach (var entry in entries)
         {
-            GameObject go = PoolManager.Instance.Spawn(PoolPrefabPath.UI("LeaderboardSlot"), content);
+            UnityEngine.GameObject go = PoolManager.Instance.Spawn(PoolPrefabPath.UI("LeaderboardSlot"), content);
             activeSlots.Add(go);
 
             var slot = go.GetComponent<LeaderboardSlot>();

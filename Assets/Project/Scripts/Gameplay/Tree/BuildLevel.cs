@@ -6,6 +6,12 @@ public class BuildLevel : SaiBehaviour
     [SerializeField] protected List<Transform> levels;
     [SerializeField] protected int currentLevel = 0;
 
+    public int CurrentLevel
+    {
+        get => currentLevel;
+        set => currentLevel = Mathf.Clamp(value, 0, levels.Count - 1);
+    }
+
     protected override void OnEnable()
     {
         this.ShowBuilding();

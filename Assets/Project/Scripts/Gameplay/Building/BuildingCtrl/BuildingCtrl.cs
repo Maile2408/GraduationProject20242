@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingCtrl : SaiBehaviour, IPoolable
+public class BuildingCtrl : SaiBehaviour, IPoolable, ISaveable<BuildingSaveData>
 {
     [Header("Building")]
+    public string buildingType;
     public BuildingTaskType buildingTaskType = BuildingTaskType.workStation;
     public Transform door;
     public Workers workers;
@@ -54,5 +53,40 @@ public class BuildingCtrl : SaiBehaviour, IPoolable
     public void OnDespawn()
     {
         this.warehouse.ResetResources();
+    }
+
+    // ===================== SAVE ======================
+    public BuildingSaveData Save()
+    {
+        return new BuildingSaveData
+        {
+            id = GetComponent<Identifiable>().id,
+            type = this.buildingType,
+            buildingInfoID = this.buildingInfo.buildingID,
+            position = transform.position,
+            rotation = transform.rotation,
+            //inventory = this.warehouse.,
+            //taxReady = this.buildingTask.taxReady,
+            //taxTimer = this.buildingTask.taxTimer
+        };
+    }
+
+    // ===================== LOAD ======================
+    public void LoadFromSave(BuildingSaveData data)
+    {
+        transform.position = data.position;
+        transform.rotation = data.rotation;
+
+        /*if (this.buildingInfo == null || this.buildingInfo.buildingID != data.buildingInfoID)
+        {
+            // You can optionally reload buildingInfo from ID if needed
+            Debug.LogWarning("BuildingInfo mismatch or null: " + name);
+        }*/
+
+        //this.warehouse.SetResources(data.inventory);
+        //this.buildingTask.taxReady = data.taxReady;
+        //this.buildingTask.taxTimer = data.taxTimer;
+
+        // Optionally reset UI, task state, animation...
     }
 }

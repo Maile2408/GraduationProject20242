@@ -25,4 +25,5 @@ MonoBehaviour:
   cost:
   - name: 1001
     number: 25
-  unlockCityLevel: 2
+  unlockCityLevel: 1
+  specialAchievementType: 0

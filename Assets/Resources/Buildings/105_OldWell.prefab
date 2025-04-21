@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5176099353417875667}
   - component: {fileID: 3191399247992500179}
   - component: {fileID: 361350465238669532}
+  - component: {fileID: 3651073603144266697}
   m_Layer: 10
   m_Name: 105_OldWell
   m_TagString: Well
@@ -211,6 +212,7 @@ MonoBehaviour:
   workers: {fileID: 5897096311856363076}
   warehouse: {fileID: 1516692336692902209}
   buildingTask: {fileID: 5176099353417875667}
+  buildingInfo: {fileID: 0}
 --- !u!114 &5176099353417875667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,6 +263,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestructible: 1
   buildingCtrl: {fileID: 6483382352796370888}
+--- !u!114 &3651073603144266697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2846300099946564928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f01034da81bc734a9f883e4ee13bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &7494243973533802976
 GameObject:
   m_ObjectHideFlags: 0

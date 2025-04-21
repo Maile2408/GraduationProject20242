@@ -10,7 +10,7 @@ public class GameMessageUIManager : MonoBehaviour
     [SerializeField] private int maxMessages = 3;
     [SerializeField] private float spacingY = 80f;
 
-    private readonly List<GameObject> activeMessages = new();
+    private readonly List<UnityEngine.GameObject> activeMessages = new();
 
     private void Awake()
     {
@@ -43,7 +43,7 @@ public class GameMessageUIManager : MonoBehaviour
             activeMessages.RemoveAt(activeMessages.Count - 1);
         }
 
-        GameObject msgObj = PoolManager.Instance.Spawn(PoolPrefabPath.UI("GameMessageUI"), container);
+        UnityEngine.GameObject msgObj = PoolManager.Instance.Spawn(PoolPrefabPath.UI("GameMessageUI"), container);
 
         if (msgObj == null)
         {

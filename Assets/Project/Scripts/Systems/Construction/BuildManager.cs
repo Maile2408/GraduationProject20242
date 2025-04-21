@@ -141,6 +141,8 @@ public class BuildManager : SaiBehaviour
         underConstruction.transform.rotation = buildRotation;
         underConstruction.transform.localScale = highlightScale;
 
+        SaveUtils.AssignID(underConstruction);
+
         if (underConstruction.TryGetComponent(out AlignWithGround align))
         {
             align.Align();
@@ -149,6 +151,7 @@ public class BuildManager : SaiBehaviour
         if (underConstruction.TryGetComponent(out ConstructionCtrl ctrl))
         {
             ctrl.Setup(currentInfo);
+            ctrl.constructionType = SaveUtils.GetPrefabName(underConstruction);
         }
 
         ClearState();

@@ -33,12 +33,18 @@ public class ProfileMenuController : MonoBehaviour, IKeyBack
 
     public void OnHomeButtonTap()
     {
+        SaveStateCollector.Instance.SaveAll();            
+        SaveManager.Instance.SaveAndUpload();
+        
         AudioManager.Instance.PlayButtonTap();
         ScreenManager.Load<HomeController>(HomeController.NAME);
     }
 
     public void OnLogoutButtonTap()
     {
+        SaveStateCollector.Instance.SaveAll();            
+        SaveManager.Instance.SaveAndUpload();             
+
         AudioManager.Instance.PlayButtonTap();
         PlayFabAccountManager.Instance.Logout();
         ScreenManager.Load<HomeController>(HomeController.NAME);

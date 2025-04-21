@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 [Serializable]
 public class CitySaveData
@@ -8,7 +7,7 @@ public class CitySaveData
     public string cityName;
     public int cityLevel;
     public int xp;
-    public int coin;
+    public float coin;
 
     public string timeState; // "Day" / "Night"
     public float timeCounter;

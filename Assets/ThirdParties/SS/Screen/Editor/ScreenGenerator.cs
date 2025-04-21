@@ -169,7 +169,7 @@ public class ScreenGenerator : EditorWindow
 
     void SetupPrefab()
     {
-        GameObject prefab = PrefabUtility.LoadPrefabContents(prefabPath);
+        UnityEngine.GameObject prefab = PrefabUtility.LoadPrefabContents(prefabPath);
 
         if (prefab != null)
         {
@@ -211,7 +211,7 @@ public class ScreenGenerator : EditorWindow
 
     void SetupScene()
     {
-        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        UnityEngine.GameObject prefab = AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(prefabPath);
 
         if (prefab != null)
         {

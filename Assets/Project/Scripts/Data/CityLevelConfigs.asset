@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelConfigs:
   - requiredXP: 0
-    unlockedBuildings: 69000000
+    unlockedBuildings: 65000000
     rewardCoin: 0
   - requiredXP: 300
-    unlockedBuildings: 65000000
+    unlockedBuildings: 69000000
     rewardCoin: 50
   - requiredXP: 900
     unlockedBuildings: 0100000068000000

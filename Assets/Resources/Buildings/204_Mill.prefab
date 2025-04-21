@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 626446649395977377}
   - component: {fileID: 5568238156848796024}
   - component: {fileID: 5032773578031557958}
+  - component: {fileID: 7805202134158946876}
   m_Layer: 10
   m_Name: 204_Mill
   m_TagString: Untagged
@@ -226,6 +227,7 @@ MonoBehaviour:
   workers: {fileID: 5862594308299958790}
   warehouse: {fileID: 3247199984456728586}
   buildingTask: {fileID: 4408572599766678027}
+  buildingInfo: {fileID: 0}
 --- !u!114 &5862594308299958790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +297,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  raycastHeight: 5
   raycastDistance: 10
+  maxAllowedSlope: 45
 --- !u!114 &5568238156848796024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +329,20 @@ MonoBehaviour:
   coinPerCycle: 30
   interval: 65
   taxIcon: {fileID: 3862846949163438281}
-  taxText: {fileID: 4599704704848716284}
+  taxText: {fileID: 0}
+--- !u!114 &7805202134158946876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7001314357054349155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f01034da81bc734a9f883e4ee13bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &7057220416242035974
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,18 +596,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 862281928941677016}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4599704704848716284 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3756600049790732324, guid: 0d6f57d2af65ab645a1f5645defa27ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 862281928941677016}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5126a98bfbc624bb4d06f5e20c9278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &6529892758607083055 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5866402532127219703, guid: 0d6f57d2af65ab645a1f5645defa27ea,

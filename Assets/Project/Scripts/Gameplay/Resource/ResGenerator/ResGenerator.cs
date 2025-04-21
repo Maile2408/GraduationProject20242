@@ -10,6 +10,12 @@ public class ResGenerator : Warehouse
     [SerializeField] protected float createTimer = 0f;
     [SerializeField] protected float createDelay = 7f;
 
+    public float CreateTimer
+    {
+        get => createTimer;
+        set => createTimer = Mathf.Max(0, value);
+    }
+
     protected override void FixedUpdate()
     {
         this.Creating();

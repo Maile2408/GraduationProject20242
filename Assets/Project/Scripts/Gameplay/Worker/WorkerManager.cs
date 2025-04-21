@@ -162,6 +162,8 @@ public class WorkerManager : SaiBehaviour
     private void FinalizePlacement()
     {
         AddWorker(placingWorker);
+        SaveUtils.AssignID(placingWorker.gameObject);
+        placingWorker.workerType = SaveUtils.GetPrefabName(placingWorker.gameObject);
 
         AudioManager.Instance.PlayWorkerSpawn();
         CurrencyManager.Instance.SpendCoin(workerCost);

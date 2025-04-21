@@ -17,9 +17,9 @@ public class CameraManager : SaiBehaviour
     }
 
     [Header("Camera Objects")]
-    [SerializeField] private GameObject thirdPersonCam;
-    [SerializeField] private GameObject firstPersonCam;
-    [SerializeField] private GameObject godModeCam;
+    [SerializeField] private UnityEngine.GameObject thirdPersonCam;
+    [SerializeField] private UnityEngine.GameObject firstPersonCam;
+    [SerializeField] private UnityEngine.GameObject godModeCam;
 
     [Header("Current Camera Mode")]
     [SerializeField] private GameCameraType currentCamera = GameCameraType.godMode;

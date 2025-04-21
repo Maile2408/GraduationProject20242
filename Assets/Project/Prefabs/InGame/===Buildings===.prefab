@@ -59,6 +59,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1099888767448876681}
     m_Modifications:
+    - target: {fileID: 2709533480045664817, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
+        type: 3}
+      propertyPath: id
+      value: 57fd5359-ac8d-4324-bacb-de7c5c3d1588
+      objectReference: {fileID: 0}
     - target: {fileID: 4939449749382840778, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -165,6 +170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FirstlHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989587335745935196, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: id
+      value: 240f7ed2-63e9-4464-bba4-d27f8648a8ef
       objectReference: {fileID: 0}
     - target: {fileID: 4554691606063356283, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
@@ -333,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: resCurrent
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7667156246287879683, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: id
+      value: ba859e3d-5998-4ff9-828d-937556eb040d
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,7 +5,7 @@ public class vPickupItem : MonoBehaviour
 {
     AudioSource _audioSource;
     public AudioClip _audioClip;
-    public GameObject _particle;    
+    public UnityEngine.GameObject _particle;    
 
     void Start()
     {

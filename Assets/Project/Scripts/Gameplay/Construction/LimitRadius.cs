@@ -17,7 +17,7 @@ public class LimitRadius : SaiBehaviour
     [SerializeField] private float highlightYScale = 0.5f;
 
     [Header("Runtime")]
-    [SerializeField] private List<GameObject> collideObjects = new();
+    [SerializeField] private List<UnityEngine.GameObject> collideObjects = new();
 
     private BoxCollider boxCollider;
     private Rigidbody rb;

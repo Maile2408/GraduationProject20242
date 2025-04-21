@@ -5,13 +5,12 @@ using System;
 public class TreeSaveData
 {
     public string id;
-    public int treeType;
+    public string type;
     public Vector3 position;
     public Quaternion rotation;
 
     public int currentLevel;
     public float treeTimer;
-    public bool isMaxLevel;
 
     public float generatorTimer;
 }

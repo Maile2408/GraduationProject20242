@@ -15,8 +15,8 @@ public class WorkersController : MonoBehaviour, IKeyBack
 
     [Header("Hire UI")]
     [SerializeField] private Button hireButton;
-    [SerializeField] private GameObject note;
-    [SerializeField] private GameObject warning;
+    [SerializeField] private UnityEngine.GameObject note;
+    [SerializeField] private UnityEngine.GameObject warning;
     [SerializeField] private TextMeshProUGUI txtWarning;
 
     private bool canHire = false;

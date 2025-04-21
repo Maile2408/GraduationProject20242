@@ -6,8 +6,8 @@ public class CharacterSwitcher : MonoBehaviour
     [SerializeField] private Animator animator;
 
     [Header("Character Models")]
-    [SerializeField] private GameObject modelKing;
-    [SerializeField] private GameObject modelQueen;
+    [SerializeField] private UnityEngine.GameObject modelKing;
+    [SerializeField] private UnityEngine.GameObject modelQueen;
 
     [Header("Avatars")]
     [SerializeField] private Avatar kingAvatar;

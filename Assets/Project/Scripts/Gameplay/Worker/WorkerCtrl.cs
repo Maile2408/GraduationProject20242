@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WorkerCtrl : SaiBehaviour, IPoolable
+public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
 {
+    public string workerType;
     public WorkerBuildings workerBuildings;
     public WorkerMovement workerMovement;
     public WorkerTasks workerTasks;
@@ -98,5 +99,34 @@ public class WorkerCtrl : SaiBehaviour, IPoolable
     public void OnDespawn()
     {
         this.workerBuildings.WorkerReleased();
+    }
+
+    // ===================== SAVE ======================
+    public WorkerSaveData Save()
+    {
+        return new WorkerSaveData
+        {
+            id = GetComponent<Identifiable>().id,
+            type = this.workerType,
+            position = transform.position,
+            //homeBuildingId = this.workerBuildings.GetHome().,
+            //workBuildingId = this.workerBuildings.workID
+        };
+    }
+
+    // ===================== LOAD ======================
+    public void LoadFromSave(WorkerSaveData data)
+    {
+        transform.position = data.position;
+
+        //this.workerBuildings.homeID = data.homeBuildingId;
+        //this.workerBuildings.workID = data.workBuildingId;
+
+        // reset worker state
+        this.workerTasks.ClearAllTasks();
+        this.workerTasks.readyForTask = false;
+        this.workerMovement.SetWorkingType(false, WorkingType.none);
+
+        this.workerType = data.type;
     }
 }

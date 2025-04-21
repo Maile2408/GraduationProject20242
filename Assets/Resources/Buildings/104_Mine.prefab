@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 8396968305035882445}
   - component: {fileID: 8335665856062766556}
   - component: {fileID: 2063794824000658203}
+  - component: {fileID: 4868063190295348471}
   m_Layer: 10
   m_Name: 104_Mine
   m_TagString: Untagged
@@ -242,6 +243,7 @@ MonoBehaviour:
   workers: {fileID: 5526516204302391449}
   warehouse: {fileID: 7551604691183085391}
   buildingTask: {fileID: 3111888421605113748}
+  buildingInfo: {fileID: 0}
 --- !u!114 &5526516204302391449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +340,20 @@ MonoBehaviour:
   coinPerCycle: 20
   interval: 70
   taxIcon: {fileID: 8288161507742111123}
-  taxText: {fileID: 8740236869455652006}
+  taxText: {fileID: 0}
+--- !u!114 &4868063190295348471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7116166987348167793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f01034da81bc734a9f883e4ee13bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &7483022057702023295
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,18 +550,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5578149006326951042}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8740236869455652006 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3756600049790732324, guid: 0d6f57d2af65ab645a1f5645defa27ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 5578149006326951042}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5126a98bfbc624bb4d06f5e20c9278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &7946871713107913860
 PrefabInstance:
   m_ObjectHideFlags: 0

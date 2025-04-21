@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 4456616609900915090}
   - component: {fileID: 7802444393789693333}
   - component: {fileID: 3874021764402216211}
+  - component: {fileID: 2709533480045664817}
   m_Layer: 10
   m_Name: 304_BuilderHut
   m_TagString: Untagged
@@ -192,6 +193,7 @@ MonoBehaviour:
   workers: {fileID: 490644881862380583}
   warehouse: {fileID: 2425093524609828206}
   buildingTask: {fileID: 821983392919612589}
+  buildingInfo: {fileID: 0}
 --- !u!114 &2425093524609828206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +256,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
+  raycastHeight: 5
   raycastDistance: 10
+  maxAllowedSlope: 45
 --- !u!114 &7802444393789693333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +288,20 @@ MonoBehaviour:
   coinPerCycle: 15
   interval: 60
   taxIcon: {fileID: 8778495229898802364}
-  taxText: {fileID: 8330959180470007177}
+  taxText: {fileID: 0}
+--- !u!114 &2709533480045664817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751155682947312614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f01034da81bc734a9f883e4ee13bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1001 &5170023433409166765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,18 +461,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5170023433409166765}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8330959180470007177 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3756600049790732324, guid: 0d6f57d2af65ab645a1f5645defa27ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 5170023433409166765}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5126a98bfbc624bb4d06f5e20c9278, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8778495229898802364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4498223071418136849, guid: 0d6f57d2af65ab645a1f5645defa27ea,

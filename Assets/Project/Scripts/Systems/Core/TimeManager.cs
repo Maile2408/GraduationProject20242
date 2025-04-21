@@ -21,6 +21,8 @@ public class TimeManager : SaiBehaviour
     public static event Action OnDayStart;
     public static event Action OnNightStart;
 
+    public float Timer() => timer;
+
     protected override void Awake()
     {
         base.Awake();

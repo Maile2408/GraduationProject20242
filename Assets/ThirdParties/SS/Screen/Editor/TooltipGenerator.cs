@@ -189,7 +189,7 @@ public class TooltipGenerator : EditorWindow
 
     void SetupPrefab()
     {
-        GameObject prefab = PrefabUtility.LoadPrefabContents(prefabPath);
+        UnityEngine.GameObject prefab = PrefabUtility.LoadPrefabContents(prefabPath);
 
         if (prefab != null)
         {
@@ -197,7 +197,7 @@ public class TooltipGenerator : EditorWindow
 
             prefab.AddComponent(type);
 
-            var text = new GameObject("Text");
+            var text = new UnityEngine.GameObject("Text");
             text.transform.SetParent(prefab.transform);
 
             switch (textType)
@@ -254,7 +254,7 @@ public class TooltipGenerator : EditorWindow
 
     void SetupScene()
     {
-        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        UnityEngine.GameObject prefab = AssetDatabase.LoadAssetAtPath<UnityEngine.GameObject>(prefabPath);
 
         if (prefab != null)
         {

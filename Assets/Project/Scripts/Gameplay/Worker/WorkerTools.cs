@@ -4,13 +4,13 @@ using UnityEngine;
 public class WorkerTools : SaiBehaviour
 {
     [Header("Tool References")]
-    [SerializeField] GameObject axe;
-    [SerializeField] GameObject box;
-    [SerializeField] GameObject hammer;
-    [SerializeField] GameObject pickaxe;
-    [SerializeField] GameObject saw;
-    [SerializeField] GameObject can;
-    GameObject currentTool;
+    [SerializeField] UnityEngine.GameObject axe;
+    [SerializeField] UnityEngine.GameObject box;
+    [SerializeField] UnityEngine.GameObject hammer;
+    [SerializeField] UnityEngine.GameObject pickaxe;
+    [SerializeField] UnityEngine.GameObject saw;
+    [SerializeField] UnityEngine.GameObject can;
+    UnityEngine.GameObject currentTool;
     WorkerCtrl workerCtrl;
 
     protected override void LoadComponents()

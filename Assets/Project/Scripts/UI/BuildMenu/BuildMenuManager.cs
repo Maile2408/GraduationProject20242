@@ -12,7 +12,7 @@ public class BuildMenuManager : MonoBehaviour
     [SerializeField] Transform contentParent;
     [SerializeField] List<BuildingInfo> allBuildings;
 
-    private List<GameObject> activeItems = new();
+    private List<UnityEngine.GameObject> activeItems = new();
 
     private void Awake()
     {
@@ -36,7 +36,7 @@ public class BuildMenuManager : MonoBehaviour
 
         foreach (var info in allBuildings.Where(b => b.category == category))
         {
-            GameObject go = PoolManager.Instance.Spawn(PoolPrefabPath.UI("BuildingItem"), contentParent);
+            UnityEngine.GameObject go = PoolManager.Instance.Spawn(PoolPrefabPath.UI("BuildingItem"), contentParent);
             go.transform.localScale = Vector3.one;
             go.GetComponent<BuildingItem>().Setup(info, OnBuildingItemClick);
             activeItems.Add(go);

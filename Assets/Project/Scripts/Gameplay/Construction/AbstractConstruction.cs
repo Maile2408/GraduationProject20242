@@ -90,6 +90,9 @@ public class AbstractConstruction : SaiBehaviour
 
         GameObject realBuilding = PoolManager.Instance.Spawn(PoolPrefabPath.Building(realPrefabName));
         realBuilding.transform.position = this.transform.position;
+        realBuilding.transform.rotation = this.transform.rotation;
+
+        SaveUtils.AssignID(realBuilding);
 
         if (realBuilding.TryGetComponent(out AlignWithGround align))
             align.Align();
@@ -97,6 +100,7 @@ public class AbstractConstruction : SaiBehaviour
         if (realBuilding.TryGetComponent(out BuildingCtrl ctrl))
         {
             ctrl.buildingInfo = this.info;
+            ctrl.buildingType = SaveUtils.GetPrefabName(realBuilding);
             BuildingManager.Instance.AddBuilding(ctrl);
         }
 

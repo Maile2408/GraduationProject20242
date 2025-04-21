@@ -69,11 +69,11 @@ public class ScreenManager : MonoBehaviour
     #region Private Member
     private Scene m_LastLoadedScene;
     private List<Component> m_ScreenList = new List<Component>();
-    private GameObject m_SceneLoading;
-    private GameObject m_Loading;
+    private UnityEngine.GameObject m_SceneLoading;
+    private UnityEngine.GameObject m_Loading;
     private TooltipBaseController m_Tooltip;
     private UnscaledAnimation m_ScreenShield;
-    private GameObject m_ScreenShieldTop;
+    private UnityEngine.GameObject m_ScreenShieldTop;
     private OnScreenAddedDelegate m_OnScreenAdded;
     private OnScreenChangedDelegate m_OnScreenChanged;
     private int m_PendingScreens = 0;
@@ -184,7 +184,7 @@ public class ScreenManager : MonoBehaviour
     /// Add a screen to the canvas, on top of all screens. But it's not added to the screen list for managing.
     /// </summary>
     /// <param name="screen">The GameObject of screen</param>
-    public static void AddToCanvas(GameObject screen)
+    public static void AddToCanvas(UnityEngine.GameObject screen)
     {
         instance.AddScreenToCanvas(screen);
     }
@@ -303,7 +303,7 @@ public class ScreenManager : MonoBehaviour
     /// <param name="parent"></param>
     /// <param name="name"></param>
     /// <returns></returns>
-    public static GameObject FindChildBFS(GameObject parent, string name)
+    public static UnityEngine.GameObject FindChildBFS(UnityEngine.GameObject parent, string name)
     {
         Queue<Transform> queue = new Queue<Transform>();
 
@@ -606,7 +606,7 @@ public class ScreenManager : MonoBehaviour
                     }
                 });
 #else
-                var prefab = Resources.Load<GameObject>(Path.Combine(m_ScreenPath, m_SceneLoadingName));
+                var prefab = Resources.Load<UnityEngine.GameObject>(Path.Combine(m_ScreenPath, m_SceneLoadingName));
                 CreateSceneLoading(prefab);
                 ShowSceneLoading();
 #endif
@@ -649,7 +649,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-    private void CreateSceneLoading(GameObject prefab)
+    private void CreateSceneLoading(UnityEngine.GameObject prefab)
     {
         m_SceneLoading = Instantiate(prefab);
         m_SceneLoading.name = m_SceneLoadingName;
@@ -762,7 +762,7 @@ public class ScreenManager : MonoBehaviour
                 }
             });
 #else
-            var prefab = Resources.Load<GameObject>(Path.Combine(m_ScreenPath, screenName));
+            var prefab = Resources.Load<UnityEngine.GameObject>(Path.Combine(m_ScreenPath, screenName));
             CreateScreen<T>(prefab, screenName, showAnimation, hideAnimation, animationObjectName, onScreenLoad, hasShield);
 #endif
         }
@@ -775,7 +775,7 @@ public class ScreenManager : MonoBehaviour
         m_OnScreenAdded?.Invoke(toScreen, fromScreen, manually);
     }
 
-    private void CreateScreen<T>(GameObject prefab, string screenName, string showAnimation = "ScaleShow", string hideAnimation = "ScaleHide", string animationObjectName = "", OnScreenLoad<T> onScreenLoad = null, bool hasShield = true) where T : Component
+    private void CreateScreen<T>(UnityEngine.GameObject prefab, string screenName, string showAnimation = "ScaleShow", string hideAnimation = "ScaleHide", string animationObjectName = "", OnScreenLoad<T> onScreenLoad = null, bool hasShield = true) where T : Component
     {
         T screen = Instantiate(prefab.GetComponent<T>(), m_Canvas.transform);
 
@@ -867,7 +867,7 @@ public class ScreenManager : MonoBehaviour
                         }
                     });
 #else
-                    var prefab = Resources.Load<GameObject>(Path.Combine(m_ScreenPath, m_LoadingName));
+                    var prefab = Resources.Load<UnityEngine.GameObject>(Path.Combine(m_ScreenPath, m_LoadingName));
                     CreateLoading(prefab);
                     ShowLoading(timeout);
 #endif
@@ -884,7 +884,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-    private void CreateLoading(GameObject prefab)
+    private void CreateLoading(UnityEngine.GameObject prefab)
     {
         m_Loading = Instantiate(prefab);
         m_Loading.name = m_LoadingName;
@@ -935,7 +935,7 @@ public class ScreenManager : MonoBehaviour
         m_Loading.SetActive(false);
     }
 
-    private void AddScreenToCanvas(GameObject screen)
+    private void AddScreenToCanvas(UnityEngine.GameObject screen)
     {
         screen.transform.SetParent(m_Canvas.transform);
         screen.transform.localPosition = Vector3.zero;
@@ -945,7 +945,7 @@ public class ScreenManager : MonoBehaviour
 
     private void CreateShield()
     {
-        m_ScreenShield = Instantiate(Resources.Load<GameObject>("Prefabs/Shield"), m_Canvas.transform).GetComponent<UnscaledAnimation>();
+        m_ScreenShield = Instantiate(Resources.Load<UnityEngine.GameObject>("Prefabs/Shield"), m_Canvas.transform).GetComponent<UnscaledAnimation>();
         m_ScreenShield.name = ScreenShieldName("Default");
         m_ScreenShield.transform.SetAsLastSibling();
         m_ScreenShield.gameObject.SetActive(false);
@@ -978,9 +978,9 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-    private GameObject CreateTransparentShield()
+    private UnityEngine.GameObject CreateTransparentShield()
     {
-        var shield = Instantiate(Resources.Load<GameObject>("Prefabs/TransparentShield"), m_Canvas.transform);
+        var shield = Instantiate(Resources.Load<UnityEngine.GameObject>("Prefabs/TransparentShield"), m_Canvas.transform);
         shield.name = "Transparent Shield";
 
         var image = shield.GetComponent<Image>();
@@ -991,7 +991,7 @@ public class ScreenManager : MonoBehaviour
 
     private Animation AddAnimations(Component screen, string animationObjectName = "", params string[] animationNames)
     {
-        GameObject animObject = screen.gameObject;
+        UnityEngine.GameObject animObject = screen.gameObject;
 
         if (!string.IsNullOrEmpty(animationObjectName))
         {
@@ -1245,7 +1245,7 @@ public class ScreenManager : MonoBehaviour
         }
     }
 
-    private void CreateAndShowTooltip(GameObject tooltipPrefab, string text, Vector3 worldPosition, float targetY)
+    private void CreateAndShowTooltip(UnityEngine.GameObject tooltipPrefab, string text, Vector3 worldPosition, float targetY)
     {
         var tooltip = Instantiate(tooltipPrefab, Top);
         m_Tooltip = tooltip.GetComponent<TooltipBaseController>();
@@ -1277,7 +1277,7 @@ public class ScreenManager : MonoBehaviour
                 }
             });
 #else
-        var tooltipPrefab = Resources.Load<GameObject>(Path.Combine(m_ScreenPath, m_TooltipName));
+        var tooltipPrefab = Resources.Load<UnityEngine.GameObject>(Path.Combine(m_ScreenPath, m_TooltipName));
         CreateAndShowTooltip(tooltipPrefab, text, worldPosition, targetY);
 #endif
     }

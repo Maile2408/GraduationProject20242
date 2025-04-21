@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &92087412641434865
+--- !u!1 &1068598549363939869
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5150759656852316466}
-  - component: {fileID: 1058163132460526691}
+  - component: {fileID: 352490670869551758}
+  - component: {fileID: 4880253963442144568}
+  - component: {fileID: 7910298430126932744}
   m_Layer: 0
-  m_Name: ConstructionManager
+  m_Name: GameLoader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5150759656852316466
+--- !u!4 &352490670869551758
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92087412641434865}
+  m_GameObject: {fileID: 1068598549363939869}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -918.23474, y: -288.49207, z: 11.890554}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8449162695324988949}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1058163132460526691
+--- !u!114 &4880253963442144568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92087412641434865}
+  m_GameObject: {fileID: 1068598549363939869}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d38201e9b807794e885ff0fa5a3c8ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 8195a1ed698aaf24e8924e838b3f82a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  constructions: []
+--- !u!114 &7910298430126932744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068598549363939869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e18ebc299ed3fe40a7542f8ab31bdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2313128510188377459
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,9 +91,9 @@ Transform:
   - {fileID: 1081958091541777836}
   - {fileID: 7968425753300638090}
   - {fileID: 7442198740349008480}
-  - {fileID: 5150759656852316466}
   - {fileID: 2830924456445135925}
   - {fileID: 6490433833003167370}
+  - {fileID: 352490670869551758}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2754136123425709106

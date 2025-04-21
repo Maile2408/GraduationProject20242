@@ -29,6 +29,7 @@ public class ConstructionManager : SaiBehaviour
     {
         if (!this.constructions.Contains(construction))
         {
+            construction.transform.parent = this.transform;
             this.constructions.Add(construction);
         }
     }

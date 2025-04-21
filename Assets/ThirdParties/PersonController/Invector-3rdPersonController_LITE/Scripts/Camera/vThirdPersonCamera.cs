@@ -72,7 +72,7 @@ public class vThirdPersonCamera : MonoBehaviour
         currentTarget = target;
         currentTargetPos = new Vector3(currentTarget.position.x, currentTarget.position.y + offSetPlayerPivot, currentTarget.position.z);
 
-        targetLookAt = new GameObject("targetLookAt").transform;
+        targetLookAt = new UnityEngine.GameObject("targetLookAt").transform;
         targetLookAt.position = currentTarget.position;
         targetLookAt.hideFlags = HideFlags.HideInHierarchy;
         targetLookAt.rotation = currentTarget.rotation;

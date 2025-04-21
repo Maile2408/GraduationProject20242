@@ -12,7 +12,7 @@ public class ForestHutTask : BuildingTask
     [SerializeField] protected float treeRange = 20f;
     [SerializeField] protected float treeDistance = 7f;
     [SerializeField] protected float treeRemoveSpeed = 16f;
-    [SerializeField] protected List<GameObject> trees;
+    [SerializeField] protected List<TreeCtrl> trees = new();
 
     protected override void Start()
     {
@@ -144,6 +144,8 @@ public class ForestHutTask : BuildingTask
         string path = PoolPrefabPath.Tree(treePrefab.name);
         GameObject treeObj = PoolManager.Instance.Spawn(path);
 
+        SaveUtils.AssignID(treeObj);
+
         Vector3 offset = trans.forward * 0.5f;
         Vector3 placePos = trans.position + offset;
 
@@ -158,8 +160,11 @@ public class ForestHutTask : BuildingTask
         }
 
         treeObj.transform.rotation = trans.rotation;
-        this.trees.Add(treeObj);
-        TreeManager.instance.TreeAdd(treeObj);
+
+        TreeCtrl treeCtrl = treeObj.GetComponent<TreeCtrl>();
+        this.trees.Add(treeCtrl);
+        treeCtrl.treeType = SaveUtils.GetPrefabName(treePrefab);
+        TreeManager.Instance.TreeAdd(treeCtrl);
     }
 
     protected virtual GameObject GetTreePrefab()
@@ -179,7 +184,7 @@ public class ForestHutTask : BuildingTask
 
     protected virtual Vector3? RandomPlaceForTree()
     {
-        const float minDistanceToObstacle = 2.5f; 
+        const float minDistanceToObstacle = 2.5f;
         int obstacleLayerMask = LayerMask.GetMask("Building", "Nature", "Tree", "UnderConstruction");
 
         for (int i = 0; i < 20; i++)
@@ -212,8 +217,8 @@ public class ForestHutTask : BuildingTask
 
     protected virtual void LoadNearByTrees()
     {
-        List<GameObject> allTrees = TreeManager.instance.Trees();
-        foreach (GameObject tree in allTrees)
+        List<TreeCtrl> allTrees = TreeManager.Instance.Trees();
+        foreach (TreeCtrl tree in allTrees)
         {
             float dis = Vector3.Distance(tree.transform.position, transform.position);
             if (dis > this.treeRange) continue;
@@ -221,7 +226,7 @@ public class ForestHutTask : BuildingTask
         }
     }
 
-    public virtual void TreeAdd(GameObject tree)
+    public virtual void TreeAdd(TreeCtrl tree)
     {
         if (this.trees.Contains(tree)) return;
         this.trees.Add(tree);
@@ -244,8 +249,8 @@ public class ForestHutTask : BuildingTask
         List<Resource> resources = treeCtrl.logwoodGenerator.TakeAll();
         treeCtrl.choper = null;
 
-        this.trees.Remove(treeCtrl.gameObject);
-        TreeManager.instance.TreeRemove(treeCtrl.gameObject);
+        this.trees.Remove(treeCtrl);
+        TreeManager.Instance.TreeRemove(treeCtrl);
 
         workerCtrl.workerMovement.SetWorkingType(false, WorkingType.chopping);
 
@@ -287,10 +292,8 @@ public class ForestHutTask : BuildingTask
 
     protected virtual void FindNearestTree(WorkerCtrl workerCtrl)
     {
-        foreach (GameObject tree in this.trees)
+        foreach (TreeCtrl treeCtrl in this.trees)
         {
-            if (tree == null) continue;
-            TreeCtrl treeCtrl = tree.GetComponent<TreeCtrl>();
             if (treeCtrl == null) continue;
             if (!treeCtrl.logwoodGenerator.IsAllResMax()) continue;
             if (treeCtrl.choper != null) continue;

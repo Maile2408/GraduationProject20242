@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 1487967974124332394}
   - component: {fileID: 6715072606138140870}
   - component: {fileID: 4934674291790717148}
+  - component: {fileID: 3692217415674087552}
   m_Layer: 9
   m_Name: Tree_1
   m_TagString: Tree
@@ -143,6 +144,19 @@ MonoBehaviour:
   canCreate: 1
   createTimer: 0
   createDelay: 60
+--- !u!114 &3692217415674087552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871105914798837505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f01034da81bc734a9f883e4ee13bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1 &4333593640651922279
 GameObject:
   m_ObjectHideFlags: 0

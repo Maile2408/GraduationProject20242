@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BuildingItem : MonoBehaviour, IPoolable
 {
     [SerializeField] private Image icon;
-    [SerializeField] private GameObject lockIcon;
+    [SerializeField] private UnityEngine.GameObject lockIcon;
 
     private BuildingInfo info;
     private Action<BuildingInfo> onClick;

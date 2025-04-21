@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 589787677702946022}
   - component: {fileID: 749390315378072316}
   - component: {fileID: 2785807609405427035}
+  - component: {fileID: 6325360806149833103}
   m_Layer: 10
   m_Name: 401_Lamp1
   m_TagString: Untagged
@@ -190,6 +191,7 @@ MonoBehaviour:
   workers: {fileID: 1095960585246189257}
   warehouse: {fileID: 105618136336304315}
   buildingTask: {fileID: 589787677702946022}
+  buildingInfo: {fileID: 0}
 --- !u!114 &1095960585246189257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +270,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestructible: 1
   buildingCtrl: {fileID: 4933643866002245090}
+--- !u!114 &6325360806149833103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6373910601849673281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f01034da81bc734a9f883e4ee13bb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 
 --- !u!1001 &7698086036147538102
 PrefabInstance:
   m_ObjectHideFlags: 0

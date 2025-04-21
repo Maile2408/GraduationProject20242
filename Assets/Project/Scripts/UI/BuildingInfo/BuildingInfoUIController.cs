@@ -8,7 +8,7 @@ public class BuildingInfoUIController : MonoBehaviour, IKeyBack
     public const string NAME = "BuildingInfoUI";
 
     [Header("UI Elements")]
-    [SerializeField] private GameObject panel;
+    [SerializeField] private UnityEngine.GameObject panel;
     [SerializeField] private TextMeshProUGUI buildingNameText;
     [SerializeField] private TextMeshProUGUI typeText;
     [SerializeField] private TextMeshProUGUI workerText;
