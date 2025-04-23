@@ -8,12 +8,12 @@ public static class SaveUtils
         return go.name.Replace("(Clone)", "").Trim();
     }
 
-    public static void AssignID(GameObject go)
+    public static void AssignID(GameObject go, IDType type)
     {
         var iden = go.GetComponent<Identifiable>();
-        if (iden != null && string.IsNullOrEmpty(iden.id))
+        if (iden != null)
         {
-            iden.id = System.Guid.NewGuid().ToString();
+            iden.SetID(IDGenerator.GenerateID(type));
         }
     }
 }

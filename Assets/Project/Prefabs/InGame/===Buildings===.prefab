@@ -114,6 +114,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5527674286708930120, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
+        type: 3}
+      propertyPath: id
+      value: building_3
+      objectReference: {fileID: 0}
     - target: {fileID: 6751155682947312614, guid: f7f44a4919b87f049aeda5b4b46c1e9d,
         type: 3}
       propertyPath: m_Name
@@ -226,6 +231,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4808292374319925941, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: id
+      value: building_1
+      objectReference: {fileID: 0}
     - target: {fileID: 5961908531418431930, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
       propertyPath: buildingInfo
@@ -263,6 +273,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1099888767448876681}
     m_Modifications:
+    - target: {fileID: 93302368352698535, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: id
+      value: building_2
+      objectReference: {fileID: 0}
     - target: {fileID: 1411624868277248345, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: m_LocalPosition.x

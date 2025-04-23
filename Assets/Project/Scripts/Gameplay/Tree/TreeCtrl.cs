@@ -42,7 +42,7 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
     {
         return new TreeSaveData
         {
-            id = GetComponent<Identifiable>().id,
+            //id = GetComponent<Identifiable>().id,
             type = this.treeType,
             position = transform.position,
             rotation = transform.rotation,

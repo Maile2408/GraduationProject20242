@@ -164,14 +164,30 @@ public class LoginController : MonoBehaviour, IKeyBack
                 PlayFabProfileManager.Instance.LoadProfile(
                     onSuccess: () =>
                     {
-                        messageText.text = "";
-                        if (PlayFabProfileManager.Instance.HasCreatedProfile)
-                            ScreenManager.Close();
-                        else
+                        PlayFabManager.Instance.DownloadUserData(data =>
                         {
-                            ScreenManager.Close();
-                            ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
-                        }
+                            if (data != null)
+                            {
+                                SaveManager.Instance.CurrentData = data;
+                                SaveManager.Instance.SaveToDisk(); // Backup local
+                                messageText.text = "";
+                            }
+                            else
+                            {
+                                SaveManager.Instance.CurrentData = new UserSaveData();
+                                messageText.text = "No cloud save found, using default.";
+                            }
+
+                            if (PlayFabProfileManager.Instance.HasCreatedProfile)
+                            {
+                                ScreenManager.Close();
+                            }
+                            else
+                            {
+                                ScreenManager.Close();
+                                ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
+                            }
+                        });
                     },
                     onError: error =>
                     {

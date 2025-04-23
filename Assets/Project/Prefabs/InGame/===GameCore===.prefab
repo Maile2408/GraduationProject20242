@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7245841765081669588}
   - component: {fileID: 1008455056992308579}
   - component: {fileID: 2109400375866590914}
+  - component: {fileID: 8564661743755659105}
+  - component: {fileID: 5448585605157890155}
   m_Layer: 0
   m_Name: PlayfabManager
   m_TagString: Untagged
@@ -69,6 +71,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6e898505403e9d4099546814b9e216b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8564661743755659105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21753365584167984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d5a73c758254a4db04b2b42839ba4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5448585605157890155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21753365584167984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2bf6c201afe0cb47929799e09adf120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1504931944103819398
@@ -160,6 +186,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f58a59c2279aaa344a61e3f773336ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentData:
+    playfabID: 
+    userName: 
+    characterType: 
+    city:
+      cityName: 
+      cityLevel: 0
+      xp: 0
+      coin: 0
+      timeState: 
+      timeCounter: 0
+      unlockedBuildingIDs: 
+      unlockedAchievements: []
+      buildings: []
+      constructions: []
+      workers: []
+      trees: []
+      lastSaveTime: 
 --- !u!1 &5459378848420236512
 GameObject:
   m_ObjectHideFlags: 0

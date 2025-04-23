@@ -46,7 +46,7 @@ public class ConstructionCtrl : SaiBehaviour, IPoolable, ISaveable<ConstructionS
     {
         return new ConstructionSaveData
         {
-            id = GetComponent<Identifiable>().id,
+            //id = GetComponent<Identifiable>().id,
             buildingInfoID = this.buildingInfo.buildingID,
             position = transform.position,
             rotation = transform.rotation,

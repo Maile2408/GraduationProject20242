@@ -62,7 +62,7 @@ PrefabInstance:
     - target: {fileID: 1294301621214157536, guid: fa8258dc17db99d4aa9cec214858539f,
         type: 3}
       propertyPath: id
-      value: 0f9c03a6-b113-4b7b-b36c-ff8fd98b2fce
+      value: woker_1
       objectReference: {fileID: 0}
     - target: {fileID: 1823627154968402021, guid: fa8258dc17db99d4aa9cec214858539f,
         type: 3}

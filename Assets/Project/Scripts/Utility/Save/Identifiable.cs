@@ -4,7 +4,14 @@ using System;
 [DisallowMultipleComponent]
 public class Identifiable : MonoBehaviour
 {
-    public string id;
+    [SerializeField] private string id;
+    public string ID => id;
+
+    public void SetID(string newID)
+    {
+        if (!string.IsNullOrEmpty(id)) return;
+        id = newID;
+    }
 
 #if UNITY_EDITOR
     [ContextMenu("Generate New ID")]
@@ -15,12 +22,4 @@ public class Identifiable : MonoBehaviour
         Debug.Log($"Generated ID for {name}: {id}");
     }
 #endif
-
-    private void Awake()
-    {
-        if (string.IsNullOrEmpty(id))
-        {
-            Debug.LogWarning($"Object '{name}' missing ID");
-        }
-    }
 }

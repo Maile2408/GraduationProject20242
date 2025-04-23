@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 5862589241954472880}
   - component: {fileID: 5176502065300578403}
   - component: {fileID: 2799566800521373762}
-  - component: {fileID: 3201169019494988601}
+  - component: {fileID: 4248001409652877610}
   m_Layer: 10
   m_Name: 101_SmallForesterHut
   m_TagString: Untagged
@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingType: 
   buildingTaskType: 1
   door: {fileID: 4363021126508830458}
   workers: {fileID: 3351261019592303417}
@@ -345,9 +346,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinPerCycle: 15
   interval: 75
-  taxIcon: {fileID: 8971956416390118098}
-  taxText: {fileID: 0}
---- !u!114 &3201169019494988601
+  taxIcon: {fileID: 135798916008243332}
+  taxText: {fileID: 8011418317816308025}
+--- !u!114 &4248001409652877610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -592,15 +593,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d6f57d2af65ab645a1f5645defa27ea, type: 3}
+--- !u!114 &135798916008243332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4831334061566718791, guid: 0d6f57d2af65ab645a1f5645defa27ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 4822841584152216515}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90aef44219a50df4db1ed014c4979769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1407246082777619508 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5866402532127219703, guid: 0d6f57d2af65ab645a1f5645defa27ea,
     type: 3}
   m_PrefabInstance: {fileID: 4822841584152216515}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8971956416390118098 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4498223071418136849, guid: 0d6f57d2af65ab645a1f5645defa27ea,
+--- !u!114 &8011418317816308025 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3296751878173336314, guid: 0d6f57d2af65ab645a1f5645defa27ea,
     type: 3}
   m_PrefabInstance: {fileID: 4822841584152216515}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f35513ad21cb440a1b48495dd31713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

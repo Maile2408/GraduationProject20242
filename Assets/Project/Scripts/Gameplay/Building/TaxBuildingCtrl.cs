@@ -7,7 +7,7 @@ public class TaxBuildingCtrl : MonoBehaviour
     [SerializeField] private float interval = 20f;
 
     [Header("UI References")]
-    [SerializeField] private GameObject taxIcon;
+    [SerializeField] private TaxIcon taxIcon;
     [SerializeField] private TaxText taxText;
 
     private float timer;
@@ -18,7 +18,7 @@ public class TaxBuildingCtrl : MonoBehaviour
 
     private void Start()
     {
-        if (taxIcon != null) taxIcon.SetActive(false);
+        if (taxIcon != null) taxIcon.gameObject.SetActive(false);
         if (taxText != null) taxText.gameObject.SetActive(false);
     }
 
@@ -40,7 +40,7 @@ public class TaxBuildingCtrl : MonoBehaviour
 
         if (taxIcon != null)
         {
-            taxIcon.SetActive(true);
+            taxIcon.gameObject.SetActive(true);
 
             var icon = taxIcon.GetComponent<TaxIcon>();
             icon?.Animate();
@@ -52,7 +52,7 @@ public class TaxBuildingCtrl : MonoBehaviour
         if (!isReadyToCollect) return 0;
 
         isReadyToCollect = false;
-        taxIcon?.SetActive(false);
+        taxIcon?.gameObject.SetActive(false);
         taxText?.Show(coinPerCycle);
 
         CurrencyManager.Instance.AddCoin((int)coinPerCycle);

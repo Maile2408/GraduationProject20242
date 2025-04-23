@@ -144,7 +144,7 @@ public class ForestHutTask : BuildingTask
         string path = PoolPrefabPath.Tree(treePrefab.name);
         GameObject treeObj = PoolManager.Instance.Spawn(path);
 
-        SaveUtils.AssignID(treeObj);
+        SaveUtils.AssignID(treeObj, IDType.Tree);
 
         Vector3 offset = trans.forward * 0.5f;
         Vector3 placePos = trans.position + offset;

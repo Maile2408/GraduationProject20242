@@ -60,7 +60,7 @@ public class BuildingCtrl : SaiBehaviour, IPoolable, ISaveable<BuildingSaveData>
     {
         return new BuildingSaveData
         {
-            id = GetComponent<Identifiable>().id,
+            //id = GetComponent<Identifiable>().id,
             type = this.buildingType,
             buildingInfoID = this.buildingInfo.buildingID,
             position = transform.position,

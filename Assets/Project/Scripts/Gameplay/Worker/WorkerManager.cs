@@ -162,7 +162,7 @@ public class WorkerManager : SaiBehaviour
     private void FinalizePlacement()
     {
         AddWorker(placingWorker);
-        SaveUtils.AssignID(placingWorker.gameObject);
+        SaveUtils.AssignID(placingWorker.gameObject, IDType.Worker);
         placingWorker.workerType = SaveUtils.GetPrefabName(placingWorker.gameObject);
 
         AudioManager.Instance.PlayWorkerSpawn();

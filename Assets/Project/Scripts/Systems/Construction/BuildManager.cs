@@ -141,7 +141,7 @@ public class BuildManager : SaiBehaviour
         underConstruction.transform.rotation = buildRotation;
         underConstruction.transform.localScale = highlightScale;
 
-        SaveUtils.AssignID(underConstruction);
+        SaveUtils.AssignID(underConstruction, IDType.Construction);
 
         if (underConstruction.TryGetComponent(out AlignWithGround align))
         {

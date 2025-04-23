@@ -106,7 +106,7 @@ public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
     {
         return new WorkerSaveData
         {
-            id = GetComponent<Identifiable>().id,
+            //id = GetComponent<Identifiable>().id,
             type = this.workerType,
             position = transform.position,
             //homeBuildingId = this.workerBuildings.GetHome().,

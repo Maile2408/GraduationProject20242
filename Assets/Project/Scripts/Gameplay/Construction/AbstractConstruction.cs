@@ -92,7 +92,7 @@ public class AbstractConstruction : SaiBehaviour
         realBuilding.transform.position = this.transform.position;
         realBuilding.transform.rotation = this.transform.rotation;
 
-        SaveUtils.AssignID(realBuilding);
+        SaveUtils.AssignID(realBuilding, IDType.Building);
 
         if (realBuilding.TryGetComponent(out AlignWithGround align))
             align.Align();

@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 589787677702946022}
   - component: {fileID: 749390315378072316}
   - component: {fileID: 2785807609405427035}
-  - component: {fileID: 6325360806149833103}
+  - component: {fileID: 2721350207748949615}
   m_Layer: 10
   m_Name: 401_Lamp1
   m_TagString: Untagged
@@ -186,6 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89e4c0b79b0cd7441bd1c9a76dc43a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingType: 
   buildingTaskType: 0
   door: {fileID: 7715639215626838163}
   workers: {fileID: 1095960585246189257}
@@ -270,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDestructible: 1
   buildingCtrl: {fileID: 4933643866002245090}
---- !u!114 &6325360806149833103
+--- !u!114 &2721350207748949615
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

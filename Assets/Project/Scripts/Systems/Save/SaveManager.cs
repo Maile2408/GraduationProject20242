@@ -16,7 +16,6 @@ public class SaveManager : MonoBehaviour
         if (Instance != null && Instance != this) { Destroy(gameObject); return; }
 
         Instance = this;
-        DontDestroyOnLoad(this.gameObject);
 
         LoadFromDisk();
         StartCoroutine(AutoSaveRoutine());
@@ -50,7 +49,7 @@ public class SaveManager : MonoBehaviour
     {
         SaveToDisk();
 #if USE_PLAYFAB
-        PlayfabManager.Instance.UploadUserData(CurrentData);
+        PlayFabManager.Instance.UploadUserData(CurrentData);
 #endif
     }
 
@@ -58,7 +57,7 @@ public class SaveManager : MonoBehaviour
     public void DownloadAndApplyFromCloud(Action onDone = null)
     {
 #if USE_PLAYFAB
-        PlayfabManager.Instance.DownloadUserData(data =>
+        PlayFabManager.Instance.DownloadUserData(data =>
         {
             if (data != null)
             {
