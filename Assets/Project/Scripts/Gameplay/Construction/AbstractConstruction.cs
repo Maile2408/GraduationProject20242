@@ -99,8 +99,6 @@ public class AbstractConstruction : SaiBehaviour
 
         if (realBuilding.TryGetComponent(out BuildingCtrl ctrl))
         {
-            ctrl.buildingInfo = this.info;
-            ctrl.buildingType = SaveUtils.GetPrefabName(realBuilding);
             BuildingManager.Instance.AddBuilding(ctrl);
         }
 
@@ -128,6 +126,31 @@ public class AbstractConstruction : SaiBehaviour
                 AchievementReporter.BuildWarehouse();
                 break;
         }
+    }
+
+    public List<Resource> GetResourceProgress()
+    {
+        var list = new List<Resource>();
+        foreach (var pair in resourceProgress)
+        {
+            list.Add(new Resource
+            {
+                name = pair.Key,
+                number = pair.Value
+            });
+        }
+        return list;
+    }
+
+    public void SetResourceProgress(List<Resource> list)
+    {
+        resourceProgress.Clear();
+        foreach (var res in list)
+        {
+            resourceProgress[res.name] = res.number;
+        }
+
+        CheckIfReadyToBuild(); 
     }
 
     public virtual void ResetConstruction()

@@ -7,7 +7,6 @@ public class BuildingSaveData
 {
     public string id;
     public string type;
-    public int buildingInfoID;
     public Vector3 position;
     public Quaternion rotation;
 

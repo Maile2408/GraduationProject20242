@@ -10,6 +10,7 @@ public class ConstructionSaveData
     public int buildingInfoID;                       
     public Vector3 position;
     public Quaternion rotation;
+    public Vector3 localScale;
 
     public List<Resource> resourceProgress = new();
 }

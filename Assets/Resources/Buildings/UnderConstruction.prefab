@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8085290c61bd637409c99c6d41675eea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  constructionType: UnderConstruction
   buildingInfo: {fileID: 0}
   abstractConstruction: {fileID: 6254648920629245741}
 --- !u!114 &6254648920629245741

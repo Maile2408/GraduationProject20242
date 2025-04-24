@@ -163,7 +163,6 @@ public class ForestHutTask : BuildingTask
 
         TreeCtrl treeCtrl = treeObj.GetComponent<TreeCtrl>();
         this.trees.Add(treeCtrl);
-        treeCtrl.treeType = SaveUtils.GetPrefabName(treePrefab);
         TreeManager.Instance.TreeAdd(treeCtrl);
     }
 

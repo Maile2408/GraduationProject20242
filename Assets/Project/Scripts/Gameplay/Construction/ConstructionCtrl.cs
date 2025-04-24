@@ -46,11 +46,13 @@ public class ConstructionCtrl : SaiBehaviour, IPoolable, ISaveable<ConstructionS
     {
         return new ConstructionSaveData
         {
-            //id = GetComponent<Identifiable>().id,
+            id = GetComponent<Identifiable>().ID,
+            type = this.constructionType,
             buildingInfoID = this.buildingInfo.buildingID,
             position = transform.position,
             rotation = transform.rotation,
-            //resourceProgress = new System.Collections.Generic.List<Resource>(this.abstractConstruction.GetResourceProgress())
+            localScale = transform.localScale,
+            resourceProgress = this.abstractConstruction.GetResourceProgress()
         };
     }
 
@@ -59,9 +61,16 @@ public class ConstructionCtrl : SaiBehaviour, IPoolable, ISaveable<ConstructionS
     {
         transform.position = data.position;
         transform.rotation = data.rotation;
+        transform.localScale = data.localScale;
 
-        // Gán lại BuildingInfo từ buildingInfoID nếu cần
-        // (ở đây bạn có thể map buildingInfoID → ScriptableObject hoặc prefab)
-        //this.abstractConstruction.SetResourceProgress(data.resourceProgress);
+        BuildingInfo info = BuildingDatabase.Instance.GetByID(data.buildingInfoID);
+        if (info == null)
+        {
+            Debug.LogError($"[ConstructionCtrl] BuildingInfo ID {data.buildingInfoID} not found.");
+            return;
+        }
+
+        Setup(info);
+        this.abstractConstruction.SetResourceProgress(data.resourceProgress);
     }
 }

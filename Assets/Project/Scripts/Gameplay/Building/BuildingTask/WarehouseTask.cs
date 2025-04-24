@@ -200,7 +200,7 @@ public class WarehouseTask : BuildingTask
         BuildingCtrl taskBuildingCtrl = tasks.taskBuildingCtrl;
         if (taskBuildingCtrl.warehouse is WarehouseWH wh && wh.IsFull())
         {
-            Debug.Log("Warehouse full, canceling resources.");
+            //Debug.Log("Warehouse full, canceling resources.");
             tasks.taskBuildingCtrl = null;
             tasks.TaskCurrentDone();
             return;

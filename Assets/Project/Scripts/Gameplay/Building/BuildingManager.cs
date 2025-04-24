@@ -9,7 +9,7 @@ public class BuildingManager : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (Instance != null) Debug.LogError("Only 1 BuildingManager allow");
+        if (Instance != null) Destroy(gameObject);
         Instance = this;
     }
 
@@ -29,7 +29,7 @@ public class BuildingManager : SaiBehaviour
             this.buildingCtrls.Add(ctrl);
         }
 
-        Debug.Log(transform.name + "LoadBuildingCtrls", gameObject);
+        //Debug.Log(transform.name + "LoadBuildingCtrls", gameObject);
     }
 
     public virtual BuildingCtrl FindBuilding(BuildingTaskType buildingTaskType)

@@ -10,7 +10,7 @@ public class StorageResourceManager : SaiBehaviour
         base.Awake();
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only 1 StorageResourceManager allowed");
+            //Debug.LogError("Only 1 StorageResourceManager allowed");
             Destroy(gameObject);
             return;
         }

@@ -17,26 +17,14 @@ public class SaveStateCollector : MonoBehaviour
         var city = SaveManager.Instance.CurrentData.city;
 
         city.lastSaveTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        city.coin = CurrencyManager.Instance.CurrentCoin();
-        city.xp = CityLevelManager.Instance.GetCurrentXP();
-        city.cityLevel = CityLevelManager.Instance.GetCurrentLevel();
+        city.coin = CurrencyManager.Instance.Coin;
+        city.xp = CityLevelManager.Instance.XP;
+        city.cityLevel = CityLevelManager.Instance.Level;
 
-        city.timeState = TimeManager.Instance.IsDay ? "Day" : "Night";
-        city.timeCounter = TimeManager.Instance.Timer();
+        city.timeCounter = TimeManager.Instance.TimeCounter;
+        city.timeState = TimeManager.Instance.CurrentTime.ToString();
 
-        city.unlockedBuildingIDs = UnlockManager.Instance
-            .GetUnlockedBuildings()
-            .Select(b => b.buildingID)
-            .ToList();
-
-        city.unlockedAchievements = AchievementManager.Instance
-            .GetAllProgress()
-            .Where(p => p.isCompleted)
-            .Select(p => p.data.id)
-            .ToList();
-
-        city.cityName = PlayFabProfileManager.Instance.CityName;
-
+        city.achievements = AchievementManager.Instance.GetAllSaveData();
 
         // BUILDINGS
         city.buildings.Clear();

@@ -32,7 +32,7 @@ public class GamePlayController : MonoBehaviour, IKeyBack
     public void UpdateCoinDisplay()
     {
         if (CurrencyManager.Instance == null || coinAmount == null) return;
-        var coins = CurrencyManager.Instance.CurrentCoin();
+        var coins = CurrencyManager.Instance.Coin;
         coinAmount.text = $"{coins}";
     }
 

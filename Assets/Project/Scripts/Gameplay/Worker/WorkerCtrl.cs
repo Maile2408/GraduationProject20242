@@ -31,21 +31,21 @@ public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
     {
         if (this.workerGroundAlign != null) return;
         this.workerGroundAlign = GetComponent<WorkerGroundAlign>();
-        Debug.Log(transform.name + ": LoadWorkerGroundAlign", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerGroundAlign", gameObject);
     }
 
     protected virtual void LoadWorkerTasks()
     {
         if (this.workerTasks != null) return;
         this.workerTasks = GetComponent<WorkerTasks>();
-        Debug.Log(transform.name + ": LoadWorkerTasks", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerTasks", gameObject);
     }
 
     protected virtual void LoadWokerTools()
     {
         if (this.tools != null) return;
         this.tools = GetComponent<WorkerTools>();
-        Debug.Log(transform.name + ": LoadWorkerTools", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerTools", gameObject);
     }
 
     protected virtual void LoadAnimator()
@@ -53,21 +53,21 @@ public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
         if (this.animator != null) return;
         this.animator = GetComponentInChildren<Animator>();
         this.workerModel = this.animator.transform;
-        Debug.Log(transform.name + ": LoadAnimator", gameObject);
+        //Debug.Log(transform.name + ": LoadAnimator", gameObject);
     }
 
     protected virtual void LoadWorkerBuildings()
     {
         if (this.workerBuildings != null) return;
         this.workerBuildings = GetComponent<WorkerBuildings>();
-        Debug.Log(transform.name + ": LoadWorkerBuildings", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerBuildings", gameObject);
     }
 
     protected virtual void LoadWorkerMovement()
     {
         if (this.workerMovement != null) return;
         this.workerMovement = GetComponent<WorkerMovement>();
-        Debug.Log(transform.name + ": LoadWorkerMovement", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerMovement", gameObject);
     }
 
     protected virtual void LoadAgent()
@@ -75,14 +75,14 @@ public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
         if (this.navMeshAgent != null) return;
         this.navMeshAgent = GetComponent<NavMeshAgent>();
         this.navMeshAgent.speed = 2f;
-        Debug.Log(transform.name + ": LoadAgent", gameObject);
+        //Debug.Log(transform.name + ": LoadAgent", gameObject);
     }
 
     protected virtual void LoadResCarrier()
     {
         if (this.resCarrier != null) return;
         this.resCarrier = GetComponent<ResCarrier>();
-        Debug.Log(transform.name + ": ResCarrier", gameObject);
+        //Debug.Log(transform.name + ": ResCarrier", gameObject);
     }
 
     public virtual void WorkerReleased()
@@ -106,11 +106,10 @@ public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
     {
         return new WorkerSaveData
         {
-            //id = GetComponent<Identifiable>().id,
+            id = GetComponent<Identifiable>().ID,
             type = this.workerType,
             position = transform.position,
-            //homeBuildingId = this.workerBuildings.GetHome().,
-            //workBuildingId = this.workerBuildings.workID
+            rotation = transform.rotation,
         };
     }
 
@@ -118,15 +117,9 @@ public class WorkerCtrl : SaiBehaviour, IPoolable, ISaveable<WorkerSaveData>
     public void LoadFromSave(WorkerSaveData data)
     {
         transform.position = data.position;
+        transform.rotation = data.rotation;
 
-        //this.workerBuildings.homeID = data.homeBuildingId;
-        //this.workerBuildings.workID = data.workBuildingId;
-
-        // reset worker state
-        this.workerTasks.ClearAllTasks();
-        this.workerTasks.readyForTask = false;
-        this.workerMovement.SetWorkingType(false, WorkingType.none);
-
-        this.workerType = data.type;
+        if (TimeManager.Instance.IsDay) this.workerTasks.GoWork();
+        else this.workerTasks.GoHome();
     }
 }

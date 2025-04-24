@@ -27,7 +27,7 @@ public class FarmTask : BuildingTask
     {
         if (this.workingPoint != null) return;
         this.workingPoint = transform.Find("WorkingPoint");
-        Debug.Log(transform.name + " LoadObjects", gameObject);
+        //Debug.Log(transform.name + " LoadObjects", gameObject);
     }
 
     protected virtual void LoadGrains()

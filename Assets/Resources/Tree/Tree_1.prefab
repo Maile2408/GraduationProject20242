@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a82299033f4a19458b2ec1133b67bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treeType: Tree_1
   logwoodGenerator: {fileID: 4934674291790717148}
   treeLevel: {fileID: 1487967974124332394}
   choper: {fileID: 0}

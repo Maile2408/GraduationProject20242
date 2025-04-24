@@ -63,6 +63,17 @@ PrefabInstance:
       propertyPath: resMax
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 2281166653818590534, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 937fe9aca04c6744e9f47acf7c345485,
+        type: 2}
+    - target: {fileID: 2281166653818590534, guid: 18f5cc42f0dbf444d95119a3c11bf738,
+        type: 3}
+      propertyPath: buildingType
+      value: 302_MediumWarehouse
+      objectReference: {fileID: 0}
     - target: {fileID: 2627877434307994831, guid: 18f5cc42f0dbf444d95119a3c11bf738,
         type: 3}
       propertyPath: resMax

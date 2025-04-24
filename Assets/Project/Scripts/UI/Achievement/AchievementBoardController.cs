@@ -23,7 +23,7 @@ public class AchievementBoardController : MonoBehaviour, IKeyBack
 
         foreach (var progress in list)
         {
-            UnityEngine.GameObject slot = PoolManager.Instance.Spawn(PoolPrefabPath.UI("AchievementSlot"), content);
+            GameObject slot = PoolManager.Instance.Spawn(PoolPrefabPath.UI("AchievementSlot"), content);
             slot.GetComponent<AchievementSlotUI>().Setup(progress);
         }
     }

@@ -20,7 +20,6 @@ public class BuildManager : SaiBehaviour
         base.Awake();
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only 1 BuildManager allowed");
             Destroy(gameObject);
             return;
         }
@@ -71,7 +70,7 @@ public class BuildManager : SaiBehaviour
     protected virtual void UpdateGhostPosition()
     {
         Ray ray = GodModeCtrl.Instance._camera.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.green, 0.2f);
+        //Debug.DrawRay(ray.origin, ray.direction * 1000f, Color.green, 0.2f);
 
         if (Physics.Raycast(ray, out RaycastHit hit, 999f, groundMask))
         {
@@ -118,7 +117,7 @@ public class BuildManager : SaiBehaviour
         // Check for collision
         if (currentGhost.TryGetComponent(out LimitRadius limitRadius) && limitRadius.IsCollided())
         {
-            Debug.Log("Can't place the building due to collision.");
+            //Debug.Log("Can't place the building due to collision.");
             return;
         }
 
@@ -151,7 +150,6 @@ public class BuildManager : SaiBehaviour
         if (underConstruction.TryGetComponent(out ConstructionCtrl ctrl))
         {
             ctrl.Setup(currentInfo);
-            ctrl.constructionType = SaveUtils.GetPrefabName(underConstruction);
         }
 
         ClearState();
@@ -179,7 +177,7 @@ public class BuildManager : SaiBehaviour
                 if (remaining <= 0) break;
             }
 
-            Debug.Log($"[BuildManager] Deducted {targetToDeduct}/{res.number} of {res.name}");
+            //Debug.Log($"[BuildManager] Deducted {targetToDeduct}/{res.number} of {res.name}");
         }
     }
 

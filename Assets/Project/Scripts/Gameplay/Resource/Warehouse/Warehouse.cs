@@ -26,13 +26,13 @@ public class Warehouse : SaiBehaviour
         Transform res = transform.Find("Res");
         foreach (Transform resTran in res)
         {
-            Debug.Log(resTran.name);
+            //Debug.Log(resTran.name);
             ResHolder resHolder = resTran.GetComponent<ResHolder>();
             if (resHolder == null) continue;
             this.resHolders.Add(resHolder);
         }
 
-        Debug.Log(transform.name + ": LoadHolders", gameObject);
+        //Debug.Log(transform.name + ": LoadHolders", gameObject);
     }
 
     public virtual ResHolder GetResource(ResourceName name)

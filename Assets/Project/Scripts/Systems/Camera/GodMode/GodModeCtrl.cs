@@ -11,8 +11,8 @@ public class GodModeCtrl : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (GodModeCtrl.Instance != null) Debug.LogError("Only 1 GodModeCtrl allow");
-        GodModeCtrl.Instance = this;
+        if (Instance != null) Debug.LogError("Only 1 GodModeCtrl allow");
+        Instance = this;
     }
 
     protected override void LoadComponents()
@@ -26,7 +26,7 @@ public class GodModeCtrl : SaiBehaviour
     {
         if (this.godMovement != null) return;
         this.godMovement = GetComponent<GodMovement>();
-        Debug.Log(transform.name + ": LoadGodMovement", gameObject);
+        //Debug.Log(transform.name + ": LoadGodMovement", gameObject);
     }
 
     protected virtual void LoadCamera()
@@ -34,6 +34,6 @@ public class GodModeCtrl : SaiBehaviour
         if (this._camera != null) return;
         this._camera = transform.Find("Camera").GetComponent<Camera>();
         this._camera.transform.rotation = Quaternion.Euler(this.godMovement.camView.x, this.godMovement.camView.y, this.godMovement.camView.z);
-        Debug.Log(transform.name + ": LoadCamera", gameObject);
+        //Debug.Log(transform.name + ": LoadCamera", gameObject);
     }
 }

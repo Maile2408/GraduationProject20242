@@ -88,6 +88,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 5961908531418431930, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 2dade64b7c32ef549855730c228bca4d,
+        type: 2}
+    - target: {fileID: 5961908531418431930, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: buildingType
+      value: 3_CityHouse
+      objectReference: {fileID: 0}
     - target: {fileID: 6451577935508301101, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
       propertyPath: resMax

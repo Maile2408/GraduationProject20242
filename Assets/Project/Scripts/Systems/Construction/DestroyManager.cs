@@ -23,7 +23,6 @@ public class DestroyManager : SaiBehaviour
         base.Awake();
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only one DestroyManager allowed.");
             Destroy(gameObject);
             return;
         }
@@ -69,17 +68,13 @@ public class DestroyManager : SaiBehaviour
 
                 ScreenManager.Add<ConfirmationPopupController>(ConfirmationPopupController.NAME);
             }
-            else
-            {
-                Debug.Log("[DestroyManager] Clicked but no valid target found.");
-            }
         }
     }
 
     private void UpdateRaycastTarget()
     {
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 999f, Color.red, 0.2f);
+        //Debug.DrawRay(ray.origin, ray.direction * 999f, Color.red, 0.2f);
 
         currentTarget = null;
 
@@ -100,7 +95,7 @@ public class DestroyManager : SaiBehaviour
 
         GameMessage.Info("Entered destroy mode");
         GameMessage.Guide("Left-click a building to destroy it\nRight-click to exit destroy mode");
-        Debug.Log("[DestroyManager] Entered destroy mode.");
+        //Debug.Log("[DestroyManager] Entered destroy mode.");
     }
 
     public void CancelDestroyMode()
@@ -110,7 +105,7 @@ public class DestroyManager : SaiBehaviour
         currentTarget = null;
 
         GameMessage.Info("Exited destroy mode");
-        Debug.Log("[DestroyManager] Exited destroy mode.");
+        //Debug.Log("[DestroyManager] Exited destroy mode.");
     }
 
     private void OnConfirmYes()
@@ -127,11 +122,7 @@ public class DestroyManager : SaiBehaviour
             AudioManager.Instance.PlayBuildingDestroy();
 
             GameMessage.Success($"Destroyed: {name}");
-            Debug.Log("[DestroyManager] Destroyed: " + name);
-        }
-        else
-        {
-            Debug.LogWarning("[DestroyManager] Confirmed destroy but target was null.");
+            //Debug.Log("[DestroyManager] Destroyed: " + name);
         }
 
         ClearCallbacks();
@@ -140,7 +131,7 @@ public class DestroyManager : SaiBehaviour
 
     private void OnConfirmNo()
     {
-        Debug.Log("[DestroyManager] Destruction cancelled.");
+        //Debug.Log("[DestroyManager] Destruction cancelled.");
         ClearCallbacks();
         CancelDestroyMode();
     }

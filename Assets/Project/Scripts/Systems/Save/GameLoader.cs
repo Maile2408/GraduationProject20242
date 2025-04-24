@@ -1,7 +1,5 @@
 using UnityEngine;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
 public class GameLoader : MonoBehaviour
 {
@@ -17,21 +15,15 @@ public class GameLoader : MonoBehaviour
     {
         var city = SaveManager.Instance.CurrentData.city;
 
-        // Load city state
-        //CurrencyManager.Instance.SetCoin(city.coin);
-        //CityLevelManager.Instance.SetXP(city.xp);
-        //CityLevelManager.Instance.SetLevel(city.cityLevel);
-        //TimeManager.Instance.SetTime(city.timeCounter, city.timeState == "Day");
+        CurrencyManager.Instance.Coin = city.coin;
+        CityLevelManager.Instance.SetLevelAndXP(city.cityLevel, city.xp);
+        TimeManager.Instance.SetTime(city.timeCounter, city.timeState == "Day");
 
         // Load world objects
         LoadObjects<BuildingCtrl, BuildingSaveData>(city.buildings, IDType.Building);
         LoadObjects<WorkerCtrl, WorkerSaveData>(city.workers, IDType.Worker);
         LoadObjects<TreeCtrl, TreeSaveData>(city.trees, IDType.Tree);
         LoadObjects<ConstructionCtrl, ConstructionSaveData>(city.constructions, IDType.Construction);
-
-        // Restore unlocks
-        //UnlockManager.Instance.RestoreUnlocks(city.unlockedBuildingIDs);
-        //AchievementManager.Instance.RestoreUnlocks(city.unlockedAchievements);
     }
 
     private void LoadObjects<T, TData>(List<TData> savedList, IDType type)
@@ -42,7 +34,7 @@ public class GameLoader : MonoBehaviour
         {
             string id = GetField<string>(data, "id");
             Vector3 position = GetField<Vector3>(data, "position");
-            Quaternion rotation = HasField(data, "rotation") ? GetField<Quaternion>(data, "rotation") : Quaternion.identity;
+            Quaternion rotation = GetField<Quaternion>(data, "rotation");
 
             T existing = FindById<T>(id);
             if (existing != null)
@@ -59,7 +51,6 @@ public class GameLoader : MonoBehaviour
 
             go.transform.SetPositionAndRotation(position, rotation);
 
-            // Gán lại ID chính xác
             var identifiable = go.GetComponent<Identifiable>();
             if (identifiable != null)
                 identifiable.SetID(id);
@@ -112,10 +103,5 @@ public class GameLoader : MonoBehaviour
     {
         var field = obj.GetType().GetField(fieldName);
         return field != null ? (U)field.GetValue(obj) : default;
-    }
-
-    private bool HasField(object obj, string fieldName)
-    {
-        return obj.GetType().GetField(fieldName) != null;
     }
 }

@@ -54,7 +54,7 @@ public class WorkerTasks : SaiBehaviour
     {
         if (this.workerCtrl != null) return;
         this.workerCtrl = GetComponent<WorkerCtrl>();
-        Debug.Log(transform.name + ": LoadWorkerCtrl", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerCtrl", gameObject);
     }
 
     protected virtual void LoadTasks()
@@ -63,7 +63,7 @@ public class WorkerTasks : SaiBehaviour
         Transform tasksObj = transform.Find("Tasks");
         this.taskWorking = tasksObj.GetComponentInChildren<TaskWorking>();
         this.taskGoHome = tasksObj.GetComponentInChildren<TaskGoHome>();
-        Debug.Log(transform.name + ": LoadTasks", gameObject);
+        //Debug.Log(transform.name + ": LoadTasks", gameObject);
     }
 
     protected virtual void DisableTasks()

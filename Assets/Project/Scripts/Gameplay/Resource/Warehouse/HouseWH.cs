@@ -23,7 +23,7 @@ public class HouseWH : Warehouse
     {
         if (this.workers != null) return;
         this.workers = GetComponent<Workers>();
-        Debug.Log(transform.name + " LoadWorkers", gameObject);
+        //Debug.Log(transform.name + " LoadWorkers", gameObject);
     }
 
     protected override void FixedUpdate()
@@ -37,7 +37,7 @@ public class HouseWH : Warehouse
     {
         if (TimeManager.Instance == null)
         {
-            Debug.LogWarning("TimeManager.Instance is null in HouseWH");
+            //Debug.LogWarning("TimeManager.Instance is null in HouseWH");
             return;
         }
 

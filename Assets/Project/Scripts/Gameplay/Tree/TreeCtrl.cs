@@ -18,14 +18,14 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
     {
         if (this.treeLevel != null) return;
         this.treeLevel = GetComponent<TreeLevel>();
-        Debug.Log(transform.name + " LoadTreeLevel", gameObject);
+        //Debug.Log(transform.name + " LoadTreeLevel", gameObject);
     }
 
     protected virtual void LoadResGenerator()
     {
         if (this.logwoodGenerator != null) return;
         this.logwoodGenerator = GetComponent<LogwoodGenerator>();
-        Debug.Log(transform.name + " LoadLogwoodGenerator", gameObject);
+        //Debug.Log(transform.name + " LoadLogwoodGenerator", gameObject);
     }
 
     public void OnSpawn() { }
@@ -42,7 +42,7 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
     {
         return new TreeSaveData
         {
-            //id = GetComponent<Identifiable>().id,
+            id = GetComponent<Identifiable>().ID,
             type = this.treeType,
             position = transform.position,
             rotation = transform.rotation,
@@ -58,7 +58,6 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
         transform.position = data.position;
         transform.rotation = data.rotation;
 
-        this.treeType = data.type;
         this.treeLevel.CurrentLevel = data.currentLevel;
         this.treeLevel.TreeTimer = data.treeTimer;
         this.logwoodGenerator.CreateTimer = data.generatorTimer;

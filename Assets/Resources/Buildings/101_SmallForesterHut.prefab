@@ -215,13 +215,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 
+  buildingType: 101_SmallForesterHut
   buildingTaskType: 1
   door: {fileID: 4363021126508830458}
   workers: {fileID: 3351261019592303417}
   warehouse: {fileID: 7983853247106543956}
   buildingTask: {fileID: 5045358046197085009}
-  buildingInfo: {fileID: 0}
+  buildingInfo: {fileID: 11400000, guid: 16920cba8b850e9459662f97da908848, type: 2}
 --- !u!114 &5045358046197085009
 MonoBehaviour:
   m_ObjectHideFlags: 0

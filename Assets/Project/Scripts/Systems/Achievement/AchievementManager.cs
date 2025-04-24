@@ -47,8 +47,6 @@ public class AchievementManager : MonoBehaviour
             progressDict[data.id] = progress;
             progressList.Add(progress);
         }
-
-        Debug.Log($"[AchievementManager] Loaded {progressDict.Count} achievements");
     }
 
     public void ReportProgress(AchievementType type, int amount)
@@ -77,8 +75,7 @@ public class AchievementManager : MonoBehaviour
 
     private void ShowAchievementPopup()
     {
-        if(isPopupPending) return;
-        
+        if (isPopupPending) return;
         isPopupPending = true;
         Invoke(nameof(OpenPopup), 1.5f);
     }
@@ -86,7 +83,8 @@ public class AchievementManager : MonoBehaviour
     private void OpenPopup()
     {
         isPopupPending = false;
-        if(pendingClaimQueue.Count > 0 ) ScreenManager.Add<AchievementRewardsController>(AchievementRewardsController.NAME);
+        if (pendingClaimQueue.Count > 0)
+            ScreenManager.Add<AchievementRewardsController>(AchievementRewardsController.NAME);
     }
 
     public void ClaimAllPendingRewards()
@@ -125,9 +123,54 @@ public class AchievementManager : MonoBehaviour
 
     public List<AchievementProgress> GetAllProgress() => new(progressList);
 
+    public List<string> GetClaimedIDs()
+    {
+        return progressList
+            .Where(p => p.isRewardClaimed)
+            .Select(p => p.data.id)
+            .ToList();
+    }
+
+    public void RestoreClaimedOnly(List<string> claimedIDs)
+    {
+        foreach (var p in progressList)
+        {
+            p.isRewardClaimed = claimedIDs.Contains(p.data.id);
+        }
+
+        Debug.Log($"[AchievementManager] Restored {claimedIDs.Count} claimed achievements.");
+    }
+
+    public List<AchievementSaveData> GetAllSaveData()
+    {
+        return progressList
+            .Where(p => p.current > 0 || p.isRewardClaimed)
+            .Select(p => new AchievementSaveData
+            {
+                id = p.data.id,
+                current = p.current,
+                claimed = p.isRewardClaimed
+            })
+            .ToList();
+    }
+
+
+    public void RestoreProgressFromSave(List<AchievementSaveData> saves)
+    {
+        foreach (var save in saves)
+        {
+            if (!progressDict.TryGetValue(save.id, out var p)) continue;
+
+            p.current = Mathf.Min(save.current, p.data.goalAmount);
+            p.isRewardClaimed = save.claimed;
+            p.isCompleted = p.current >= p.data.goalAmount;
+        }
+
+        Debug.Log($"[AchievementManager] Restored {saves.Count} achievements.");
+    }
+
     public bool IsCompleted(string achievementId)
     {
-        if (!progressDict.ContainsKey(achievementId)) return false;
-        return progressDict[achievementId].isCompleted;
+        return progressDict.TryGetValue(achievementId, out var p) && p.isCompleted;
     }
 }

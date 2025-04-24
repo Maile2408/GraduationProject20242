@@ -3,18 +3,20 @@ using UnityEngine;
 public class TaxBuildingCtrl : MonoBehaviour
 {
     [Header("Tax Settings")]
-    [SerializeField] private float coinPerCycle = 50f;
-    [SerializeField] private float interval = 20f;
+    [SerializeField] float coinPerCycle = 50f;
+    [SerializeField] float interval = 20f;
 
     [Header("UI References")]
-    [SerializeField] private TaxIcon taxIcon;
-    [SerializeField] private TaxText taxText;
+    [SerializeField] TaxIcon taxIcon;
+    [SerializeField] TaxText taxText;
 
-    private float timer;
-    private bool isReadyToCollect = false;
+    [SerializeField] float timer;
+    [SerializeField] bool isReadyToCollect = false;
 
     public float GetCoinPerCycle() => coinPerCycle;
     public float GetInterval() => interval;
+    public float GetCurrentTimer() => timer;
+
 
     private void Start()
     {
@@ -60,6 +62,20 @@ public class TaxBuildingCtrl : MonoBehaviour
         return (int)coinPerCycle;
     }
 
+    public void RestoreState(bool ready, float savedTimer)
+    {
+        isReadyToCollect = ready;
+        timer = savedTimer;
+
+        if (taxIcon != null) taxIcon.gameObject.SetActive(ready);
+        if (taxText != null) taxText.gameObject.SetActive(false);
+
+        if (ready && taxIcon != null)
+        {
+            var icon = taxIcon.GetComponent<TaxIcon>();
+            icon?.Animate();
+        }
+    }
 
     public bool IsReadyToCollect() => isReadyToCollect;
 }

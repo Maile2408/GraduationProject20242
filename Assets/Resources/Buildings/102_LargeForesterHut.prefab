@@ -162,6 +162,17 @@ PrefabInstance:
       propertyPath: maxWorker
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3590794400304309782, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 572ef9f300abd5b489e97b4077f6de60,
+        type: 2}
+    - target: {fileID: 3590794400304309782, guid: 6c0c9b5b08dcf2947a38239488d26535,
+        type: 3}
+      propertyPath: buildingType
+      value: 102_LargeForesterHut
+      objectReference: {fileID: 0}
     - target: {fileID: 4363021126508830458, guid: 6c0c9b5b08dcf2947a38239488d26535,
         type: 3}
       propertyPath: m_LocalPosition.z

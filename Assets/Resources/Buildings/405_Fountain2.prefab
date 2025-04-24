@@ -147,6 +147,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4933643866002245090, guid: 9575259a25832df47aae4ba623db9614,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d83b8d35e9fff44d85fa04733e23d20,
+        type: 2}
+    - target: {fileID: 4933643866002245090, guid: 9575259a25832df47aae4ba623db9614,
+        type: 3}
+      propertyPath: buildingType
+      value: 405_Fountain2
+      objectReference: {fileID: 0}
     - target: {fileID: 6373910601849673281, guid: 9575259a25832df47aae4ba623db9614,
         type: 3}
       propertyPath: m_Name

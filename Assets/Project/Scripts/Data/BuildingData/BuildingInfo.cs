@@ -7,7 +7,7 @@ public class BuildingInfo : ScriptableObject
     public int buildingID;
     public string buildingName;
     public Sprite icon;
-    public UnityEngine.GameObject prefab;
+    public GameObject prefab;
     [TextArea] public string description;
     public BuildingCategory category;
 

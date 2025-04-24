@@ -31,7 +31,7 @@ public class TreeLevel : BuildLevel
         if (this.tree != null) return;
         this.tree = GetComponent<LogwoodGenerator>();
         this.GetTreeDelay();
-        Debug.Log(transform.name + ": LoadTree");
+        //Debug.Log(transform.name + ": LoadTree");
     }
 
     protected virtual void GetTreeDelay()

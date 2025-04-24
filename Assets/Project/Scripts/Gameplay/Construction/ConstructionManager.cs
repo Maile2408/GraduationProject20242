@@ -13,7 +13,7 @@ public class ConstructionManager : SaiBehaviour
         base.Awake();
         if (Instance != null && Instance != this)
         {
-            Debug.LogWarning("Multiple ConstructionManager in scene");
+            //Debug.LogWarning("Multiple ConstructionManager in scene");
             Destroy(gameObject);
             return;
         }

@@ -103,18 +103,6 @@ public class LoginController : MonoBehaviour, IKeyBack
         rememberMeToggle.onValueChanged.RemoveListener(UpdateRememberMeLabel);
     }
 
-    private void SetEmailBackgroundColor(Color color)
-    {
-        var bg = inputEmail.GetComponent<Image>();
-        if (bg != null) bg.color = color;
-    }
-
-    private void SetPasswordBackgroundColor(Color color)
-    {
-        var bg = inputPassword.GetComponent<Image>();
-        if (bg != null) bg.color = color;
-    }
-
     private void SetDropdownArrowUp()
     {
         if (dropdownArrowImage != null && arrowUp != null)
@@ -174,9 +162,19 @@ public class LoginController : MonoBehaviour, IKeyBack
                             }
                             else
                             {
-                                SaveManager.Instance.CurrentData = new UserSaveData();
-                                messageText.text = "No cloud save found, using default.";
+                                var defaultData = SaveDataFactory.CreateDefaultSaveData(
+                                    PlayFabAccountManager.Instance.PlayFabId,
+                                    PlayFabProfileManager.Instance.Username,
+                                    PlayFabProfileManager.Instance.CityName,
+                                    PlayFabProfileManager.Instance.CharacterType
+                                );
+
+                                SaveManager.Instance.CurrentData = defaultData;
+                                SaveManager.Instance.SaveAndUpload(); // Lưu lên cloud ngay
+
+                                messageText.text = "<color=green>Welcome! New city save created.</color>";
                             }
+
 
                             if (PlayFabProfileManager.Instance.HasCreatedProfile)
                             {

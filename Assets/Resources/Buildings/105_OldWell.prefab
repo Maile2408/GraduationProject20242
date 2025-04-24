@@ -206,13 +206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3b32282cb4b7c4eb978af50fd7e5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 
+  buildingType: 105_OldWell
   buildingTaskType: 3
   door: {fileID: 7288594023897671340}
   workers: {fileID: 5897096311856363076}
   warehouse: {fileID: 1516692336692902209}
   buildingTask: {fileID: 5176099353417875667}
-  buildingInfo: {fileID: 0}
+  buildingInfo: {fileID: 11400000, guid: 4d993fcfafa5e384992ed15fc9b80324, type: 2}
 --- !u!114 &5176099353417875667
 MonoBehaviour:
   m_ObjectHideFlags: 0

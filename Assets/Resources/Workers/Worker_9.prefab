@@ -727,6 +727,11 @@ PrefabInstance:
       objectReference: {fileID: 7337979670387569139}
     - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
         type: 3}
+      propertyPath: workerType
+      value: Worker_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288901113479984733, guid: fa8258dc17db99d4aa9cec214858539f,
+        type: 3}
       propertyPath: workerModel
       value: 
       objectReference: {fileID: 3690015402521324425}

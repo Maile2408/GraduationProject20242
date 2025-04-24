@@ -188,13 +188,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6007ec9d5fc520a4da2488601970a885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: 
+  buildingType: 304_BuilderHut
   buildingTaskType: 1
   door: {fileID: 7619892272282265105}
   workers: {fileID: 490644881862380583}
   warehouse: {fileID: 2425093524609828206}
   buildingTask: {fileID: 821983392919612589}
-  buildingInfo: {fileID: 0}
+  buildingInfo: {fileID: 11400000, guid: a61cb2ebd432ed14c8ec62156d808ed3, type: 2}
 --- !u!114 &2425093524609828206
 MonoBehaviour:
   m_ObjectHideFlags: 0

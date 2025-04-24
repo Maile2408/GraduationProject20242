@@ -23,7 +23,7 @@ public class MillTask : BuildingTask
     {
         if (this.relaxingPoint != null) return;
         this.relaxingPoint = transform.Find("RelaxingPoint");
-        Debug.Log(transform.name + " LoadRelaxingPoint", gameObject);
+        //Debug.Log(transform.name + " LoadRelaxingPoint", gameObject);
     }
 
     protected override void Update()

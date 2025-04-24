@@ -35,7 +35,7 @@ public class WorkersController : MonoBehaviour, IKeyBack
         int countEmployed = WorkerManager.Instance.CountEmployed(workers);
         int totalJobSlots = WorkerManager.Instance.GetTotalCapacity(BuildingTaskType.workStation);
 
-        float coin = CurrencyManager.Instance.CurrentCoin();
+        float coin = CurrencyManager.Instance.Coin;
         float cost = WorkerManager.Instance.WorkerCost();
 
         txtCurrentWorkers.text = $"Current Workers: {currentWorkers}";
@@ -70,7 +70,7 @@ public class WorkersController : MonoBehaviour, IKeyBack
         int currentWorkers = workers.Count;
         int workerCapacity = WorkerManager.Instance.GetTotalCapacity(BuildingTaskType.home);
         
-        float coin = CurrencyManager.Instance.CurrentCoin();
+        float coin = CurrencyManager.Instance.Coin;
         float cost = WorkerManager.Instance.WorkerCost();
 
         note.SetActive(false);

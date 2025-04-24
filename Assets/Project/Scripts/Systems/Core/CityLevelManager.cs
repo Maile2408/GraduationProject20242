@@ -7,12 +7,16 @@ public class CityLevelManager : MonoBehaviour
     public static CityLevelManager Instance;
 
     [Header("Level Data")]
-    [SerializeField] CityLevelConfig levelConfig;
+    [SerializeField] private CityLevelConfig levelConfig;
     private List<LevelData> levelConfigs;
 
     [Header("Runtime Values")]
     [SerializeField] private int currentLevel = 1;
     [SerializeField] private int currentXP = 0;
+
+    public UnityEvent<int> onLevelUp;
+    public UnityEvent<int> onLevelChanged;
+    public UnityEvent<int> onXPChanged;
 
     [System.Serializable]
     public class LevelData
@@ -22,13 +26,31 @@ public class CityLevelManager : MonoBehaviour
         public int rewardCoin;
     }
 
-    public UnityEvent<int> onLevelUp;
+    public int Level
+    {
+        get => currentLevel;
+        set
+        {
+            currentLevel = Mathf.Max(1, value);
+            onLevelChanged?.Invoke(currentLevel);
+            AchievementReporter.ReachLevel(currentLevel);
+        }
+    }
+
+    public int XP
+    {
+        get => currentXP;
+        set
+        {
+            currentXP = Mathf.Max(0, value);
+            onXPChanged?.Invoke(currentXP);
+        }
+    }
 
     private void Awake()
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only one CityLevelManager allowed!");
             Destroy(gameObject);
             return;
         }
@@ -39,15 +61,13 @@ public class CityLevelManager : MonoBehaviour
 
     private void Start()
     {
-        UnlockManager.Instance.UnlockInitialBuildings(currentLevel);
-        
-        //Achievement
-        AchievementReporter.ReachLevel(currentLevel);
+        onLevelChanged?.Invoke(currentLevel);
+        onXPChanged?.Invoke(currentXP);
     }
 
     public void AddXP(int amount)
     {
-        currentXP += amount;
+        XP += amount;
         TryLevelUp();
     }
 
@@ -61,24 +81,27 @@ public class CityLevelManager : MonoBehaviour
             var levelData = levelConfigs[currentLevel - 1];
 
             onLevelUp?.Invoke(currentLevel);
+            onLevelChanged?.Invoke(currentLevel);
 
-            foreach (var id in levelData.unlockedBuildings) UnlockManager.Instance.UnlockBuilding(id);
+            foreach (var id in levelData.unlockedBuildings)
+                UnlockManager.Instance.UnlockBuilding(id);
 
             CurrencyManager.Instance.AddCoin(levelData.rewardCoin);
             GameMessage.Success($"Level up! You reached level {currentLevel} and gained {levelData.rewardCoin} coins!");
 
-            //Achievement
             AchievementReporter.ReachLevel(currentLevel);
-            
-            Debug.Log($"City leveled up to {currentLevel}! Reward: {levelData.rewardCoin} coins.");
         }
     }
 
-    public int GetCurrentLevel() => currentLevel;
-    public int GetCurrentXP() => currentXP;
     public int GetXPToNextLevel()
     {
         if (currentLevel >= levelConfigs.Count) return 0;
         return levelConfigs[currentLevel].requiredXP - currentXP;
+    }
+
+    public void SetLevelAndXP(int level, int xp)
+    {
+        this.Level = level;
+        this.XP = xp;
     }
 }

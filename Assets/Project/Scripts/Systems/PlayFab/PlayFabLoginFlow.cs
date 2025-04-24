@@ -24,7 +24,7 @@ public class PlayFabLoginFlow : MonoBehaviour
                     if (data != null)
                     {
                         SaveManager.Instance.CurrentData = data;
-                        SaveManager.Instance.SaveToDisk(); 
+                        SaveManager.Instance.SaveToDisk();
                         Debug.Log("[LoginFlow] SaveData loaded.");
                     }
                     else

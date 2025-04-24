@@ -14,7 +14,6 @@ public class UnlockManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only one UnlockManager allowed!");
             Destroy(gameObject);
             return;
         }
@@ -26,7 +25,7 @@ public class UnlockManager : MonoBehaviour
 
     private void Start()
     {
-        UnlockInitialBuildings(CityLevelManager.Instance.GetCurrentLevel());
+        UnlockInitialBuildings(CityLevelManager.Instance.Level);
     }
 
     public bool IsUnlocked(int buildingID)
@@ -39,7 +38,7 @@ public class UnlockManager : MonoBehaviour
         if (!IsUnlocked(buildingID))
         {
             unlockedBuildings.Add(buildingID);
-            Debug.Log($"[Unlock] Building Unlocked: {buildingID}");
+            //Debug.Log($"[Unlock] Building Unlocked: {buildingID}");
 
             // Achievement
             AchievementReporter.UnlockBuilding();

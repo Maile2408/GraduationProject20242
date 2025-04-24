@@ -9,7 +9,11 @@ public class BuildLevel : SaiBehaviour
     public int CurrentLevel
     {
         get => currentLevel;
-        set => currentLevel = Mathf.Clamp(value, 0, levels.Count - 1);
+        set
+        {
+            currentLevel = Mathf.Clamp(value, 0, levels.Count - 1);
+            ShowBuilding();
+        }
     }
 
     protected override void OnEnable()
@@ -34,7 +38,7 @@ public class BuildLevel : SaiBehaviour
 
         this.levels[0].gameObject.SetActive(true);
 
-        Debug.Log(transform.name + ": LoadBuildings");
+        //Debug.Log(transform.name + ": LoadBuildings");
     }
 
     /// <summary>

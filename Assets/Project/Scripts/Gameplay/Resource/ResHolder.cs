@@ -21,7 +21,7 @@ public class ResHolder : SaiBehaviour
 
         string name = transform.name;
         this.resourceName = ResNameParser.FromString(name);
-        Debug.Log(transform.name + ": LoadResName");
+        //Debug.Log(transform.name + ": LoadResName");
     }
 
     public virtual ResourceName Name()

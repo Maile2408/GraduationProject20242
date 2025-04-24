@@ -133,6 +133,17 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6483382352796370888, guid: 6c47289cc014f454bb1c466f3ed61b34,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 32c02c0dd611bed4197466dad49a33de,
+        type: 2}
+    - target: {fileID: 6483382352796370888, guid: 6c47289cc014f454bb1c466f3ed61b34,
+        type: 3}
+      propertyPath: buildingType
+      value: 106_ModernWell
+      objectReference: {fileID: 0}
     - target: {fileID: 6954766002471206161, guid: 6c47289cc014f454bb1c466f3ed61b34,
         type: 3}
       propertyPath: resMax

@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class TimeUIManager : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.GameObject dayIcon;
-    [SerializeField] private UnityEngine.GameObject nightIcon;
+    [SerializeField] private GameObject dayIcon;
+    [SerializeField] private GameObject nightIcon;
 
     private void OnEnable()
     {

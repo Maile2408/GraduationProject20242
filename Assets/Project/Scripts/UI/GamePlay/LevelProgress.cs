@@ -15,7 +15,7 @@ public class LevelProgress : MonoBehaviour
         if (CityLevelManager.Instance != null)
         {
             CityLevelManager.Instance.onLevelUp.AddListener(UpdateUI);
-            UpdateUI(CityLevelManager.Instance.GetCurrentLevel());
+            UpdateUI(CityLevelManager.Instance.Level);
         }
     }
 
@@ -29,8 +29,8 @@ public class LevelProgress : MonoBehaviour
     {
         if (CityLevelManager.Instance == null) return;
 
-        int currentXP = CityLevelManager.Instance.GetCurrentXP();
-        int currentLevel = CityLevelManager.Instance.GetCurrentLevel();
+        int currentXP = CityLevelManager.Instance.XP;
+        int currentLevel = CityLevelManager.Instance.Level;
 
         // Only update if XP or level has changed
         if (currentXP != lastXP || currentLevel != lastLevel)
@@ -53,7 +53,7 @@ public class LevelProgress : MonoBehaviour
     {
         if (fillImage == null || CityLevelManager.Instance == null) return;
 
-        float xp = CityLevelManager.Instance.GetCurrentXP();
+        float xp = CityLevelManager.Instance.XP;
         float toNext = CityLevelManager.Instance.GetXPToNextLevel();
         float ratio = toNext == 0 ? 1f : xp / (xp + toNext);
         fillImage.fillAmount = Mathf.Clamp01(ratio);

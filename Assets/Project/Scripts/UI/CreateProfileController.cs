@@ -15,7 +15,7 @@ public class CreateProfileController : MonoBehaviour, IKeyBack
     public void OnStartButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
-        
+
         string yourName = inputYourName.text.Trim();
         string cityName = inputCityName.text.Trim();
         string character = toggleKing.isOn ? "King" : "Queen";
@@ -30,6 +30,17 @@ public class CreateProfileController : MonoBehaviour, IKeyBack
             onSuccess: () =>
             {
                 messageText.text = "";
+
+                var saveData = SaveDataFactory.CreateDefaultSaveData(
+                    PlayFabAccountManager.Instance.PlayFabId,
+                    yourName,
+                    cityName,
+                    character
+                );
+
+                SaveManager.Instance.CurrentData = saveData;
+                SaveManager.Instance.SaveAndUpload();
+
                 ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
             },
             onError: msg =>

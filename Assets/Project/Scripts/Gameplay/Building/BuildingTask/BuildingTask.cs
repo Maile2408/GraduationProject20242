@@ -27,7 +27,7 @@ public class BuildingTask : SaiBehaviour
     {
         if (this.buildingCtrl != null) return;
         this.buildingCtrl = GetComponent<BuildingCtrl>();
-        Debug.Log(transform.name + " LoadBuildingCtrl", gameObject);
+        //Debug.Log(transform.name + " LoadBuildingCtrl", gameObject);
     }
 
     protected virtual bool IsTime2Work()

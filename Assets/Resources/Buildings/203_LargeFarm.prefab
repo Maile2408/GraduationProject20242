@@ -2542,6 +2542,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3466910155300429710, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 26ef8f7d129f9f04fbe05703db088f46,
+        type: 2}
+    - target: {fileID: 3466910155300429710, guid: a07a46ef718b33244b758cdb0797c693,
+        type: 3}
+      propertyPath: buildingType
+      value: 203_LargeFarm
+      objectReference: {fileID: 0}
     - target: {fileID: 3680062198928746659, guid: a07a46ef718b33244b758cdb0797c693,
         type: 3}
       propertyPath: m_AnchoredPosition.y

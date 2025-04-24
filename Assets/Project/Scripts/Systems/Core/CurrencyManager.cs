@@ -9,14 +9,20 @@ public class CurrencyManager : SaiBehaviour
 
     public static event Action OnCoinChanged;
 
-    public float CurrentCoin() => currentCoin;
+    public float Coin
+    {
+        get => currentCoin;
+        set
+        {
+            currentCoin = Mathf.Max(0, value);
+        }
+    }
 
     protected override void Awake()
     {
         base.Awake();
         if (Instance != null && Instance != this)
         {
-            Debug.LogError("Only 1 CurrencyManager allowed");
             Destroy(gameObject);
             return;
         }
@@ -53,6 +59,6 @@ public class CurrencyManager : SaiBehaviour
             AchievementReporter.SpendCoin(amount);
             AchievementReporter.UpdateCurrentCoin(currentCoin);
         }
-        Debug.Log("Not enough money!");
+        //Debug.Log("Not enough money!");
     }
 }

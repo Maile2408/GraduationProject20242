@@ -443,6 +443,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6715072606138140870, guid: 3fe148055f2ca74439b4323df2201e6e,
         type: 3}
+      propertyPath: treeType
+      value: Tree_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6715072606138140870, guid: 3fe148055f2ca74439b4323df2201e6e,
+        type: 3}
       propertyPath: logwoodGenerator
       value: 
       objectReference: {fileID: 2452909694020632218}

@@ -12,8 +12,7 @@ public class CitySaveData
     public string timeState; // "Day" / "Night"
     public float timeCounter;
 
-    public List<int> unlockedBuildingIDs = new();
-    public List<string> unlockedAchievements = new();
+    public List<AchievementSaveData> achievements = new();
 
     public List<BuildingSaveData> buildings = new();
     public List<ConstructionSaveData> constructions = new();

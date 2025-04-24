@@ -78,6 +78,17 @@ PrefabInstance:
       propertyPath: maxWorker
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5961908531418431930, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: buildingInfo
+      value: 
+      objectReference: {fileID: 11400000, guid: 403cb12fddc4aa34fb6a1605d9f05e55,
+        type: 2}
+    - target: {fileID: 5961908531418431930, guid: 74fca03778c574141b6701a05c8bc380,
+        type: 3}
+      propertyPath: buildingType
+      value: 2_TownHouse
+      objectReference: {fileID: 0}
     - target: {fileID: 6451577935508301101, guid: 74fca03778c574141b6701a05c8bc380,
         type: 3}
       propertyPath: resMax

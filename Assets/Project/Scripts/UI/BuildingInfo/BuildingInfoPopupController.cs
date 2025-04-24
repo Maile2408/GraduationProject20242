@@ -89,7 +89,7 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     {
         if (currentInfo == null) return false;
 
-        bool hasCoin = CurrencyManager.Instance.CurrentCoin() >= currentInfo.coin;
+        bool hasCoin = CurrencyManager.Instance.Coin >= currentInfo.coin;
         bool hasRes = StorageResourceManager.Instance.HasEnoughResources(currentInfo.cost);
 
         if (!hasCoin && !hasRes)

@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b3814f8f67f974d8267d2a6377d207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workerType: Worker_1
   workerBuildings: {fileID: 5276538544039100352}
   workerMovement: {fileID: 4393391447325745335}
   workerTasks: {fileID: 3255505065262186428}

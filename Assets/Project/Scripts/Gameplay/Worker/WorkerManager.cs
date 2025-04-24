@@ -23,7 +23,7 @@ public class WorkerManager : SaiBehaviour
         base.Awake();
         if (Instance != null)
         {
-            Debug.LogError("Only 1 WorkerManager allowed");
+            Destroy(gameObject);
         }
         Instance = this;
     }
@@ -79,7 +79,7 @@ public class WorkerManager : SaiBehaviour
             this.workerCtrls.Add(ctrl);
         }
 
-        Debug.Log(transform.name + ": LoadWorkerCtrls", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerCtrls", gameObject);
     }
 
     public virtual List<WorkerCtrl> WorkerCtrls()
@@ -131,23 +131,12 @@ public class WorkerManager : SaiBehaviour
         if (isPlacingWorker) return;
 
         GameObject prefab = WorkerPrefabCache.GetRandomWorker();
-        if (prefab == null)
-        {
-            Debug.LogError("WorkerManager: Prefab is null.");
-            return;
-        }
 
         string path = PoolPrefabPath.Worker(prefab.name);
         GameObject workerGO = PoolManager.Instance.Spawn(path);
-        if (workerGO == null)
-        {
-            Debug.LogError($"WorkerManager: Failed to spawn worker from path: {path}");
-            return;
-        }
 
         if (!workerGO.TryGetComponent(out placingWorker))
         {
-            Debug.LogError("Worker prefab is missing WorkerCtrl component.");
             PoolManager.Instance.Despawn(workerGO);
             return;
         }
@@ -156,14 +145,13 @@ public class WorkerManager : SaiBehaviour
 
         GameMessage.Guide("Click on Ground to place a worker");
 
-        Debug.Log("Click on Ground to place a worker.");
+        //Debug.Log("Click on Ground to place a worker.");
     }
 
     private void FinalizePlacement()
     {
         AddWorker(placingWorker);
         SaveUtils.AssignID(placingWorker.gameObject, IDType.Worker);
-        placingWorker.workerType = SaveUtils.GetPrefabName(placingWorker.gameObject);
 
         AudioManager.Instance.PlayWorkerSpawn();
         CurrencyManager.Instance.SpendCoin(workerCost);
@@ -191,6 +179,6 @@ public class WorkerManager : SaiBehaviour
         }
 
         isPlacingWorker = false;
-        Debug.Log("Cancelled worker placement.");
+        //Debug.Log("Cancelled worker placement.");
     }
 }

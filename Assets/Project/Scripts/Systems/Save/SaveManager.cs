@@ -48,9 +48,17 @@ public class SaveManager : MonoBehaviour
     public void SaveAndUpload()
     {
         SaveToDisk();
-#if USE_PLAYFAB
         PlayFabManager.Instance.UploadUserData(CurrentData);
-#endif
+
+        var city = CurrentData.city;
+
+        PlayFabLeaderboardManager.Instance.UpdateLeaderboard(
+            city.cityLevel,
+            city.xp,
+            city.buildings.Count,
+            city.workers.Count,
+            Mathf.RoundToInt(city.coin)
+        );
     }
 
     // Download from cloud and replace current data

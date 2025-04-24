@@ -961,7 +961,7 @@ PrefabInstance:
     - target: {fileID: 2313128510188377459, guid: ca166bb671510494786df2021c4fb06a,
         type: 3}
       propertyPath: m_Name
-      value: ===Manager===
+      value: ===GamePlayManager===
       objectReference: {fileID: 0}
     - target: {fileID: 2830924456445135925, guid: ca166bb671510494786df2021c4fb06a,
         type: 3}

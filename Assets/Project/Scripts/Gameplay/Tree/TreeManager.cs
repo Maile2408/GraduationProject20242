@@ -10,7 +10,7 @@ public class TreeManager : SaiBehaviour
     protected override void Awake()
     {
         base.Awake();
-        if (Instance != null) Debug.LogError("Only 1 TreeManager allowed");
+        if (Instance != null) Destroy(gameObject);
         Instance = this;
     }
 

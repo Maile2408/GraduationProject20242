@@ -51,26 +51,6 @@ public class PlayFabLeaderboardManager : MonoBehaviour
             });
     }
 
-    public void SetDisplayName(string displayName, Action onSuccess = null, Action<string> onError = null)
-    {
-        var request = new UpdateUserTitleDisplayNameRequest
-        {
-            DisplayName = displayName
-        };
-
-        PlayFabClientAPI.UpdateUserTitleDisplayName(request,
-            result =>
-            {
-                Debug.Log("Display name set to: " + result.DisplayName);
-                onSuccess?.Invoke();
-            },
-            error =>
-            {
-                Debug.LogError("SetDisplayName failed: " + error.GenerateErrorReport());
-                onError?.Invoke(error.ErrorMessage);
-            });
-    }
-
     public void GetUserData(string playFabId, Action<Dictionary<string, UserDataRecord>> onSuccess, Action<string> onError = null)
     {
         var request = new GetUserDataRequest

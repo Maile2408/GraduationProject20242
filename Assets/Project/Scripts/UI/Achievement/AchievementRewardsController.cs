@@ -26,7 +26,7 @@ public class AchievementRewardsController : MonoBehaviour, IKeyBack
         {
             if (progress.isCompleted && !progress.isRewardClaimed)
             {
-                UnityEngine.GameObject slot = PoolManager.Instance.Spawn(PoolPrefabPath.UI("AchievementSlot"), content);
+                GameObject slot = PoolManager.Instance.Spawn(PoolPrefabPath.UI("AchievementSlot"), content);
                 slot.GetComponent<AchievementSlotUI>().Setup(progress);
             }
         }

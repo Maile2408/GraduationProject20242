@@ -33,7 +33,7 @@ public class WorkerTask : SaiBehaviour
     {
         if (this.workerCtrl != null) return;
         this.workerCtrl = transform.parent.parent.GetComponent<WorkerCtrl>();
-        Debug.Log(transform.name + ": LoadWorkerCtrl", gameObject);
+        //Debug.Log(transform.name + ": LoadWorkerCtrl", gameObject);
     }
 
     protected virtual void FindBuilding()

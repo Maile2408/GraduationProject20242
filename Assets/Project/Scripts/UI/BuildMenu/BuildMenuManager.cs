@@ -12,13 +12,19 @@ public class BuildMenuManager : MonoBehaviour
     [SerializeField] Transform contentParent;
     [SerializeField] List<BuildingInfo> allBuildings;
 
-    private List<UnityEngine.GameObject> activeItems = new();
+    private List<GameObject> activeItems = new();
 
     private void Awake()
     {
-        allBuildings = Resources.LoadAll<BuildingInfo>("BuildingInfo/")
-        .OrderBy(b => b.name)
-        .ToList();
+        if (BuildingDatabase.Instance == null)
+        {
+            Debug.LogError("[BuildMenuManager] Missing BuildingDatabase in scene.");
+            return;
+        }
+
+        allBuildings = BuildingDatabase.Instance.GetAll()
+            .OrderBy(b => b.buildingID)
+            .ToList();
     }
 
     private void Start()
