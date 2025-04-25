@@ -27,7 +27,6 @@ public class LoginController : MonoBehaviour, IKeyBack
     {
         RefreshDropdownEmails();
 
-        // Auto-fill if remembered
         if (RememberMeManager.IsRemembered())
         {
             rememberMeToggle.isOn = true;
@@ -41,11 +40,9 @@ public class LoginController : MonoBehaviour, IKeyBack
             UpdateRememberMeLabel(false);
         }
 
-        // Toggle dropdown visibility
         buttonShowDropdown.onClick.AddListener(() =>
         {
             isDropdownOpen = !isDropdownOpen;
-
             if (isDropdownOpen)
             {
                 dropdownSuggestions.Show();
@@ -58,24 +55,19 @@ public class LoginController : MonoBehaviour, IKeyBack
             }
         });
 
-        // Handle email selection
         dropdownSuggestions.onValueChanged.AddListener(index =>
         {
             string selectedEmail = dropdownSuggestions.options[index].text;
             inputEmail.text = selectedEmail;
-
-            string password = RememberMeManager.GetPasswordOf(selectedEmail);
-            inputPassword.text = password;
-
+            inputPassword.text = RememberMeManager.GetPasswordOf(selectedEmail);
             dropdownSuggestions.Hide();
             isDropdownOpen = false;
             SetDropdownArrowDown();
         });
 
-        // Click outside to hide dropdown
         EventTrigger trigger = gameObject.AddComponent<EventTrigger>();
-        EventTrigger.Entry entry = new EventTrigger.Entry { eventID = EventTriggerType.PointerClick };
-        entry.callback.AddListener((eventData) =>
+        var entry = new EventTrigger.Entry { eventID = EventTriggerType.PointerClick };
+        entry.callback.AddListener((_) =>
         {
             if (isDropdownOpen)
             {
@@ -89,13 +81,6 @@ public class LoginController : MonoBehaviour, IKeyBack
         rememberMeToggle.onValueChanged.AddListener(UpdateRememberMeLabel);
     }
 
-    private void RefreshDropdownEmails()
-    {
-        var savedEmails = RememberMeManager.GetEmailList();
-        dropdownSuggestions.ClearOptions();
-        dropdownSuggestions.AddOptions(savedEmails);
-    }
-
     private void OnDisable()
     {
         buttonShowDropdown.onClick.RemoveAllListeners();
@@ -103,22 +88,20 @@ public class LoginController : MonoBehaviour, IKeyBack
         rememberMeToggle.onValueChanged.RemoveListener(UpdateRememberMeLabel);
     }
 
-    private void SetDropdownArrowUp()
+    private void RefreshDropdownEmails()
     {
-        if (dropdownArrowImage != null && arrowUp != null)
-            dropdownArrowImage.sprite = arrowUp;
+        var savedEmails = RememberMeManager.GetEmailList();
+        dropdownSuggestions.ClearOptions();
+        dropdownSuggestions.AddOptions(savedEmails);
     }
 
-    private void SetDropdownArrowDown()
-    {
-        if (dropdownArrowImage != null && arrowDown != null)
-            dropdownArrowImage.sprite = arrowDown;
-    }
+    private void SetDropdownArrowUp() => dropdownArrowImage.sprite = arrowUp;
+    private void SetDropdownArrowDown() => dropdownArrowImage.sprite = arrowDown;
 
     private void UpdateRememberMeLabel(bool isOn)
     {
-        if (rememberMeLabel == null) return;
-        rememberMeLabel.color = isOn ? Color.green : Color.gray;
+        if (rememberMeLabel != null)
+            rememberMeLabel.color = isOn ? Color.green : Color.gray;
     }
 
     public void OnSignupButtonTap()
@@ -141,60 +124,29 @@ public class LoginController : MonoBehaviour, IKeyBack
             return;
         }
 
-        PlayFabAccountManager.Instance.Login(email, password,
-            onSuccess: () =>
+        PlayFabLoginFlow.Instance.LoginAndLoadData(email, password,
+            onComplete: () =>
             {
                 if (rememberMeToggle.isOn)
                     RememberMeManager.Save(email, password);
                 else
                     RememberMeManager.Clear();
 
-                PlayFabProfileManager.Instance.LoadProfile(
-                    onSuccess: () =>
-                    {
-                        PlayFabManager.Instance.DownloadUserData(data =>
-                        {
-                            if (data != null)
-                            {
-                                SaveManager.Instance.CurrentData = data;
-                                SaveManager.Instance.SaveToDisk(); // Backup local
-                                messageText.text = "";
-                            }
-                            else
-                            {
-                                var defaultData = SaveDataFactory.CreateDefaultSaveData(
-                                    PlayFabAccountManager.Instance.PlayFabId,
-                                    PlayFabProfileManager.Instance.Username,
-                                    PlayFabProfileManager.Instance.CityName,
-                                    PlayFabProfileManager.Instance.CharacterType
-                                );
+                messageText.text = "";
 
-                                SaveManager.Instance.CurrentData = defaultData;
-                                SaveManager.Instance.SaveAndUpload(); // Lưu lên cloud ngay
-
-                                messageText.text = "<color=green>Welcome! New city save created.</color>";
-                            }
-
-
-                            if (PlayFabProfileManager.Instance.HasCreatedProfile)
-                            {
-                                ScreenManager.Close();
-                            }
-                            else
-                            {
-                                ScreenManager.Close();
-                                ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
-                            }
-                        });
-                    },
-                    onError: error =>
-                    {
-                        messageText.text = "Login OK, but failed to load profile: " + error;
-                    });
+                if (PlayFabProfileManager.Instance.HasCreatedProfile)
+                {
+                    ScreenManager.Close();
+                }
+                else
+                {
+                    ScreenManager.Close();
+                    ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
+                }
             },
             onError: errorMsg =>
             {
-                messageText.text = "Login failed: " + errorMsg;
+                messageText.text = errorMsg;
             });
     }
 
@@ -203,7 +155,6 @@ public class LoginController : MonoBehaviour, IKeyBack
         AudioManager.Instance.PlayButtonTap();
 
         string email = inputEmail.text.Trim();
-
         if (string.IsNullOrEmpty(email))
         {
             messageText.text = "Please enter your email!";

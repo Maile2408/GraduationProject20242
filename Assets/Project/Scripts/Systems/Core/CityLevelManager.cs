@@ -84,7 +84,13 @@ public class CityLevelManager : MonoBehaviour
             onLevelChanged?.Invoke(currentLevel);
 
             foreach (var id in levelData.unlockedBuildings)
+            {
+                bool isNew = !UnlockManager.Instance.IsUnlocked(id);
                 UnlockManager.Instance.UnlockBuilding(id);
+
+                //Achievement
+                if (isNew) AchievementReporter.UnlockBuilding();
+            }
 
             CurrencyManager.Instance.AddCoin(levelData.rewardCoin);
             GameMessage.Success($"Level up! You reached level {currentLevel} and gained {levelData.rewardCoin} coins!");

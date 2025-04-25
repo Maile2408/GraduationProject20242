@@ -123,24 +123,6 @@ public class AchievementManager : MonoBehaviour
 
     public List<AchievementProgress> GetAllProgress() => new(progressList);
 
-    public List<string> GetClaimedIDs()
-    {
-        return progressList
-            .Where(p => p.isRewardClaimed)
-            .Select(p => p.data.id)
-            .ToList();
-    }
-
-    public void RestoreClaimedOnly(List<string> claimedIDs)
-    {
-        foreach (var p in progressList)
-        {
-            p.isRewardClaimed = claimedIDs.Contains(p.data.id);
-        }
-
-        Debug.Log($"[AchievementManager] Restored {claimedIDs.Count} claimed achievements.");
-    }
-
     public List<AchievementSaveData> GetAllSaveData()
     {
         return progressList
@@ -166,8 +148,21 @@ public class AchievementManager : MonoBehaviour
             p.isCompleted = p.current >= p.data.goalAmount;
         }
 
-        Debug.Log($"[AchievementManager] Restored {saves.Count} achievements.");
+        //Debug.Log($"[AchievementManager] Restored {saves.Count} achievements.");
     }
+
+    public void Reset()
+    {
+        progressDict.Clear();
+        progressList.Clear();
+        pendingClaimQueue.Clear();
+        isPopupPending = false;
+
+        LoadAllAchievements();
+
+        //Debug.Log("[AchievementManager] Reset and reload all achievement definitions.");
+    }
+
 
     public bool IsCompleted(string achievementId)
     {

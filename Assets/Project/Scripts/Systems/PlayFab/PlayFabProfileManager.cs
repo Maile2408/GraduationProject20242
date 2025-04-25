@@ -31,7 +31,8 @@ public class PlayFabProfileManager : MonoBehaviour
 
         var request = new UpdateUserDataRequest
         {
-            Data = data
+            Data = data,
+            Permission = UserDataPermission.Public
         };
 
         PlayFabClientAPI.UpdateUserData(request,
@@ -47,7 +48,7 @@ public class PlayFabProfileManager : MonoBehaviour
 
     public void LoadProfile(Action onSuccess, Action<string> onError)
     {
-        PlayFabClientAPI.GetUserData(new GetUserDataRequest(), 
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest(),
         result =>
         {
             if (result.Data != null)
@@ -60,4 +61,14 @@ public class PlayFabProfileManager : MonoBehaviour
         },
         error => onError?.Invoke(error.ErrorMessage));
     }
+
+    public void Reset()
+    {
+        Username = null;
+        CityName = null;
+        CharacterType = "";
+
+        //Debug.Log("[PlayFabProfileManager] Profile reset.");
+    }
+
 }

@@ -14,8 +14,10 @@ public class PlayFabLeaderboardManager : MonoBehaviour
         Instance = this;
     }
 
-    public void UpdateLeaderboard(int cityLevel, int xp, int buildingCount, int workerCount, int coin)
+    public void UpdateLeaderboard(int cityLevel, int xp, int buildingCount, int workerCount, float coin)
     {
+        int safeCoin = Mathf.RoundToInt(Mathf.Clamp(coin, 0, 999999999));
+        
         var request = new UpdatePlayerStatisticsRequest
         {
             Statistics = new List<StatisticUpdate>
@@ -24,7 +26,7 @@ public class PlayFabLeaderboardManager : MonoBehaviour
                 new StatisticUpdate { StatisticName = "xp", Value = xp },
                 new StatisticUpdate { StatisticName = "buildingCount", Value = buildingCount },
                 new StatisticUpdate { StatisticName = "workerCount", Value = workerCount },
-                new StatisticUpdate { StatisticName = "coin", Value = coin }
+                new StatisticUpdate { StatisticName = "coin", Value = safeCoin }
             }
         };
 
@@ -39,7 +41,7 @@ public class PlayFabLeaderboardManager : MonoBehaviour
         {
             StatisticName = statName,
             StartPosition = 0,
-            MaxResultsCount = 10
+            MaxResultsCount = 15
         };
 
         PlayFabClientAPI.GetLeaderboard(request,

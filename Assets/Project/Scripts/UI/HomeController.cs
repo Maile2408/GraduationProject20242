@@ -8,7 +8,7 @@ public class HomeController : MonoBehaviour, IKeyBack
     public void OnAchievementsButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
-        
+
         if (PlayFabAccountManager.Instance.IsLoggedIn)
         {
             if (PlayFabProfileManager.Instance.HasCreatedProfile)
@@ -25,7 +25,7 @@ public class HomeController : MonoBehaviour, IKeyBack
     public void OnLeaderboardButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
-        
+
         if (PlayFabAccountManager.Instance.IsLoggedIn)
         {
             if (PlayFabProfileManager.Instance.HasCreatedProfile)
@@ -48,7 +48,7 @@ public class HomeController : MonoBehaviour, IKeyBack
     public void OnShareButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
-        
+
         string urlToShare = "https://www.facebook.com/maile.tran.2408/";
         string facebookShareUrl = $"https://www.facebook.com/sharer/sharer.php?u={UnityWebRequest.EscapeURL(urlToShare)}";
         Application.OpenURL(facebookShareUrl);
@@ -63,19 +63,25 @@ public class HomeController : MonoBehaviour, IKeyBack
     public void OnPlayButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
-        
-        if (PlayFabAccountManager.Instance.IsLoggedIn)
+
+        if (!HomeLoader.IsReadyToPlay) return;
+
+        if (!PlayFabAccountManager.Instance.IsLoggedIn)
         {
-            if (PlayFabProfileManager.Instance.HasCreatedProfile)
-                ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
-            else
-                ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
+            ScreenManager.Add<LoginController>(LoginController.NAME);
+            return;
+        }
+
+        if (PlayFabProfileManager.Instance.HasCreatedProfile)
+        {
+            ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
         }
         else
         {
-            ScreenManager.Add<LoginController>(LoginController.NAME);
+            ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
         }
     }
+
 
     public void OnQuitButtonTap()
     {

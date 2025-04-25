@@ -7,8 +7,7 @@ public class UnlockManager : MonoBehaviour
     public static UnlockManager Instance;
 
     [Header("Runtime Unlocks")]
-    private List<BuildingInfo> allBuildings;
-    [SerializeField] List<int> unlockedBuildings = new();
+    [SerializeField] private List<int> unlockedBuildings = new();
 
     private void Awake()
     {
@@ -19,8 +18,6 @@ public class UnlockManager : MonoBehaviour
         }
 
         Instance = this;
-
-        allBuildings = Resources.LoadAll<BuildingInfo>("BuildingInfo/").ToList();
     }
 
     private void Start()
@@ -38,16 +35,13 @@ public class UnlockManager : MonoBehaviour
         if (!IsUnlocked(buildingID))
         {
             unlockedBuildings.Add(buildingID);
-            //Debug.Log($"[Unlock] Building Unlocked: {buildingID}");
-
-            // Achievement
-            AchievementReporter.UnlockBuilding();
+            Debug.Log($"[UnlockManager] Unlocked building ID: {buildingID}");
         }
     }
 
     public void UnlockInitialBuildings(int currentLevel)
     {
-        foreach (var b in allBuildings)
+        foreach (var b in BuildingDatabase.Instance.GetAll())
         {
             if (b.unlockCityLevel <= currentLevel)
                 UnlockBuilding(b.buildingID);
@@ -56,13 +50,17 @@ public class UnlockManager : MonoBehaviour
 
     public List<BuildingInfo> GetUnlockedBuildings()
     {
-        return allBuildings.Where(b => IsUnlocked(b.buildingID)).ToList();
+        return BuildingDatabase.Instance.GetAll()
+            .Where(b => IsUnlocked(b.buildingID))
+            .ToList();
     }
 
     public List<BuildingInfo> GetUnlockedBuildingsByCategory(BuildingCategory category)
     {
-        return allBuildings
+        return BuildingDatabase.Instance.GetAll()
             .Where(b => b.category == category && IsUnlocked(b.buildingID))
             .ToList();
     }
+
+    public int GetTotalUnlockedBuildingCount() => unlockedBuildings.Count;
 }

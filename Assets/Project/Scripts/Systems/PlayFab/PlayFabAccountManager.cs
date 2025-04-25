@@ -72,6 +72,5 @@ public class PlayFabAccountManager : MonoBehaviour
     {
         PlayFabId = "";
         PlayerPrefs.DeleteKey("PlayFabID");
-        Debug.Log("User logged out");
     }
 }

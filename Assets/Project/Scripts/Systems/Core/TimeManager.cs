@@ -14,7 +14,7 @@ public class TimeManager : SaiBehaviour
 
     [Header("Time Config")]
     [SerializeField] private float dayDuration = 300f;
-    [SerializeField] private float nightDuration = 120f;
+    [SerializeField] private float nightDuration = 90f;
     [SerializeField] private float timer;
 
     public static event Action OnDayStart;

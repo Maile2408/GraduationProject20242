@@ -10,6 +10,7 @@ public class SaveManager : MonoBehaviour
     public UserSaveData CurrentData = new();
 
     private const float AutoSaveInterval = 60f;
+    private Coroutine autoSaveCoroutine;
 
     private void Awake()
     {
@@ -18,21 +19,26 @@ public class SaveManager : MonoBehaviour
         Instance = this;
 
         LoadFromDisk();
-        StartCoroutine(AutoSaveRoutine());
+        autoSaveCoroutine = StartCoroutine(AutoSaveRoutine());
     }
 
-    // Save current data to PlayerPrefs (local device)
+    private void OnDestroy()
+    {
+        if (autoSaveCoroutine != null)
+        {
+            StopCoroutine(autoSaveCoroutine);
+            autoSaveCoroutine = null;
+        }
+    }
+
     public void SaveToDisk()
     {
         string json = JsonUtility.ToJson(CurrentData, true);
         string key = GetPlayerSaveKey();
         PlayerPrefs.SetString(key, json);
         PlayerPrefs.Save();
-
-        Debug.Log("[SaveManager] Saved to disk as " + key);
     }
 
-    // Load saved data from PlayerPrefs
     public void LoadFromDisk()
     {
         string key = GetPlayerSaveKey();
@@ -40,11 +46,8 @@ public class SaveManager : MonoBehaviour
 
         string json = PlayerPrefs.GetString(key);
         CurrentData = JsonUtility.FromJson<UserSaveData>(json);
-
-        Debug.Log("[SaveManager] Loaded from disk: " + key);
     }
 
-    // Save + Upload to Playfab cloud
     public void SaveAndUpload()
     {
         SaveToDisk();
@@ -61,7 +64,6 @@ public class SaveManager : MonoBehaviour
         );
     }
 
-    // Download from cloud and replace current data
     public void DownloadAndApplyFromCloud(Action onDone = null)
     {
 #if USE_PLAYFAB
@@ -71,7 +73,6 @@ public class SaveManager : MonoBehaviour
             {
                 CurrentData = data;
                 SaveToDisk();
-                Debug.Log("[SaveManager] Data applied from cloud");
             }
             onDone?.Invoke();
         });
@@ -95,9 +96,13 @@ public class SaveManager : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(AutoSaveInterval);
-            SaveStateCollector.Instance?.SaveAll();
-            SaveToDisk();
-            Debug.Log("[AutoSave] Game auto-saved at " + Time.time);
+
+            if (SaveStateCollector.Instance != null)
+            {
+                SaveStateCollector.Instance.SaveAll();
+                SaveToDisk();
+                Debug.Log("[AutoSave] Game auto-saved at " + Time.time);
+            }
         }
     }
 
