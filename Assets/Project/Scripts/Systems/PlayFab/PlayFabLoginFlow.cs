@@ -96,7 +96,7 @@ public class PlayFabLoginFlow : MonoBehaviour
         AchievementManager.Instance?.Reset();
         RememberMeManager.Clear();
 
-        Debug.Log("[PlayFabLoginFlow] Logout completed.");
+        //Debug.Log("[PlayFabLoginFlow] Logout completed.");
     }
 
     private void ResetAll()

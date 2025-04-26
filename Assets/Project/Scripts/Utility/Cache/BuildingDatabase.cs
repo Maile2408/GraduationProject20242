@@ -32,7 +32,7 @@ public class BuildingDatabase : MonoBehaviour
 
             if (infoByID.ContainsKey(info.buildingID))
             {
-                Debug.LogWarning($"[BuildingDatabase] Duplicate buildingID: {info.buildingID} ({info.buildingName})");
+                //Debug.LogWarning($"[BuildingDatabase] Duplicate buildingID: {info.buildingID} ({info.buildingName})");
                 duplicates++;
                 continue;
             }
@@ -40,7 +40,7 @@ public class BuildingDatabase : MonoBehaviour
             infoByID[info.buildingID] = info;
         }
 
-        Debug.Log($"[BuildingDatabase] Loaded {infoByID.Count} BuildingInfo(s). Duplicates: {duplicates}");
+        //Debug.Log($"[BuildingDatabase] Loaded {infoByID.Count} BuildingInfo(s). Duplicates: {duplicates}");
     }
 
     public BuildingInfo GetByID(int id)
@@ -48,7 +48,7 @@ public class BuildingDatabase : MonoBehaviour
         if (infoByID.TryGetValue(id, out var info))
             return info;
 
-        Debug.LogError($"[BuildingDatabase] BuildingInfo not found for ID: {id}");
+        //Debug.LogError($"[BuildingDatabase] BuildingInfo not found for ID: {id}");
         return null;
     }
 

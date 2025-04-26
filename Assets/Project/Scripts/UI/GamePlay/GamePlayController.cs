@@ -51,6 +51,7 @@ public class GamePlayController : MonoBehaviour, IKeyBack
     public void OnHelpButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
+        ScreenManager.Add<HelpController>(HelpController.NAME);
     }
 
     public void OnDestroyButtonTap()

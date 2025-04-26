@@ -35,7 +35,7 @@ public class UnlockManager : MonoBehaviour
         if (!IsUnlocked(buildingID))
         {
             unlockedBuildings.Add(buildingID);
-            Debug.Log($"[UnlockManager] Unlocked building ID: {buildingID}");
+            //Debug.Log($"[UnlockManager] Unlocked building ID: {buildingID}");
         }
     }
 

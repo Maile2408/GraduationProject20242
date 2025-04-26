@@ -63,8 +63,11 @@ public class BuildingManager : SaiBehaviour
 
     public virtual void AddBuilding(BuildingCtrl buildingCtrl)
     {
+        if (this.buildingCtrls.Contains(buildingCtrl)) return;
+
         this.buildingCtrls.Add(buildingCtrl);
         buildingCtrl.transform.parent = transform;
+        
         this.NearBuildingRecheck();
     }
 

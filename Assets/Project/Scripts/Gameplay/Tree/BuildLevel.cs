@@ -11,8 +11,7 @@ public class BuildLevel : SaiBehaviour
         get => currentLevel;
         set
         {
-            currentLevel = Mathf.Clamp(value, 0, levels.Count - 1);
-            ShowBuilding();
+            currentLevel = value;
         }
     }
 
@@ -41,9 +40,6 @@ public class BuildLevel : SaiBehaviour
         //Debug.Log(transform.name + ": LoadBuildings");
     }
 
-    /// <summary>
-    /// Call from InvokeRepeating
-    /// </summary>
     protected virtual void ShowNextBuild()
     {
         if (this.currentLevel >= this.levels.Count - 2) return;
@@ -58,7 +54,7 @@ public class BuildLevel : SaiBehaviour
         this.ShowBuilding();
     }
 
-    protected virtual void ShowBuilding()
+    public virtual void ShowBuilding()
     {
         this.HideLastBuild();
         Transform currentBuild = this.levels[this.currentLevel];
@@ -73,7 +69,7 @@ public class BuildLevel : SaiBehaviour
         lastBuild.gameObject.SetActive(false);
     }
 
-    protected virtual void HideAllBuild()
+    public virtual void HideAllBuild()
     {
         Transform buildTran = transform.Find("Buildings");
         foreach (Transform child in buildTran)

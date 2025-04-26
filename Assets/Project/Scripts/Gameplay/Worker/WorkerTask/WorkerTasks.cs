@@ -85,6 +85,7 @@ public class WorkerTasks : SaiBehaviour
         this.taskGoHome.gameObject.SetActive(true);
 
         this.taskGoHome.GoOutBuilding();
+        this.workerCtrl.workerMovement.SetMovingType(MovingType.walking);
         this.TaskAdd(TaskType.goToHome);
     }
 
@@ -101,6 +102,7 @@ public class WorkerTasks : SaiBehaviour
         this.taskWorking.gameObject.SetActive(true);
 
         this.taskWorking.GoOutBuilding();
+        this.workerCtrl.workerMovement.SetMovingType(MovingType.walking);
         this.TaskAdd(TaskType.goToWorkStation);
     }
 

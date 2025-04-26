@@ -48,7 +48,6 @@ public class ProfileMenuController : MonoBehaviour, IKeyBack
         AudioManager.Instance.PlayButtonTap();
         PlayFabLoginFlow.Instance.Logout();
         ScreenManager.Load<HomeController>(HomeController.NAME);
-
     }
 
     public void OnCloseButtonTap()

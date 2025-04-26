@@ -101,7 +101,7 @@ public class SaveManager : MonoBehaviour
             {
                 SaveStateCollector.Instance.SaveAll();
                 SaveToDisk();
-                Debug.Log("[AutoSave] Game auto-saved at " + Time.time);
+                //Debug.Log("[AutoSave] Game auto-saved at " + Time.time);
             }
         }
     }

@@ -89,7 +89,14 @@ public class CityLevelManager : MonoBehaviour
                 UnlockManager.Instance.UnlockBuilding(id);
 
                 //Achievement
-                if (isNew) AchievementReporter.UnlockBuilding();
+                if (isNew)
+                {
+                    BuildingInfo info = BuildingDatabase.Instance.GetByID(id);
+                    string buildingName = info != null ? info.buildingName : "Unknown Building";
+
+                    GameMessage.Info($"Unlocked new building: {buildingName}");
+                    AchievementReporter.UnlockBuilding();
+                }
             }
 
             CurrencyManager.Instance.AddCoin(levelData.rewardCoin);

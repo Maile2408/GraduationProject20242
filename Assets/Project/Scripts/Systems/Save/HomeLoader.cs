@@ -4,7 +4,7 @@ public class HomeLoader : MonoBehaviour
 {
     public static HomeLoader Instance;
 
-    public static bool IsReadyToPlay { get; private set; } = false;
+    public static bool IsReadyToPlay = false;
 
     private void Awake()
     {
@@ -19,45 +19,38 @@ public class HomeLoader : MonoBehaviour
 
     private void Start()
     {
-        IsReadyToPlay = false; 
+        IsReadyToPlay = false;
 
         if (RememberMeManager.IsRemembered())
         {
             PlayFabLoginFlow.Instance.TryAutoLogin(
                 onSuccess: () =>
                 {
-                    Debug.Log("[HomeLoader] AutoLogin success.");
-
-                    PlayFabProfileManager.Instance.LoadProfile(
-                        onSuccess: () =>
-                        {
-                            Debug.Log("[HomeLoader] Profile loaded.");
-                            IsReadyToPlay = true;
-
-                            AchievementManager.Instance.Reset();
-                            AchievementManager.Instance.RestoreProgressFromSave(
-                                SaveManager.Instance.CurrentData.city.achievements
-                            );
-                        },
-                        onError: msg =>
-                        {
-                            Debug.LogWarning("Profile load failed: " + msg);
-                            IsReadyToPlay = true;
-                        });
+                    SaveManager.Instance.DownloadAndApplyFromCloud(() =>
+                    {
+                        PlayFabProfileManager.Instance.LoadProfile(
+                            onSuccess: () =>
+                            {
+                                RestoreAchievements();
+                                IsReadyToPlay = true;
+                            },
+                            onError: msg =>
+                            {
+                                Debug.LogWarning("Profile load failed: " + msg);
+                                IsReadyToPlay = false;
+                            });
+                    });
                 },
                 onFail: msg =>
                 {
                     Debug.Log("[HomeLoader] AutoLogin skipped: " + msg);
-                    IsReadyToPlay = true;
+                    IsReadyToPlay = false;
                 });
         }
         else
         {
-            if (SaveManager.Instance.CurrentData != null)
-            {
-                IsReadyToPlay = true;
-                RestoreAchievements();
-            }
+            if (SaveManager.Instance.CurrentData != null) RestoreAchievements();
+            IsReadyToPlay = true;
         }
     }
 

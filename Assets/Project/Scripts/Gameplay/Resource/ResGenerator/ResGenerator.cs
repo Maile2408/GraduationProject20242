@@ -13,7 +13,7 @@ public class ResGenerator : Warehouse
     public float CreateTimer
     {
         get => createTimer;
-        set => createTimer = Mathf.Max(0, value);
+        set => createTimer = value;
     }
 
     protected override void FixedUpdate()

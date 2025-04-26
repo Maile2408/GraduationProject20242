@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
@@ -46,9 +47,14 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
             type = this.treeType,
             position = transform.position,
             rotation = transform.rotation,
+
+            isMaxLevel = this.treeLevel.MaxLevel,
             currentLevel = this.treeLevel.CurrentLevel,
             treeTimer = this.treeLevel.TreeTimer,
-            generatorTimer = this.logwoodGenerator.CreateTimer
+
+            generatorTimer = this.logwoodGenerator.CreateTimer,
+            inventory = this.logwoodGenerator.GetStockedResources()
+                .Select(r => new Resource { name = r.Name(), number = r.Current() }).ToList(),
         };
     }
 
@@ -58,8 +64,14 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
         transform.position = data.position;
         transform.rotation = data.rotation;
 
+        this.treeLevel.HideAllBuild();
+        this.treeLevel.IsMaxLevel();
         this.treeLevel.CurrentLevel = data.currentLevel;
         this.treeLevel.TreeTimer = data.treeTimer;
+        this.treeLevel.ShowBuilding();
+
         this.logwoodGenerator.CreateTimer = data.generatorTimer;
+        this.logwoodGenerator.ResetResources();
+        this.logwoodGenerator.AddByList(data.inventory);
     }
-} 
+}

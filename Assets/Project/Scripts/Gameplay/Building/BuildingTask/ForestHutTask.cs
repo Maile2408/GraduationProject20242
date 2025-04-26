@@ -17,7 +17,7 @@ public class ForestHutTask : BuildingTask
     protected override void Start()
     {
         base.Start();
-        this.LoadNearByTrees();
+        Invoke(nameof(LoadNearByTrees), 0.5f);
     }
 
     protected override void FixedUpdate()

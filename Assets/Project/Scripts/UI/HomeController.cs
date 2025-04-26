@@ -64,24 +64,23 @@ public class HomeController : MonoBehaviour, IKeyBack
     {
         AudioManager.Instance.PlayButtonTap();
 
-        if (!HomeLoader.IsReadyToPlay) return;
+        if (!HomeLoader.IsReadyToPlay) return;  
 
         if (!PlayFabAccountManager.Instance.IsLoggedIn)
         {
-            ScreenManager.Add<LoginController>(LoginController.NAME);
+            ScreenManager.Add<LoginController>(LoginController.NAME); 
             return;
         }
 
         if (PlayFabProfileManager.Instance.HasCreatedProfile)
         {
-            ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
+            ScreenManager.Load<GamePlayController>(GamePlayController.NAME); 
         }
         else
         {
-            ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
+            ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME); 
         }
     }
-
 
     public void OnQuitButtonTap()
     {

@@ -43,7 +43,7 @@ public class GrainLevel : BuildLevel
         this.levels[0].gameObject.SetActive(true);
     }
 
-    protected override void HideAllBuild()
+    public override void HideAllBuild()
     {
         foreach (Transform level in this.levels)
         {
