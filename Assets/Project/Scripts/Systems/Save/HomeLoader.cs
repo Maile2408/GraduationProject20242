@@ -4,8 +4,6 @@ public class HomeLoader : MonoBehaviour
 {
     public static HomeLoader Instance;
 
-    public static bool IsReadyToPlay = false;
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -19,9 +17,11 @@ public class HomeLoader : MonoBehaviour
 
     private void Start()
     {
-        IsReadyToPlay = false;
-
-        if (RememberMeManager.IsRemembered())
+        if (PlayFabAccountManager.Instance.IsLoggedIn)
+        {
+            HomeController.Instance?.UpdateState();
+        }
+        else if (RememberMeManager.IsRemembered())
         {
             PlayFabLoginFlow.Instance.TryAutoLogin(
                 onSuccess: () =>
@@ -32,25 +32,20 @@ public class HomeLoader : MonoBehaviour
                             onSuccess: () =>
                             {
                                 RestoreAchievements();
-                                IsReadyToPlay = true;
+                                HomeController.Instance?.UpdateState();
                             },
-                            onError: msg =>
-                            {
-                                Debug.LogWarning("Profile load failed: " + msg);
-                                IsReadyToPlay = false;
-                            });
+                            onError: msg => Debug.LogWarning("Profile load failed: " + msg)
+                        );
                     });
                 },
                 onFail: msg =>
                 {
                     Debug.Log("[HomeLoader] AutoLogin skipped: " + msg);
-                    IsReadyToPlay = false;
                 });
         }
         else
         {
-            if (SaveManager.Instance.CurrentData != null) RestoreAchievements();
-            IsReadyToPlay = true;
+            HomeController.Instance?.UpdateState();
         }
     }
 

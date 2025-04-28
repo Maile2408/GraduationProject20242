@@ -10,7 +10,6 @@ public class TreeSaveData
     public Vector3 position;
     public Quaternion rotation;
 
-    public bool isMaxLevel;
     public int currentLevel;
     public float treeTimer;
 

@@ -9,6 +9,8 @@ public class PlayFabAccountManager : MonoBehaviour
 
     public string PlayFabId { get; private set; }
     public bool IsLoggedIn => !string.IsNullOrEmpty(PlayFabId);
+    public string CurrentEmail { get; private set; }
+
 
     [SerializeField] private string titleId = "1D709F";
 
@@ -31,6 +33,7 @@ public class PlayFabAccountManager : MonoBehaviour
         PlayFabClientAPI.LoginWithEmailAddress(request, result =>
         {
             PlayFabId = result.PlayFabId;
+            CurrentEmail = email;
             PlayerPrefs.SetString("PlayFabID", PlayFabId);
             onSuccess?.Invoke();
         },

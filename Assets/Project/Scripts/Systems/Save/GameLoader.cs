@@ -16,6 +16,8 @@ public class GameLoader : MonoBehaviour
         var city = SaveManager.Instance.CurrentData.city;
 
         CurrencyManager.Instance.Coin = city.coin;
+        CurrencyManager.Instance.NotifyCoinChanged();
+
         CityLevelManager.Instance.SetLevelAndXP(city.cityLevel, city.xp);
         TimeManager.Instance.SetTime(city.timeCounter, city.timeState == "Day");
 

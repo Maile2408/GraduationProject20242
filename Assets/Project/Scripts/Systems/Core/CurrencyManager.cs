@@ -32,10 +32,14 @@ public class CurrencyManager : SaiBehaviour
     protected override void Start()
     {
         base.Start();
-        OnCoinChanged?.Invoke();
 
         //Achievement
         AchievementReporter.UpdateCurrentCoin(currentCoin);
+    }
+
+    public void NotifyCoinChanged()
+    {
+        OnCoinChanged?.Invoke();
     }
 
     public void AddCoin(float amount)

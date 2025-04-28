@@ -12,7 +12,6 @@ public class PlayFabLoginFlow : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
     }
 
@@ -26,6 +25,8 @@ public class PlayFabLoginFlow : MonoBehaviour
                 PlayFabProfileManager.Instance.LoadProfile(
                     onSuccess: () =>
                     {
+                        SaveManager.Instance.ClearLocalSave();
+                        
                         PlayFabManager.Instance.DownloadUserData(saveData =>
                         {
                             if (saveData != null)
@@ -51,8 +52,11 @@ public class PlayFabLoginFlow : MonoBehaviour
                                 SaveManager.Instance.SaveAndUpload();
 
                                 AchievementManager.Instance.Reset();
+
                                 onComplete?.Invoke();
                             }
+
+                            HomeController.Instance?.UpdateState();
                         });
                     },
                     onError: error =>
@@ -96,7 +100,7 @@ public class PlayFabLoginFlow : MonoBehaviour
         AchievementManager.Instance?.Reset();
         RememberMeManager.Clear();
 
-        //Debug.Log("[PlayFabLoginFlow] Logout completed.");
+        HomeController.Instance?.UpdateState();
     }
 
     private void ResetAll()
@@ -106,7 +110,5 @@ public class PlayFabLoginFlow : MonoBehaviour
 
         SaveManager.Instance.CurrentData = null;
         AchievementManager.Instance?.Reset();
-
-        //Debug.Log("[PlayFabLoginFlow] Reset all state before login.");
     }
 }

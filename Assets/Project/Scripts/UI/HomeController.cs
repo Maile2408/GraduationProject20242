@@ -1,9 +1,49 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class HomeController : MonoBehaviour, IKeyBack
 {
     public const string NAME = "Home";
+
+    public static HomeController Instance;
+
+    [SerializeField] Button playButton;
+    [SerializeField] Button continueButton;
+    [SerializeField] Button logoutButton;
+
+    [SerializeField] TextMeshProUGUI accountInfoText;
+
+    private void Awake()
+    {
+        if (Instance != null) { Destroy(gameObject); return; }
+        Instance = this;
+    }
+
+    public void UpdateState()
+    {
+        bool isLoggedIn = PlayFabAccountManager.Instance.IsLoggedIn;
+
+        playButton.gameObject.SetActive(!isLoggedIn);
+        continueButton.gameObject.SetActive(isLoggedIn);
+        logoutButton.gameObject.SetActive(isLoggedIn);
+
+        if (isLoggedIn)
+        {
+            accountInfoText.gameObject.SetActive(true);
+            string email = PlayFabAccountManager.Instance.CurrentEmail;
+            if (string.IsNullOrEmpty(email)) email = "Guest";
+            accountInfoText.text = $"Account: {email}";
+        }
+        else
+        {
+            accountInfoText.gameObject.SetActive(true);
+            accountInfoText.text = $"Account: Guest";
+        }
+
+
+    }
 
     public void OnAchievementsButtonTap()
     {
@@ -39,17 +79,17 @@ public class HomeController : MonoBehaviour, IKeyBack
         }
     }
 
-    public void OnFacebookButtonTap()
+    public void OnGameButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
-        Application.OpenURL("https://www.facebook.com/maile.tran.2408/");
+        Application.OpenURL("https://maile2408.itch.io/realm-builder");
     }
 
     public void OnShareButtonTap()
     {
         AudioManager.Instance.PlayButtonTap();
 
-        string urlToShare = "https://www.facebook.com/maile.tran.2408/";
+        string urlToShare = "https://maile2408.itch.io/realm-builder";
         string facebookShareUrl = $"https://www.facebook.com/sharer/sharer.php?u={UnityWebRequest.EscapeURL(urlToShare)}";
         Application.OpenURL(facebookShareUrl);
     }
@@ -64,22 +104,59 @@ public class HomeController : MonoBehaviour, IKeyBack
     {
         AudioManager.Instance.PlayButtonTap();
 
-        if (!HomeLoader.IsReadyToPlay) return;  
-
         if (!PlayFabAccountManager.Instance.IsLoggedIn)
         {
-            ScreenManager.Add<LoginController>(LoginController.NAME); 
+            ScreenManager.Add<LoginController>(LoginController.NAME);
+            return;
+        }
+    }
+
+    public void OnContinueButtonTap()
+    {
+        AudioManager.Instance.PlayButtonTap();
+
+        if (!PlayFabProfileManager.Instance.HasCreatedProfile)
+        {
+            ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME);
             return;
         }
 
-        if (PlayFabProfileManager.Instance.HasCreatedProfile)
+        ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
+    }
+
+    public void OnLogoutButtonTap()
+    {
+        AudioManager.Instance.PlayButtonTap();
+
+        if (PlayFabAccountManager.Instance.IsLoggedIn)
         {
-            ScreenManager.Load<GamePlayController>(GamePlayController.NAME); 
+            string email = PlayFabAccountManager.Instance.CurrentEmail;
+            if (string.IsNullOrEmpty(email)) email = "Guest";
+
+            ConfirmationPopupController.OnYesCallback = OnConfirmYes;
+            ConfirmationPopupController.OnNoCallback = OnConfirmNo;
+            ConfirmationPopupController.Message = $"Are you sure you want to log out from {email}?";
+
+            ScreenManager.Add<ConfirmationPopupController>(ConfirmationPopupController.NAME);
         }
-        else
-        {
-            ScreenManager.Add<CreateProfileController>(CreateProfileController.NAME); 
-        }
+    }
+
+    private void OnConfirmYes()
+    {
+        SaveManager.Instance.SaveAndUpload();
+        PlayFabLoginFlow.Instance.Logout();
+        ClearCallbacks();
+    }
+
+    private void OnConfirmNo()
+    {
+        ClearCallbacks();
+    }
+
+    private void ClearCallbacks()
+    {
+        ConfirmationPopupController.OnYesCallback = null;
+        ConfirmationPopupController.OnNoCallback = null;
     }
 
     public void OnQuitButtonTap()

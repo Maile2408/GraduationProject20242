@@ -24,7 +24,8 @@ MonoBehaviour:
   coin: 1000
   cost:
   - name: 1001
-    number: 35
+    number: 30
   - name: 2001
     number: 25
   unlockCityLevel: 10
+  specialAchievementType: 0

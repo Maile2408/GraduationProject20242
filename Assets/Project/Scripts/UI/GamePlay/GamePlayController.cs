@@ -5,8 +5,16 @@ public class GamePlayController : MonoBehaviour, IKeyBack
 {
     public const string NAME = "GamePlay";
 
+    public static GamePlayController Instance;
+
     [SerializeField] TextMeshProUGUI workerAmount;
     [SerializeField] TextMeshProUGUI coinAmount;
+
+    private void Awake()
+    {
+        if (Instance != null) { Destroy(gameObject); return; }
+        Instance = this;
+    }
 
     private void OnEnable()
     {

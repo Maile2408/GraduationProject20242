@@ -74,7 +74,6 @@ public class BuildLevel : SaiBehaviour
         Transform buildTran = transform.Find("Buildings");
         foreach (Transform child in buildTran)
         {
-            this.levels.Add(child);
             child.gameObject.SetActive(false);
         }
     }

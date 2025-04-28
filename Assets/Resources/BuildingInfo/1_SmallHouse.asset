@@ -24,6 +24,6 @@ MonoBehaviour:
   coin: 400
   cost:
   - name: 1001
-    number: 35
+    number: 15
   unlockCityLevel: 3
   specialAchievementType: 1

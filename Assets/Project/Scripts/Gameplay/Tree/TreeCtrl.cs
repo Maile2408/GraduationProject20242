@@ -48,7 +48,6 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
             position = transform.position,
             rotation = transform.rotation,
 
-            isMaxLevel = this.treeLevel.MaxLevel,
             currentLevel = this.treeLevel.CurrentLevel,
             treeTimer = this.treeLevel.TreeTimer,
 
@@ -65,13 +64,11 @@ public class TreeCtrl : SaiBehaviour, IPoolable, ISaveable<TreeSaveData>
         transform.rotation = data.rotation;
 
         this.treeLevel.HideAllBuild();
-        this.treeLevel.IsMaxLevel();
         this.treeLevel.CurrentLevel = data.currentLevel;
         this.treeLevel.TreeTimer = data.treeTimer;
         this.treeLevel.ShowBuilding();
 
         this.logwoodGenerator.CreateTimer = data.generatorTimer;
-        this.logwoodGenerator.ResetResources();
         this.logwoodGenerator.AddByList(data.inventory);
     }
 }

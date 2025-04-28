@@ -25,5 +25,6 @@ MonoBehaviour:
   - name: 1001
     number: 10
   - name: 1002
-    number: 20
+    number: 10
   unlockCityLevel: 3
+  specialAchievementType: 0

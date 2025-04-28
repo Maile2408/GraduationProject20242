@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.IO;
 using System.Collections;
 
 public class SaveManager : MonoBehaviour
@@ -62,6 +61,16 @@ public class SaveManager : MonoBehaviour
             city.workers.Count,
             Mathf.RoundToInt(city.coin)
         );
+    }
+
+    public void ClearLocalSave()
+    {
+        string key = GetPlayerSaveKey();
+        if (PlayerPrefs.HasKey(key))
+        {
+            PlayerPrefs.DeleteKey(key);
+            PlayerPrefs.Save();
+        }
     }
 
     public void DownloadAndApplyFromCloud(Action onDone = null)
