@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class GameLoader : MonoBehaviour
@@ -9,23 +10,62 @@ public class GameLoader : MonoBehaviour
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
-    void Start()
+    public IEnumerator LoadAllGameData()
+    {
+        yield return LoadCurrency();
+        yield return LoadCityLevelAndTime();
+        yield return LoadBuildings();
+        yield return LoadWorkers();
+        yield return LoadTrees();
+        yield return LoadConstructions();
+    }
+
+    IEnumerator LoadCurrency()
     {
         var city = SaveManager.Instance.CurrentData.city;
-
         CurrencyManager.Instance.Coin = city.coin;
         CurrencyManager.Instance.NotifyCoinChanged();
+        yield return null;
+    }
 
+    IEnumerator LoadCityLevelAndTime()
+    {
+        var city = SaveManager.Instance.CurrentData.city;
         CityLevelManager.Instance.SetLevelAndXP(city.cityLevel, city.xp);
         TimeManager.Instance.SetTime(city.timeCounter, city.timeState == "Day");
+        yield return null;
+    }
 
-        // Load world objects
+    IEnumerator LoadBuildings()
+    {
+        var city = SaveManager.Instance.CurrentData.city;
         LoadObjects<BuildingCtrl, BuildingSaveData>(city.buildings, IDType.Building);
+        yield return null;
+    }
+
+    IEnumerator LoadWorkers()
+    {
+        var city = SaveManager.Instance.CurrentData.city;
         LoadObjects<WorkerCtrl, WorkerSaveData>(city.workers, IDType.Worker);
+        yield return null;
+    }
+
+    IEnumerator LoadTrees()
+    {
+        var city = SaveManager.Instance.CurrentData.city;
         LoadObjects<TreeCtrl, TreeSaveData>(city.trees, IDType.Tree);
+        yield return null;
+    }
+
+    IEnumerator LoadConstructions()
+    {
+        var city = SaveManager.Instance.CurrentData.city;
         LoadObjects<ConstructionCtrl, ConstructionSaveData>(city.constructions, IDType.Construction);
+        yield return null;
     }
 
     private void LoadObjects<T, TData>(List<TData> savedList, IDType type)

@@ -197,8 +197,7 @@ MonoBehaviour:
       coin: 0
       timeState: 
       timeCounter: 0
-      unlockedBuildingIDs: 
-      unlockedAchievements: []
+      achievements: []
       buildings: []
       constructions: []
       workers: []
@@ -253,6 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10bb3023097afa7418802fbda47359a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quitKey: 27
 --- !u!1 &8532177846855999818
 GameObject:
   m_ObjectHideFlags: 0

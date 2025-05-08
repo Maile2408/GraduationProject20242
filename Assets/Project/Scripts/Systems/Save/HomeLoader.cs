@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class HomeLoader : MonoBehaviour
@@ -13,16 +14,21 @@ public class HomeLoader : MonoBehaviour
         }
 
         Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+    public IEnumerator LoadProfileData()
     {
         if (PlayFabAccountManager.Instance.IsLoggedIn)
         {
-            HomeController.Instance?.UpdateState();
+            yield break;
         }
-        else if (RememberMeManager.IsRemembered())
+
+        if (RememberMeManager.IsRemembered())
         {
+            bool isDone = false;
+
             PlayFabLoginFlow.Instance.TryAutoLogin(
                 onSuccess: () =>
                 {
@@ -32,21 +38,23 @@ public class HomeLoader : MonoBehaviour
                             onSuccess: () =>
                             {
                                 RestoreAchievements();
-                                HomeController.Instance?.UpdateState();
+                                isDone = true;
                             },
-                            onError: msg => Debug.LogWarning("Profile load failed: " + msg)
+                            onError: msg => isDone = true
                         );
                     });
                 },
                 onFail: msg =>
                 {
-                    Debug.Log("[HomeLoader] AutoLogin skipped: " + msg);
+                    Debug.Log("[HomeLoader] AutoLogin failed: " + msg);
+                    isDone = true;
                 });
+
+            while (!isDone)
+                yield return null;
         }
-        else
-        {
-            HomeController.Instance?.UpdateState();
-        }
+
+        yield return null;
     }
 
     private void RestoreAchievements()

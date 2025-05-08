@@ -41,7 +41,9 @@ public class CreateProfileController : MonoBehaviour, IKeyBack
                 SaveManager.Instance.CurrentData = saveData;
                 SaveManager.Instance.SaveAndUpload();
 
-                ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
+                LoadingRequest.targetScene = GamePlayController.NAME;
+                LoadingRequest.loadStage = LoadingRequest.LoadStage.LoadGameDataToGameplay;
+                ScreenManager.Load<LoadingController>(LoadingController.NAME);
             },
             onError: msg =>
             {

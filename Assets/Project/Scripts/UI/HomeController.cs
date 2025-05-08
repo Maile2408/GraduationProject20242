@@ -21,6 +21,11 @@ public class HomeController : MonoBehaviour, IKeyBack
         Instance = this;
     }
 
+    private void Start()
+    {
+        UpdateState();
+    }
+
     public void UpdateState()
     {
         bool isLoggedIn = PlayFabAccountManager.Instance.IsLoggedIn;
@@ -41,8 +46,6 @@ public class HomeController : MonoBehaviour, IKeyBack
             accountInfoText.gameObject.SetActive(true);
             accountInfoText.text = $"Account: Guest";
         }
-
-
     }
 
     public void OnAchievementsButtonTap()
@@ -121,7 +124,10 @@ public class HomeController : MonoBehaviour, IKeyBack
             return;
         }
 
-        ScreenManager.Load<GamePlayController>(GamePlayController.NAME);
+        LoadingRequest.targetScene = GamePlayController.NAME;
+        LoadingRequest.loadStage = LoadingRequest.LoadStage.LoadGameDataToGameplay;
+
+        ScreenManager.Load<LoadingController>(LoadingController.NAME);
     }
 
     public void OnLogoutButtonTap()
