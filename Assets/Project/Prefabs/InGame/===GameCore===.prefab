@@ -152,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4858965846646758728}
   - component: {fileID: 8200849423926485666}
+  - component: {fileID: 9076225571347276916}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -203,6 +204,18 @@ MonoBehaviour:
       workers: []
       trees: []
       lastSaveTime: 
+--- !u!114 &9076225571347276916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257723412650722117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e18ebc299ed3fe40a7542f8ab31bdc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5459378848420236512
 GameObject:
   m_ObjectHideFlags: 0

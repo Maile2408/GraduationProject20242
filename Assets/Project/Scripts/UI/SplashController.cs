@@ -4,12 +4,9 @@ public class SplashController : MonoBehaviour, IKeyBack
 {
     public const string NAME = "Splash";
 
-    private void Start()
+    private void OnEnable()
     {
-        LoadingRequest.targetScene = HomeController.NAME;
-        LoadingRequest.loadStage = LoadingRequest.LoadStage.LoadProfileToHome;
-
-        ScreenManager.Load<LoadingController>(LoadingController.NAME);
+        LoadingController.Show(LoadingController.LoadType.ProfileToHome);
     }
 
     public void OnKeyBack()

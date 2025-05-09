@@ -22,6 +22,7 @@ public class LoginController : MonoBehaviour, IKeyBack
     [SerializeField] private Sprite arrowDown;
 
     private bool isDropdownOpen = false;
+    private int lastSelectedIndex = -1;
 
     private void Start()
     {
@@ -45,6 +46,7 @@ public class LoginController : MonoBehaviour, IKeyBack
             isDropdownOpen = !isDropdownOpen;
             if (isDropdownOpen)
             {
+                dropdownSuggestions.value = -1;
                 dropdownSuggestions.Show();
                 SetDropdownArrowUp();
             }
@@ -57,6 +59,9 @@ public class LoginController : MonoBehaviour, IKeyBack
 
         dropdownSuggestions.onValueChanged.AddListener(index =>
         {
+            if (index == lastSelectedIndex) return;
+            lastSelectedIndex = index;
+
             string selectedEmail = dropdownSuggestions.options[index].text;
             inputEmail.text = selectedEmail;
             inputPassword.text = RememberMeManager.GetPasswordOf(selectedEmail);
@@ -93,6 +98,7 @@ public class LoginController : MonoBehaviour, IKeyBack
         var savedEmails = RememberMeManager.GetEmailList();
         dropdownSuggestions.ClearOptions();
         dropdownSuggestions.AddOptions(savedEmails);
+        lastSelectedIndex = -1;
     }
 
     private void SetDropdownArrowUp() => dropdownArrowImage.sprite = arrowUp;

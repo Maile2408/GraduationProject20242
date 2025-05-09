@@ -5,8 +5,11 @@ public class TimeUIManager : MonoBehaviour
     [SerializeField] private GameObject dayIcon;
     [SerializeField] private GameObject nightIcon;
 
+    private bool hasHandledFirst = false;
+
     private void OnEnable()
     {
+        hasHandledFirst = false;
         TimeManager.OnDayStart += HandleDayStart;
         TimeManager.OnNightStart += HandleNightStart;
     }
@@ -25,13 +28,15 @@ public class TimeUIManager : MonoBehaviour
     private void HandleDayStart()
     {
         ShowDayIcon();
-        GameMessage.Info("A new day has begun!");
+        if (hasHandledFirst) GameMessage.Info("A new day has begun!");
+        hasHandledFirst = true;
     }
 
     private void HandleNightStart()
     {
         ShowNightIcon();
-        GameMessage.Info("Nightfall: All workers have returned home to rest.");
+        if (hasHandledFirst) GameMessage.Info("Nightfall: All workers have returned home to rest.");
+        hasHandledFirst = true;
     }
 
     private void UpdateIconSilently()

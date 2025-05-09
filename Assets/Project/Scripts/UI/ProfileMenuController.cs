@@ -38,9 +38,7 @@ public class ProfileMenuController : MonoBehaviour, IKeyBack
         SaveStateCollector.Instance.SaveAll();
         SaveManager.Instance.SaveAndUpload();
 
-        LoadingRequest.targetScene = HomeController.NAME;
-        LoadingRequest.loadStage = LoadingRequest.LoadStage.ReturnHomeFromGameplay;
-        ScreenManager.Load<LoadingController>(LoadingController.NAME);
+        LoadingController.Show(LoadingController.LoadType.BackToHome);
     }
 
     public void OnCloseButtonTap()

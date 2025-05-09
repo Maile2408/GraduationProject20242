@@ -124,10 +124,7 @@ public class HomeController : MonoBehaviour, IKeyBack
             return;
         }
 
-        LoadingRequest.targetScene = GamePlayController.NAME;
-        LoadingRequest.loadStage = LoadingRequest.LoadStage.LoadGameDataToGameplay;
-
-        ScreenManager.Load<LoadingController>(LoadingController.NAME);
+        LoadingController.Show(LoadingController.LoadType.GameDataToGamePlay);
     }
 
     public void OnLogoutButtonTap()

@@ -8,10 +8,18 @@ public class GameLoader : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(this);
-        else Instance = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        DontDestroyOnLoad(gameObject);
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(LoadAllGameData());
     }
 
     public IEnumerator LoadAllGameData()
