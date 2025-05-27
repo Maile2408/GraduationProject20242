@@ -129,6 +129,8 @@ public class CityLevelManager : MonoBehaviour
 
         XP = levelConfigs[currentLevel].requiredXP;
         TryLevelUp();
+
+        UnlockManager.Instance?.UnlockInitialBuildings(currentLevel);
     }
 #endif
 }

@@ -90,12 +90,32 @@ public class HouseBuilderTask : BuildingTask
     protected virtual void GetResNeed2Move(WorkerCtrl workerCtrl)
     {
         var construction = workerCtrl.workerTasks.taskConstruction;
-        if (construction == null) return;
+        if (construction == null)
+        {
+            Debug.LogWarning("Construction is null in GetResNeed2Move.");
+            return;
+        }
 
         BuildingCtrl warehouseCtrl = workerCtrl.workerTasks.taskBuildingCtrl;
+        if (warehouseCtrl == null)
+        {
+            Debug.LogWarning("taskBuildingCtrl is null in GetResNeed2Move.");
+            workerCtrl.workerTasks.TaskCurrentDone();
+            workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);
+            return;
+        }
+
+        if (warehouseCtrl.warehouse == null)
+        {
+            Debug.LogWarning($"Warehouse in {warehouseCtrl.name} is null in GetResNeed2Move.");
+            workerCtrl.workerTasks.TaskCurrentDone();
+            workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);
+            return;
+        }
+
         ResourceName resRequireName = construction.GetResRequireName();
         ResHolder resHolder = warehouseCtrl.warehouse.GetResource(resRequireName);
-        if (resHolder.Current() < 1)
+        if (resHolder == null || resHolder.Current() < 1)
         {
             workerCtrl.workerTasks.TaskCurrentDone();
             workerCtrl.workerTasks.TaskAdd(TaskType.findWarehouseHasRes);

@@ -22,18 +22,14 @@ public class Test : MonoBehaviour
 
             Test cheat = (Test)target;
 
-            GUILayout.Space(10);
-            EditorGUILayout.LabelField("=== Cheat Actions ===", EditorStyles.boldLabel);
+            GUILayout.Space(15);
+            EditorGUILayout.LabelField("=== Cheat Game Data ===", EditorStyles.boldLabel);
 
             if (GUILayout.Button("Add Coin"))
-            {
                 CurrencyManager.Instance?.AddCoin(cheat.addCoin);
-            }
 
             if (GUILayout.Button("Add XP"))
-            {
                 CityLevelManager.Instance?.AddXP(cheat.addXP);
-            }
 
             if (GUILayout.Button("Add Resources (to WarehouseWH)"))
             {
@@ -43,8 +39,36 @@ public class Test : MonoBehaviour
             }
 
             if (GUILayout.Button("Force Level Up"))
-            {
                 CityLevelManager.Instance?.ForceLevelUp();
+
+            GUILayout.Space(15);
+            EditorGUILayout.LabelField("=== Save / Load Tools ===", EditorStyles.boldLabel);
+
+            if (GUILayout.Button("Save Game"))
+            {
+                SaveStateCollector.Instance?.SaveAll();
+                Debug.Log("[Cheat] Save Complete");
+            }
+
+            if (GUILayout.Button("Upload Save to PlayFab"))
+            {
+                SaveManager.Instance?.SaveAndUpload();
+                Debug.Log("[Cheat] Upload Save Done");
+            }
+
+            if (GUILayout.Button("Reload Save From Local"))
+            {
+                GameLoader.Instance?.StartCoroutine(GameLoader.Instance.LoadAllGameData());
+                Debug.Log("[Cheat] Reloaded from Save");
+            }
+
+            GUILayout.Space(15);
+            EditorGUILayout.LabelField("=== Reset Tools ===", EditorStyles.boldLabel);
+
+            if (GUILayout.Button("Clear Local Save"))
+            {
+                SaveManager.Instance?.ClearLocalSave();
+                Debug.LogWarning("[Cheat] Local save cleared");
             }
         }
     }
