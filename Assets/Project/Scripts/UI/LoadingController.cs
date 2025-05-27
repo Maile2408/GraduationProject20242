@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class LoadingController : MonoBehaviour, IKeyBack
 {

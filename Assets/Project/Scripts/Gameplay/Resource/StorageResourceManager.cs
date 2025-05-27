@@ -112,4 +112,22 @@ public class StorageResourceManager : SaiBehaviour
 
         AchievementReporter.StoreResource(total);
     }
+
+    public void AddResourceToAnyWarehouse(ResourceName resourceName, float amount)
+    {
+        foreach (var building in BuildingManager.Instance.BuildingCtrls())
+        {
+            if (building.warehouse is not WarehouseWH wh) continue;
+
+            if (!wh.IsFull())
+            {
+                wh.AddResource(resourceName, amount);
+                Debug.Log($"Added {amount} {resourceName} to {building.name}");
+                return;
+            }
+        }
+
+        Debug.LogWarning($"No available WarehouseWH found to store {resourceName}");
+    }
+
 }

@@ -117,4 +117,18 @@ public class CityLevelManager : MonoBehaviour
         this.Level = level;
         this.XP = xp;
     }
+
+#if UNITY_EDITOR
+    public void ForceLevelUp()
+    {
+        if (currentLevel >= levelConfigs.Count)
+        {
+            Debug.LogWarning("City is already at max level.");
+            return;
+        }
+
+        XP = levelConfigs[currentLevel].requiredXP;
+        TryLevelUp();
+    }
+#endif
 }
