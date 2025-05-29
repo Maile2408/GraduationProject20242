@@ -7,6 +7,7 @@ public class ConstructionManager : SaiBehaviour
 
     [Header("All Constructions")]
     [SerializeField] protected List<AbstractConstruction> constructions = new();
+    private List<AbstractConstruction> pendingReadyConstructions = new();
 
     protected override void Awake()
     {
@@ -54,6 +55,20 @@ public class ConstructionManager : SaiBehaviour
     public virtual List<AbstractConstruction> GetAll()
     {
         return constructions;
+    }
+
+    public void AddPendingReadyConstruction(AbstractConstruction c)
+    {
+        if (!pendingReadyConstructions.Contains(c))
+            pendingReadyConstructions.Add(c);
+    }
+
+    public AbstractConstruction GetPendingReadyConstruction()
+    {
+        if (pendingReadyConstructions.Count == 0) return null;
+        var c = pendingReadyConstructions[0];
+        pendingReadyConstructions.RemoveAt(0);
+        return c;
     }
 
     public void NotifyWorkersWhenFinished(AbstractConstruction finished)

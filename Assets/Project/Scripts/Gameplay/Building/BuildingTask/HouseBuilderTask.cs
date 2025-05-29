@@ -41,7 +41,10 @@ public class HouseBuilderTask : BuildingTask
     {
         if (workerCtrl.workerTasks.taskConstruction == null)
         {
-            AbstractConstruction construction = ConstructionManager.Instance.GetConstruction();
+            AbstractConstruction construction = ConstructionManager.Instance.GetPendingReadyConstruction();
+            if (construction == null)
+                construction = ConstructionManager.Instance.GetConstruction();
+
             if (construction == null) return;
 
             construction.builder = this.buildingCtrl;

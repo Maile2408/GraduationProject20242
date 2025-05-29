@@ -44,6 +44,7 @@ public class GameLoader : MonoBehaviour
     {
         var city = SaveManager.Instance.CurrentData.city;
         CityLevelManager.Instance.SetLevelAndXP(city.cityLevel, city.xp);
+        UnlockManager.Instance.UnlockInitialBuildings(city.cityLevel);
         TimeManager.Instance.SetTime(city.timeCounter, city.timeState == "Day");
         yield return null;
     }

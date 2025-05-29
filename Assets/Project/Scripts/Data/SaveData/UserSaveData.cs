@@ -7,5 +7,5 @@ public class UserSaveData
     public string userName;
     public string characterType; // "King" or "Queen"
 
-    public CitySaveData city; // Data GamePlay
+    public CitySaveData city = new(); // Data GamePlay
 }

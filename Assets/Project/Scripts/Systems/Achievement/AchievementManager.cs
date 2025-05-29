@@ -76,8 +76,9 @@ public class AchievementManager : MonoBehaviour
     private void ShowAchievementPopup()
     {
         if (isPopupPending) return;
+        if (pendingClaimQueue.Count == 0) return;
         isPopupPending = true;
-        Invoke(nameof(OpenPopup), 1.5f);
+        Invoke(nameof(OpenPopup), 2.5f);
     }
 
     private void OpenPopup()
@@ -139,6 +140,7 @@ public class AchievementManager : MonoBehaviour
 
     public void RestoreProgressFromSave(List<AchievementSaveData> saves)
     {
+        pendingClaimQueue.Clear();
         foreach (var save in saves)
         {
             if (!progressDict.TryGetValue(save.id, out var p)) continue;
@@ -146,9 +148,15 @@ public class AchievementManager : MonoBehaviour
             p.current = Mathf.Min(save.current, p.data.goalAmount);
             p.isRewardClaimed = save.claimed;
             p.isCompleted = p.current >= p.data.goalAmount;
+
+            if (p.isCompleted && !p.isRewardClaimed)
+            {
+                pendingClaimQueue.Add(p);
+            }
         }
 
-        //Debug.Log($"[AchievementManager] Restored {saves.Count} achievements.");
+        CancelInvoke(nameof(OpenPopup));
+        isPopupPending = false;
     }
 
     public void Reset()

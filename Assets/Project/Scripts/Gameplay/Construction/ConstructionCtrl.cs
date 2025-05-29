@@ -72,5 +72,10 @@ public class ConstructionCtrl : SaiBehaviour, IPoolable, ISaveable<ConstructionS
 
         Setup(info);
         this.abstractConstruction.SetResourceProgress(data.resourceProgress);
+
+        if (this.abstractConstruction.isReadyToBuild)
+        {
+            ConstructionManager.Instance.AddPendingReadyConstruction(this.abstractConstruction);
+        }
     }
 }
