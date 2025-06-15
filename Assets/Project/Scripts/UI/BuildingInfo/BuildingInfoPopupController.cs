@@ -11,20 +11,20 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     [SerializeField] TextMeshProUGUI buildingName;
     [SerializeField] TextMeshProUGUI description;
 
-    [SerializeField] private UnityEngine.GameObject coinIcon;
+    [SerializeField] private GameObject coinIcon;
     [SerializeField] private TextMeshProUGUI coinAmount;
 
     [SerializeField] private UnityEngine.GameObject logwoodIcon;
     [SerializeField] private TextMeshProUGUI logwoodAmount;
 
-    [SerializeField] private UnityEngine.GameObject plankIcon;
+    [SerializeField] private GameObject plankIcon;
     [SerializeField] private TextMeshProUGUI plankAmount;
 
-    [SerializeField] private UnityEngine.GameObject stoneIcon;
+    [SerializeField] private GameObject stoneIcon;
     [SerializeField] private TextMeshProUGUI stoneAmount;
 
     [SerializeField] private Button buildButton;
-    [SerializeField] private UnityEngine.GameObject warningPanel;
+    [SerializeField] private GameObject warningPanel;
     [SerializeField] private TextMeshProUGUI warningText;
 
     public static BuildingInfo pendingInfo;

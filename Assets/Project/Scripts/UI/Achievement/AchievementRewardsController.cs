@@ -36,6 +36,7 @@ public class AchievementRewardsController : MonoBehaviour, IKeyBack
     {
         AudioManager.Instance.PlayButtonTap();
         AchievementManager.Instance.ClaimAllPendingRewards();
+        SaveStateCollector.Instance.SaveAll();
         ScreenManager.Close();
     }
 
