@@ -14,7 +14,7 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
     [SerializeField] private GameObject coinIcon;
     [SerializeField] private TextMeshProUGUI coinAmount;
 
-    [SerializeField] private UnityEngine.GameObject logwoodIcon;
+    [SerializeField] private GameObject logwoodIcon;
     [SerializeField] private TextMeshProUGUI logwoodAmount;
 
     [SerializeField] private GameObject plankIcon;
@@ -53,7 +53,7 @@ public class BuildingInfoPopupController : MonoBehaviour, IKeyBack
         ShowResource(stoneIcon, stoneAmount, info, ResourceName.stone);
     }
 
-    private void ShowResource(UnityEngine.GameObject icon, TextMeshProUGUI text, BuildingInfo info, ResourceName name)
+    private void ShowResource(GameObject icon, TextMeshProUGUI text, BuildingInfo info, ResourceName name)
     {
         if (icon == null || text == null) return;
 
